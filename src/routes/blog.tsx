@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import blogImageAsset from "@/assets/approach-2.jpeg.asset.json";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
@@ -15,6 +16,11 @@ export const Route = createFileRoute("/blog")({
         content:
           "Reflections, guidance, and identity-aligned support for the fourth trimester.",
       },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/blog" },
+      { property: "og:image", content: blogImageAsset.url },
+    ],
+    links: [
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/blog" },
     ],
   }),
   component: BlogPage,

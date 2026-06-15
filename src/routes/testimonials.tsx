@@ -7,6 +7,10 @@ export const Route = createFileRoute("/testimonials")({
       { name: "description", content: "What families say about working with Ashlee McKenzie and Nurture The Roots™ postpartum care." },
       { property: "og:title", content: "Testimonials — Nurture The Roots™" },
       { property: "og:description", content: "What families say about their experience with lineage-rooted postpartum care." },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/testimonials" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/testimonials" },
     ],
   }),
   component: TestimonialsPage,

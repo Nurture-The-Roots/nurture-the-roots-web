@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import servicesImageAsset from "@/assets/approach-3.jpeg.asset.json";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -7,6 +8,11 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: "Postpartum doula care, overnight newborn care, NBO-informed sessions, feeding and lactation support, and new parent coaching in San Francisco." },
       { property: "og:title", content: "Services — Nurture The Roots™" },
       { property: "og:description", content: "Warm, attuned, identity-aligned postpartum offerings." },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/services" },
+      { property: "og:image", content: servicesImageAsset.url },
+    ],
+    links: [
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/services" },
     ],
   }),
   component: ServicesPage,
