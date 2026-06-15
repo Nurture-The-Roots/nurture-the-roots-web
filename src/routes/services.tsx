@@ -4,7 +4,7 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services — Nurture The Roots™ Postpartum Care" },
-      { name: "description", content: "Postpartum doula care, overnight newborn care, NBO-informed sessions, feeding and lactation support, new parent coaching, and innate postpartum care in San Francisco." },
+      { name: "description", content: "Postpartum doula care, overnight newborn care, NBO-informed sessions, feeding and lactation support, and new parent coaching in San Francisco." },
       { property: "og:title", content: "Services — Nurture The Roots™" },
       { property: "og:description", content: "Warm, attuned, identity-aligned postpartum offerings." },
     ],
@@ -67,17 +67,6 @@ const services = [
       "Nervous system care",
       "Communication + partnership support",
       "Guidance through postpartum transitions",
-    ],
-  },
-  {
-    title: "Innate Postpartum Care",
-    description:
-      "A holistic, lineage-rooted approach to postpartum healing that supports rest, nourishment, warmth, and emotional grounding.",
-    includes: [
-      "Nervous system support",
-      "Rest + recovery guidance",
-      "Warmth + nourishment practices",
-      "Rituals for postpartum healing",
     ],
   },
 ];
