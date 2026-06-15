@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import aboutAsset from "@/assets/about-ashlee-reflection.jpg.asset.json";
+import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
 const aboutImg = aboutAsset.url;
 
 export const Route = createFileRoute("/about")({
@@ -56,6 +57,36 @@ function AboutPage() {
             <p className="font-serif italic text-cocoa text-xl">
               My intention is simple: to make sure no family begins this chapter alone.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24 grid md:grid-cols-[7fr_5fr] gap-10 md:gap-16 items-center">
+          <div className="space-y-6 text-lg text-earth/80 leading-relaxed order-2 md:order-1">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay">Your story, your becoming</div>
+            <h2 className="text-3xl md:text-4xl leading-tight text-cocoa">
+              Walking with you, at your own pace.
+            </h2>
+            <p>
+              Becoming a parent is not a single moment — it is a slow, daily
+              unfolding. I show up as a steady companion along that walk: noticing
+              what you might not yet have words for, naming what is already true,
+              and trusting the wisdom that lives in your lineage and in your body.
+            </p>
+            <p>
+              There is no right way to begin. There is only your way, supported.
+            </p>
+          </div>
+          <div className="order-1 md:order-2 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
+            <img
+              src={walkingAsset.url}
+              alt="Ashlee walking down a sunlit city sidewalk in a plaid coat, smiling toward the camera"
+              loading="lazy"
+              width={1280}
+              height={1920}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
