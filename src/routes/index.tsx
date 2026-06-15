@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroAsset from "@/assets/hero-ashlee-baby.jpg.asset.json";
 import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
-import approachImg from "@/assets/approach.jpg";
-const heroImg = heroAsset.url;
+const welcomeImg = welcomeAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -11,8 +9,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Guiding you through the fourth trimester with clarity and care." },
       { property: "og:title", content: "Nurture The Roots™" },
       { property: "og:description", content: "Guiding you through the fourth trimester with clarity and care." },
-      { property: "og:image", content: heroImg },
-      { name: "twitter:image", content: heroImg },
+      { property: "og:image", content: welcomeImg },
+      { name: "twitter:image", content: welcomeImg },
     ],
   }),
   component: Index,
@@ -47,16 +45,6 @@ function Index() {
             >
               Schedule a consultation
             </Link>
-          </div>
-
-          <div className="mt-16 md:mt-20 mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-[0_30px_80px_-30px_rgba(74,63,57,0.35)]">
-            <img
-              src={heroImg}
-              alt="Ashlee McKenzie holding a newborn wrapped in a rust-colored blanket near a sunlit window with greenery outside"
-              width={1920}
-              height={1280}
-              className="w-full h-auto object-cover"
-            />
           </div>
         </div>
       </section>
@@ -136,38 +124,24 @@ function Index() {
 
       {/* MY APPROACH PREVIEW */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="order-2 md:order-1">
-              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">My Approach</div>
-              <h2 className="text-3xl md:text-4xl leading-tight">
-                A Relational, Identity-Aligned Approach
-              </h2>
-              <p className="mt-6 text-earth/80 leading-relaxed">
-                My care is rooted in four pillars: Identity-Aligned Care™, Ancestral-Rooted Care™,
-                Developmental & Relational Guidance™, and Sovereign Family Systems™. These
-                frameworks help you understand your baby, your identity, and your new family system
-                with clarity and confidence.
-              </p>
-              <div className="mt-10">
-                <Link
-                  to="/approach"
-                  className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
-                >
-                  Learn About My Approach
-                </Link>
-              </div>
-            </div>
-            <div className="order-1 md:order-2 overflow-hidden rounded-2xl">
-              <img
-                src={approachImg}
-                alt="Ceremonial postpartum still life with woven textiles, dried herbs, and clay bowl"
-                loading="lazy"
-                width={1400}
-                height={1000}
-                className="w-full h-full object-cover"
-              />
-            </div>
+        <div className="mx-auto max-w-3xl px-6 py-20 md:py-28 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">My Approach</div>
+          <h2 className="text-3xl md:text-4xl leading-tight">
+            A Relational, Identity-Aligned Approach
+          </h2>
+          <p className="mt-6 text-earth/80 leading-relaxed">
+            My care is rooted in four pillars: Identity-Aligned Care™, Ancestral-Rooted Care™,
+            Developmental & Relational Guidance™, and Sovereign Family Systems™. These
+            frameworks help you understand your baby, your identity, and your new family system
+            with clarity and confidence.
+          </p>
+          <div className="mt-10">
+            <Link
+              to="/approach"
+              className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
+            >
+              Learn About My Approach
+            </Link>
           </div>
         </div>
       </section>
