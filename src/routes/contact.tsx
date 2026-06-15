@@ -104,6 +104,17 @@ function ContactPage() {
         </div>
       </section>
 
+      {/* PHOTO */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-6 pb-12 md:pb-16">
+          <img
+            src={contactFamilyAsset.url}
+            alt="Ashlee McKenzie supporting a family during the fourth trimester"
+            className="w-full rounded-2xl object-cover aspect-[16/9] md:aspect-[21/9]"
+          />
+        </div>
+      </section>
+
       {/* CONTACT FORM */}
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 pb-16 md:pb-24">
