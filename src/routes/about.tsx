@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import aboutImg from "@/assets/about-ashlee.jpg";
+import aboutAsset from "@/assets/about-ashlee-reflection.jpg.asset.json";
+const aboutImg = aboutAsset.url;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -30,7 +31,7 @@ function AboutPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24 grid md:grid-cols-[5fr_7fr] gap-10 md:gap-16 items-start">
           <div className="overflow-hidden rounded-2xl">
-            <img src={aboutImg} alt="Ashlee McKenzie, postpartum doula" loading="lazy" width={1200} height={1400} className="w-full h-full object-cover" />
+            <img src={aboutImg} alt="Ashlee McKenzie standing on a sunlit sidewalk, leaning against a brick storefront with her reflection in the window" loading="lazy" width={1280} height={1920} className="w-full h-full object-cover" />
           </div>
           <div className="space-y-6 text-lg text-earth/80 leading-relaxed">
             <p>
