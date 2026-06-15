@@ -188,7 +188,7 @@ function SiteFooter() {
         {/* Brand Info */}
         <div>
           <div className="font-serif text-2xl">Ashlee McKenzie</div>
-          <p className="mt-2 text-sm text-sand/75">
+          <p className="mt-2 text-sm text-cocoa/75">
             Certified Postpartum Doula & Newborn Care Specialist
           </p>
         </div>
