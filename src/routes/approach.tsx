@@ -25,6 +25,16 @@ function ApproachPage() {
           <div className="uppercase tracking-[0.32em] text-xs text-clay mb-6">Approach</div>
           <h1 className="text-4xl md:text-5xl leading-tight">My Approach</h1>
         </div>
+        <div className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[16/9]">
+            <img
+              src={approach2Asset.url}
+              alt="Ashlee gently attending to a newborn baby"
+              loading="eager"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       {/* INTRO */}

@@ -134,13 +134,15 @@ function RootComponent() {
 function SiteHeader() {
   const nav = [
     { to: "/", label: "Home" },
-    { to: "/approach", label: "My Approach" },
-    { to: "/services", label: "Services" },
-    { to: "/testimonials", label: "Testimonials" },
-    { to: "/faq", label: "FAQ" },
     { to: "/about", label: "About" },
+    { to: "/services", label: "Services" },
+    { to: "/approach", label: "Approach" },
+    { to: "/testimonials", label: "Testimonials" },
+    { to: "/blog", label: "Blog" },
     { to: "/media", label: "Media" },
+    { to: "/faq", label: "FAQ" },
     { to: "/contact", label: "Contact" },
+    { to: "/privacy", label: "Legal" },
   ] as const;
   return (
     <header className="sticky top-0 z-40 backdrop-blur-sm bg-[color-mix(in_oklab,var(--sand)_85%,transparent)] border-b border-border/60">
@@ -148,7 +150,7 @@ function SiteHeader() {
         <Link to="/" className="font-serif text-lg text-cocoa tracking-wide">
           Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-earth/80">
+        <nav className="hidden lg:flex items-center gap-6 text-sm text-earth/80">
           {nav.map((n) => (
             <Link
               key={n.to}
@@ -163,12 +165,12 @@ function SiteHeader() {
         </nav>
         <Link
           to="/contact"
-          className="hidden md:inline-flex items-center rounded-full border border-taupe/70 px-4 py-2 text-sm text-cocoa hover:bg-blush transition-colors"
+          className="hidden lg:inline-flex items-center rounded-full border border-taupe/70 px-4 py-2 text-sm text-cocoa hover:bg-blush transition-colors"
         >
           Begin
         </Link>
       </div>
-      <nav className="md:hidden flex justify-center gap-5 pb-3 text-xs tracking-wide text-earth/75">
+      <nav className="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 pb-3 text-xs tracking-wide text-earth/75">
         {nav.map((n) => (
           <Link key={n.to} to={n.to} className="hover:text-cocoa" activeProps={{ className: "text-cocoa" }} activeOptions={{ exact: n.to === "/" }}>
             {n.label}
