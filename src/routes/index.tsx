@@ -8,9 +8,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Nurture The Roots™ — Warm, Attuned Postpartum Support in San Francisco" },
-      { name: "description", content: "Warm, attuned, identity-aligned postpartum support for new parents. Guiding you through the fourth trimester with clarity and care." },
+      { name: "description", content: "Guiding you through the fourth trimester with clarity and care." },
       { property: "og:title", content: "Nurture The Roots™" },
-      { property: "og:description", content: "Warm, attuned, identity-aligned postpartum support for new parents." },
+      { property: "og:description", content: "Guiding you through the fourth trimester with clarity and care." },
       { property: "og:image", content: heroImg },
       { name: "twitter:image", content: heroImg },
     ],
@@ -33,7 +33,7 @@ function Index() {
             <span className="align-super text-[0.4em] ml-1 text-cocoa/70">™</span>
           </h1>
           <p className="mt-7 mx-auto max-w-2xl font-serif text-xl md:text-2xl text-earth/85 italic">
-            Warm, attuned, identity-aligned postpartum support for new parents.
+            Guiding you through the fourth trimester with clarity and care.
           </p>
           <p className="mt-5 mx-auto max-w-2xl text-base text-earth/70 leading-relaxed">
             Your fourth trimester deserves care that feels grounding, relational, and deeply human.
