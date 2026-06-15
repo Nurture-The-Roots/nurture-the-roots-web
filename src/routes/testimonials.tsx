@@ -67,8 +67,10 @@ function TestimonialsPage() {
               className="rounded-2xl bg-cream/40 border border-taupe/25 p-8 md:p-12"
             >
               <div className="font-serif text-4xl text-clay/40 leading-none mb-4">"</div>
-              <blockquote className="font-serif italic text-2xl md:text-3xl text-cocoa leading-snug">
-                {t.quote}
+              <blockquote className="font-serif italic text-xl md:text-2xl text-cocoa leading-relaxed space-y-5">
+                {t.quote.split("\n\n").map((para, pi) => (
+                  <p key={pi}>{para}</p>
+                ))}
               </blockquote>
               {t.name && (
                 <p className="mt-6 text-sm uppercase tracking-[0.22em] text-clay">
