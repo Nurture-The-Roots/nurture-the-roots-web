@@ -5,17 +5,17 @@ const CANONICAL = "https://nurture-the-roots-web.lovable.app/postpartum-doula-sa
 export const Route = createFileRoute("/postpartum-doula-san-francisco")({
   head: () => ({
     meta: [
-      { title: "Postpartum Doula in San Francisco | Nurture The Roots™" },
+      { title: "Postpartum Doula in San Francisco & Bay Area | Nurture The Roots™" },
       {
         name: "description",
         content:
-          "Identity-aligned postpartum doula care in San Francisco and the Bay Area. Daytime support, overnight newborn care, feeding guidance, and NBO-informed sessions.",
+          "Experienced postpartum doula in San Francisco offering warm, identity-aligned daytime support, overnight newborn care, feeding guidance, and NBO-informed sessions for Bay Area families.",
       },
-      { property: "og:title", content: "Postpartum Doula in San Francisco | Nurture The Roots™" },
+      { property: "og:title", content: "Postpartum Doula in San Francisco & Bay Area | Nurture The Roots™" },
       {
         property: "og:description",
         content:
-          "Warm, lineage-rooted postpartum doula care for San Francisco Bay Area families. Daytime, overnight, feeding, and newborn support.",
+          "Warm, identity-aligned postpartum doula care for San Francisco and Bay Area families — daytime support, overnight newborn care, feeding guidance, and NBO-informed sessions.",
       },
       { property: "og:url", content: CANONICAL },
       { property: "og:type", content: "website" },
