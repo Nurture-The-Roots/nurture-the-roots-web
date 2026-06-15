@@ -136,6 +136,7 @@ function SiteHeader() {
     { to: "/", label: "Home" },
     { to: "/approach", label: "My Approach" },
     { to: "/services", label: "Services" },
+    { to: "/testimonials", label: "Testimonials" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
   ] as const;
