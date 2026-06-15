@@ -61,11 +61,11 @@
   --radius: 0.5rem;
 
   --sand:  oklch(0.948 0.012 70);
-  --blush: oklch(0.890 0.020 55);
-  --clay:  oklch(0.745 0.060 50);
-  --taupe: oklch(0.715 0.020 60);
-  --cocoa: oklch(0.530 0.040 45);
-  --earth: oklch(0.330 0.025 45);
+  --blush: oklch(0.915 0.015 70);   /* soft beige section bg */
+  --clay:  oklch(0.680 0.095 45);   /* soft terracotta accent */
+  --taupe: oklch(0.800 0.018 65);   /* soft warm taupe (footer) */
+  --cocoa: oklch(0.300 0.012 60);   /* deep charcoal heading */
+  --earth: oklch(0.260 0.010 60);   /* deep charcoal body text */
 
   --background: var(--sand);
   --foreground: var(--earth);
@@ -83,8 +83,8 @@
   --accent-foreground: var(--sand);
   --destructive: oklch(0.577 0.180 27);
   --destructive-foreground: oklch(0.984 0 0);
-  --border: color-mix(in oklab, var(--taupe) 45%, transparent);
-  --input: color-mix(in oklab, var(--taupe) 35%, transparent);
+  --border: oklch(0.905 0.012 70);  /* very light warm beige */
+  --input: oklch(0.905 0.012 70);
   --ring: var(--clay);
   --chart-1: var(--clay);
   --chart-2: var(--taupe);

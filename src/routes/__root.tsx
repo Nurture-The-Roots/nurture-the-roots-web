@@ -183,7 +183,7 @@ function SiteHeader() {
 
 function SiteFooter() {
   return (
-    <footer className="mt-24 bg-earth text-sand">
+    <footer className="mt-24 bg-taupe text-cocoa">
       <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-3">
         {/* Brand Info */}
         <div>
@@ -194,7 +194,7 @@ function SiteFooter() {
         </div>
 
         {/* Contact */}
-        <div className="text-sm text-sand/80">
+        <div className="text-sm text-cocoa/80">
           <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Contact</div>
           <p>San Francisco, California — Serving families across the Bay Area</p>
           <p className="mt-2">
@@ -205,7 +205,7 @@ function SiteFooter() {
         </div>
 
         {/* Navigation */}
-        <div className="text-sm text-sand/80">
+        <div className="text-sm text-cocoa/80">
           <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Navigation</div>
           <ul className="space-y-2">
             <li><Link to="/" className="hover:text-clay transition-colors">Home</Link></li>
@@ -220,12 +220,12 @@ function SiteFooter() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-sand/10">
+      <div className="border-t border-cocoa/15">
         <div className="mx-auto max-w-6xl px-6 py-6">
-          <p className="text-xs text-sand/55 text-center">
+          <p className="text-xs text-cocoa/65 text-center">
             My support is relational and educational, not medical. Please consult your healthcare provider for medical concerns.
           </p>
-          <p className="mt-2 text-xs text-sand/55 text-center">
+          <p className="mt-2 text-xs text-cocoa/65 text-center">
             © 2026 Nurture the Roots LLC. All rights reserved.
           </p>
         </div>
