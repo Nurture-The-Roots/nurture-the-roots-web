@@ -68,7 +68,7 @@ function Index() {
             <div className="relative overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
               <img
                 src={welcomeAsset.url}
-                alt="Ashlee smiling tenderly at a baby wrapped in a rust-colored swaddle in warm, golden light"
+                alt="Ashlee McKenzie kneeling on the floor, smiling warmly while gently holding a happy baby in a striped onesie"
                 loading="lazy"
                 width={1920}
                 height={1280}
