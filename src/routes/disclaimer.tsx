@@ -64,7 +64,7 @@ function DisclaimerPage() {
               <p className="text-earth/80 leading-relaxed">
                 For questions about any of these policies, contact:
               </p>
-              <p className="text-cocoa font-medium">am.nurturetr@proton.me</p>
+              <p className="text-cocoa font-medium">ashleemckenzie@nurturetheroots.co</p>
             </div>
           </div>
         </div>

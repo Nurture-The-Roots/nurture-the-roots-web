@@ -267,10 +267,10 @@ function ContactPage() {
             <div className="rounded-2xl bg-background/60 border border-taupe/30 p-8 text-center">
               <div className="uppercase tracking-[0.22em] text-xs text-clay mb-3">Email</div>
               <a
-                href="mailto:am.nurturetr@proton.me"
+                href="mailto:ashleemckenzie@nurturetheroots.co"
                 className="text-cocoa font-serif text-xl hover:text-earth transition-colors"
               >
-                am.nurturetr@proton.me
+                ashleemckenzie@nurturetheroots.co
               </a>
             </div>
             <div className="rounded-2xl bg-background/60 border border-taupe/30 p-8 text-center">
