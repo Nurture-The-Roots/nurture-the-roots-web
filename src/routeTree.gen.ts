@@ -25,6 +25,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
+import { Route as BlogWhatIsAPostpartumDoulaRouteImport } from './routes/blog.what-is-a-postpartum-doula'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -110,6 +111,12 @@ const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
   path: '/email/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogWhatIsAPostpartumDoulaRoute =
+  BlogWhatIsAPostpartumDoulaRouteImport.update({
+    id: '/what-is-a-postpartum-doula',
+    path: '/what-is-a-postpartum-doula',
+    getParentRoute: () => BlogRoute,
+  } as any)
 const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   id: '/lovable/email/suppression',
   path: '/lovable/email/suppression',
@@ -149,6 +156,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -170,6 +178,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog': typeof BlogIndexRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -193,6 +202,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
@@ -217,6 +227,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
+    | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog/'
     | '/lovable/email/suppression'
@@ -238,6 +249,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
+    | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog'
     | '/lovable/email/suppression'
@@ -260,6 +272,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
+    | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog/'
     | '/lovable/email/suppression'
@@ -404,6 +417,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmailUnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/what-is-a-postpartum-doula': {
+      id: '/blog/what-is-a-postpartum-doula'
+      path: '/what-is-a-postpartum-doula'
+      fullPath: '/blog/what-is-a-postpartum-doula'
+      preLoaderRoute: typeof BlogWhatIsAPostpartumDoulaRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/lovable/email/suppression': {
       id: '/lovable/email/suppression'
       path: '/lovable/email/suppression'
@@ -436,10 +456,12 @@ declare module '@tanstack/react-router' {
 }
 
 interface BlogRouteChildren {
+  BlogWhatIsAPostpartumDoulaRoute: typeof BlogWhatIsAPostpartumDoulaRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
 const BlogRouteChildren: BlogRouteChildren = {
+  BlogWhatIsAPostpartumDoulaRoute: BlogWhatIsAPostpartumDoulaRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 
