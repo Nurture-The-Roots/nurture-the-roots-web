@@ -208,7 +208,7 @@ function SiteFooter() {
             <li><Link to="/" className="hover:text-clay transition-colors">Home</Link></li>
             <li><Link to="/about" className="hover:text-clay transition-colors">About</Link></li>
             <li><Link to="/services" className="hover:text-clay transition-colors">Services</Link></li>
-            <li><a href="/blog" className="hover:text-clay transition-colors">Blog</a></li>
+            <li><Link to="/blog" className="hover:text-clay transition-colors">Blog</Link></li>
             <li><Link to="/contact" className="hover:text-clay transition-colors">Contact</Link></li>
             <li><Link to="/privacy" className="hover:text-clay transition-colors">Legal</Link></li>
           </ul>
