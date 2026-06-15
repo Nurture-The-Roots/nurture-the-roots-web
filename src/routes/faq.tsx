@@ -1,22 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-export const Route = createFileRoute("/faq")({
-  head: () => ({
-    meta: [
-      { title: "FAQ — Nurture The Roots™" },
-      { name: "description", content: "Frequently asked questions about postpartum support, overnight care, feeding support, and working with Ashlee McKenzie." },
-      { property: "og:title", content: "FAQ — Nurture The Roots™" },
-      { property: "og:description", content: "Answers to common questions about postpartum support and care services." },
-    ],
-  }),
-  component: FaqPage,
-});
 
 const faqs = [
   {
@@ -70,6 +59,37 @@ const faqs = [
       "You can reach out through my contact form or schedule a consultation to explore what support feels right for your family.",
   },
 ];
+
+export const Route = createFileRoute("/faq")({
+  head: () => ({
+    meta: [
+      { title: "FAQ — Nurture The Roots™" },
+      { name: "description", content: "Frequently asked questions about postpartum support, overnight care, feeding support, and working with Ashlee McKenzie." },
+      { property: "og:title", content: "FAQ — Nurture The Roots™" },
+      { property: "og:description", content: "Answers to common questions about postpartum support and care services." },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/faq" },
+      { property: "og:image", content: welcomeAsset.url },
+    ],
+    links: [
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/faq" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        }),
+      },
+    ],
+  }),
+  component: FaqPage,
+});
 
 function FaqPage() {
   return (
