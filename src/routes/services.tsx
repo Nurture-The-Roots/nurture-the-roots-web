@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import servicesImg from "@/assets/services.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -8,7 +7,6 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: "Postpartum doula care, overnight newborn care, NBO-informed sessions, feeding and lactation support, new parent coaching, and innate postpartum care in San Francisco." },
       { property: "og:title", content: "Services — Nurture The Roots™" },
       { property: "og:description", content: "Warm, attuned, identity-aligned postpartum offerings." },
-      { property: "og:image", content: servicesImg },
     ],
   }),
   component: ServicesPage,
@@ -97,18 +95,8 @@ function ServicesPage() {
 
       {/* INTRO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-          <div className="overflow-hidden rounded-2xl">
-            <img
-              src={servicesImg}
-              alt="Parent feeding newborn in soft natural light, warm and nurturing"
-              loading="lazy"
-              width={1400}
-              height={1000}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="space-y-6 text-lg text-earth/80 leading-relaxed">
+        <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+          <div className="space-y-6 text-lg text-earth/80 leading-relaxed text-center">
             <p>
               Every family's needs are unique.
             </p>
