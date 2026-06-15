@@ -40,19 +40,19 @@ function TestimonialsPage() {
     <>
       {/* PAGE TITLE */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
-          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-6">Testimonials</div>
-          <h1 className="text-4xl md:text-5xl leading-tight">Testimonials</h1>
+        <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
+          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Testimonials</div>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">Testimonials</h1>
         </div>
       </section>
 
       {/* INTRO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 text-center">
-          <p className="text-lg text-earth/80 leading-relaxed">
+        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             The families I support often describe our time together as grounding, clarifying, and deeply transformative.
           </p>
-          <p className="mt-4 text-lg text-earth/80 leading-relaxed">
+          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
             Here are some of the words they've shared about their experience.
           </p>
         </div>
@@ -60,20 +60,20 @@ function TestimonialsPage() {
 
       {/* TESTIMONIALS */}
       <section className="bg-background">
-        <div className="mx-auto max-w-5xl px-6 pb-16 md:pb-24 space-y-10">
+        <div className="mx-auto max-w-4xl px-6 pb-24 md:pb-32 space-y-14">
           {testimonials.map((t, i) => (
             <article
               key={i}
-              className="rounded-2xl bg-cream/40 border border-taupe/25 p-8 md:p-12"
+              className="rounded-2xl bg-blush/50 border border-taupe/25 p-10 md:p-14"
             >
-              <div className="font-serif text-4xl text-clay/40 leading-none mb-4">"</div>
-              <blockquote className="font-serif italic text-xl md:text-2xl text-cocoa leading-relaxed space-y-5">
+              <div className="font-serif text-5xl text-clay/50 leading-none mb-6">"</div>
+              <blockquote className="font-serif italic text-xl md:text-2xl text-cocoa leading-[1.6] space-y-6">
                 {t.quote.split("\n\n").map((para, pi) => (
                   <p key={pi}>{para}</p>
                 ))}
               </blockquote>
               {t.name && (
-                <p className="mt-6 text-sm uppercase tracking-[0.22em] text-clay">
+                <p className="mt-8 text-xs uppercase tracking-[0.28em] text-clay">
                   — {t.name}
                 </p>
               )}
@@ -84,15 +84,15 @@ function TestimonialsPage() {
 
       {/* CTA */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Ready to Feel Supported?</div>
-          <h2 className="text-3xl md:text-4xl leading-tight">
+        <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Ready to Feel Supported?</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
             Ready to Feel Supported?
           </h2>
-          <p className="mt-6 text-lg text-earth/80 leading-relaxed">
+          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
             If you're craving clarity, rest, and attuned guidance, I'd love to support your family through this tender beginning.
           </p>
-          <div className="mt-10">
+          <div className="mt-12">
             <Link
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
