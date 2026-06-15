@@ -34,6 +34,10 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Reach out to Ashlee at Nurture The Roots™ for warm, attuned postpartum support in San Francisco." },
       { property: "og:title", content: "Contact — Nurture The Roots™" },
       { property: "og:description", content: "I'd love to connect with you. Reach out and I'll respond with warmth, clarity, and care." },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/contact" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/contact" },
     ],
   }),
   component: ContactPage,
@@ -203,7 +207,7 @@ function ContactPage() {
                     value={watch("supportType") || ""}
                     onValueChange={(value) => setValue("supportType", value)}
                   >
-                    <SelectTrigger className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth focus:ring-clay focus:ring-offset-0 h-auto">
+                  <SelectTrigger id="supportType" aria-label="Type of support" className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth focus:ring-clay focus:ring-offset-0 h-auto">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent className="pointer-events-auto">

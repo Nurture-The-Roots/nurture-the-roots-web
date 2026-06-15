@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as MediaRouteImport } from './routes/media'
@@ -41,6 +42,11 @@ const TestimonialsRoute = TestimonialsRouteImport.update({
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -133,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/media': typeof MediaRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByTo {
   '/media': typeof MediaRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
@@ -174,6 +182,7 @@ export interface FileRoutesById {
   '/media': typeof MediaRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
@@ -196,6 +205,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/privacy'
     | '/services'
+    | '/sitemap.xml'
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
@@ -216,6 +226,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/privacy'
     | '/services'
+    | '/sitemap.xml'
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
@@ -236,6 +247,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/privacy'
     | '/services'
+    | '/sitemap.xml'
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
@@ -257,6 +269,7 @@ export interface RootRouteChildren {
   MediaRoute: typeof MediaRoute
   PrivacyRoute: typeof PrivacyRoute
   ServicesRoute: typeof ServicesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   TestimonialsRoute: typeof TestimonialsRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
@@ -288,6 +301,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -409,6 +429,7 @@ const rootRouteChildren: RootRouteChildren = {
   MediaRoute: MediaRoute,
   PrivacyRoute: PrivacyRoute,
   ServicesRoute: ServicesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   TestimonialsRoute: TestimonialsRoute,
   UnsubscribeRoute: UnsubscribeRoute,

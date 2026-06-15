@@ -9,7 +9,11 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "Ashlee McKenzie is a postpartum doula, newborn care specialist, and family coach with 16+ years of lineage-rooted practice in San Francisco." },
       { property: "og:title", content: "About Ashlee McKenzie" },
       { property: "og:description", content: "Postpartum doula, newborn care specialist, and family coach." },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/about" },
       { property: "og:image", content: aboutImg },
+    ],
+    links: [
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/about" },
     ],
   }),
   component: AboutPage,

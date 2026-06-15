@@ -5,12 +5,50 @@ const welcomeImg = welcomeAsset.url;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nurture The Roots™ — Warm, Attuned Postpartum Support in San Francisco" },
+      { title: "Postpartum Doula San Francisco | Nurture The Roots™" },
       { name: "description", content: "Guiding you through the fourth trimester with clarity and care." },
-      { property: "og:title", content: "Nurture The Roots™" },
+      { property: "og:title", content: "Postpartum Doula San Francisco | Nurture The Roots™" },
       { property: "og:description", content: "Guiding you through the fourth trimester with clarity and care." },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/" },
       { property: "og:image", content: welcomeImg },
       { name: "twitter:image", content: welcomeImg },
+    ],
+    links: [
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Nurture The Roots™",
+          description:
+            "Lineage-rooted, identity-aligned postpartum doula and newborn care practice serving families across the San Francisco Bay Area.",
+          url: "https://nurture-the-roots-web.lovable.app/",
+          image: welcomeImg,
+          telephone: "",
+          email: "ashleemckenzie@nurturetheroots.co",
+          founder: { "@type": "Person", name: "Ashlee McKenzie" },
+          areaServed: [
+            { "@type": "City", name: "San Francisco" },
+            { "@type": "Place", name: "San Francisco Bay Area" },
+          ],
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "San Francisco",
+            addressRegion: "CA",
+            addressCountry: "US",
+          },
+          serviceType: [
+            "Postpartum Doula Care",
+            "Overnight Newborn Care",
+            "NBO-Informed Newborn Sessions",
+            "Feeding & Lactation Support",
+            "New Parent Support Coaching",
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
@@ -29,6 +67,9 @@ function Index() {
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.05] text-cocoa">
             Nurture the Roots
             <span className="align-super text-[0.4em] ml-1 text-cocoa/70">™</span>
+            <span className="block mt-6 font-serif text-2xl sm:text-3xl md:text-4xl font-normal text-cocoa/80">
+              Warm, Attuned Postpartum Support in San Francisco
+            </span>
           </h1>
           <p className="mt-10 mx-auto max-w-2xl font-serif text-xl md:text-2xl text-cocoa/80 italic">
             Guiding you through the fourth trimester with clarity and care.
