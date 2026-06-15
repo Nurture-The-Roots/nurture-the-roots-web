@@ -224,11 +224,10 @@ function ApproachPage() {
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            My approach is warm, grounded, and deeply relational.
+            You don't have to navigate this beginning alone.
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
-            I support you in understanding your baby, your identity, and your new family system —
-            with clarity, compassion, and attunement.
+            If you're looking for support that aligns with your identity, your values, and the way your family moves through the world, I'd be honored to walk with you.
           </p>
           <div className="mt-12">
             <Link
