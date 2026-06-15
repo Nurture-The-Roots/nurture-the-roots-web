@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroAsset from "@/assets/hero-ashlee-baby.jpg.asset.json";
+import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
 import approachImg from "@/assets/approach.jpg";
 const heroImg = heroAsset.url;
 
@@ -66,17 +67,31 @@ function Index() {
 
       {/* INTRO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 py-20 md:py-28 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">A gentle welcome</div>
-          <h2 className="text-3xl md:text-4xl">
-            The fourth trimester is sacred ground.
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-earth/80">
-            In the weeks after birth, you and your baby are becoming. This is a tender,
-            ancestral threshold — one that asks to be held with reverence, not rushed
-            through. My work is to hold that space with you: with attunement, with
-            lineage, with care that meets you as your whole self.
-          </p>
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div>
+              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">A gentle welcome</div>
+              <h2 className="text-3xl md:text-4xl leading-tight">
+                The fourth trimester is sacred ground.
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-earth/80">
+                In the weeks after birth, you and your baby are becoming. This is a tender,
+                ancestral threshold — one that asks to be held with reverence, not rushed
+                through. My work is to hold that space with you: with attunement, with
+                lineage, with care that meets you as your whole self.
+              </p>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
+              <img
+                src={welcomeAsset.url}
+                alt="Ashlee smiling tenderly at a baby wrapped in a rust-colored swaddle in warm, golden light"
+                loading="lazy"
+                width={1920}
+                height={1280}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
