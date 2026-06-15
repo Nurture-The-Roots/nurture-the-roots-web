@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { render } from '@react-email/components'
 import { TEMPLATES } from '@/lib/email-templates/registry'
-import { supabaseAdmin } from '@/integrations/supabase/client.server'
+import { supabaseAdmin as _admin } from "@/integrations/supabase/client.server"
+const supabaseAdmin: any = _admin
 
 const SITE_NAME = 'nurture-the-roots-web'
 const SENDER_DOMAIN = 'notify.nurturetheroots.co'
