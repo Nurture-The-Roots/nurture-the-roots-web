@@ -16,7 +16,7 @@ export const submitContact = createServerFn({ method: "POST" })
   .inputValidator((data) => contactSchema.parse(data))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const { error } = await supabaseAdmin
+    const { data: inserted, error } = await supabaseAdmin
       .from("contact_inquiries")
       .insert({
         full_name: data.fullName,
@@ -25,7 +25,30 @@ export const submitContact = createServerFn({ method: "POST" })
         due_date: data.dueDate || null,
         support_type: data.supportType || null,
         message: data.message,
-      });
+      })
+      .select("id")
+      .single();
     if (error) throw new Error("Failed to submit inquiry: " + error.message);
+
+    // Fire-and-forget notification email to the practitioner.
+    // Do not fail the form submission if the email send fails.
+    try {
+      const { enqueueTransactionalEmail } = await import("@/lib/email/enqueue.server");
+      await enqueueTransactionalEmail({
+        templateName: "consultation-inquiry",
+        idempotencyKey: `consultation-inquiry-${inserted?.id ?? crypto.randomUUID()}`,
+        templateData: {
+          fullName: data.fullName,
+          email: data.email,
+          phone: data.phone,
+          dueDate: data.dueDate,
+          supportType: data.supportType,
+          message: data.message,
+        },
+      });
+    } catch (e) {
+      console.error("Failed to enqueue consultation-inquiry email", e);
+    }
+
     return { success: true };
   });
