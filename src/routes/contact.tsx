@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import contactFamilyAsset from "@/assets/contact-family.jpeg.asset.json";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -100,6 +101,17 @@ function ContactPage() {
             Whether you're ready to book support or simply exploring your options, reach out
             and I'll respond with warmth, clarity, and care.
           </p>
+        </div>
+      </section>
+
+      {/* PHOTO */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-6 pb-12 md:pb-16">
+          <img
+            src={contactFamilyAsset.url}
+            alt="Ashlee McKenzie supporting a family during the fourth trimester"
+            className="w-full rounded-2xl object-cover aspect-[16/9] md:aspect-[21/9]"
+          />
         </div>
       </section>
 
