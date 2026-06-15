@@ -181,42 +181,49 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="mt-24 bg-earth text-sand">
-      <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-4">
+      <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-3">
+        {/* Brand Info */}
         <div>
-          <div className="font-serif text-2xl">Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span></div>
-          <p className="mt-3 text-sm text-sand/75 max-w-xs">
-            Lineage-rooted postpartum support for your most sacred beginning. Based in San Francisco.
+          <div className="font-serif text-2xl">Ashlee McKenzie</div>
+          <p className="mt-2 text-sm text-sand/75">
+            Certified Postpartum Doula & Newborn Care Specialist
           </p>
         </div>
+
+        {/* Contact */}
         <div className="text-sm text-sand/80">
-          <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Explore</div>
-          <ul className="space-y-2">
-            <li><Link to="/approach" className="hover:text-clay">My Approach</Link></li>
-            <li><Link to="/services" className="hover:text-clay">Services</Link></li>
-            <li><Link to="/testimonials" className="hover:text-clay">Testimonials</Link></li>
-            <li><Link to="/faq" className="hover:text-clay">FAQ</Link></li>
-            <li><Link to="/about" className="hover:text-clay">About Ashlee</Link></li>
-            <li><Link to="/contact" className="hover:text-clay">Contact</Link></li>
-          </ul>
+          <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Contact</div>
+          <p>San Francisco, California — Serving families across the Bay Area</p>
+          <p className="mt-2">
+            <a href="mailto:am.nurturetr@proton.me" className="hover:text-clay transition-colors">
+              am.nurturetr@proton.me
+            </a>
+          </p>
         </div>
+
+        {/* Navigation */}
         <div className="text-sm text-sand/80">
-          <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Legal</div>
+          <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Navigation</div>
           <ul className="space-y-2">
-            <li><Link to="/privacy" className="hover:text-clay">Privacy Policy</Link></li>
-            <li><Link to="/terms" className="hover:text-clay">Terms & Conditions</Link></li>
-            <li><Link to="/disclaimer" className="hover:text-clay">Disclaimer</Link></li>
+            <li><Link to="/" className="hover:text-clay transition-colors">Home</Link></li>
+            <li><Link to="/about" className="hover:text-clay transition-colors">About</Link></li>
+            <li><Link to="/services" className="hover:text-clay transition-colors">Services</Link></li>
+            <li><a href="/blog" className="hover:text-clay transition-colors">Blog</a></li>
+            <li><Link to="/contact" className="hover:text-clay transition-colors">Contact</Link></li>
+            <li><Link to="/privacy" className="hover:text-clay transition-colors">Legal</Link></li>
           </ul>
-        </div>
-        <div className="text-sm text-sand/80">
-          <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Sanctuary</div>
-          <p>San Francisco, California</p>
-          <p className="mt-1">By appointment & invitation</p>
         </div>
       </div>
+
+      {/* Bottom bar */}
       <div className="border-t border-sand/10">
-        <div className="mx-auto max-w-6xl px-6 py-5 text-xs text-sand/55 flex flex-wrap justify-between gap-2">
-          <span>© {new Date().getFullYear()} Nurture The Roots™. All rights reserved.</span>
-          <span>Held with care.</span>
+        <div className="mx-auto max-w-6xl px-6 py-6">
+          <p className="text-xs text-sand/55 text-center">
+            My support is relational and educational, not medical. Please consult your healthcare provider for medical concerns.
+          </p>
+          <p className="mt-2 text-xs text-sand/55 text-center">
+            © 2026 Nurture the Roots LLC. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
