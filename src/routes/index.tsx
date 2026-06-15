@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-newborn.jpg";
+import heroAsset from "@/assets/hero-ashlee-baby.jpg.asset.json";
 import approachImg from "@/assets/approach.jpg";
+const heroImg = heroAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -54,9 +55,9 @@ function Index() {
           <div className="mt-16 md:mt-20 mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-[0_30px_80px_-30px_rgba(74,63,57,0.35)]">
             <img
               src={heroImg}
-              alt="Mother's hands gently cradling a newborn baby's feet wrapped in soft linen"
-              width={1600}
-              height={1200}
+              alt="Ashlee McKenzie holding a newborn wrapped in a rust-colored blanket near a sunlit window with greenery outside"
+              width={1920}
+              height={1280}
               className="w-full h-auto object-cover"
             />
           </div>
