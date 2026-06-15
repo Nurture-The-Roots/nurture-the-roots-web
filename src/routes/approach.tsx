@@ -1,5 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import approachImg from "@/assets/approach.jpg";
+import approach1Asset from "@/assets/approach-1.jpeg.asset.json";
+import approach2Asset from "@/assets/approach-2.jpeg.asset.json";
+import approach3Asset from "@/assets/approach-3.jpeg.asset.json";
 
 export const Route = createFileRoute("/approach")({
   head: () => ({
@@ -56,6 +59,14 @@ function ApproachPage() {
       <section className="bg-blush/40">
         <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
           <div className="rounded-2xl bg-background/70 p-8 md:p-12 border border-taupe/25">
+            <div className="overflow-hidden rounded-xl mb-8 aspect-[4/3] md:aspect-[16/9]">
+              <img
+                src={approach1Asset.url}
+                alt="Parent holding newborn beside a bassinet in a sunlit nursery"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="flex items-center gap-4 mb-6">
               <div className="font-serif text-5xl text-clay leading-none">I</div>
               <h2 className="text-2xl md:text-3xl leading-tight">
@@ -92,6 +103,14 @@ function ApproachPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
           <div className="rounded-2xl bg-cream/40 p-8 md:p-12 border border-taupe/25">
+            <div className="overflow-hidden rounded-xl mb-8 aspect-[4/3] md:aspect-[16/9]">
+              <img
+                src={approach2Asset.url}
+                alt="Doula tenderly attending to a baby on a changing table"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="flex items-center gap-4 mb-6">
               <div className="font-serif text-5xl text-clay leading-none">II</div>
               <h2 className="text-2xl md:text-3xl leading-tight">
@@ -128,6 +147,14 @@ function ApproachPage() {
       <section className="bg-blush/40">
         <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
           <div className="rounded-2xl bg-background/70 p-8 md:p-12 border border-taupe/25">
+            <div className="overflow-hidden rounded-xl mb-8 aspect-[4/3] md:aspect-[16/9]">
+              <img
+                src={approach3Asset.url}
+                alt="Engaging a baby with a wooden toy during developmental play"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="flex items-center gap-4 mb-6">
               <div className="font-serif text-5xl text-clay leading-none">III</div>
               <h2 className="text-2xl md:text-3xl leading-tight">
