@@ -76,19 +76,19 @@ function FaqPage() {
     <>
       {/* PAGE TITLE */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
-          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-6">FAQ</div>
-          <h1 className="text-4xl md:text-5xl leading-tight">Frequently Asked Questions</h1>
+        <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
+          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">FAQ</div>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">Frequently Asked Questions</h1>
         </div>
       </section>
 
       {/* INTRO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 text-center">
-          <p className="text-lg text-earth/80 leading-relaxed">
+        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             Every family arrives with different questions, needs, and curiosities.
           </p>
-          <p className="mt-4 text-lg text-earth/80 leading-relaxed">
+          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
             Here are answers to the most common questions new parents ask when exploring support.
           </p>
         </div>
@@ -96,15 +96,15 @@ function FaqPage() {
 
       {/* FAQ ACCORDION */}
       <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 pb-16 md:pb-24">
-          <div className="rounded-2xl bg-cream/40 border border-taupe/25 p-8 md:p-12">
+        <div className="mx-auto max-w-3xl px-6 pb-24 md:pb-32">
+          <div className="rounded-2xl bg-blush/50 border border-taupe/25 p-10 md:p-14">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, i) => (
-                <AccordionItem key={i} value={`item-${i}`} className="border-b border-taupe/25">
-                  <AccordionTrigger className="text-left text-base md:text-lg text-cocoa font-medium py-5 hover:no-underline">
+                <AccordionItem key={i} value={`item-${i}`} className="border-b border-taupe/25 last:border-b-0">
+                  <AccordionTrigger className="text-left font-serif text-lg md:text-xl text-cocoa font-medium py-6 hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-earth/80 leading-relaxed pb-5">
+                  <AccordionContent className="text-cocoa/80 leading-[1.85] pb-6 text-[15px]">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -116,15 +116,15 @@ function FaqPage() {
 
       {/* CTA */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Still Have Questions?</div>
-          <h2 className="text-3xl md:text-4xl leading-tight">
+        <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Still Have Questions?</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
             Still Have Questions?
           </h2>
-          <p className="mt-6 text-lg text-earth/80 leading-relaxed">
+          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
             I'm here to help. Reach out anytime — I'd love to connect with you.
           </p>
-          <div className="mt-10">
+          <div className="mt-12">
             <Link
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
