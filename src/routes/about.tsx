@@ -90,7 +90,7 @@ function AboutPage() {
           <div className="order-1 md:order-2 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
             <img
               src={walkingAsset.url}
-              alt="Ashlee walking down a sunlit alley, smiling warmly, grounded and approachable"
+              alt="Ashlee McKenzie holding a sleeping newborn close, standing by a bright window with greenery outside"
               loading="lazy"
               width={1280}
               height={1920}
