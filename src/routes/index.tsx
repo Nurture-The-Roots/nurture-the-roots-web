@@ -182,10 +182,10 @@ function Index() {
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            You Don't Have to Navigate This Beginning Alone
+            You don't have to navigate this beginning alone.
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
-            If you're craving clarity, rest, and attuned support, I'd love to walk with you through this season.
+            If you're looking for support that honors your identity, your pace, and your family's rhythm, I'd be honored to walk with you.
           </p>
           <div className="mt-12">
             <Link
