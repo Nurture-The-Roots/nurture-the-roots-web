@@ -181,7 +181,7 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="mt-24 bg-earth text-sand">
-      <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-3">
+      <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-4">
         <div>
           <div className="font-serif text-2xl">Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span></div>
           <p className="mt-3 text-sm text-sand/75 max-w-xs">
@@ -197,6 +197,14 @@ function SiteFooter() {
             <li><Link to="/faq" className="hover:text-clay">FAQ</Link></li>
             <li><Link to="/about" className="hover:text-clay">About Ashlee</Link></li>
             <li><Link to="/contact" className="hover:text-clay">Contact</Link></li>
+          </ul>
+        </div>
+        <div className="text-sm text-sand/80">
+          <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Legal</div>
+          <ul className="space-y-2">
+            <li><Link to="/privacy" className="hover:text-clay">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-clay">Terms & Conditions</Link></li>
+            <li><Link to="/disclaimer" className="hover:text-clay">Disclaimer</Link></li>
           </ul>
         </div>
         <div className="text-sm text-sand/80">
