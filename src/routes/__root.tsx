@@ -198,8 +198,8 @@ function SiteFooter() {
           <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Contact</div>
           <p>San Francisco, California — Serving families across the Bay Area</p>
           <p className="mt-2">
-            <a href="mailto:am.nurturetr@proton.me" className="hover:text-clay transition-colors">
-              am.nurturetr@proton.me
+            <a href="mailto:ashleemckenzie@nurturetheroots.co" className="hover:text-clay transition-colors">
+              ashleemckenzie@nurturetheroots.co
             </a>
           </p>
         </div>

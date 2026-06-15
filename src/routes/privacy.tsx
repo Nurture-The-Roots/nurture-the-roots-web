@@ -119,7 +119,7 @@ function PrivacyPage() {
               <p className="text-earth/80 leading-relaxed">
                 You may request that your information be updated or deleted at any time by contacting:
               </p>
-              <p className="text-cocoa font-medium">am.nurturetr@proton.me</p>
+              <p className="text-cocoa font-medium">ashleemckenzie@nurturetheroots.co</p>
             </div>
           </div>
         </div>

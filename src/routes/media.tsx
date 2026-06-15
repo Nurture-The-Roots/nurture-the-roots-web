@@ -193,10 +193,10 @@ function MediaPage() {
           </p>
           <p className="mt-4 text-lg">
             <a
-              href="mailto:am.nurturetr@proton.me"
+              href="mailto:ashleemckenzie@nurturetheroots.co"
               className="text-cocoa hover:underline"
             >
-              am.nurturetr@proton.me
+              ashleemckenzie@nurturetheroots.co
             </a>
           </p>
           <div className="mt-10">
