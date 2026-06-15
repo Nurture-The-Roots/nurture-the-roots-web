@@ -87,16 +87,16 @@ function ServicesPage() {
     <>
       {/* PAGE TITLE */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
-          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-6">Services</div>
-          <h1 className="text-4xl md:text-5xl leading-tight">Services</h1>
+        <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
+          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Services</div>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">Services</h1>
         </div>
       </section>
 
       {/* INTRO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
-          <div className="space-y-6 text-lg text-earth/80 leading-relaxed text-center">
+        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28">
+          <div className="space-y-6 text-[17px] text-cocoa/80 leading-[1.85] text-center">
             <p>
               Every family's needs are unique.
             </p>
@@ -110,32 +110,32 @@ function ServicesPage() {
 
       {/* SERVICES */}
       <section className="bg-background">
-        <div className="mx-auto max-w-5xl px-6 py-12 md:py-16 space-y-16 md:space-y-24">
+        <div className="mx-auto max-w-5xl px-6 pb-24 md:pb-32 space-y-16 md:space-y-24">
           {services.map((s, i) => (
             <article
               key={s.title}
-              className="rounded-2xl bg-cream/40 p-8 md:p-12 border border-taupe/25"
+              className="rounded-2xl bg-blush/50 p-10 md:p-14 border border-taupe/25"
             >
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex items-center gap-5 mb-6">
                 <div className="font-serif text-4xl text-clay leading-none">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h2 className="text-2xl md:text-3xl leading-tight">{s.title}</h2>
+                <h2 className="font-serif text-3xl md:text-4xl font-medium leading-tight text-cocoa">{s.title}</h2>
               </div>
-              <p className="text-lg text-earth/80 leading-relaxed mb-6">
+              <p className="text-lg text-cocoa/80 leading-[1.85] mb-10 max-w-2xl">
                 {s.description}
               </p>
-              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
+              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-5">
                 Includes
               </div>
-              <div className="grid sm:grid-cols-2 gap-3">
+              <div className="grid sm:grid-cols-2 gap-4">
                 {s.includes.map((item, j) => (
                   <div
                     key={j}
-                    className="flex items-start gap-3 rounded-lg border border-taupe/30 bg-blush/70 px-4 py-3 text-sm text-cocoa"
+                    className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-sand/70 px-5 py-4 text-sm text-cocoa"
                   >
-                    <span className="text-clay mt-0.5">&bull;</span>
-                    <span>{item}</span>
+                    <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
+                    <span className="leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
@@ -146,14 +146,14 @@ function ServicesPage() {
 
       {/* CLOSING / CTA */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-          <h2 className="text-3xl md:text-4xl leading-tight">
+        <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
             You don't have to navigate this beginning alone.
           </h2>
-          <p className="mt-6 text-lg text-earth/80 leading-relaxed">
+          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
             If you're craving clarity, rest, and attuned support, I'd love to walk with you through this season.
           </p>
-          <div className="mt-10">
+          <div className="mt-12">
             <Link
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
