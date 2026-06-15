@@ -142,7 +142,7 @@ function ServicesPage() {
             You don't have to navigate this beginning alone.
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
-            If you're craving clarity, rest, and attuned support, I'd love to walk with you through this season.
+            If you're looking for support that feels aligned with your family's needs, I'd be honored to walk with you.
           </p>
           <div className="mt-12">
             <Link
