@@ -87,11 +87,13 @@ function ServicesPage() {
         <div className="mx-auto max-w-2xl px-6 py-20 md:py-28">
           <div className="space-y-6 text-[17px] text-cocoa/80 leading-[1.85] text-center">
             <p>
-              Every family's needs are unique.
+              Below, you'll find the offerings that currently shape my practice —
+              from daytime postpartum care and overnight support to feeding guidance,
+              NBO-informed newborn sessions, and relational coaching for new parents.
             </p>
             <p>
-              My services are designed to support you through the fourth trimester with clarity,
-              warmth, and attuned care — day and night.
+              Each one is designed to meet you with warmth, clarity, and attuned care
+              through the tender terrain of the fourth trimester.
             </p>
           </div>
         </div>
