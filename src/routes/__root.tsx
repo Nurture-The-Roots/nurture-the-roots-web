@@ -136,6 +136,7 @@ function SiteHeader() {
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
+    { to: "/postpartum-doula-san-francisco", label: "SF Doula" },
     { to: "/approach", label: "Approach" },
     { to: "/testimonials", label: "Testimonials" },
     { to: "/blog", label: "Blog" },
