@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import aboutAsset from "@/assets/about-ashlee-reflection.jpg.asset.json";
 import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
-const aboutImg = aboutAsset.url;
+const aboutImg = walkingAsset.url;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -32,17 +31,7 @@ function AboutPage() {
 
       {/* HERO IMAGE + INTRO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24 grid md:grid-cols-[5fr_7fr] gap-10 md:gap-16 items-start">
-          <div className="overflow-hidden rounded-2xl">
-            <img
-              src={aboutImg}
-              alt="Ashlee McKenzie standing near a sunlit window, her reflection visible in the glass, warm and grounded"
-              loading="lazy"
-              width={1280}
-              height={1920}
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
           <div className="space-y-6 text-lg text-earth/80 leading-relaxed">
             <p>
               For more than sixteen years, I've supported families through one of the most tender
