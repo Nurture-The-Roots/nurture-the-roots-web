@@ -192,6 +192,7 @@ function SiteFooter() {
           <ul className="space-y-2">
             <li><Link to="/approach" className="hover:text-clay">My Approach</Link></li>
             <li><Link to="/services" className="hover:text-clay">Services</Link></li>
+            <li><Link to="/testimonials" className="hover:text-clay">Testimonials</Link></li>
             <li><Link to="/about" className="hover:text-clay">About Ashlee</Link></li>
             <li><Link to="/contact" className="hover:text-clay">Contact</Link></li>
           </ul>
