@@ -17,6 +17,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/about", changefreq: "monthly", priority: "0.9" },
           { path: "/services", changefreq: "monthly", priority: "0.9" },
+          { path: "/postpartum-doula-san-francisco", changefreq: "monthly", priority: "0.9" },
           { path: "/approach", changefreq: "monthly", priority: "0.8" },
           { path: "/testimonials", changefreq: "monthly", priority: "0.7" },
           { path: "/blog", changefreq: "weekly", priority: "0.7" },
