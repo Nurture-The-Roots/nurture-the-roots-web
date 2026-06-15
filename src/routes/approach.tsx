@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import approachImg from "@/assets/approach.jpg";
 import approach1Asset from "@/assets/approach-1.jpeg.asset.json";
 import approach2Asset from "@/assets/approach-2.jpeg.asset.json";
 import approach3Asset from "@/assets/approach-3.jpeg.asset.json";
@@ -11,7 +10,7 @@ export const Route = createFileRoute("/approach")({
       { name: "description", content: "A warm, grounded, relational approach to postpartum care rooted in identity, lineage, attunement, and development." },
       { property: "og:title", content: "My Approach — Nurture The Roots™" },
       { property: "og:description", content: "A warm, grounded, relational approach to postpartum care rooted in identity, lineage, attunement, and development." },
-      { property: "og:image", content: approachImg },
+      { property: "og:image", content: approach1Asset.url },
     ],
   }),
   component: ApproachPage,
@@ -30,17 +29,7 @@ function ApproachPage() {
 
       {/* INTRO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-          <div className="overflow-hidden rounded-2xl">
-            <img
-              src={approachImg}
-              alt="Warm, grounded postpartum ceremonial textures"
-              loading="lazy"
-              width={1400}
-              height={1000}
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
           <div className="space-y-6 text-lg text-earth/80 leading-relaxed">
             <p>
               My approach is rooted in identity, lineage, attunement, and development. I support
