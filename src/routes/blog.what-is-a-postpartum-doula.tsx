@@ -4,20 +4,20 @@ import postImageAsset from "@/assets/approach-1.jpeg.asset.json";
 export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
   head: () => ({
     meta: [
-      { title: "What Is a Postpartum Doula? — Nurture The Roots™" },
+      { title: "What Is a Postpartum Doula? | San Francisco | Nurture The Roots™" },
       {
         name: "description",
         content:
-          "A warm guide to what a postpartum doula does, how they differ from midwives and nannies, and why identity-aligned care transforms the fourth trimester.",
+          "Learn what a postpartum doula does, how she differs from a night nurse or nanny, and why identity-aligned care in San Francisco transforms the fourth trimester.",
       },
       {
         property: "og:title",
-        content: "What Is a Postpartum Doula? — Nurture The Roots™",
+        content: "What Is a Postpartum Doula? A San Francisco Guide | Nurture The Roots™",
       },
       {
         property: "og:description",
         content:
-          "Learn what a postpartum doula does, how they differ from other caregivers, and why identity-aligned care matters in the fourth trimester.",
+          "What a postpartum doula does, how she differs from a night nurse or nanny, and why identity-aligned care matters in the fourth trimester.",
       },
       {
         property: "og:url",
@@ -38,9 +38,9 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
-          headline: "What Is a Postpartum Doula? A Warm Guide to Fourth Trimester Support",
+          headline: "What Is a Postpartum Doula? A Guide to Fourth Trimester Support",
           description:
-            "A warm guide to what a postpartum doula does, how they differ from midwives and nannies, and why identity-aligned care transforms the fourth trimester.",
+            "What a postpartum doula does, how she differs from a midwife, night nurse, or nanny, and why identity-aligned care in San Francisco transforms the fourth trimester.",
           author: {
             "@type": "Person",
             name: "Ashlee McKenzie",
@@ -73,7 +73,7 @@ function PostPage() {
             Fourth Trimester · June 2026
           </p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-cocoa">
-            What Is a Postpartum Doula?
+            What Is a Postpartum Doula? A Guide to Fourth Trimester Support
           </h1>
           <p className="mt-8 text-lg md:text-xl text-cocoa/80 leading-relaxed max-w-2xl mx-auto">
             A warm guide to understanding the role, the care, and why the right support
@@ -120,7 +120,11 @@ function PostPage() {
               . Unlike medical providers, a postpartum doula does not diagnose or treat
               conditions. Instead, she offers emotional care, practical guidance, newborn
               support, and evidence-based education so you can feel grounded and confident
-              in your new role.
+              in your new role. You can explore the full range of{" "}
+              <Link to="/services" className="text-clay hover:text-cocoa underline underline-offset-4 transition-colors">
+                postpartum doula services
+              </Link>{" "}
+              I offer to families in San Francisco.
             </p>
             <p>
               The word <em>doula</em> comes from the Greek for "a woman who serves." Today,
@@ -158,7 +162,7 @@ function PostPage() {
             </p>
 
             <h2 className="font-serif text-2xl md:text-3xl text-cocoa pt-4">
-              How a Postpartum Doula Is Different
+              Postpartum Doula vs. Midwife, Night Nurse, and Nanny
             </h2>
             <p>
               It's natural to wonder how a postpartum doula differs from the other caregivers
@@ -195,7 +199,7 @@ function PostPage() {
             </div>
 
             <h2 className="font-serif text-2xl md:text-3xl text-cocoa pt-4">
-              Identity-Aligned Care: A Different Kind of Support
+              Identity-Aligned Postpartum Care in San Francisco
             </h2>
             <p>
               Not all postpartum support looks the same. At Nurture The Roots™, my
@@ -216,6 +220,14 @@ function PostPage() {
               Whether you're drawn to ancestral practices, evidence-based guidance, or a blend
               of both, identity-aligned support meets you where you are and helps you feel
               more like yourself, not less.
+            </p>
+            <p>
+              If this resonates, you can read more about my{" "}
+              <Link to="/services" className="text-clay hover:text-cocoa underline underline-offset-4 transition-colors">
+                postpartum services in San Francisco
+              </Link>
+              , including daytime doula care, overnight newborn support, and NBO-informed
+              sessions.
             </p>
 
             <h2 className="font-serif text-2xl md:text-3xl text-cocoa pt-4">
