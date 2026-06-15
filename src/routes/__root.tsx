@@ -139,6 +139,7 @@ function SiteHeader() {
     { to: "/testimonials", label: "Testimonials" },
     { to: "/faq", label: "FAQ" },
     { to: "/about", label: "About" },
+    { to: "/media", label: "Media" },
     { to: "/contact", label: "Contact" },
   ] as const;
   return (
@@ -209,6 +210,7 @@ function SiteFooter() {
             <li><Link to="/about" className="hover:text-clay transition-colors">About</Link></li>
             <li><Link to="/services" className="hover:text-clay transition-colors">Services</Link></li>
             <li><Link to="/blog" className="hover:text-clay transition-colors">Blog</Link></li>
+            <li><Link to="/media" className="hover:text-clay transition-colors">Media</Link></li>
             <li><Link to="/contact" className="hover:text-clay transition-colors">Contact</Link></li>
             <li><Link to="/privacy" className="hover:text-clay transition-colors">Legal</Link></li>
           </ul>

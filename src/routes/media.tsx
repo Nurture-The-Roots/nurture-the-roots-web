@@ -38,7 +38,6 @@ function MediaPage() {
     <>
       {/* HERO */}
       <section className="bg-hero-gradient">
-        1-50
         <div className="mx-auto max-w-3xl px-6 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
           <div className="uppercase tracking-[0.32em] text-xs text-clay mb-6">Media</div>
           <h1 className="text-4xl md:text-5xl leading-tight">Media & Press</h1>
