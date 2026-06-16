@@ -382,6 +382,21 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* GOOGLE REVIEWS */}
+      <GoogleReviewsBlock />
+
+      {/* BEGIN INTAKE */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-3xl px-6 pb-20 md:pb-28 text-center">
+          <IntakeButton className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors">
+            Begin Intake
+          </IntakeButton>
+          <p className="mt-3 text-xs text-cocoa/60">
+            Opens our intake form — a gentle first step to working together.
+          </p>
+        </div>
+      </section>
+
       {/* INVITATION / CTA */}
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center font-sans">
