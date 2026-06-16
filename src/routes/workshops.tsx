@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-54.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-54.responsive.json";
+import groupReadingResponsive from "@/assets/branding-photos-54.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 export const Route = createFileRoute("/workshops")({
