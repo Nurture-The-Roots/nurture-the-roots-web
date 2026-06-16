@@ -112,6 +112,9 @@ function ContactPage() {
       {/* INTRO */}
       <section className="bg-background">
         <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <p className="mb-8 font-serif italic text-xl text-cocoa/85 leading-[1.5]">
+            {/* [PLACEHOLDER: A grounding intro line above the form in your voice.] */}
+          </p>
           <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             I'd love to connect with you.
           </p>
@@ -119,6 +122,22 @@ function ContactPage() {
             Whether you're ready to book support or simply exploring your options, reach out
             and I'll respond with warmth, clarity, and care.
           </p>
+        </div>
+      </section>
+
+      {/* OPTIONAL TESTIMONIAL */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-3xl px-6 pb-12">
+          <figure className="rounded-2xl border border-taupe/25 bg-blush/40 p-10 md:p-12 text-center">
+            <blockquote className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+              {/* [PLACEHOLDER: A short testimonial quote to land just above the form.] */}
+              "A short, attuned quote from a family Ashlee served."
+            </blockquote>
+            <figcaption className="mt-6 text-xs uppercase tracking-[0.22em] text-clay">
+              {/* [PLACEHOLDER: Attribution.] */}
+              — A San Francisco family
+            </figcaption>
+          </figure>
         </div>
       </section>
 
