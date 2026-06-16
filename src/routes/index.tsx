@@ -6,6 +6,7 @@ import aboutResponsive from "@/assets/branding-65.responsive.json";
 import bandResponsive from "@/assets/branding-62.responsive.json";
 import editorialResponsive from "@/assets/branding-photos-48.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 const welcomeImg = welcomeAsset.url;
 
 export const Route = createFileRoute("/")({
