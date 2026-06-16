@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import babyFootMassageWideAsset from "@/assets/baby-foot-massage-wide.jpeg.asset.json";
+import branding54Responsive from "@/assets/branding-54.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 
@@ -128,11 +128,9 @@ function ResourcesPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={babyFootMassageWideAsset.url}
-              alt="A baby resting on a bed while receiving gentle foot care, reflecting the quiet, grounded pace of fourth-trimester tending"
-              loading="lazy"
-              decoding="async"
+            <ResponsiveImage
+              source={branding54Responsive}
+              alt="An editorial still of grounded postpartum tools and reflections"
               sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover object-[center_50%]"
             />

@@ -1,43 +1,58 @@
-## Goal
-Make the currently active page (and, on the home page, the currently visible section) clearly highlighted in both desktop and mobile navigation — in a way that fits the warm, editorial brand voice.
+## What's wrong today
 
-## Scope
-All changes live in `src/routes/__root.tsx` (the shared `SiteHeader`). No copy changes, no nav restructure, no new pages.
+Four images are reused across multiple pages, which is what's making the site feel repetitive:
 
-## 1. Elevated active styles (route-based)
+| Image | Used on |
+|---|---|
+| `baby-foot-massage-wide` | Resources (hero) + Client Journey (supporting) ← screenshot IMG_3750/3751 |
+| `ashlee-baby-laughing` | About + Testimonials |
+| `ashlee-baby-closeup` | About + Testimonials |
+| `ashlee-burping-baby` | Contact + About |
 
-Today active links only swap text color from `earth/80` → `cocoa`, which reads as a hover state. Replace with a clearer editorial treatment:
+And the bedside-swaddle shot (IMG_3752) on the Home mid-band feels heavy — it's a strong portrait but lands at an awkward moment between Home sections.
 
-- **Desktop top-level links** (Home, About, Framework, Services, Client Journey, Workshops, Contact):
-  - Active: `text-cocoa` + a soft terracotta underline rendered as a 1px `bg-clay` bar under the label (using a `relative` wrapper + `after:` pseudo via a span, since `activeProps` only swaps className). Inactive: no underline. Animate the underline width (`w-0` → `w-full`) on activation/hover for a quiet motion cue.
-- **Resources dropdown button**: when the current route is one of `/resources`, `/blog`, `/media`, `/faq`, mark the trigger active using the same underline treatment. Detected via `useRouterState({ select: s => s.location.pathname })`.
-- **Resources dropdown items**: keep current `bg-blush/40` active background; add a small `text-clay` leading dot (`•`) before the active item for additional clarity.
-- **Mobile panel links**: active item gets `text-clay`, `font-medium`, and a 2px left `border-clay` accent with `pl-3` indent (replacing the current text-only swap). Inactive items stay flush.
+## Proposed swap map (every section gets a unique image)
 
-All active detection continues to use TanStack's built-in `activeProps` + `activeOptions={{ exact: n.to === "/" }}` so SSR and client renders agree.
+Drawing from the curated `1.17AshleeBrandShoot_*` uploads we agreed on plus the existing `Branding_photos-*` library, every section ends up with its own image and no duplicates.
 
-## 2. Scroll-position active state (home page sections)
+| Page / Section | New image | Why |
+|---|---|---|
+| Home — mid band (replaces bedside-swaddle) | `1.17AshleeBrandShoot_0077` (tender hold) | Softer, more relational; better rhythm between hero and closing |
+| Home — closing | keep `ashlee-baby-chair-portrait` | Already a strong closing note |
+| About — relational mid (replaces `ashlee-burping-baby`) | `1.17AshleeBrandShoot_0106` (relational detail) | Quieter supporting moment, frees burping shot for Contact |
+| About — closing portrait (replaces `ashlee-baby-laughing`) | `1.17AshleeBrandShoot_0086` (Ashlee portrait) | About page deserves the strongest practitioner portrait |
+| About — final (replaces `ashlee-baby-closeup`) | keep walking shot or `branding-60` | Frees closeup for Testimonials |
+| Services — supporting | keep `baby-changing-table` | Working well |
+| Approach — three pillars | keep `approach-1/2/3` | Working well |
+| Client Journey — supporting (replaces `baby-foot-massage-wide`) | `1.17AshleeBrandShoot_0079` (feeding moment) | Better fits "journey / care in motion" |
+| Testimonials — hero | `ashlee-baby-laughing` (now unique here) | Warm, joyful — sets the right tone for testimonials |
+| Testimonials — supporting | `ashlee-baby-closeup` (now unique here) | Intimate close to the section |
+| Resources — hero (replaces foot-massage) | `branding-54` (editorial still) | Quieter, library-like — fits "resources" better than a body shot |
+| Contact — hero | `ashlee-burping-baby` (now unique here) | Warm relational shot suits a contact page |
+| Framework | keep `ashlee-playmat-tending` | Working well |
 
-On `/` only, the home page has multiple long-form sections. Add lightweight scroll-spy so the desktop nav reflects which section is in view, giving the same active treatment as a route match.
+End state: zero duplicate images across pages, and each placement picked for tone-fit rather than availability.
 
-- Section ids to track on `/` (matching existing section anchors — to be confirmed after a quick read of `src/routes/index.tsx`): e.g. `#about`, `#framework`, `#services`. Each nav item maps to its section id when present on the current route.
-- Implementation: a single `IntersectionObserver` inside `SiteHeader` that activates only when `pathname === "/"`. Observes the mapped section elements with `rootMargin: "-40% 0px -55% 0px"` so the active section changes when the section crosses roughly the middle of the viewport.
-- Tracks `activeSection` in state. A nav item is rendered active when either (a) TanStack reports the route as active, or (b) `pathname === "/"` and `activeSection === item.sectionId`.
-- Clicking a section-linked nav item on `/` smooth-scrolls to the anchor (`element.scrollIntoView({ behavior: "smooth", block: "start" })`) and closes the mobile panel.
-- No scroll-spy on non-home routes — only the route-based active state applies there.
+## Responsive variants
 
-If `src/routes/index.tsx` doesn't yet have stable section ids, I'll add the minimum ids needed (`id="..."` on existing wrapper sections) without changing copy or layout.
-
-## 3. Reduced-motion + a11y
-
-- The underline animation respects `prefers-reduced-motion: reduce` (skip the width transition).
-- Active link gets `aria-current="page"` (route match) or `aria-current="location"` (scroll-spy section). TanStack adds `data-status="active"` automatically; we'll mirror with `aria-current` via a small wrapper so screen readers announce the current page/section.
+Each newly-placed `1.17AshleeBrandShoot_*` upload gets:
+- Uploaded once via `lovable-assets create` → base `.asset.json`
+- Mobile crop (3:4, widths 480/768) and desktop crop (16:9 or 4:5, widths 1152/1600) generated with ImageMagick + cwebp + avifenc
+- Assembled into a `.responsive.json` matching the existing `ResponsiveImage` schema, with `mobileSource` art-direction support added to the component
+- Hero placements use `priority`; supporting placements stay lazy
 
 ## Files touched
-- `src/routes/__root.tsx` — nav link rendering, scroll-spy hook, active styling.
-- `src/routes/index.tsx` — only if section `id`s are missing; add ids on existing sections.
+
+`src/components/ResponsiveImage.tsx` (add `mobileSource` prop), `src/routes/index.tsx`, `src/routes/about.tsx`, `src/routes/client-journey.tsx`, `src/routes/testimonials.tsx`, `src/routes/resources.tsx`, `src/routes/contact.tsx`. Removes any `.asset.json` / `.responsive.json` pointers that become unreferenced.
+
+## Verification
+
+`bun run build`, then Playwright screenshots of `/`, `/about`, `/client-journey`, `/testimonials`, `/resources`, `/contact` at 375px and 1440px to confirm crops land correctly and no section repeats an image.
 
 ## Out of scope
-- No changes to footer, copy, color tokens, fonts, or page content.
-- No new pages or nav items.
-- No changes to the Resources dropdown structure beyond active styling.
+
+Copy, layout, typography — image swaps only.
+
+---
+
+**Want me to proceed with this map, or adjust any specific swap before I implement?** (E.g., if you'd rather keep the bedside-swaddle on Home and move it elsewhere, or pick a different Resources hero, tell me and I'll revise.)

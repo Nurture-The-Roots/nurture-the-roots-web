@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import babyFootMassageWideAsset from "@/assets/baby-foot-massage-wide.jpeg.asset.json";
+import ashleeFeedingMomentAsset from "@/assets/ashlee-feeding-moment.jpeg.asset.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 
@@ -106,12 +106,12 @@ function ClientJourneyPage() {
         <div className="mx-auto max-w-6xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
             <img
-              src={babyFootMassageWideAsset.url}
-              alt="A baby receiving gentle foot massage and body care, illustrating the tender, hands-on rhythm of postpartum support"
+              src={ashleeFeedingMomentAsset.url}
+              alt="A quiet feeding moment, illustrating the attuned, in-motion rhythm of fourth-trimester care"
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_52%]"
+              className="w-full h-full object-cover object-[center_45%]"
             />
           </div>
         </div>
