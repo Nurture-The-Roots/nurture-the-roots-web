@@ -103,12 +103,13 @@ function WorkshopsPage() {
             </h2>
           </div>
           <ul className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {workshops.map((title) => (
+            {workshops.map((w) => (
               <li
-                key={title}
-                className="rounded-xl border border-taupe/25 bg-sand/70 px-5 py-5 text-cocoa font-serif text-lg leading-snug"
+                key={w.title}
+                className="rounded-xl border border-taupe/25 bg-sand/70 px-5 py-5 text-cocoa"
               >
-                {title}
+                <div className="font-serif text-lg leading-snug">{w.title}</div>
+                <p className="mt-2 text-[14px] text-cocoa/70 leading-[1.7] italic font-serif">{w.line}</p>
               </li>
             ))}
           </ul>
