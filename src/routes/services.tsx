@@ -119,6 +119,8 @@ function ServicesPage() {
               src={bandAsset.url}
               alt="Ashlee gently tending to a baby on a changing table, soft daylight and calm nursery surroundings"
               loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover"
             />
           </div>

@@ -99,6 +99,8 @@ function AboutPage() {
               src={walkingAsset.url}
               alt="Ashlee McKenzie, a postpartum doula, walking outdoors and cradling a swaddled newborn close to her chest with warm, attuned presence"
               loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
               width={1280}
               height={1920}
               className="w-full h-full object-cover"
@@ -179,6 +181,8 @@ function AboutPage() {
               src={faceAsset.url}
               alt="Ashlee sharing a tender, smiling moment face‑to‑face with a baby in her arms"
               loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover"
             />
           </div>
@@ -256,6 +260,8 @@ function AboutPage() {
               src={joyAsset.url}
               alt="Ashlee smiling as she dresses a baby on a changing table — a warm, everyday moment of attuned newborn care"
               loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover"
             />
           </div>

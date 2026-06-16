@@ -84,6 +84,8 @@ function WorkshopsPage() {
               src={bandAsset.url}
               alt="Ashlee leading a warm postpartum education session with a family — two parents and a baby learning together"
               loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover"
             />
           </div>
