@@ -9,10 +9,21 @@ export const Route = createFileRoute("/framework")({
   head: () => ({
     meta: [
       { title: "The Nurture The Roots™ Postpartum Framework — Four Pillars & Twelve Practices" },
-      { name: "description", content: "A lineage‑rooted, identity‑aligned, developmental, relational model for the fourth trimester — four pillars and twelve practices for grounded postpartum care in San Francisco." },
-      { name: "keywords", content: "postpartum framework, fourth trimester, identity-aligned postpartum, ancestral postpartum care, newborn cues, sovereign family systems, Nurture The Roots" },
+      {
+        name: "description",
+        content:
+          "A lineage‑rooted, identity‑aligned, developmental, relational model for the fourth trimester — four pillars and twelve practices for grounded postpartum care in San Francisco.",
+      },
+      {
+        name: "keywords",
+        content:
+          "postpartum framework, fourth trimester, identity-aligned postpartum, ancestral postpartum care, newborn cues, sovereign family systems, Nurture The Roots",
+      },
       { property: "og:title", content: "The Nurture The Roots™ Postpartum Framework" },
-      { property: "og:description", content: "Four pillars and twelve practices for grounded, identity‑rooted postpartum care." },
+      {
+        property: "og:description",
+        content: "Four pillars and twelve practices for grounded, identity‑rooted postpartum care.",
+      },
       { property: "og:url", content: "https://nurturetheroots.co/framework" },
       { property: "og:type", content: "website" },
     ],
@@ -33,9 +44,20 @@ const pillars = [
     meaning:
       "[PLACEHOLDER: 'What this means for your family' — one line in your voice for Identity-Aligned Care.]",
     practices: [
-      { name: "Identity Mapping", description: "helps parents understand who they are becoming, not only what they need to do." },
-      { name: "Emotional Landscape Reading", description: "is the practice of reading the room, the nervous system, and the relational field." },
-      { name: "Attunement as a Practice", description: "teaches parents how to observe, interpret, and respond to their baby's cues." },
+      {
+        name: "Identity Mapping",
+        description:
+          "helps parents understand who they are becoming, not only what they need to do.",
+      },
+      {
+        name: "Emotional Landscape Reading",
+        description:
+          "is the practice of reading the room, the nervous system, and the relational field.",
+      },
+      {
+        name: "Attunement as a Practice",
+        description: "teaches parents how to observe, interpret, and respond to their baby's cues.",
+      },
     ],
   },
   {
@@ -47,9 +69,20 @@ const pillars = [
     meaning:
       "[PLACEHOLDER: 'What this means for your family' — one line for Ancestral-Rooted Care.]",
     practices: [
-      { name: "Rhythms Over Routines", description: "teaches families to follow the baby's natural rhythms rather than impose rigid schedules." },
-      { name: "Care as Ceremony", description: "transforms daily care tasks into grounding rituals." },
-      { name: "Lineage Continuity", description: "helps parents understand the ancestral, familial, and spiritual significance of their baby's arrival." },
+      {
+        name: "Rhythms Over Routines",
+        description:
+          "teaches families to follow the baby's natural rhythms rather than impose rigid schedules.",
+      },
+      {
+        name: "Care as Ceremony",
+        description: "transforms daily care tasks into grounding rituals.",
+      },
+      {
+        name: "Lineage Continuity",
+        description:
+          "helps parents understand the ancestral, familial, and spiritual significance of their baby's arrival.",
+      },
     ],
   },
   {
@@ -61,23 +94,45 @@ const pillars = [
     meaning:
       "[PLACEHOLDER: 'What this means for your family' — one line for Developmental + Relational Guidance.]",
     practices: [
-      { name: "Cue‑Based Care", description: "teaches parents to follow newborn cues for feeding, sleep, soothing, and regulation." },
-      { name: "Relational Regulation", description: "supports parents in co‑regulating with their baby." },
-      { name: "Threshold Navigation", description: "guides families through the emotional, developmental, and identity shifts of the fourth trimester." },
+      {
+        name: "Cue‑Based Care",
+        description:
+          "teaches parents to follow newborn cues for feeding, sleep, soothing, and regulation.",
+      },
+      {
+        name: "Relational Regulation",
+        description: "supports parents in co‑regulating with their baby.",
+      },
+      {
+        name: "Threshold Navigation",
+        description:
+          "guides families through the emotional, developmental, and identity shifts of the fourth trimester.",
+      },
     ],
   },
   {
     numeral: "IV",
     title: "Sovereign Family Systems",
-    belief: "Families thrive when they build systems that honor their identity, not external expectations.",
+    belief:
+      "Families thrive when they build systems that honor their identity, not external expectations.",
     description:
       "This pillar helps families create practical, sustainable, values‑aligned support systems.",
     meaning:
       "[PLACEHOLDER: 'What this means for your family' — one line for Sovereign Family Systems.]",
     practices: [
-      { name: "Sovereign Postpartum Planning", description: "creates plans based on identity, values, needs, and lived reality." },
-      { name: "Support Ecosystem Building", description: "helps families create sustainable care networks." },
-      { name: "Integration + Continuity", description: "guides families as they transition out of the fourth trimester with confidence and clarity." },
+      {
+        name: "Sovereign Postpartum Planning",
+        description: "creates plans based on identity, values, needs, and lived reality.",
+      },
+      {
+        name: "Support Ecosystem Building",
+        description: "helps families create sustainable care networks.",
+      },
+      {
+        name: "Integration + Continuity",
+        description:
+          "guides families as they transition out of the fourth trimester with confidence and clarity.",
+      },
     ],
   },
 ];
@@ -90,10 +145,12 @@ function FrameworkPage() {
         <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
           <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">The Framework</div>
           <h1 className="font-serif text-4xl md:text-6xl font-medium leading-[1.1] text-cocoa">
-            The Nurture The Roots<TM /> Postpartum Framework
+            The Nurture The Roots
+            <TM /> Postpartum Framework
           </h1>
           <p className="mt-8 font-serif italic text-xl md:text-2xl text-cocoa/75 leading-[1.5]">
-            A lineage‑rooted, identity‑aligned, developmental, relational model for the fourth trimester.
+            A lineage‑rooted, identity‑aligned, developmental, relational model for the fourth
+            trimester.
           </p>
         </div>
       </section>
@@ -105,7 +162,10 @@ function FrameworkPage() {
             {/* [PLACEHOLDER: A grounding paragraph in your voice explaining why this framework matters, and why postpartum needs more than a checklist.] */}
           </p>
           <p className="text-[17px] text-cocoa/80 leading-[1.85]">
-            Nurture The Roots<TM /> helps families move through the fourth trimester by grounding postpartum care in identity, lineage, newborn communication, relational regulation, and sovereign systems of support.
+            Nurture The Roots
+            <TM /> helps families move through the fourth trimester by grounding postpartum care in
+            identity, lineage, newborn communication, relational regulation, and sovereign systems
+            of support.
           </p>
           <p className="mt-10 font-serif italic text-xl md:text-2xl text-cocoa leading-[1.5]">
             Postpartum support begins at the roots: identity, lineage, relationship, and rhythm.
@@ -146,7 +206,13 @@ function FrameworkPage() {
             <div className="absolute inset-[12%] rounded-full border border-taupe/25" />
             <div className="absolute inset-[28%] rounded-full bg-sand border border-taupe/30 flex items-center justify-center text-center px-6">
               <span className="font-serif italic text-cocoa leading-[1.4] text-base md:text-lg">
-                identity<br />lineage<br />relationship<br />rhythm
+                identity
+                <br />
+                lineage
+                <br />
+                relationship
+                <br />
+                rhythm
               </span>
             </div>
             {pillars.map((p, i) => {
@@ -161,8 +227,12 @@ function FrameworkPage() {
                   key={p.numeral}
                   className={`absolute ${positions[i]} w-32 md:w-40 rounded-full border border-clay/40 bg-sand px-3 py-3 text-center shadow-sm`}
                 >
-                  <div className="font-serif text-clay text-xs uppercase tracking-[0.2em]">Pillar {p.numeral}</div>
-                  <div className="font-serif text-cocoa text-xs md:text-sm leading-[1.25] mt-1">{p.title}</div>
+                  <div className="font-serif text-clay text-xs uppercase tracking-[0.2em]">
+                    Pillar {p.numeral}
+                  </div>
+                  <div className="font-serif text-cocoa text-xs md:text-sm leading-[1.25] mt-1">
+                    {p.title}
+                  </div>
                 </div>
               );
             })}
@@ -174,7 +244,9 @@ function FrameworkPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Four Pillars · Twelve Practices</div>
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+              Four Pillars · Twelve Practices
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
               The structure of the work
             </h2>
@@ -185,43 +257,51 @@ function FrameworkPage() {
               return (
                 <div key={p.numeral}>
                   {i > 0 && <SectionDivider className="mb-16 md:mb-24" />}
-                <article
-                  className={`rounded-2xl border border-taupe/25 p-10 md:p-14 ${alt ? "bg-blush/50" : "bg-sand/60"}`}
-                >
-                  <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
-                    Pillar {p.numeral}
-                  </div>
-                  <div className="flex items-baseline gap-5 mb-6">
-                    <div className="font-serif text-5xl text-clay leading-none">{p.numeral}</div>
-                    <h3 className="font-serif text-3xl md:text-4xl font-medium leading-tight text-cocoa">
-                      {p.title}
-                    </h3>
-                  </div>
-                  <p className="font-serif italic text-xl md:text-2xl text-cocoa/80 leading-[1.4] mb-6 max-w-2xl">
-                    “{p.belief}”
-                  </p>
-                  <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mb-10">
-                    {p.description}
-                  </p>
-                  <div className="mb-10 max-w-2xl rounded-xl border border-clay/30 bg-sand/70 px-6 py-5">
-                    <div className="uppercase tracking-[0.22em] text-[0.65rem] text-clay mb-2">What this means for your family</div>
-                    <p className="text-[15px] text-cocoa/80 leading-[1.7] italic font-serif">{p.meaning}</p>
-                  </div>
-                  <div className="uppercase tracking-[0.22em] text-xs text-clay mb-5">Practices</div>
-                  <div className="grid md:grid-cols-3 gap-4">
-                    {p.practices.map((practice) => (
-                      <div
-                        key={practice.name}
-                        className={`rounded-xl border border-taupe/25 px-5 py-5 ${alt ? "bg-sand/70" : "bg-blush/60"}`}
-                      >
-                        <div className="font-serif text-lg text-cocoa mb-2 leading-snug">
-                          {practice.name}
-                        </div>
-                        <p className="text-sm text-cocoa/75 leading-relaxed">{practice.description}</p>
+                  <article
+                    className={`rounded-2xl border border-taupe/25 p-10 md:p-14 ${alt ? "bg-blush/50" : "bg-sand/60"}`}
+                  >
+                    <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
+                      Pillar {p.numeral}
+                    </div>
+                    <div className="flex items-baseline gap-5 mb-6">
+                      <div className="font-serif text-5xl text-clay leading-none">{p.numeral}</div>
+                      <h3 className="font-serif text-3xl md:text-4xl font-medium leading-tight text-cocoa">
+                        {p.title}
+                      </h3>
+                    </div>
+                    <p className="font-serif italic text-xl md:text-2xl text-cocoa/80 leading-[1.4] mb-6 max-w-2xl">
+                      “{p.belief}”
+                    </p>
+                    <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mb-10">
+                      {p.description}
+                    </p>
+                    <div className="mb-10 max-w-2xl rounded-xl border border-clay/30 bg-sand/70 px-6 py-5">
+                      <div className="uppercase tracking-[0.22em] text-[0.65rem] text-clay mb-2">
+                        What this means for your family
                       </div>
-                    ))}
-                  </div>
-                </article>
+                      <p className="text-[15px] text-cocoa/80 leading-[1.7] italic font-serif">
+                        {p.meaning}
+                      </p>
+                    </div>
+                    <div className="uppercase tracking-[0.22em] text-xs text-clay mb-5">
+                      Practices
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-4">
+                      {p.practices.map((practice) => (
+                        <div
+                          key={practice.name}
+                          className={`rounded-xl border border-taupe/25 px-5 py-5 ${alt ? "bg-sand/70" : "bg-blush/60"}`}
+                        >
+                          <div className="font-serif text-lg text-cocoa mb-2 leading-snug">
+                            {practice.name}
+                          </div>
+                          <p className="text-sm text-cocoa/75 leading-relaxed">
+                            {practice.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </article>
                 </div>
               );
             })}

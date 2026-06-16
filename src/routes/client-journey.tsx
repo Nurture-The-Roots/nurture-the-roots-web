@@ -10,9 +10,17 @@ export const Route = createFileRoute("/client-journey")({
   head: () => ({
     meta: [
       { title: "The Client Journey — Nurture The Roots™" },
-      { name: "description", content: "A four‑phase pathway through the fourth trimester: Rooting, Tending, Strengthening, and Integrating — identity‑aligned postpartum support in San Francisco." },
+      {
+        name: "description",
+        content:
+          "A four‑phase pathway through the fourth trimester: Rooting, Tending, Strengthening, and Integrating — identity‑aligned postpartum support in San Francisco.",
+      },
       { property: "og:title", content: "The Nurture The Roots™ Client Journey" },
-      { property: "og:description", content: "Rooting · Tending · Strengthening · Integrating — a four‑phase pathway through the fourth trimester." },
+      {
+        property: "og:description",
+        content:
+          "Rooting · Tending · Strengthening · Integrating — a four‑phase pathway through the fourth trimester.",
+      },
       { property: "og:url", content: "https://nurturetheroots.co/client-journey" },
     ],
     links: [{ rel: "canonical", href: "https://nurturetheroots.co/client-journey" }],
@@ -27,28 +35,54 @@ const phases = [
     numeral: "One",
     name: "Rooting",
     focus: "Identity, values, emotional landscape, and preparation.",
-    includes: ["intake", "identity mapping", "values clarification", "postpartum vision", "support ecosystem review"],
+    includes: [
+      "intake",
+      "identity mapping",
+      "values clarification",
+      "postpartum vision",
+      "support ecosystem review",
+    ],
     body: "This phase helps families name who they are, what they value, and what they need protected as they prepare for postpartum.",
   },
   {
     numeral: "Two",
     name: "Tending",
     focus: "Newborn care, regulation, rhythms, nourishment, and family support.",
-    includes: ["cue‑based care", "emotional landscape reading", "parent‑baby attunement", "care as ceremony", "feeding and sleep rhythm support", "co‑regulation practices"],
+    includes: [
+      "cue‑based care",
+      "emotional landscape reading",
+      "parent‑baby attunement",
+      "care as ceremony",
+      "feeding and sleep rhythm support",
+      "co‑regulation practices",
+    ],
     body: "This phase supports the daily realities of newborn care while helping parents build confidence through relationship and observation.",
   },
   {
     numeral: "Three",
     name: "Strengthening",
     focus: "Confidence, systems, family sovereignty, and transitions.",
-    includes: ["sovereign planning refinement", "support ecosystem building", "threshold navigation", "relational repair", "household systems"],
+    includes: [
+      "sovereign planning refinement",
+      "support ecosystem building",
+      "threshold navigation",
+      "relational repair",
+      "household systems",
+    ],
     body: "This phase helps the family strengthen the rhythms, boundaries, and systems that allow them to feel supported and grounded.",
   },
   {
     numeral: "Four",
     name: "Integrating",
     focus: "Continuity beyond the fourth trimester.",
-    includes: ["reflection", "identity integration", "baby rhythm review", "family system review", "next‑season planning", "closing ritual"],
+    includes: [
+      "reflection",
+      "identity integration",
+      "baby rhythm review",
+      "family system review",
+      "next‑season planning",
+      "closing ritual",
+    ],
     body: "This phase helps families carry what they have learned into the next season with clarity, confidence, and continuity.",
   },
 ];
@@ -61,7 +95,8 @@ function ClientJourneyPage() {
         <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
           <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Client Journey</div>
           <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">
-            The Nurture The Roots<TM /> Client Journey
+            The Nurture The Roots
+            <TM /> Client Journey
           </h1>
           <p className="mt-8 font-serif italic text-xl md:text-2xl text-cocoa/75 leading-[1.5]">
             A four‑phase pathway through the fourth trimester.
@@ -97,7 +132,9 @@ function ClientJourneyPage() {
 
           {/* WHAT THIS JOURNEY OFFERS */}
           <div className="rounded-2xl border border-taupe/25 bg-sand/60 p-10 md:p-14">
-            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">What This Journey Offers</div>
+            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
+              What This Journey Offers
+            </div>
             <h2 className="font-serif text-2xl md:text-3xl text-cocoa leading-snug mb-4">
               A rooted pathway, phase by phase
             </h2>
@@ -111,34 +148,38 @@ function ClientJourneyPage() {
             return (
               <div key={phase.numeral}>
                 {i > 0 && <SectionDivider className="mb-16 md:mb-20" />}
-              <article
-                className={`rounded-2xl border border-taupe/25 p-10 md:p-14 ${alt ? "bg-blush/50" : "bg-sand/60"}`}
-              >
-                <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Phase {phase.numeral}</div>
-                <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.1] text-cocoa">
-                  {phase.name}
-                </h2>
-                <p className="mt-6 font-serif italic text-lg md:text-xl text-cocoa/80 leading-[1.5] max-w-2xl">
-                  {phase.focus}
-                </p>
-                <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl">
-                  {phase.body}
-                </p>
-                <div className="mt-10">
-                  <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Includes</div>
-                  <ul className="grid sm:grid-cols-2 gap-3">
-                    {phase.includes.map((item) => (
-                      <li
-                        key={item}
-                        className={`flex items-start gap-3 rounded-xl border border-taupe/25 px-4 py-3 text-sm text-cocoa ${alt ? "bg-sand/60" : "bg-blush/60"}`}
-                      >
-                        <span className="text-clay mt-1 text-[0.55rem]">&#9679;</span>
-                        <span className="leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
+                <article
+                  className={`rounded-2xl border border-taupe/25 p-10 md:p-14 ${alt ? "bg-blush/50" : "bg-sand/60"}`}
+                >
+                  <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
+                    Phase {phase.numeral}
+                  </div>
+                  <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.1] text-cocoa">
+                    {phase.name}
+                  </h2>
+                  <p className="mt-6 font-serif italic text-lg md:text-xl text-cocoa/80 leading-[1.5] max-w-2xl">
+                    {phase.focus}
+                  </p>
+                  <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl">
+                    {phase.body}
+                  </p>
+                  <div className="mt-10">
+                    <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
+                      Includes
+                    </div>
+                    <ul className="grid sm:grid-cols-2 gap-3">
+                      {phase.includes.map((item) => (
+                        <li
+                          key={item}
+                          className={`flex items-start gap-3 rounded-xl border border-taupe/25 px-4 py-3 text-sm text-cocoa ${alt ? "bg-sand/60" : "bg-blush/60"}`}
+                        >
+                          <span className="text-clay mt-1 text-[0.55rem]">&#9679;</span>
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
               </div>
             );
           })}
@@ -161,7 +202,8 @@ function ClientJourneyPage() {
             Begin your client journey
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
-            Every family begins where they are. We'll meet first in a consultation, then root your support into the phase that fits.
+            Every family begins where they are. We'll meet first in a consultation, then root your
+            support into the phase that fits.
           </p>
           <div className="mt-12">
             <Link

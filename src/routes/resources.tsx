@@ -9,14 +9,20 @@ export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
       { title: "Resources for a Rooted Fourth Trimester — Nurture The Roots™" },
-      { name: "description", content: "Worksheets, reflections, articles, and parent‑friendly resources to support identity, rhythm, relationship, and grounded postpartum care." },
+      {
+        name: "description",
+        content:
+          "Worksheets, reflections, articles, and parent‑friendly resources to support identity, rhythm, relationship, and grounded postpartum care.",
+      },
       { property: "og:title", content: "Resources for a Rooted Fourth Trimester" },
-      { property: "og:description", content: "Grounded worksheets, reflections, and editorial writing for the fourth trimester." },
+      {
+        property: "og:description",
+        content:
+          "Grounded worksheets, reflections, and editorial writing for the fourth trimester.",
+      },
       { property: "og:url", content: "https://nurturetheroots.co/resources" },
     ],
-    links: [
-      { rel: "canonical", href: "https://nurturetheroots.co/resources" },
-    ],
+    links: [{ rel: "canonical", href: "https://nurturetheroots.co/resources" }],
   }),
   component: ResourcesPage,
 });
@@ -46,18 +52,51 @@ const explore = [
 ];
 
 const worksheets = [
-  { title: "Postpartum Identity Map", body: "A reflection to name who you are becoming as a parent." },
-  { title: "Emotional Landscape Reflection", body: "A practice for reading the emotional field of your home." },
-  { title: "Baby Cue Observation Sheet", body: "Track and learn your baby's cues, states, and signals." },
+  {
+    title: "Postpartum Identity Map",
+    body: "A reflection to name who you are becoming as a parent.",
+  },
+  {
+    title: "Emotional Landscape Reflection",
+    body: "A practice for reading the emotional field of your home.",
+  },
+  {
+    title: "Baby Cue Observation Sheet",
+    body: "Track and learn your baby's cues, states, and signals.",
+  },
   { title: "Family Rhythm Map", body: "Map the rhythms that support your family's grounded days." },
-  { title: "Care as Ceremony Ritual Builder", body: "Turn daily care tasks into grounding, meaningful rituals." },
-  { title: "Lineage Continuity Reflection", body: "Honor the ancestral significance of your baby's arrival." },
-  { title: "Cue‑Based Care Tracker", body: "A gentle tool for following feeding, sleep, and regulation cues." },
-  { title: "Co‑Regulation Practice Sheet", body: "Simple practices for co‑regulating with your baby." },
-  { title: "Threshold Navigation Map", body: "A guide for the emotional and developmental shifts ahead." },
-  { title: "Sovereign Postpartum Plan", body: "A planning template rooted in identity and lived reality." },
-  { title: "Support Ecosystem Map", body: "Build the sustainable support network your family needs." },
-  { title: "Fourth Trimester Integration Reflection", body: "Reflect, integrate, and step into the next season." },
+  {
+    title: "Care as Ceremony Ritual Builder",
+    body: "Turn daily care tasks into grounding, meaningful rituals.",
+  },
+  {
+    title: "Lineage Continuity Reflection",
+    body: "Honor the ancestral significance of your baby's arrival.",
+  },
+  {
+    title: "Cue‑Based Care Tracker",
+    body: "A gentle tool for following feeding, sleep, and regulation cues.",
+  },
+  {
+    title: "Co‑Regulation Practice Sheet",
+    body: "Simple practices for co‑regulating with your baby.",
+  },
+  {
+    title: "Threshold Navigation Map",
+    body: "A guide for the emotional and developmental shifts ahead.",
+  },
+  {
+    title: "Sovereign Postpartum Plan",
+    body: "A planning template rooted in identity and lived reality.",
+  },
+  {
+    title: "Support Ecosystem Map",
+    body: "Build the sustainable support network your family needs.",
+  },
+  {
+    title: "Fourth Trimester Integration Reflection",
+    body: "Reflect, integrate, and step into the next season.",
+  },
 ];
 
 const reflections = [
@@ -81,7 +120,8 @@ function ResourcesPage() {
             Resources for a rooted fourth trimester
           </h1>
           <p className="mt-8 mx-auto max-w-2xl font-serif italic text-lg md:text-xl text-cocoa/75 leading-[1.5]">
-            These resources support families in slowing down, listening deeply, and building postpartum care that honors identity, rhythm, relationship, and support.
+            These resources support families in slowing down, listening deeply, and building
+            postpartum care that honors identity, rhythm, relationship, and support.
           </p>
         </div>
       </section>
@@ -108,13 +148,17 @@ function ResourcesPage() {
           {/* GROUNDING INTRO + HOW TO USE + WHO FOR */}
           <div className="grid md:grid-cols-2 gap-6 mb-16 md:mb-20">
             <div className="rounded-2xl border border-taupe/25 bg-sand/60 p-10">
-              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">How to Use These Resources</div>
+              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
+                How to Use These Resources
+              </div>
               <p className="text-[16px] text-cocoa/75 leading-[1.85]">
                 {/* [PLACEHOLDER: 2–3 sentences guiding how to move through these resources, in your voice.] */}
               </p>
             </div>
             <div className="rounded-2xl border border-taupe/25 bg-blush/40 p-10">
-              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Who These Are For</div>
+              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
+                Who These Are For
+              </div>
               <p className="text-[16px] text-cocoa/75 leading-[1.85]">
                 {/* [PLACEHOLDER: 2–3 sentences naming who these resources will serve.] */}
               </p>
@@ -122,7 +166,9 @@ function ResourcesPage() {
           </div>
 
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Worksheets &amp; Reflections</div>
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+              Worksheets &amp; Reflections
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
               Twelve grounded companions
             </h2>
@@ -156,7 +202,9 @@ function ResourcesPage() {
       <section className="bg-blush/50">
         <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">
           <div className="text-center mb-14">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Signature Reflections</div>
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+              Signature Reflections
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
               Questions to sit with
             </h2>
@@ -184,27 +232,25 @@ function ResourcesPage() {
             </h2>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
-          {explore.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className="group rounded-2xl border border-taupe/30 bg-blush/50 p-8 md:p-10 hover:bg-blush transition-colors flex flex-col"
-            >
-              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-5">
-                {item.eyebrow}
-              </div>
-              <h2 className="font-serif text-2xl md:text-[1.75rem] leading-[1.2] text-cocoa">
-                {item.title}
-              </h2>
-              <p className="mt-5 text-[15px] text-cocoa/75 leading-[1.8] flex-1">
-                {item.body}
-              </p>
-              <span className="mt-8 inline-flex items-center gap-2 text-sm text-clay group-hover:text-cocoa transition-colors">
-                {item.cta}
-                <span aria-hidden>→</span>
-              </span>
-            </Link>
-          ))}
+            {explore.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="group rounded-2xl border border-taupe/30 bg-blush/50 p-8 md:p-10 hover:bg-blush transition-colors flex flex-col"
+              >
+                <div className="uppercase tracking-[0.22em] text-xs text-clay mb-5">
+                  {item.eyebrow}
+                </div>
+                <h2 className="font-serif text-2xl md:text-[1.75rem] leading-[1.2] text-cocoa">
+                  {item.title}
+                </h2>
+                <p className="mt-5 text-[15px] text-cocoa/75 leading-[1.8] flex-1">{item.body}</p>
+                <span className="mt-8 inline-flex items-center gap-2 text-sm text-clay group-hover:text-cocoa transition-colors">
+                  {item.cta}
+                  <span aria-hidden>→</span>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
