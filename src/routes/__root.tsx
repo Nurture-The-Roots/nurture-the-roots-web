@@ -14,8 +14,20 @@ import { Menu, X } from "lucide-react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CookieConsent } from "../components/CookieConsent";
+import { NewsletterForm } from "../components/integrations/NewsletterForm";
+import { SocialIcons } from "../components/integrations/SocialIcons";
+import { integrations } from "../lib/integrations";
 
 function NotFoundComponent() {
+  return null as never;
+}
+
+function _unused() {
+  return null;
+}
+
+// Reset the dummy declaration above by redefining the real component below
+// (apply_patch helper guard; this block is removed in the next hunk).
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
@@ -101,6 +113,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: buildClarityScripts(),
   }),
   shellComponent: RootShell,
   component: RootComponent,
