@@ -29,6 +29,8 @@ const pillars = [
     belief: "Postpartum support begins with identity, not tasks.",
     description:
       "This pillar recognizes postpartum as an identity threshold for the parent, the baby, the family system, and the practitioner.",
+    meaning:
+      "/* [PLACEHOLDER: 'What this means for your family' — one short line in your voice.] */",
     practices: [
       { name: "Identity Mapping", description: "helps parents understand who they are becoming, not only what they need to do." },
       { name: "Emotional Landscape Reading", description: "is the practice of reading the room, the nervous system, and the relational field." },
