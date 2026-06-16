@@ -16,9 +16,9 @@ export function SectionDivider({
       className={`mx-auto flex max-w-3xl items-center gap-4 px-6 ${className}`}
       {...rest}
     >
-      <span className="h-px flex-1 bg-taupe/40" />
-      <span className="text-clay/80 text-base font-serif leading-none">{glyph}</span>
-      <span className="h-px flex-1 bg-taupe/40" />
+      <span className="h-px flex-1 bg-taupe/30" />
+      <span className="text-clay/70 text-lg font-serif leading-none select-none">{glyph}</span>
+      <span className="h-px flex-1 bg-taupe/30" />
     </div>
   );
 }
