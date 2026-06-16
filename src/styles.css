@@ -53,6 +53,12 @@
   --color-taupe: var(--taupe);
   --color-cocoa: var(--cocoa);
   --color-earth: var(--earth);
+  --color-sage: var(--sage);
+  --color-moss: var(--moss);
+  --color-cedar: var(--cedar);
+  --color-terracotta: var(--terracotta);
+  --color-forest: var(--forest);
+  --color-ivory: var(--ivory);
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
@@ -66,6 +72,14 @@
   --taupe: oklch(0.800 0.018 65);   /* soft warm taupe (footer) */
   --cocoa: oklch(0.300 0.012 60);   /* deep charcoal heading */
   --earth: oklch(0.260 0.010 60);   /* deep charcoal body text */
+
+  /* Earthy botanical accents — used sparingly alongside the warm cream base */
+  --ivory:      oklch(0.965 0.008 80);
+  --sage:       oklch(0.780 0.028 145);  /* soft sage */
+  --moss:       oklch(0.560 0.045 145);  /* moss green */
+  --forest:     oklch(0.380 0.040 150);  /* deep forest accent */
+  --cedar:      oklch(0.430 0.045 50);   /* cedar brown */
+  --terracotta: oklch(0.620 0.110 38);   /* muted terracotta */
 
   --background: var(--sand);
   --foreground: var(--earth);
