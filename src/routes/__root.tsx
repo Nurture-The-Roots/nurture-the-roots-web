@@ -141,9 +141,13 @@ function SiteHeader() {
   const nav = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
+    { to: "/framework", label: "The Framework" },
     { to: "/services", label: "Services" },
+    { to: "/client-journey", label: "Client Journey" },
+    { to: "/workshops", label: "Workshops" },
   ] as const;
   const resourcesItems = [
+    { to: "/resources", label: "Resources" },
     { to: "/blog", label: "Blog" },
     { to: "/media", label: "Media" },
     { to: "/faq", label: "FAQ" },
@@ -164,7 +168,7 @@ function SiteHeader() {
         <Link to="/" className="font-serif text-lg text-cocoa tracking-wide">
           Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-7 text-sm text-earth/80">
+        <nav className="hidden lg:flex items-center gap-6 text-sm text-earth/80">
           {nav.map((n) => (
             <Link
               key={n.to}
@@ -271,7 +275,10 @@ function SiteFooter() {
           <ul className="space-y-2">
             <li><Link to="/" className="hover:text-clay transition-colors">Home</Link></li>
             <li><Link to="/about" className="hover:text-clay transition-colors">About</Link></li>
+            <li><Link to="/framework" className="hover:text-clay transition-colors">The Framework</Link></li>
             <li><Link to="/services" className="hover:text-clay transition-colors">Services</Link></li>
+            <li><Link to="/client-journey" className="hover:text-clay transition-colors">Client Journey</Link></li>
+            <li><Link to="/workshops" className="hover:text-clay transition-colors">Workshops</Link></li>
             <li><Link to="/resources" className="hover:text-clay transition-colors">Resources</Link></li>
             <li><Link to="/contact" className="hover:text-clay transition-colors">Contact</Link></li>
           </ul>
@@ -292,6 +299,9 @@ function SiteFooter() {
         <div className="mx-auto max-w-6xl px-6 py-6">
           <p className="text-xs text-cocoa/65 text-center">
             My support is relational and educational, not medical. Please consult your healthcare provider for medical concerns.
+          </p>
+          <p className="mt-2 text-xs text-cocoa/65 text-center max-w-2xl mx-auto">
+            The Nurture The Roots™ Postpartum Framework and related language are original intellectual property of Nurture The Roots LLC.
           </p>
           <p className="mt-2 text-xs text-cocoa/65 text-center">
             © 2026 Nurture the Roots LLC. All rights reserved.
