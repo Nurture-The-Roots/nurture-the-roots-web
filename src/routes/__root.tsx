@@ -157,9 +157,7 @@ function SiteHeader() {
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const resourcesActive = resourcesItems.some((r) =>
-    r.to === "/" ? pathname === "/" : pathname.startsWith(r.to),
-  );
+  const resourcesActive = resourcesItems.some((r) => pathname.startsWith(r.to));
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const openMenu = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
