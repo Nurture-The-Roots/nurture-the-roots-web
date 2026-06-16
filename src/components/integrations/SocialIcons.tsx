@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Instagram, Music2, Youtube } from "lucide-react";
 import { integrations } from "@/lib/integrations";
 
@@ -21,7 +22,7 @@ export function SocialIcons() {
       label: "YouTube",
       icon: <Youtube size={18} aria-hidden />,
     },
-  ].filter((l): l is { href: string; label: string; icon: JSX.Element } => Boolean(l.href));
+  ].filter((l): l is { href: string; label: string; icon: ReactNode } => Boolean(l.href));
 
   if (links.length === 0) return null;
   return (
