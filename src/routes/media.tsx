@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import mediaImageAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
+import teachingResponsive from "@/assets/branding-photos-53.responsive.json";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 export const Route = createFileRoute("/media")({
   head: () => ({
@@ -63,6 +65,20 @@ function MediaPage() {
             parenthood. If you're seeking a grounded, thoughtful perspective on the fourth trimester,
             I'd love to connect.
           </p>
+        </div>
+      </section>
+
+      {/* IMAGE BAND — in the conversation */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-3xl px-6 pb-16 md:pb-20">
+          <div className="mx-auto overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/3] max-w-2xl">
+            <ResponsiveImage
+              source={teachingResponsive}
+              alt="Ashlee reading aloud from a book to two parents during an attentive postpartum education session in a sunlit living room"
+              sizes="(min-width: 768px) 672px, 100vw"
+              className="w-full h-full object-cover object-[center_30%]"
+            />
+          </div>
         </div>
       </section>
 
