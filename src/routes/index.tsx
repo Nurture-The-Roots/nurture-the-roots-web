@@ -106,7 +106,7 @@ function Index() {
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-9 py-4 text-base font-medium text-sand shadow-sm hover:bg-cocoa transition-colors"
             >
-              Book a Consultation
+              Begin Your Postpartum Support
             </Link>
             <Link
               to="/framework"
@@ -117,6 +117,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <SectionDivider className="my-2 md:my-4" />
 
       {/* OPENING — fourth trimester as threshold */}
       <section className="bg-background">
