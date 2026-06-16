@@ -5,6 +5,8 @@ import joyAsset from "@/assets/branding-59.jpeg.asset.json";
 import walkingResponsive from "@/assets/about-ashlee-walking.responsive.json";
 import faceResponsive from "@/assets/branding-58.responsive.json";
 import joyResponsive from "@/assets/branding-59.responsive.json";
+import embraceResponsive from "@/assets/branding-photos-50.responsive.json";
+import portraitResponsive from "@/assets/branding-photos-49.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 const aboutImg = walkingAsset.url;
 
@@ -100,10 +102,10 @@ function AboutPage() {
         <div className="mx-auto max-w-3xl px-6 pt-8 pb-24 md:pt-12 md:pb-36 font-sans">
           <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/5] max-w-md">
             <ResponsiveImage
-              source={walkingResponsive}
-              alt="Ashlee McKenzie, a postpartum doula, walking outdoors and cradling a swaddled newborn close to her chest with warm, attuned presence"
+              source={embraceResponsive}
+              alt="Ashlee cradling a swaddled newborn close to her chest in soft window light — a moment of attuned, tender presence"
               sizes="(min-width: 768px) 448px, 100vw"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_25%]"
             />
           </div>
           <div className="text-center mb-10">
@@ -255,10 +257,10 @@ function AboutPage() {
         <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
             <ResponsiveImage
-              source={joyResponsive}
-              alt="Ashlee smiling as she dresses a baby on a changing table — a warm, everyday moment of attuned newborn care"
+              source={portraitResponsive}
+              alt="Ashlee standing in a sunlit room holding a sleeping baby in a rust-colored swaddle, smiling softly at the camera"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_35%]"
+              className="w-full h-full object-cover object-[center_40%]"
             />
           </div>
         </div>
