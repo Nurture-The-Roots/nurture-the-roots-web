@@ -19,15 +19,6 @@ import { SocialIcons } from "../components/integrations/SocialIcons";
 import { integrations } from "../lib/integrations";
 
 function NotFoundComponent() {
-  return null as never;
-}
-
-function _unused() {
-  return null;
-}
-
-// Reset the dummy declaration above by redefining the real component below
-// (apply_patch helper guard; this block is removed in the next hunk).
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
