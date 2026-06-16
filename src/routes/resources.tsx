@@ -209,6 +209,9 @@ function ResourcesPage() {
       {/* CTA */}
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
+          <p className="mb-10 font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+            {/* [PLACEHOLDER: A short closing reflection in your voice before the CTA.] */}
+          </p>
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
             Receive new resources as they're released
           </h2>
