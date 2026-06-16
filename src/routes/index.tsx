@@ -5,6 +5,8 @@ import ashleeTenderHoldAsset from "@/assets/ashlee-tender-hold.jpeg.asset.json";
 import aboutResponsive from "@/assets/branding-65.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
+import { CalendlyButton } from "@/components/integrations/CalendlyButton";
+import { TestimonialsCarousel } from "@/components/integrations/TestimonialsCarousel";
 const welcomeImg = welcomeAsset.url;
 const homeBandImg = ashleeTenderHoldAsset.url;
 const homeClosingImg = ashleeBabyChairPortraitAsset.url;
@@ -120,9 +122,12 @@ function Index() {
             moving through the fourth trimester.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
+            <CalendlyButton className="inline-flex items-center rounded-full bg-clay px-9 py-4 text-base font-medium text-sand shadow-sm hover:bg-cocoa transition-colors">
+              Book a Consultation
+            </CalendlyButton>
             <Link
               to="/contact"
-              className="inline-flex items-center rounded-full bg-clay px-9 py-4 text-base font-medium text-sand shadow-sm hover:bg-cocoa transition-colors"
+              className="inline-flex items-center rounded-full border border-cocoa/30 px-9 py-4 text-base font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
             >
               Begin Your Postpartum Support
             </Link>
@@ -201,6 +206,9 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* TESTIMONIALS CAROUSEL */}
+      <TestimonialsCarousel />
 
       {/* IMAGE BAND — relational presence */}
       <section aria-hidden="false" className="bg-background">

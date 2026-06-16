@@ -16,6 +16,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { DubsadoEmbed } from "@/components/integrations/DubsadoEmbed";
+import { CalendlyButton } from "@/components/integrations/CalendlyButton";
+import { integrations } from "@/lib/integrations";
 
 const contactFormSchema = z.object({
   fullName: z.string().trim().min(1, "Full name is required").max(100),
