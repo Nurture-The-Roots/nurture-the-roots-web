@@ -4,6 +4,7 @@ import servicesImageAsset from "@/assets/approach-3.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-60.responsive.json";
 import planningResponsive from "@/assets/branding-photos-52.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/services")({
 const services = [
   {
     title: "Rooted Postpartum Planning",
+    signature: "[PLACEHOLDER: One signature line for Rooted Postpartum Planning.]",
     description:
       "A values‑based planning session for expecting families who want to prepare for postpartum with clarity, support, and sovereignty.",
     includes: [
@@ -41,6 +43,7 @@ const services = [
   },
   {
     title: "In‑Home or Virtual Postpartum Support",
+    signature: "[PLACEHOLDER: One signature line for In-Home or Virtual Postpartum Support.]",
     description:
       "Relational postpartum support focused on newborn cues, parent confidence, rhythm, regulation, and family grounding.",
     includes: [
@@ -57,6 +60,7 @@ const services = [
   },
   {
     title: "Newborn Cue + Attunement Session",
+    signature: "[PLACEHOLDER: One signature line for Newborn Cue + Attunement Session.]",
     description:
       "A focused session helping parents understand their baby's communication, states, cues, stress signals, readiness signals, and regulation needs.",
     includes: [
@@ -70,6 +74,7 @@ const services = [
   },
   {
     title: "Sovereign Family Systems Session",
+    signature: "[PLACEHOLDER: One signature line for Sovereign Family Systems Session.]",
     description:
       "A practical and reflective session for families who need support organizing care, boundaries, household systems, and community support.",
     includes: [
@@ -84,6 +89,7 @@ const services = [
   },
   {
     title: "Integration + Continuity Session",
+    signature: "[PLACEHOLDER: One signature line for Integration + Continuity Session.]",
     description:
       "A closing or transition session for families moving beyond early postpartum and into the next season of family life.",
     includes: [
