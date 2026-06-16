@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
 import ashleeRelationalDetailAsset from "@/assets/ashlee-relational-detail.jpeg.asset.json";
 import ashleePortraitAsset from "@/assets/ashlee-portrait.jpeg.asset.json";
+import branding49Responsive from "@/assets/branding-photos-49.responsive.json";
 import branding60Responsive from "@/assets/branding-60.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
