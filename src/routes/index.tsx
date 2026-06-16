@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
-import aboutAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
+import aboutAsset from "@/assets/branding-65.jpeg.asset.json";
+import bandAsset from "@/assets/branding-62.jpeg.asset.json";
 const welcomeImg = welcomeAsset.url;
 
 export const Route = createFileRoute("/")({
@@ -163,6 +164,20 @@ function Index() {
         </div>
       </section>
 
+      {/* IMAGE BAND — relational presence */}
+      <section aria-hidden="false" className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pt-4 pb-4 md:pt-10 md:pb-10">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={bandAsset.url}
+              alt="Ashlee McKenzie standing by a window holding a baby close, soft daylight filling the nursery"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* THE FOUR PILLARS */}
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
@@ -207,7 +222,7 @@ function Index() {
             <div className="relative overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5]">
               <img
                 src={aboutAsset.url}
-                alt="Ashlee McKenzie holding a sleeping newborn close, standing by a bright window with greenery outside"
+                alt="Ashlee McKenzie seated in a sunlit nursery, gently cradling a newborn in a soft moment of attuned presence"
                 loading="lazy"
                 width={1280}
                 height={1920}
