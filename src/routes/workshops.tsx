@@ -73,9 +73,37 @@ function WorkshopsPage() {
       {/* INTRO */}
       <section className="bg-background">
         <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <p className="mb-8 text-[16px] text-cocoa/70 leading-[1.85]">
+            {/* [PLACEHOLDER: A grounding intro paragraph in your voice for Workshops + Education.] */}
+          </p>
           <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             Nurture The Roots<TM /> workshops help parents and professionals understand postpartum through a lineage‑rooted, identity‑aligned, developmental, and relational lens.
           </p>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* WHO + WHAT YOU'LL LEARN */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28 grid md:grid-cols-2 gap-6">
+          <div className="rounded-2xl border border-taupe/25 bg-sand/60 p-10">
+            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Who These Workshops Are For</div>
+            <p className="text-[16px] text-cocoa/75 leading-[1.85]">
+              {/* [PLACEHOLDER: 2–3 sentences describing the parents and professionals these workshops are for.] */}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-taupe/25 bg-blush/40 p-10">
+            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">What You'll Learn</div>
+            <ul className="space-y-2 text-[15px] text-cocoa/80 leading-[1.7]">
+              {[1, 2, 3, 4].map((i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="text-clay mt-1 text-[0.55rem]">&#9679;</span>
+                  <span className="italic font-serif">{`[PLACEHOLDER: Learning outcome #${i}.]`}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
