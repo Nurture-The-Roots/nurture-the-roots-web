@@ -146,6 +146,69 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* TRAININGS & CERTIFICATIONS */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="border-t border-taupe/30" />
+        </div>
+        <div className="mx-auto max-w-4xl px-6 py-24 md:py-32 font-sans">
+          <div className="text-center mb-14">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Trainings & Certifications</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              Grounded in continued learning
+            </h2>
+            <p className="mt-6 mx-auto max-w-xl font-serif italic text-lg text-cocoa/75 leading-[1.5]">
+              A foundation of evidence‑based training in postpartum care, newborn development, and relational support.
+            </p>
+          </div>
+          <ul className="grid sm:grid-cols-2 gap-5">
+            {[
+              {
+                title: "ProDoula Certified Postpartum & Infant Care Doula",
+                org: "ProDoula",
+                year: "2024",
+              },
+              {
+                title: "Newborn Behavioral Observations (NBO) System — Level 1",
+                org: "The Brazelton Institute · Boston Children's Hospital / Harvard Medical School Teaching Hospital",
+                year: "2025",
+              },
+              {
+                title: "Beyond Trauma‑Informed Care: A Developmental & Relational Framework for Healing",
+                org: "Brazelton Touchpoints Center™",
+                year: "2024",
+              },
+              {
+                title: "CAPPA Lactation Educator Training",
+                org: "Childbirth and Postpartum Professional Association (CAPPA)",
+                year: "2021",
+              },
+              {
+                title: "Infant Massage Certification Training",
+                org: "Infant Massage USA® — US Chapter, International Association of Infant Massage",
+                year: "2011",
+              },
+              {
+                title: "TrustLine Registered Childcare Provider",
+                org: "California Department of Social Services & California Child Care Resource & Referral Network",
+                year: "Since 2012",
+              },
+            ].map((cert, i) => (
+              <li
+                key={i}
+                className="rounded-2xl border border-taupe/25 bg-blush/40 px-6 py-6 text-cocoa"
+              >
+                <div className="text-[0.65rem] uppercase tracking-[0.24em] text-clay mb-2">{cert.year}</div>
+                <h3 className="font-serif text-lg md:text-xl font-medium leading-[1.3] text-cocoa">
+                  {cert.title}
+                </h3>
+                <p className="mt-2 text-[14px] text-cocoa/75 leading-[1.6]">{cert.org}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* INVITATION / CTA */}
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center font-sans">
