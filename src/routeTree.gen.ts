@@ -21,6 +21,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PostpartumDoulaSanFranciscoRouteImport } from './routes/postpartum-doula-san-francisco'
 import { Route as MediaRouteImport } from './routes/media'
 import { Route as FrameworkRouteImport } from './routes/framework'
+import { Route as FilesRouteImport } from './routes/files'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -96,6 +97,11 @@ const MediaRoute = MediaRouteImport.update({
 const FrameworkRoute = FrameworkRouteImport.update({
   id: '/framework',
   path: '/framework',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FilesRoute = FilesRouteImport.update({
+  id: '/files',
+  path: '/files',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -187,6 +193,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
+  '/files': typeof FilesRoute
   '/framework': typeof FrameworkRoute
   '/media': typeof MediaRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
@@ -215,6 +222,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
+  '/files': typeof FilesRoute
   '/framework': typeof FrameworkRoute
   '/media': typeof MediaRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
@@ -245,6 +253,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
+  '/files': typeof FilesRoute
   '/framework': typeof FrameworkRoute
   '/media': typeof MediaRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
@@ -276,6 +285,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/faq'
+    | '/files'
     | '/framework'
     | '/media'
     | '/postpartum-doula-san-francisco'
@@ -304,6 +314,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/faq'
+    | '/files'
     | '/framework'
     | '/media'
     | '/postpartum-doula-san-francisco'
@@ -333,6 +344,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/faq'
+    | '/files'
     | '/framework'
     | '/media'
     | '/postpartum-doula-san-francisco'
@@ -363,6 +375,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
   FaqRoute: typeof FaqRoute
+  FilesRoute: typeof FilesRoute
   FrameworkRoute: typeof FrameworkRoute
   MediaRoute: typeof MediaRoute
   PostpartumDoulaSanFranciscoRoute: typeof PostpartumDoulaSanFranciscoRoute
@@ -466,6 +479,13 @@ declare module '@tanstack/react-router' {
       path: '/framework'
       fullPath: '/framework'
       preLoaderRoute: typeof FrameworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/files': {
+      id: '/files'
+      path: '/files'
+      fullPath: '/files'
+      preLoaderRoute: typeof FilesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -597,6 +617,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
   FaqRoute: FaqRoute,
+  FilesRoute: FilesRoute,
   FrameworkRoute: FrameworkRoute,
   MediaRoute: MediaRoute,
   PostpartumDoulaSanFranciscoRoute: PostpartumDoulaSanFranciscoRoute,
@@ -618,13 +639,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
