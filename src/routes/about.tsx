@@ -54,8 +54,7 @@ function AboutPage() {
             <p>
               I'm Ashlee McKenzie — a Certified Postpartum Doula, Newborn Care Specialist, and
               Fourth Trimester Expert serving families across San Francisco. My work is grounded in
-              attunement, clarity, and lineage‑rooted care that honors the earliest days of your
-              baby's life.
+              attunement, clarity, and lineage‑rooted care that honors your baby's earliest days.
             </p>
           </div>
         </div>
@@ -63,30 +62,33 @@ function AboutPage() {
 
       {/* MY STORY */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 pt-8 pb-24 md:py-36 grid md:grid-cols-[6fr_5fr] gap-8 md:gap-20 items-center">
-          <div className="space-y-7 text-[17px] text-cocoa/80 leading-[1.85] font-sans order-2 md:order-1 max-w-xl">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay">My Story</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa mt-2">
-              Woven through lineage and lived experience
-            </h2>
-            <p className="pt-2">
-              My path into postpartum work is woven through my lineage, lived experience, and a deep
-              commitment to helping families feel held during one of life's most tender transitions.
-            </p>
-            <p>
-              I support parents with grounded presence, evidence‑based guidance, and a relational
-              approach that centers your family's identity and values.
-            </p>
-          </div>
-          <div className="order-1 md:order-2 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5]">
+        <div className="mx-auto max-w-3xl px-6 pt-8 pb-24 md:pt-12 md:pb-36 font-sans">
+          <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] max-w-md">
             <img
               src={walkingAsset.url}
-              alt="Ashlee McKenzie holding a sleeping newborn close, standing by a bright window with greenery outside"
+              alt="Ashlee McKenzie, a postpartum doula, walking outdoors and cradling a swaddled newborn close to her chest with warm, attuned presence"
               loading="lazy"
               width={1280}
               height={1920}
               className="w-full h-full object-cover"
             />
+          </div>
+          <div className="text-center mb-10">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">My Story</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              Woven through lineage and lived experience
+            </h2>
+          </div>
+          <div className="space-y-7 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            <p>
+              My path into postpartum work is woven through my lineage, lived experience, and a deep
+              commitment to helping families feel held during one of the most tender transitions of
+              early parenthood.
+            </p>
+            <p>
+              I support parents with grounded presence, evidence‑based guidance, and a relational
+              approach that centers your family's identity and values.
+            </p>
           </div>
         </div>
       </section>
