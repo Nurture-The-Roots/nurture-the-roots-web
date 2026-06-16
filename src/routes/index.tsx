@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
           name: "Nurture The Roots™",
           description:
             "Lineage-rooted, identity-aligned postpartum doula and newborn care practice serving families across the San Francisco Bay Area.",
-          url: "https://nurture-the-roots-web.lovable.app/",
+          url: "https://nurturetheroots.co/",
           image: welcomeImg,
           telephone: "",
           email: "ashleemckenzie@nurturetheroots.co",

@@ -69,11 +69,11 @@ export const Route = createFileRoute("/faq")({
       { name: "description", content: "Frequently asked questions about postpartum support, overnight care, feeding support, and working with Ashlee McKenzie." },
       { property: "og:title", content: "FAQ — Nurture The Roots™" },
       { property: "og:description", content: "Answers to common questions about postpartum support and care services." },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/faq" },
+      { property: "og:url", content: "https://nurturetheroots.co/faq" },
       { property: "og:image", content: welcomeAsset.url },
     ],
     links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/faq" },
+      { rel: "canonical", href: "https://nurturetheroots.co/faq" },
     ],
     scripts: [
       {

@@ -16,11 +16,11 @@ export const Route = createFileRoute("/blog/")({
         content:
           "Reflections, guidance, and identity-aligned support for the fourth trimester.",
       },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/blog" },
+      { property: "og:url", content: "https://nurturetheroots.co/blog" },
       { property: "og:image", content: blogImageAsset.url },
     ],
     links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/blog" },
+      { rel: "canonical", href: "https://nurturetheroots.co/blog" },
     ],
   }),
   component: BlogPage,

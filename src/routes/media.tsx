@@ -11,11 +11,11 @@ export const Route = createFileRoute("/media")({
       { name: "description", content: "Media appearances, speaking topics, and press inquiries for Ashlee McKenzie — postpartum doula, newborn care specialist, and founder of Nurture the Roots." },
       { property: "og:title", content: "Media & Press — Nurture The Roots™" },
       { property: "og:description", content: "Expert voice on postpartum care, newborn development, identity, and lineage-rooted support." },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/media" },
+      { property: "og:url", content: "https://nurturetheroots.co/media" },
       { property: "og:image", content: mediaImageAsset.url },
     ],
     links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/media" },
+      { rel: "canonical", href: "https://nurturetheroots.co/media" },
     ],
   }),
   component: MediaPage,
