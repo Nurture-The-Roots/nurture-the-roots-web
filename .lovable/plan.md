@@ -1,100 +1,43 @@
+## Goal
+Make the currently active page (and, on the home page, the currently visible section) clearly highlighted in both desktop and mobile navigation — in a way that fits the warm, editorial brand voice.
 
-# Site-Wide Editorial Refinement
+## Scope
+All changes live in `src/routes/__root.tsx` (the shared `SiteHeader`). No copy changes, no nav restructure, no new pages.
 
-Refine every page of Nurture The Roots™ for emotional spaciousness, clearer hierarchy, and a premium editorial feel — without changing the navigation, the framework, or your written voice. All copy additions will be drafted in your existing warm, grounded, lineage-rooted tone (short connective lines, intros, micro-sections), not new claims or services.
+## 1. Elevated active styles (route-based)
 
-## Global (applies to every page)
+Today active links only swap text color from `earth/80` → `cocoa`, which reads as a hover state. Replace with a clearer editorial treatment:
 
-- Increase vertical rhythm: larger section padding, consistent max-widths for prose (~65ch).
-- Add subtle motif dividers between major sections (hairline rule + small ornamental glyph in terracotta).
-- Calmer typographic scale: tighten heading leading, widen body leading, ensure serif H1/H2 + sans body.
-- Standardize CTA language sitewide to the three approved phrases:
-  - "Begin Your Postpartum Support"
-  - "Start Your Fourth Trimester Plan"
-  - "Schedule Your First Conversation"
-- Footer: add a soft brand anchor line ("Rooted care for the fourth trimester — San Francisco Bay Area") and add spacing between IP, legal, and disclaimer lines.
-- Add 1–2 soft warm images per page from the existing `src/assets/` library (hands, home, baby, rhythm — no new photography).
+- **Desktop top-level links** (Home, About, Framework, Services, Client Journey, Workshops, Contact):
+  - Active: `text-cocoa` + a soft terracotta underline rendered as a 1px `bg-clay` bar under the label (using a `relative` wrapper + `after:` pseudo via a span, since `activeProps` only swaps className). Inactive: no underline. Animate the underline width (`w-0` → `w-full`) on activation/hover for a quiet motion cue.
+- **Resources dropdown button**: when the current route is one of `/resources`, `/blog`, `/media`, `/faq`, mark the trigger active using the same underline treatment. Detected via `useRouterState({ select: s => s.location.pathname })`.
+- **Resources dropdown items**: keep current `bg-blush/40` active background; add a small `text-clay` leading dot (`•`) before the active item for additional clarity.
+- **Mobile panel links**: active item gets `text-clay`, `font-medium`, and a 2px left `border-clay` accent with `pl-3` indent (replacing the current text-only swap). Inactive items stay flush.
 
-## Page-by-page refinements
+All active detection continues to use TanStack's built-in `activeProps` + `activeOptions={{ exact: n.to === "/" }}` so SSR and client renders agree.
 
-**1. Home (`src/routes/index.tsx`)**
-- Add a short grounding emotional arc above the hero CTA.
-- Insert two soft images for rhythm (one mid-page, one near closing).
-- Add a "Services at a Glance" preview (3–5 short tiles linking to /services).
-- Add a "Who This Is For" section above Meet Ashlee.
-- Strengthen primary CTA copy.
-- Keep: Four Pillars, Meet Ashlee, overall flow.
+## 2. Scroll-position active state (home page sections)
 
-**2. About (`src/routes/about.tsx`)**
-- Add a grounding intro line under the hero.
-- Expand "My Story" with one additional reflective paragraph (drafted in your voice for your approval).
-- Add a warm portrait block (existing asset).
-- New micro-section: "What families often say about me" (2–3 short pull-quotes from existing testimonials).
-- Reorder for arc: Identity → Origin → Philosophy → Expertise → Invitation.
-- More breathing room around Certifications.
+On `/` only, the home page has multiple long-form sections. Add lightweight scroll-spy so the desktop nav reflects which section is in view, giving the same active treatment as a route match.
 
-**3. Framework (`src/routes/framework.tsx`)**
-- Grounding intro paragraph explaining why this framework matters.
-- One-line explainer under "At the Center" (Identity · Lineage · Relationship · Rhythm).
-- Add a single "What this means for your family" line under each of the Four Pillars.
-- Soft motif divider between pillars.
-- Closing reflection block before CTA.
-- Keep Four Pillars + Twelve Practices intact.
+- Section ids to track on `/` (matching existing section anchors — to be confirmed after a quick read of `src/routes/index.tsx`): e.g. `#about`, `#framework`, `#services`. Each nav item maps to its section id when present on the current route.
+- Implementation: a single `IntersectionObserver` inside `SiteHeader` that activates only when `pathname === "/"`. Observes the mapped section elements with `rootMargin: "-40% 0px -55% 0px"` so the active section changes when the section crosses roughly the middle of the viewport.
+- Tracks `activeSection` in state. A nav item is rendered active when either (a) TanStack reports the route as active, or (b) `pathname === "/"` and `activeSection === item.sectionId`.
+- Clicking a section-linked nav item on `/` smooth-scrolls to the anchor (`element.scrollIntoView({ behavior: "smooth", block: "start" })`) and closes the mobile panel.
+- No scroll-spy on non-home routes — only the route-based active state applies there.
 
-**4. Services (`src/routes/services.tsx`)**
-- Grounding intro paragraph above offerings.
-- "Who This Is For" section.
-- "What to Expect When We Work Together" section (3–4 short beats).
-- Soft hairline dividers between offerings.
-- One signature line per offering.
-- Add 1–2 soft images.
+If `src/routes/index.tsx` doesn't yet have stable section ids, I'll add the minimum ids needed (`id="..."` on existing wrapper sections) without changing copy or layout.
 
-**5. Client Journey (`src/routes/client-journey.tsx`)**
-- Grounding intro at top.
-- "What This Journey Offers" section.
-- Soft dividers between the four phases.
-- Closing reflection before CTA.
-- 1–2 soft images.
+## 3. Reduced-motion + a11y
 
-**6. Workshops (`src/routes/workshops.tsx`)**
-- Grounding intro.
-- "Who These Workshops Are For" section.
-- "What You'll Learn" section.
-- Short description under each workshop title.
-- Closing reflection before waitlist CTA.
-- 1–2 soft images.
+- The underline animation respects `prefers-reduced-motion: reduce` (skip the width transition).
+- Active link gets `aria-current="page"` (route match) or `aria-current="location"` (scroll-spy section). TanStack adds `data-status="active"` automatically; we'll mirror with `aria-current` via a small wrapper so screen readers announce the current page/section.
 
-**7. Resources (`src/routes/resources.tsx`)**
-- Grounding intro.
-- "How to Use These Resources" + "Who These Are For" sections.
-- Expanded one-line descriptions under each of the Twelve Grounded Companions.
-- Closing reflection.
-- Soft visual rhythm (dividers, spacing).
-
-**8. Contact (`src/routes/contact.tsx`)**
-- Grounding intro line above the form.
-- Optional single testimonial card alongside form.
-- More spacing between sections; keep all form fields and reassurance copy.
-
-**9. Footer (in `__root.tsx` or footer component)**
-- Soft brand anchor line at top of footer.
-- Increased spacing between IP, legal, disclaimer lines.
-- Keep nav, IP, disclaimer, sovereign tone.
-
-## Technical approach
-
-- Edit each route file in `src/routes/` in place; no new routes, no nav changes.
-- Reuse existing image assets in `src/assets/` via `ResponsiveImage`; no new image generation unless you ask.
-- Introduce a small shared `SectionDivider` component (hairline + terracotta glyph) and a `PullQuote` component in `src/components/` for reuse across pages.
-- Spacing/typography tweaks via Tailwind utilities + small additions to `src/styles.css` tokens if needed (no palette change).
-- All new microcopy will be added in your voice; if you'd prefer to write any of it yourself, I'll leave clearly marked placeholders.
+## Files touched
+- `src/routes/__root.tsx` — nav link rendering, scroll-spy hook, active styling.
+- `src/routes/index.tsx` — only if section `id`s are missing; add ids on existing sections.
 
 ## Out of scope
-
-- No nav changes, no new pages, no new services or claims.
-- No rewriting of your existing copy — only additive connective tissue and structural refinement.
-- No new photography or AI-generated imagery unless you request it.
-
-## One confirmation before building
-
-Do you want me to draft the new connective microcopy (intros, "Who This Is For", closing reflections, footer anchor line) in your voice for your review, or leave placeholders for you to fill in?
+- No changes to footer, copy, color tokens, fonts, or page content.
+- No new pages or nav items.
+- No changes to the Resources dropdown structure beyond active styling.
