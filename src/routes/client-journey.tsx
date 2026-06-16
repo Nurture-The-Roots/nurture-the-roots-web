@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-55.jpeg.asset.json";
+import babyFootMassageWideAsset from "@/assets/baby-foot-massage-wide.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-55.responsive.json";
 import bassinetResponsive from "@/assets/branding-photos-39.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
@@ -72,11 +73,13 @@ function ClientJourneyPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <ResponsiveImage
-              source={bassinetResponsive}
-              alt="Ashlee leaning over a bassinet, sharing a quiet moment of eye contact with a baby looking up at her"
+            <img
+              src={babyFootMassageWideAsset.url}
+              alt="A baby receiving gentle foot massage and body care, illustrating the tender, hands-on rhythm of postpartum support"
+              loading="lazy"
+              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_40%]"
+              className="w-full h-full object-cover object-[center_52%]"
             />
           </div>
         </div>
