@@ -2,6 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
 import faceAsset from "@/assets/branding-58.jpeg.asset.json";
 import joyAsset from "@/assets/branding-59.jpeg.asset.json";
+import walkingResponsive from "@/assets/about-ashlee-walking.responsive.json";
+import faceResponsive from "@/assets/branding-58.responsive.json";
+import joyResponsive from "@/assets/branding-59.responsive.json";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 const aboutImg = walkingAsset.url;
 
 export const Route = createFileRoute("/about")({
@@ -95,14 +99,10 @@ function AboutPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 pt-8 pb-24 md:pt-12 md:pb-36 font-sans">
           <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/5] max-w-md">
-            <img
-              src={walkingAsset.url}
+            <ResponsiveImage
+              source={walkingResponsive}
               alt="Ashlee McKenzie, a postpartum doula, walking outdoors and cradling a swaddled newborn close to her chest with warm, attuned presence"
-              loading="lazy"
-              decoding="async"
-              sizes="(min-width: 1024px) 1152px, 100vw"
-              width={1280}
-              height={1920}
+              sizes="(min-width: 768px) 448px, 100vw"
               className="w-full h-full object-cover"
             />
           </div>
@@ -177,12 +177,10 @@ function AboutPage() {
             </p>
           </div>
           <div className="mt-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/3] max-w-2xl mx-auto">
-            <img
-              src={faceAsset.url}
+            <ResponsiveImage
+              source={faceResponsive}
               alt="Ashlee sharing a tender, smiling moment face‑to‑face with a baby in her arms"
-              loading="lazy"
-              decoding="async"
-              sizes="(min-width: 1024px) 1152px, 100vw"
+              sizes="(min-width: 768px) 672px, 100vw"
               className="w-full h-full object-cover object-[center_30%]"
             />
           </div>
@@ -256,11 +254,9 @@ function AboutPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={joyAsset.url}
+            <ResponsiveImage
+              source={joyResponsive}
               alt="Ashlee smiling as she dresses a baby on a changing table — a warm, everyday moment of attuned newborn care"
-              loading="lazy"
-              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover object-[center_35%]"
             />
