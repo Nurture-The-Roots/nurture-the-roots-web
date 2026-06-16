@@ -14,6 +14,7 @@ import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PostpartumDoulaSanFranciscoRouteImport } from './routes/postpartum-doula-san-francisco'
 import { Route as MediaRouteImport } from './routes/media'
@@ -55,6 +56,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -159,6 +165,7 @@ export interface FileRoutesByFullPath {
   '/media': typeof MediaRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
   '/privacy': typeof PrivacyRoute
+  '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
@@ -182,6 +189,7 @@ export interface FileRoutesByTo {
   '/media': typeof MediaRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
   '/privacy': typeof PrivacyRoute
+  '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
@@ -207,6 +215,7 @@ export interface FileRoutesById {
   '/media': typeof MediaRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
   '/privacy': typeof PrivacyRoute
+  '/resources': typeof ResourcesRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
@@ -233,6 +242,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/postpartum-doula-san-francisco'
     | '/privacy'
+    | '/resources'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
@@ -256,6 +266,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/postpartum-doula-san-francisco'
     | '/privacy'
+    | '/resources'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
@@ -280,6 +291,7 @@ export interface FileRouteTypes {
     | '/media'
     | '/postpartum-doula-san-francisco'
     | '/privacy'
+    | '/resources'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
@@ -305,6 +317,7 @@ export interface RootRouteChildren {
   MediaRoute: typeof MediaRoute
   PostpartumDoulaSanFranciscoRoute: typeof PostpartumDoulaSanFranciscoRoute
   PrivacyRoute: typeof PrivacyRoute
+  ResourcesRoute: typeof ResourcesRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
@@ -352,6 +365,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -499,6 +519,7 @@ const rootRouteChildren: RootRouteChildren = {
   MediaRoute: MediaRoute,
   PostpartumDoulaSanFranciscoRoute: PostpartumDoulaSanFranciscoRoute,
   PrivacyRoute: PrivacyRoute,
+  ResourcesRoute: ResourcesRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
