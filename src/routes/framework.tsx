@@ -100,6 +100,9 @@ function FrameworkPage() {
       {/* INTRO */}
       <section className="bg-background">
         <div className="mx-auto max-w-2xl px-6 py-24 md:py-32 text-center">
+          <p className="mb-10 text-[16px] text-cocoa/70 leading-[1.85]">
+            {/* [PLACEHOLDER: A grounding paragraph in your voice explaining why this framework matters, and why postpartum needs more than a checklist.] */}
+          </p>
           <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             Nurture The Roots<TM /> helps families move through the fourth trimester by grounding postpartum care in identity, lineage, newborn communication, relational regulation, and sovereign systems of support.
           </p>
@@ -131,6 +134,9 @@ function FrameworkPage() {
             <h2 className="font-serif text-3xl md:text-4xl font-medium leading-[1.15] text-cocoa">
               Identity · Lineage · Relationship · Rhythm
             </h2>
+            <p className="mt-6 max-w-xl mx-auto text-[16px] text-cocoa/75 leading-[1.85]">
+              {/* [PLACEHOLDER: One short line in your voice explaining what 'Identity · Lineage · Relationship · Rhythm' holds at the center.] */}
+            </p>
           </div>
           <div className="relative mx-auto aspect-square max-w-lg">
             <div className="absolute inset-0 rounded-full border border-taupe/30" />
