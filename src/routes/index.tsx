@@ -167,7 +167,7 @@ function Index() {
       {/* IMAGE BAND — relational presence */}
       <section aria-hidden="false" className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-4 pb-4 md:pt-10 md:pb-10">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
             <img
               src={bandAsset.url}
               alt="Ashlee McKenzie standing by a window holding a baby close, soft daylight filling the nursery"

@@ -67,7 +67,7 @@ function ClientJourneyPage() {
       {/* IMAGE BAND — tending the rhythm */}
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-10 md:pt-14">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
             <img
               src={bandAsset.url}
               alt="Ashlee softly tending to a baby beside a bassinet in a sunlit nursery"

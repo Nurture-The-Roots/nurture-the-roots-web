@@ -94,7 +94,7 @@ function AboutPage() {
       {/* MY STORY */}
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 pt-8 pb-24 md:pt-12 md:pb-36 font-sans">
-          <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] max-w-md">
+          <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/5] max-w-md">
             <img
               src={walkingAsset.url}
               alt="Ashlee McKenzie, a postpartum doula, walking outdoors and cradling a swaddled newborn close to her chest with warm, attuned presence"
@@ -174,7 +174,7 @@ function AboutPage() {
               connected, and deeply cared for as you step into new parenthood.
             </p>
           </div>
-          <div className="mt-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/3] max-w-2xl mx-auto">
+          <div className="mt-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/3] max-w-2xl mx-auto">
             <img
               src={faceAsset.url}
               alt="Ashlee sharing a tender, smiling moment face‑to‑face with a baby in her arms"
@@ -251,7 +251,7 @@ function AboutPage() {
       {/* IMAGE BAND — daily practice */}
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-16">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
             <img
               src={joyAsset.url}
               alt="Ashlee smiling as she dresses a baby on a changing table — a warm, everyday moment of attuned newborn care"

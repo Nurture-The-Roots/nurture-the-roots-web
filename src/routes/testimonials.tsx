@@ -66,7 +66,7 @@ function TestimonialsPage() {
       {/* IMAGE BAND — joyful presence */}
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
             <img
               src={bandAsset.url}
               alt="Ashlee laughing warmly with a smiling baby cradled in her arms"
