@@ -26,10 +26,18 @@ function AboutPage() {
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
           <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">About</div>
-          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">Hi, I'm Ashlee McKenzie.</h1>
-          <p className="mt-8 font-serif italic text-xl text-cocoa/75">
-            Certified Postpartum Doula &bull; Newborn Care Specialist &bull; New Parent Support Coach
+          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">
+            Hi, I'm <span className="italic text-clay">Ashlee McKenzie</span>
+          </h1>
+          <p className="mt-8 mx-auto max-w-2xl font-serif italic text-xl md:text-2xl text-cocoa/75 leading-[1.5]">
+            A certified postpartum doula, newborn care specialist, and new parent support coach —
+            walking alongside families through the fourth trimester.
           </p>
+          <ul className="mt-8 flex flex-wrap justify-center gap-2 text-[0.7rem] uppercase tracking-[0.22em] text-cocoa/70">
+            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Certified Postpartum Doula</li>
+            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Newborn Care Specialist</li>
+            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">New Parent Support Coach</li>
+          </ul>
         </div>
       </section>
 
