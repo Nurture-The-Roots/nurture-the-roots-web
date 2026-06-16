@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import bandAsset from "@/assets/branding-57.jpeg.asset.json";
 
 export const Route = createFileRoute("/testimonials")({
   head: () => ({
@@ -59,6 +60,20 @@ function TestimonialsPage() {
           <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
             Here are some of the words they've shared about their experience.
           </p>
+        </div>
+      </section>
+
+      {/* IMAGE BAND — joyful presence */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={bandAsset.url}
+              alt="Ashlee laughing warmly with a smiling baby cradled in her arms"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
