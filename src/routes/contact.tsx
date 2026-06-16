@@ -21,7 +21,9 @@ const contactFormSchema = z.object({
   email: z.string().trim().email("Invalid email address").max(255),
   phone: z.string().trim().max(50).optional(),
   dueDate: z.string().optional(),
+  location: z.string().trim().max(150).optional(),
   supportType: z.string().optional(),
+  heardAbout: z.string().trim().max(200).optional(),
   message: z.string().trim().min(1, "Message is required").max(2000),
 });
 
@@ -73,7 +75,17 @@ function ContactPage() {
     setIsSubmitting(true);
     setSubmitError("");
     try {
-      await submitContact({ data });
+      // Fold extra fields (location, heardAbout) into the message body so we
+      // keep a single backend schema while honoring the user's expanded form.
+      const extraLines: string[] = [];
+      if (data.location) extraLines.push(`Location: ${data.location}`);
+      if (data.heardAbout) extraLines.push(`How they heard about Nurture The Roots: ${data.heardAbout}`);
+      const composedMessage = extraLines.length
+        ? `${data.message}\n\n— — —\n${extraLines.join("\n")}`
+        : data.message;
+      const { location: _l, heardAbout: _h, ...rest } = data;
+      void _l; void _h;
+      await submitContact({ data: { ...rest, message: composedMessage } });
       setSent(true);
       reset();
     } catch (err) {
@@ -188,7 +200,7 @@ function ContactPage() {
                   </div>
                   <div>
                     <Label htmlFor="dueDate" className="block text-sm text-cocoa mb-2">
-                      Baby's Due Date or Birth Date
+                    Estimated Due Date or Baby's Birth Date
                     </Label>
                     <Input
                       id="dueDate"
@@ -200,8 +212,21 @@ function ContactPage() {
                 </div>
 
                 <div>
+                  <Label htmlFor="location" className="block text-sm text-cocoa mb-2">
+                    Location
+                  </Label>
+                  <Input
+                    id="location"
+                    type="text"
+                    placeholder="Neighborhood, city, or area"
+                    className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/40 focus-visible:ring-clay focus-visible:ring-offset-0"
+                    {...register("location")}
+                  />
+                </div>
+
+                <div>
                   <Label htmlFor="supportType" className="block text-sm text-cocoa mb-2">
-                    Type of Support You're Interested In
+                    What kind of support are you seeking?
                   </Label>
                   <Select
                     value={watch("supportType") || ""}
@@ -218,6 +243,19 @@ function ContactPage() {
                       ))}
                     </SelectContent>
                   </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="heardAbout" className="block text-sm text-cocoa mb-2">
+                    How did you hear about Nurture The Roots?
+                  </Label>
+                  <Input
+                    id="heardAbout"
+                    type="text"
+                    placeholder="A friend, a search, an article…"
+                    className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/40 focus-visible:ring-clay focus-visible:ring-offset-0"
+                    {...register("heardAbout")}
+                  />
                 </div>
 
                 <div>
@@ -246,11 +284,14 @@ function ContactPage() {
                     disabled={isSubmitting}
                     className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand hover:bg-cocoa transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Sending..." : "Submit Inquiry"}
+                    {isSubmitting ? "Sending..." : "Send Inquiry"}
                   </button>
                 </div>
                 <p className="text-xs text-earth/60">
                   Your words are held in confidence. I respond personally to every message.
+                </p>
+                <p className="mt-6 text-[15px] text-cocoa/75 leading-[1.85] font-serif italic">
+                  Your family does not have to move through postpartum alone. Support is not a luxury — it is part of the postpartum design.
                 </p>
               </form>
             </div>
