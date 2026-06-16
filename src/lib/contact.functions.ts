@@ -28,7 +28,10 @@ export const submitContact = createServerFn({ method: "POST" })
       })
       .select("id")
       .single();
-    if (error) throw new Error("Failed to submit inquiry: " + error.message);
+    if (error) {
+      console.error("Failed to insert contact inquiry", error);
+      throw new Error("Failed to submit inquiry. Please try again.");
+    }
 
     // Fire-and-forget notification email to the practitioner.
     // Do not fail the form submission if the email send fails.
