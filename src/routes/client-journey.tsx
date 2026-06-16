@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import bandAsset from "@/assets/branding-55.jpeg.asset.json";
 
 export const Route = createFileRoute("/client-journey")({
   head: () => ({
@@ -60,6 +61,20 @@ function ClientJourneyPage() {
           <p className="mt-8 font-serif italic text-xl md:text-2xl text-cocoa/75 leading-[1.5]">
             A four‑phase pathway through the fourth trimester.
           </p>
+        </div>
+      </section>
+
+      {/* IMAGE BAND — tending the rhythm */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pt-10 md:pt-14">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={bandAsset.url}
+              alt="Ashlee softly tending to a baby beside a bassinet in a sunlit nursery"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
