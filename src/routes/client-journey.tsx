@@ -85,11 +85,30 @@ function ClientJourneyPage() {
       {/* PHASES */}
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-6 py-24 md:py-32 space-y-16 md:space-y-24">
+          {/* GROUNDING INTRO */}
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-[17px] text-cocoa/80 leading-[1.85]">
+              {/* [PLACEHOLDER: A grounding intro paragraph in your voice at the top of the journey.] */}
+            </p>
+          </div>
+
+          {/* WHAT THIS JOURNEY OFFERS */}
+          <div className="rounded-2xl border border-taupe/25 bg-sand/60 p-10 md:p-14">
+            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">What This Journey Offers</div>
+            <h2 className="font-serif text-2xl md:text-3xl text-cocoa leading-snug mb-4">
+              A rooted pathway, phase by phase
+            </h2>
+            <p className="text-[16px] text-cocoa/75 leading-[1.85] max-w-2xl">
+              {/* [PLACEHOLDER: 2–3 sentences naming what the journey offers families.] */}
+            </p>
+          </div>
+
           {phases.map((phase, i) => {
             const alt = i % 2 === 0;
             return (
+              <div key={phase.numeral}>
+                {i > 0 && <SectionDivider className="mb-16 md:mb-20" />}
               <article
-                key={phase.numeral}
                 className={`rounded-2xl border border-taupe/25 p-10 md:p-14 ${alt ? "bg-blush/50" : "bg-sand/60"}`}
               >
                 <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Phase {phase.numeral}</div>
@@ -117,8 +136,18 @@ function ClientJourneyPage() {
                   </ul>
                 </div>
               </article>
+              </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* CLOSING REFLECTION */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-2xl px-6 pb-16 md:pb-24 text-center">
+          <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+            {/* [PLACEHOLDER: A short closing reflection in your voice before the CTA.] */}
+          </p>
         </div>
       </section>
 
@@ -136,7 +165,7 @@ function ClientJourneyPage() {
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
             >
-              Book a Consultation
+              Start Your Fourth Trimester Plan
             </Link>
           </div>
         </div>
