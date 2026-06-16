@@ -173,6 +173,14 @@ function AboutPage() {
               connected, and deeply cared for as you step into new parenthood.
             </p>
           </div>
+          <div className="mt-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/3] max-w-2xl mx-auto">
+            <img
+              src={faceAsset.url}
+              alt="Ashlee sharing a tender, smiling moment face‑to‑face with a baby in her arms"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
