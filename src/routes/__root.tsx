@@ -241,12 +241,14 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="mt-24 bg-taupe text-cocoa">
-      <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-3">
+      <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-4">
         {/* Brand Info */}
         <div>
-          <div className="font-serif text-2xl">Ashlee McKenzie</div>
+          <div className="font-serif text-2xl">
+            Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span>
+          </div>
           <p className="mt-2 text-sm text-cocoa/75">
-            Certified Postpartum Doula & Newborn Care Specialist
+            Postpartum Support · San Francisco, CA
           </p>
         </div>
 
@@ -268,10 +270,17 @@ function SiteFooter() {
             <li><Link to="/" className="hover:text-clay transition-colors">Home</Link></li>
             <li><Link to="/about" className="hover:text-clay transition-colors">About</Link></li>
             <li><Link to="/services" className="hover:text-clay transition-colors">Services</Link></li>
-            <li><Link to="/blog" className="hover:text-clay transition-colors">Blog</Link></li>
-            <li><Link to="/media" className="hover:text-clay transition-colors">Media</Link></li>
+            <li><Link to="/resources" className="hover:text-clay transition-colors">Resources</Link></li>
             <li><Link to="/contact" className="hover:text-clay transition-colors">Contact</Link></li>
-            <li><Link to="/privacy" className="hover:text-clay transition-colors">Legal</Link></li>
+          </ul>
+        </div>
+
+        {/* Legal */}
+        <div className="text-sm text-cocoa/80">
+          <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Legal</div>
+          <ul className="space-y-2">
+            <li><Link to="/privacy" className="hover:text-clay transition-colors">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-clay transition-colors">Terms of Service</Link></li>
           </ul>
         </div>
       </div>
