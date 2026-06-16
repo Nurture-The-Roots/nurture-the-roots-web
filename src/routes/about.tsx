@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
-import ashleeBurpingBabyAsset from "@/assets/ashlee-burping-baby.jpeg.asset.json";
-import ashleeBabyLaughingAsset from "@/assets/ashlee-baby-laughing.jpeg.asset.json";
-import ashleeBabyCloseupAsset from "@/assets/ashlee-baby-closeup.jpeg.asset.json";
+import ashleeRelationalDetailAsset from "@/assets/ashlee-relational-detail.jpeg.asset.json";
+import ashleePortraitAsset from "@/assets/ashlee-portrait.jpeg.asset.json";
+import branding60Responsive from "@/assets/branding-60.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 const aboutImg = walkingAsset.url;
@@ -173,12 +173,12 @@ function AboutPage() {
         <div className="mx-auto max-w-3xl px-6 pt-8 pb-24 md:pt-12 md:pb-36 font-sans">
           <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/5] max-w-md">
             <img
-              src={ashleeBurpingBabyAsset.url}
-              alt="Ashlee holding a baby close against her chest in a softly lit room, a quiet moment of grounded care"
+              src={ashleeRelationalDetailAsset.url}
+              alt="A quiet relational detail between Ashlee and a baby, illustrating attuned, grounded postpartum care"
               loading="lazy"
               decoding="async"
               sizes="(min-width: 768px) 448px, 100vw"
-              className="w-full h-full object-cover object-[center_28%]"
+              className="w-full h-full object-cover object-[center_40%]"
             />
           </div>
           <div className="text-center mb-10">
@@ -286,12 +286,12 @@ function AboutPage() {
           </div>
           <div className="mt-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/3] max-w-2xl mx-auto">
             <img
-              src={ashleeBabyLaughingAsset.url}
-              alt="Ashlee smiling face-to-face with a baby, both fully engaged in a playful relational moment"
+              src={ashleePortraitAsset.url}
+              alt="A grounded editorial portrait of Ashlee, the practitioner behind Nurture The Roots™"
               loading="lazy"
               decoding="async"
               sizes="(min-width: 768px) 672px, 100vw"
-              className="w-full h-full object-cover object-[center_48%]"
+              className="w-full h-full object-cover object-[center_40%]"
             />
           </div>
         </div>
@@ -370,11 +370,9 @@ function AboutPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={ashleeBabyCloseupAsset.url}
-              alt="Ashlee cradling a baby in her lap by a bright window, both held in a gentle and attuned portrait"
-              loading="lazy"
-              decoding="async"
+            <ResponsiveImage
+              source={branding60Responsive}
+              alt="A soft editorial moment from the Nurture The Roots™ brand library"
               sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover object-[center_42%]"
             />

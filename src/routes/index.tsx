@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
 import ashleeBabyChairPortraitAsset from "@/assets/ashlee-baby-chair-portrait.jpeg.asset.json";
-import ashleeBedsideSwaddleAsset from "@/assets/ashlee-bedside-swaddle.jpeg.asset.json";
+import ashleeTenderHoldAsset from "@/assets/ashlee-tender-hold.jpeg.asset.json";
 import aboutResponsive from "@/assets/branding-65.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 const welcomeImg = welcomeAsset.url;
-const homeBandImg = ashleeBedsideSwaddleAsset.url;
+const homeBandImg = ashleeTenderHoldAsset.url;
 const homeClosingImg = ashleeBabyChairPortraitAsset.url;
 
 export const Route = createFileRoute("/")({
