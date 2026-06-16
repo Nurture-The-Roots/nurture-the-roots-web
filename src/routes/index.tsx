@@ -2,12 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
 import aboutAsset from "@/assets/branding-65.jpeg.asset.json";
 import bandAsset from "@/assets/branding-62.jpeg.asset.json";
+import ashleeBabyChairPortraitAsset from "@/assets/ashlee-baby-chair-portrait.jpeg.asset.json";
+import ashleeBedsideSwaddleAsset from "@/assets/ashlee-bedside-swaddle.jpeg.asset.json";
 import aboutResponsive from "@/assets/branding-65.responsive.json";
 import bandResponsive from "@/assets/branding-62.responsive.json";
 import editorialResponsive from "@/assets/branding-photos-48.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 const welcomeImg = welcomeAsset.url;
+const homeBandImg = ashleeBedsideSwaddleAsset.url;
+const homeClosingImg = ashleeBabyChairPortraitAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -175,11 +179,13 @@ function Index() {
       <section aria-hidden="false" className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-4 pb-4 md:pt-10 md:pb-10">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <ResponsiveImage
-              source={bandResponsive}
-              alt="Ashlee McKenzie standing by a window holding a baby close, soft daylight filling the nursery"
+            <img
+              src={homeBandImg}
+              alt="Ashlee beside a bed, gently swaddling a baby in a calm, light-filled room"
+              loading="lazy"
+              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_30%]"
+              className="w-full h-full object-cover object-[center_52%]"
             />
           </div>
         </div>
@@ -347,11 +353,13 @@ function Index() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <ResponsiveImage
-              source={editorialResponsive}
-              alt="Ashlee standing in a sunlit, plant-filled living room cradling a swaddled newborn — an editorial portrait of warm, rooted presence"
+            <img
+              src={homeClosingImg}
+              alt="Ashlee seated with a baby in her lap near a sunlit window, sharing a soft, grounded moment together"
+              loading="lazy"
+              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_45%]"
+              className="w-full h-full object-cover object-[center_38%]"
             />
           </div>
         </div>
