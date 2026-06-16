@@ -136,10 +136,10 @@ function SfDoulaPage() {
               is a good place to start.
             </p>
             <p>
-              As a postpartum doula in San Francisco, I work with families who
-              want something more than a checklist: fourth trimester support that
-              honors your identity, your lineage, and the specific shape of your
-              household.
+              As a postpartum doula in San Francisco, I offer fourth trimester
+              support for families who want something more than a checklist: care
+              that honors your identity, your lineage, and the specific shape of
+              your household.
             </p>
           </div>
         </div>
