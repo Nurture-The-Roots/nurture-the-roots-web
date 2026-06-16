@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -140,22 +140,29 @@ function SiteHeader() {
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
-    { to: "/postpartum-doula-san-francisco", label: "SF Doula" },
-    { to: "/approach", label: "Approach" },
-    { to: "/testimonials", label: "Testimonials" },
+  ] as const;
+  const resourcesItems = [
     { to: "/blog", label: "Blog" },
     { to: "/media", label: "Media" },
     { to: "/faq", label: "FAQ" },
-    { to: "/contact", label: "Contact" },
-    { to: "/privacy", label: "Legal" },
   ] as const;
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const openMenu = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setResourcesOpen(true);
+  };
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setResourcesOpen(false), 120);
+  };
   return (
     <header className="sticky top-0 z-40 backdrop-blur-sm bg-[color-mix(in_oklab,var(--sand)_85%,transparent)] border-b border-border/60">
       <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between gap-6">
         <Link to="/" className="font-serif text-lg text-cocoa tracking-wide">
           Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-6 text-sm text-earth/80">
+        <nav className="hidden lg:flex items-center gap-7 text-sm text-earth/80">
           {nav.map((n) => (
             <Link
               key={n.to}
@@ -167,6 +174,51 @@ function SiteHeader() {
               {n.label}
             </Link>
           ))}
+          <div
+            className="relative"
+            onMouseEnter={openMenu}
+            onMouseLeave={scheduleClose}
+          >
+            <button
+              type="button"
+              onClick={() => setResourcesOpen((v) => !v)}
+              onFocus={openMenu}
+              aria-haspopup="menu"
+              aria-expanded={resourcesOpen}
+              className="hover:text-cocoa transition-colors inline-flex items-center gap-1"
+            >
+              Resources
+              <span aria-hidden className="text-[0.6rem] mt-0.5">▾</span>
+            </button>
+            {resourcesOpen && (
+              <div
+                role="menu"
+                className="absolute left-1/2 top-full -translate-x-1/2 mt-3 min-w-[10rem] rounded-xl border border-taupe/40 bg-sand shadow-[0_18px_40px_-22px_rgba(74,63,57,0.5)] py-2"
+                onMouseEnter={openMenu}
+                onMouseLeave={scheduleClose}
+              >
+                {resourcesItems.map((r) => (
+                  <Link
+                    key={r.to}
+                    to={r.to}
+                    role="menuitem"
+                    className="block px-4 py-2 text-sm text-cocoa/80 hover:bg-blush/60 hover:text-cocoa transition-colors"
+                    activeProps={{ className: "block px-4 py-2 text-sm text-cocoa bg-blush/40" }}
+                    onClick={() => setResourcesOpen(false)}
+                  >
+                    {r.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+          <Link
+            to="/contact"
+            className="hover:text-cocoa transition-colors"
+            activeProps={{ className: "text-cocoa" }}
+          >
+            Contact
+          </Link>
         </nav>
         <Link
           to="/contact"
@@ -176,7 +228,7 @@ function SiteHeader() {
         </Link>
       </div>
       <nav className="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 pb-3 text-xs tracking-wide text-earth/75">
-        {nav.map((n) => (
+        {[...nav, { to: "/resources", label: "Resources" }, { to: "/contact", label: "Contact" }].map((n) => (
           <Link key={n.to} to={n.to} className="hover:text-cocoa" activeProps={{ className: "text-cocoa" }} activeOptions={{ exact: n.to === "/" }}>
             {n.label}
           </Link>
