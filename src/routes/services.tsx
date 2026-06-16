@@ -22,58 +22,27 @@ const services = [
   {
     title: "Postpartum Doula Care",
     description:
-      "Daytime support focused on emotional care, newborn guidance, feeding support, and helping you feel grounded and confident in your new role.",
-    includes: [
-      "Emotional support",
-      "Feeding + lactation guidance",
-      "Newborn care education",
-      "Household support",
-      "Parent coaching",
-    ],
+      "Identity-aligned, attuned support for your fourth trimester.",
   },
   {
     title: "Overnight Newborn Care",
     description:
-      "Gentle, developmentally aligned overnight support so you can rest while your baby is cared for with attunement and expertise.",
-    includes: [
-      "Overnight newborn care",
-      "Feeding support",
-      "Sleep shaping (developmental, not conditioning)",
-      "Morning updates + guidance",
-    ],
+      "Rest, recovery, and continuity through the night.",
   },
   {
-    title: "NBO-Informed Newborn Sessions",
+    title: "NBO‑Informed Newborn Sessions",
     description:
-      "A structured, relational session using the Newborn Behavioral Observations (NBO) framework to help you understand your baby's cues, communication, and early developmental patterns.",
-    includes: [
-      "NBO assessment",
-      "Cue-based guidance",
-      "Developmental support",
-      "Personalized recommendations",
-    ],
+      "Learn to read your baby's cues with confidence.",
   },
   {
-    title: "Feeding & Lactation Support",
+    title: "Lactation Education",
     description:
-      "Gentle, evidence-based support for chestfeeding, bottle feeding, combination feeding, and early lactation challenges.",
-    includes: [
-      "Positioning + latch support",
-      "Pumping guidance",
-      "Bottle feeding education",
-      "Feeding plans tailored to your family",
-    ],
+      "Gentle, evidence‑based feeding support.",
   },
   {
-    title: "New Parent Support Coaching",
+    title: "Holistic Family Coaching",
     description:
-      "Relational, identity-aligned coaching for new parents navigating the emotional, developmental, and practical transitions of early parenthood.",
-    includes: [
-      "Identity support",
-      "Nervous system care",
-      "Communication + partnership support",
-      "Guidance through postpartum transitions",
-    ],
+      "Guidance for identity, rhythms, and relational wellbeing.",
   },
 ];
 
@@ -84,7 +53,7 @@ function ServicesPage() {
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
           <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Services</div>
-          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">Services</h1>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">How I Support Your Family</h1>
         </div>
       </section>
 
@@ -119,25 +88,19 @@ function ServicesPage() {
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-medium leading-tight text-cocoa">{s.title}</h2>
               </div>
-              <p className="text-lg text-cocoa/80 leading-[1.85] mb-10 max-w-2xl">
+              <p className="text-lg text-cocoa/80 leading-[1.85] max-w-2xl">
                 {s.description}
               </p>
-              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-5">
-                Includes
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {s.includes.map((item, j) => (
-                  <div
-                    key={j}
-                    className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-sand/70 px-5 py-4 text-sm text-cocoa"
-                  >
-                    <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
-                    <span className="leading-relaxed">{item}</span>
-                  </div>
-                ))}
-              </div>
             </article>
           ))}
+          <div className="text-center pt-4">
+            <Link
+              to="/contact"
+              className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
+            >
+              Explore services
+            </Link>
+          </div>
         </div>
       </section>
 
