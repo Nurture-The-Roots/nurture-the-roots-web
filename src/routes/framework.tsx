@@ -180,8 +180,9 @@ function FrameworkPage() {
             {pillars.map((p, i) => {
               const alt = i % 2 === 0;
               return (
+                <div key={p.numeral}>
+                  {i > 0 && <SectionDivider className="mb-16 md:mb-24" />}
                 <article
-                  key={p.numeral}
                   className={`rounded-2xl border border-taupe/25 p-10 md:p-14 ${alt ? "bg-blush/50" : "bg-sand/60"}`}
                 >
                   <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
@@ -218,9 +219,19 @@ function FrameworkPage() {
                     ))}
                   </div>
                 </article>
+                </div>
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* CLOSING REFLECTION */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+            {/* [PLACEHOLDER: A short closing reflection in your voice — one or two sentences that land the framework before the CTA.] */}
+          </p>
         </div>
       </section>
 
@@ -235,7 +246,7 @@ function FrameworkPage() {
               to="/services"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
             >
-              Explore Services
+              Begin Your Postpartum Support
             </Link>
             <Link
               to="/client-journey"
