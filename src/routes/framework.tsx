@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import bandAsset from "@/assets/branding-61.jpeg.asset.json";
 
 export const Route = createFileRoute("/framework")({
   head: () => ({
