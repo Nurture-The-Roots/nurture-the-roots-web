@@ -247,6 +247,12 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="mt-24 bg-taupe text-cocoa">
+      {/* Brand anchor line */}
+      <div className="border-b border-cocoa/10">
+        <p className="mx-auto max-w-3xl px-6 py-8 text-center font-serif italic text-base md:text-lg text-cocoa/80 leading-[1.6]">
+          Rooted care for the fourth trimester — San Francisco Bay Area.
+        </p>
+      </div>
       <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-4">
         {/* Brand Info */}
         <div>
@@ -296,14 +302,14 @@ function SiteFooter() {
 
       {/* Bottom bar */}
       <div className="border-t border-cocoa/15">
-        <div className="mx-auto max-w-6xl px-6 py-6">
+        <div className="mx-auto max-w-6xl px-6 py-10 space-y-6">
           <p className="text-xs text-cocoa/65 text-center">
             My support is relational and educational, not medical. Please consult your healthcare provider for medical concerns.
           </p>
-          <p className="mt-2 text-xs text-cocoa/65 text-center max-w-2xl mx-auto">
+          <p className="text-xs text-cocoa/65 text-center max-w-2xl mx-auto">
             The Nurture The Roots™ Postpartum Framework and related language are original intellectual property of Nurture The Roots LLC.
           </p>
-          <p className="mt-2 text-xs text-cocoa/65 text-center">
+          <p className="text-xs text-cocoa/65 text-center">
             © 2026 Nurture the Roots LLC. All rights reserved.
           </p>
         </div>
