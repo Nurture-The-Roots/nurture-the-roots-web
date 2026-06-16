@@ -8,6 +8,7 @@ import joyResponsive from "@/assets/branding-59.responsive.json";
 import embraceResponsive from "@/assets/branding-photos-50.responsive.json";
 import portraitResponsive from "@/assets/branding-photos-49.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 const aboutImg = walkingAsset.url;
 
 export const Route = createFileRoute("/about")({
