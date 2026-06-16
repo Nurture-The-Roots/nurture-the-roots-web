@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import mediaImageAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
 import teachingResponsive from "@/assets/branding-photos-53.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { MediaEmbeds } from "@/components/integrations/MediaEmbeds";
 
 export const Route = createFileRoute("/media")({
   head: () => ({
@@ -113,6 +114,9 @@ function MediaPage() {
           </div>
         </div>
       </section>
+
+      {/* TIKTOK + YOUTUBE EMBEDS */}
+      <MediaEmbeds />
 
       {/* TOPICS I SPEAK ON */}
       <section className="bg-blush/40">

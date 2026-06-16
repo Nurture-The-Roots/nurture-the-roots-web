@@ -5,6 +5,8 @@ import ashleePortraitAsset from "@/assets/ashlee-portrait.jpeg.asset.json";
 import branding60Responsive from "@/assets/branding-60.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
+import { GoogleReviewsBlock } from "@/components/integrations/GoogleReviewsBlock";
+import { IntakeButton } from "@/components/integrations/DubsadoEmbed";
 const aboutImg = walkingAsset.url;
 
 export const Route = createFileRoute("/about")({
@@ -377,6 +379,21 @@ function AboutPage() {
               className="w-full h-full object-cover object-[center_42%]"
             />
           </div>
+        </div>
+      </section>
+
+      {/* GOOGLE REVIEWS */}
+      <GoogleReviewsBlock />
+
+      {/* BEGIN INTAKE */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-3xl px-6 pb-20 md:pb-28 text-center">
+          <IntakeButton className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors">
+            Begin Intake
+          </IntakeButton>
+          <p className="mt-3 text-xs text-cocoa/60">
+            Opens our intake form — a gentle first step to working together.
+          </p>
         </div>
       </section>
 
