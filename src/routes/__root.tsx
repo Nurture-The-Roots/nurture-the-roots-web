@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -155,6 +156,10 @@ function SiteHeader() {
   ] as const;
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const resourcesActive = resourcesItems.some((r) =>
+    r.to === "/" ? pathname === "/" : pathname.startsWith(r.to),
+  );
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const openMenu = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -194,8 +199,8 @@ function SiteHeader() {
             <Link
               key={n.to}
               to={n.to}
-              className="hover:text-cocoa transition-colors"
-              activeProps={{ className: "text-cocoa" }}
+              className="nav-link hover:text-cocoa transition-colors"
+              activeProps={{ className: "nav-link is-active text-cocoa", "aria-current": "page" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
@@ -212,7 +217,8 @@ function SiteHeader() {
               onFocus={openMenu}
               aria-haspopup="menu"
               aria-expanded={resourcesOpen}
-              className="hover:text-cocoa transition-colors inline-flex items-center gap-1"
+              aria-current={resourcesActive ? "page" : undefined}
+              className={`nav-link hover:text-cocoa transition-colors inline-flex items-center gap-1 ${resourcesActive ? "is-active text-cocoa" : ""}`}
             >
               Resources
               <span aria-hidden className="text-[0.6rem] mt-0.5">▾</span>
@@ -230,7 +236,11 @@ function SiteHeader() {
                     to={r.to}
                     role="menuitem"
                     className="block px-4 py-2 text-sm text-cocoa/80 hover:bg-blush/60 hover:text-cocoa transition-colors"
-                    activeProps={{ className: "block px-4 py-2 text-sm text-cocoa bg-blush/40" }}
+                    activeProps={{
+                      className:
+                        "block px-4 py-2 text-sm text-cocoa bg-blush/40 border-l-2 border-clay",
+                      "aria-current": "page",
+                    }}
                     onClick={() => setResourcesOpen(false)}
                   >
                     {r.label}
@@ -241,8 +251,8 @@ function SiteHeader() {
           </div>
           <Link
             to="/contact"
-            className="hover:text-cocoa transition-colors"
-            activeProps={{ className: "text-cocoa" }}
+            className="nav-link hover:text-cocoa transition-colors"
+            activeProps={{ className: "nav-link is-active text-cocoa", "aria-current": "page" }}
           >
             Contact
           </Link>
@@ -299,8 +309,12 @@ function SiteHeader() {
               <Link
                 to={n.to}
                 onClick={() => setMobileOpen(false)}
-                className="block py-3 font-serif text-lg text-cocoa/85 hover:text-clay transition-colors"
-                activeProps={{ className: "block py-3 font-serif text-lg text-clay" }}
+                className="block py-3 pl-3 border-l-2 border-transparent font-serif text-lg text-cocoa/85 hover:text-clay transition-colors"
+                activeProps={{
+                  className:
+                    "block py-3 pl-3 border-l-2 border-clay font-serif text-lg text-clay font-medium",
+                  "aria-current": "page",
+                }}
                 activeOptions={{ exact: n.to === "/" }}
               >
                 {n.label}
