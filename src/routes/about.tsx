@@ -1,12 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
-import faceAsset from "@/assets/branding-58.jpeg.asset.json";
-import joyAsset from "@/assets/branding-59.jpeg.asset.json";
-import walkingResponsive from "@/assets/about-ashlee-walking.responsive.json";
-import faceResponsive from "@/assets/branding-58.responsive.json";
-import joyResponsive from "@/assets/branding-59.responsive.json";
-import embraceResponsive from "@/assets/branding-photos-50.responsive.json";
-import portraitResponsive from "@/assets/branding-photos-49.responsive.json";
+import ashleeBurpingBabyAsset from "@/assets/ashlee-burping-baby.jpeg.asset.json";
+import ashleeBabyLaughingAsset from "@/assets/ashlee-baby-laughing.jpeg.asset.json";
+import ashleeBabyCloseupAsset from "@/assets/ashlee-baby-closeup.jpeg.asset.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 const aboutImg = walkingAsset.url;
@@ -14,22 +10,47 @@ const aboutImg = walkingAsset.url;
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Ashlee McKenzie — Certified Postpartum Doula & NBO‑Trained Newborn Specialist | San Francisco" },
-      { name: "description", content: "Meet Ashlee McKenzie: ProDoula Certified Postpartum Doula, Brazelton NBO‑trained Newborn Care Specialist, CAPPA Lactation Educator, and Fourth Trimester Expert serving San Francisco families." },
-      { name: "keywords", content: "postpartum doula San Francisco, certified postpartum doula, newborn care specialist, NBO trained, Brazelton Touchpoints, CAPPA lactation educator, fourth trimester expert, TrustLine registered, infant massage certified, Ashlee McKenzie" },
-      { property: "og:title", content: "Ashlee McKenzie — Certified Postpartum Doula, NBO‑Trained Newborn Care Specialist" },
-      { property: "og:description", content: "Lineage‑rooted postpartum support backed by ProDoula, Brazelton NBO Level 1, CAPPA Lactation Educator, Infant Massage USA, and TrustLine credentials — serving San Francisco families." },
+      {
+        title:
+          "Ashlee McKenzie — Certified Postpartum Doula & NBO‑Trained Newborn Specialist | San Francisco",
+      },
+      {
+        name: "description",
+        content:
+          "Meet Ashlee McKenzie: ProDoula Certified Postpartum Doula, Brazelton NBO‑trained Newborn Care Specialist, CAPPA Lactation Educator, and Fourth Trimester Expert serving San Francisco families.",
+      },
+      {
+        name: "keywords",
+        content:
+          "postpartum doula San Francisco, certified postpartum doula, newborn care specialist, NBO trained, Brazelton Touchpoints, CAPPA lactation educator, fourth trimester expert, TrustLine registered, infant massage certified, Ashlee McKenzie",
+      },
+      {
+        property: "og:title",
+        content:
+          "Ashlee McKenzie — Certified Postpartum Doula, NBO‑Trained Newborn Care Specialist",
+      },
+      {
+        property: "og:description",
+        content:
+          "Lineage‑rooted postpartum support backed by ProDoula, Brazelton NBO Level 1, CAPPA Lactation Educator, Infant Massage USA, and TrustLine credentials — serving San Francisco families.",
+      },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "https://nurturetheroots.co/about" },
       { property: "og:image", content: aboutImg },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Ashlee McKenzie — Certified Postpartum Doula & NBO‑Trained Newborn Care Specialist" },
-      { name: "twitter:description", content: "ProDoula‑certified, Brazelton NBO‑trained, CAPPA Lactation Educator — fourth trimester support for San Francisco families." },
+      {
+        name: "twitter:title",
+        content:
+          "Ashlee McKenzie — Certified Postpartum Doula & NBO‑Trained Newborn Care Specialist",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "ProDoula‑certified, Brazelton NBO‑trained, CAPPA Lactation Educator — fourth trimester support for San Francisco families.",
+      },
       { name: "twitter:image", content: aboutImg },
     ],
-    links: [
-      { rel: "canonical", href: "https://nurturetheroots.co/about" },
-    ],
+    links: [{ rel: "canonical", href: "https://nurturetheroots.co/about" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -43,12 +64,51 @@ export const Route = createFileRoute("/about")({
           worksFor: { "@type": "Organization", name: "Nurture The Roots" },
           areaServed: { "@type": "City", name: "San Francisco" },
           hasCredential: [
-            { "@type": "EducationalOccupationalCredential", name: "ProDoula Certified Postpartum & Infant Care Doula", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "ProDoula" } },
-            { "@type": "EducationalOccupationalCredential", name: "Newborn Behavioral Observations (NBO) System — Level 1", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "The Brazelton Institute, Boston Children's Hospital / Harvard Medical School Teaching Hospital" } },
-            { "@type": "EducationalOccupationalCredential", name: "Beyond Trauma‑Informed Care: A Developmental & Relational Framework for Healing", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "Brazelton Touchpoints Center" } },
-            { "@type": "EducationalOccupationalCredential", name: "CAPPA Lactation Educator Training", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "Childbirth and Postpartum Professional Association (CAPPA)" } },
-            { "@type": "EducationalOccupationalCredential", name: "Infant Massage Certification Training", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "Infant Massage USA" } },
-            { "@type": "EducationalOccupationalCredential", name: "TrustLine Registered Childcare Provider", credentialCategory: "registration", recognizedBy: { "@type": "Organization", name: "California Department of Social Services" } },
+            {
+              "@type": "EducationalOccupationalCredential",
+              name: "ProDoula Certified Postpartum & Infant Care Doula",
+              credentialCategory: "certification",
+              recognizedBy: { "@type": "Organization", name: "ProDoula" },
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              name: "Newborn Behavioral Observations (NBO) System — Level 1",
+              credentialCategory: "certification",
+              recognizedBy: {
+                "@type": "Organization",
+                name: "The Brazelton Institute, Boston Children's Hospital / Harvard Medical School Teaching Hospital",
+              },
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              name: "Beyond Trauma‑Informed Care: A Developmental & Relational Framework for Healing",
+              credentialCategory: "certification",
+              recognizedBy: { "@type": "Organization", name: "Brazelton Touchpoints Center" },
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              name: "CAPPA Lactation Educator Training",
+              credentialCategory: "certification",
+              recognizedBy: {
+                "@type": "Organization",
+                name: "Childbirth and Postpartum Professional Association (CAPPA)",
+              },
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              name: "Infant Massage Certification Training",
+              credentialCategory: "certification",
+              recognizedBy: { "@type": "Organization", name: "Infant Massage USA" },
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              name: "TrustLine Registered Childcare Provider",
+              credentialCategory: "registration",
+              recognizedBy: {
+                "@type": "Organization",
+                name: "California Department of Social Services",
+              },
+            },
           ],
         }),
       },
@@ -72,9 +132,15 @@ function AboutPage() {
             walking alongside San Francisco families through the earliest days of new parenthood.
           </p>
           <ul className="mt-8 flex flex-wrap justify-center gap-2 text-[0.7rem] uppercase tracking-[0.22em] text-cocoa/70">
-            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Certified Postpartum Doula</li>
-            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Newborn Care Specialist</li>
-            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Fourth Trimester Expert</li>
+            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">
+              Certified Postpartum Doula
+            </li>
+            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">
+              Newborn Care Specialist
+            </li>
+            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">
+              Fourth Trimester Expert
+            </li>
           </ul>
           <p className="mt-10 mx-auto max-w-xl text-[16px] text-cocoa/75 leading-[1.85]">
             {/* [PLACEHOLDER: A short grounding line under the hero in your voice — one sentence that invites the reader in.] */}
@@ -106,11 +172,13 @@ function AboutPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 pt-8 pb-24 md:pt-12 md:pb-36 font-sans">
           <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/5] max-w-md">
-            <ResponsiveImage
-              source={embraceResponsive}
-              alt="Ashlee cradling a swaddled newborn close to her chest in soft window light — a moment of attuned, tender presence"
+            <img
+              src={ashleeBurpingBabyAsset.url}
+              alt="Ashlee holding a baby close against her chest in a softly lit room, a quiet moment of grounded care"
+              loading="lazy"
+              decoding="async"
               sizes="(min-width: 768px) 448px, 100vw"
-              className="w-full h-full object-cover object-[center_25%]"
+              className="w-full h-full object-cover object-[center_28%]"
             />
           </div>
           <div className="text-center mb-10">
@@ -155,8 +223,8 @@ function AboutPage() {
                   "A short, attuned quote in the family's own words."
                 </blockquote>
                 <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-clay">
-                  {/* [PLACEHOLDER: Attribution — e.g. "— A San Francisco family"] */}
-                  — A family Ashlee served
+                  {/* [PLACEHOLDER: Attribution — e.g. "— A San Francisco family"] */}— A family
+                  Ashlee served
                 </figcaption>
               </figure>
             ))}
@@ -203,7 +271,9 @@ function AboutPage() {
       <section className="bg-blush/40">
         <div className="mx-auto max-w-3xl px-6 py-24 md:py-36 font-sans">
           <div className="text-center mb-16">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Why This Work Matters</div>
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+              Why This Work Matters
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
               The fourth trimester is a sacred window
             </h2>
@@ -215,11 +285,13 @@ function AboutPage() {
             </p>
           </div>
           <div className="mt-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/3] max-w-2xl mx-auto">
-            <ResponsiveImage
-              source={faceResponsive}
-              alt="Ashlee sharing a tender, smiling moment face‑to‑face with a baby in her arms"
+            <img
+              src={ashleeBabyLaughingAsset.url}
+              alt="Ashlee smiling face-to-face with a baby, both fully engaged in a playful relational moment"
+              loading="lazy"
+              decoding="async"
               sizes="(min-width: 768px) 672px, 100vw"
-              className="w-full h-full object-cover object-[center_30%]"
+              className="w-full h-full object-cover object-[center_48%]"
             />
           </div>
         </div>
@@ -232,12 +304,15 @@ function AboutPage() {
         </div>
         <div className="mx-auto max-w-4xl px-6 py-24 md:py-32 font-sans">
           <div className="text-center mb-14">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Trainings & Certifications</div>
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+              Trainings & Certifications
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
               Grounded in continued learning
             </h2>
             <p className="mt-6 mx-auto max-w-xl font-serif italic text-lg text-cocoa/75 leading-[1.5]">
-              A foundation of evidence‑based training in postpartum care, newborn development, and relational support.
+              A foundation of evidence‑based training in postpartum care, newborn development, and
+              relational support.
             </p>
           </div>
           <ul className="grid sm:grid-cols-2 gap-5">
@@ -253,7 +328,8 @@ function AboutPage() {
                 year: "2025",
               },
               {
-                title: "Beyond Trauma‑Informed Care: A Developmental & Relational Framework for Healing",
+                title:
+                  "Beyond Trauma‑Informed Care: A Developmental & Relational Framework for Healing",
                 org: "Brazelton Touchpoints Center™",
                 year: "2024",
               },
@@ -277,7 +353,9 @@ function AboutPage() {
                 key={i}
                 className="rounded-2xl border border-taupe/25 bg-blush/40 px-6 py-6 text-cocoa"
               >
-                <div className="text-[0.65rem] uppercase tracking-[0.24em] text-clay mb-2">{cert.year}</div>
+                <div className="text-[0.65rem] uppercase tracking-[0.24em] text-clay mb-2">
+                  {cert.year}
+                </div>
                 <h3 className="font-serif text-lg md:text-xl font-medium leading-[1.3] text-cocoa">
                   {cert.title}
                 </h3>
@@ -292,11 +370,13 @@ function AboutPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <ResponsiveImage
-              source={portraitResponsive}
-              alt="Ashlee standing in a sunlit room holding a sleeping baby in a rust-colored swaddle, smiling softly at the camera"
+            <img
+              src={ashleeBabyCloseupAsset.url}
+              alt="Ashlee cradling a baby in her lap by a bright window, both held in a gentle and attuned portrait"
+              loading="lazy"
+              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_40%]"
+              className="w-full h-full object-cover object-[center_42%]"
             />
           </div>
         </div>
@@ -306,9 +386,12 @@ function AboutPage() {
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center font-sans">
           <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Invitation</div>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">You don't have to navigate this beginning alone.</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+            You don't have to navigate this beginning alone.
+          </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
-            If you're looking for support that honors who you are and the family you're becoming, I'd be honored to walk with you.
+            If you're looking for support that honors who you are and the family you're becoming,
+            I'd be honored to walk with you.
           </p>
           <div className="mt-12">
             <Link

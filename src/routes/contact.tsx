@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import contactFamilyAsset from "@/assets/contact-family.jpeg.asset.json";
-import contactFamilyResponsive from "@/assets/contact-family.responsive.json";
+import ashleeBurpingBabyAsset from "@/assets/ashlee-burping-baby.jpeg.asset.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -35,14 +34,20 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Nurture The Roots™" },
-      { name: "description", content: "Reach out to Ashlee at Nurture The Roots™ for warm, attuned postpartum support in San Francisco." },
+      {
+        name: "description",
+        content:
+          "Reach out to Ashlee at Nurture The Roots™ for warm, attuned postpartum support in San Francisco.",
+      },
       { property: "og:title", content: "Contact — Nurture The Roots™" },
-      { property: "og:description", content: "I'd love to connect with you. Reach out and I'll respond with warmth, clarity, and care." },
+      {
+        property: "og:description",
+        content:
+          "I'd love to connect with you. Reach out and I'll respond with warmth, clarity, and care.",
+      },
       { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/contact" },
     ],
-    links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/contact" },
-    ],
+    links: [{ rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/contact" }],
   }),
   component: ContactPage,
 });
@@ -81,18 +86,20 @@ function ContactPage() {
       // keep a single backend schema while honoring the user's expanded form.
       const extraLines: string[] = [];
       if (data.location) extraLines.push(`Location: ${data.location}`);
-      if (data.heardAbout) extraLines.push(`How they heard about Nurture The Roots: ${data.heardAbout}`);
+      if (data.heardAbout)
+        extraLines.push(`How they heard about Nurture The Roots: ${data.heardAbout}`);
       const composedMessage = extraLines.length
         ? `${data.message}\n\n— — —\n${extraLines.join("\n")}`
         : data.message;
       const { location: _l, heardAbout: _h, ...rest } = data;
-      void _l; void _h;
+      void _l;
+      void _h;
       await submitContact({ data: { ...rest, message: composedMessage } });
       setSent(true);
       reset();
     } catch (err) {
       setSubmitError(
-        err instanceof Error ? err.message : "Something went wrong. Please try again."
+        err instanceof Error ? err.message : "Something went wrong. Please try again.",
       );
     } finally {
       setIsSubmitting(false);
@@ -105,7 +112,9 @@ function ContactPage() {
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
           <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Contact</div>
-          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">Contact</h1>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">
+            Contact
+          </h1>
         </div>
       </section>
 
@@ -115,12 +124,10 @@ function ContactPage() {
           <p className="mb-8 font-serif italic text-xl text-cocoa/85 leading-[1.5]">
             {/* [PLACEHOLDER: A grounding intro line above the form in your voice.] */}
           </p>
-          <p className="text-[17px] text-cocoa/80 leading-[1.85]">
-            I'd love to connect with you.
-          </p>
+          <p className="text-[17px] text-cocoa/80 leading-[1.85]">I'd love to connect with you.</p>
           <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
-            Whether you're ready to book support or simply exploring your options, reach out
-            and I'll respond with warmth, clarity, and care.
+            Whether you're ready to book support or simply exploring your options, reach out and
+            I'll respond with warmth, clarity, and care.
           </p>
         </div>
       </section>
@@ -134,8 +141,7 @@ function ContactPage() {
               "A short, attuned quote from a family Ashlee served."
             </blockquote>
             <figcaption className="mt-6 text-xs uppercase tracking-[0.22em] text-clay">
-              {/* [PLACEHOLDER: Attribution.] */}
-              — A San Francisco family
+              {/* [PLACEHOLDER: Attribution.] */}— A San Francisco family
             </figcaption>
           </figure>
         </div>
@@ -144,9 +150,11 @@ function ContactPage() {
       {/* PHOTO */}
       <section className="bg-background">
         <div className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
-          <ResponsiveImage
-            source={contactFamilyResponsive}
-            alt="Ashlee McKenzie supporting a family during the fourth trimester"
+          <img
+            src={ashleeBurpingBabyAsset.url}
+            alt="Ashlee holding a baby close against her shoulder in a quiet, reassuring moment of postpartum support"
+            loading="lazy"
+            decoding="async"
             sizes="(min-width: 1024px) 1024px, 100vw"
             className="w-full rounded-2xl object-cover object-[center_30%] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9] shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]"
           />
@@ -158,10 +166,12 @@ function ContactPage() {
         <div className="mx-auto max-w-3xl px-6 pb-24 md:pb-32">
           {sent ? (
             <div className="rounded-2xl bg-blush/50 border border-taupe/25 p-10 md:p-14 text-center">
-              <h2 className="font-serif text-3xl md:text-4xl font-medium leading-[1.15] text-cocoa">Thank you.</h2>
+              <h2 className="font-serif text-3xl md:text-4xl font-medium leading-[1.15] text-cocoa">
+                Thank you.
+              </h2>
               <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
-                Your inquiry has been received with care. I'll respond within two days,
-                often sooner. Until then — be gentle with yourself.
+                Your inquiry has been received with care. I'll respond within two days, often
+                sooner. Until then — be gentle with yourself.
               </p>
               <button
                 onClick={() => setSent(false)}
@@ -222,7 +232,7 @@ function ContactPage() {
                   </div>
                   <div>
                     <Label htmlFor="dueDate" className="block text-sm text-cocoa mb-2">
-                    Estimated Due Date or Baby's Birth Date
+                      Estimated Due Date or Baby's Birth Date
                     </Label>
                     <Input
                       id="dueDate"
@@ -254,7 +264,11 @@ function ContactPage() {
                     value={watch("supportType") || ""}
                     onValueChange={(value) => setValue("supportType", value)}
                   >
-                  <SelectTrigger id="supportType" aria-label="Type of support" className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth focus:ring-clay focus:ring-offset-0 h-auto">
+                    <SelectTrigger
+                      id="supportType"
+                      aria-label="Type of support"
+                      className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth focus:ring-clay focus:ring-offset-0 h-auto"
+                    >
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent className="pointer-events-auto">
@@ -296,9 +310,7 @@ function ContactPage() {
                   )}
                 </div>
 
-                {submitError && (
-                  <p className="text-sm text-red-600">{submitError}</p>
-                )}
+                {submitError && <p className="text-sm text-red-600">{submitError}</p>}
 
                 <div className="pt-2">
                   <button
@@ -313,7 +325,8 @@ function ContactPage() {
                   Your words are held in confidence. I respond personally to every message.
                 </p>
                 <p className="mt-6 text-[15px] text-cocoa/75 leading-[1.85] font-serif italic">
-                  Your family does not have to move through postpartum alone. Support is not a luxury — it is part of the postpartum design.
+                  Your family does not have to move through postpartum alone. Support is not a
+                  luxury — it is part of the postpartum design.
                 </p>
               </form>
             </div>
