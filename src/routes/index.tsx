@@ -4,6 +4,7 @@ import aboutAsset from "@/assets/branding-65.jpeg.asset.json";
 import bandAsset from "@/assets/branding-62.jpeg.asset.json";
 import aboutResponsive from "@/assets/branding-65.responsive.json";
 import bandResponsive from "@/assets/branding-62.responsive.json";
+import editorialResponsive from "@/assets/branding-photos-48.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 const welcomeImg = welcomeAsset.url;
 
@@ -269,6 +270,20 @@ function Index() {
           <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
             It is for parents who want to listen to their baby, trust their rhythms, protect their values, and move through postpartum as a meaningful passage rather than a season to simply survive.
           </p>
+        </div>
+      </section>
+
+      {/* IMAGE BAND — editorial sanctuary */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
+            <ResponsiveImage
+              source={editorialResponsive}
+              alt="Ashlee standing in a sunlit, plant-filled living room cradling a swaddled newborn — an editorial portrait of warm, rooted presence"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-[center_45%]"
+            />
+          </div>
         </div>
       </section>
 
