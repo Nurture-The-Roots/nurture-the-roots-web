@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nurture-the-roots-web.lovable.app/sitemap.xml
+Sitemap: https://nurturetheroots.co/sitemap.xml
