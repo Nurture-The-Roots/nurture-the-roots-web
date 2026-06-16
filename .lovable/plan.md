@@ -1,61 +1,68 @@
-## Plan: Nurture The Roots™ full site rebuild
+## Goal
 
-This is a substantial rebuild on top of the existing site. I'll preserve your current warm editorial design language but extend it with the new framework, copy, and pages from your brief.
+Deliver smaller, faster images on mobile without relying on Cloudflare Image Resizing. Each photo gets pre-generated AVIF + WebP + JPEG variants at multiple widths, served via a `<picture>` element so the browser picks the best format and width for the device.
 
-### Pages (routes under `src/routes/`)
-Keep / refresh: `index.tsx`, `about.tsx`, `services.tsx`, `approach.tsx` (repurpose → **The Framework**), `contact.tsx`, plus existing `testimonials`, `blog`, `media`, `faq`, `disclaimer`, `privacy`, `terms`.
+## Why this approach
 
-New routes to add:
-- `framework.tsx` — The Nurture The Roots™ Framework (four pillars + twelve practices, root-system visual)
-- `client-journey.tsx` — Four-phase journey (Rooting / Tending / Strengthening / Integrating)
-- `workshops.tsx` — Workshops + The Rooted Fourth Trimester Course (six modules)
-- `resources.tsx` — refresh existing route with the 12 resource cards + Signature Reflections
+- Lovable's asset CDN serves originals as-is — no on-the-fly format/width negotiation.
+- A server-side transformer (sharp) won't run on the Workers runtime used here.
+- Pre-built variants are a one-time cost at design time, then served straight from the CDN with the same speed and caching as today.
 
-Nav (header + footer) updates to include: Home, About, The Framework, Services, Client Journey, Workshops, Resources, Contact. Legal stays in footer.
+## What changes
 
-### Home page rewrite
-- Hero: "Postpartum care begins at the roots." + your subheadline + two CTAs (Book a Consultation / Explore the Framework).
-- Opening copy block (fourth trimester as threshold).
-- "The Nurture The Roots™ Difference" section.
-- "The Four Pillars" as four cards.
-- "For Families Who Want More Than Survival" + closing CTA.
+### 1. Generate variants for every photo
 
-### About page rewrite
-Replace current Meet Ashlee body with your "A Method Rooted in Lived Experience" copy + the credentials/influences list + "Why This Work Is Different" + "Core Practitioner Commitments" list. Keep the existing Trainings & Certifications grid below.
+A one-off Node script (`scripts/generate-image-variants.mjs`) using `sharp`:
 
-### Framework page (`framework.tsx`)
-- Headline + framework statement.
-- Four pillar sections, each with: Core Belief, Description, three Practices with their descriptions.
-- Visual: simple CSS root-system / radial diagram with "identity · lineage · relationship · rhythm" at center.
+- Reads every `src/assets/branding-*.jpeg` / hero / portrait original (re-uploaded temporarily, or pulled from the existing CDN URL).
+- For each source, emits widths `[480, 768, 1152, 1600]` × formats `[avif, webp, jpeg]` — 12 files per photo.
+- Uploads each via `lovable-assets create` and writes a single combined pointer file like `src/assets/branding-62.responsive.json` listing every variant's URL + width + format.
 
-### Services page rewrite
-Replace current service list with five service cards (Rooted Postpartum Planning, In-Home / Virtual Support, Newborn Cue + Attunement, Sovereign Family Systems, Integration + Continuity), each with description, "Includes" list, and CTA. Add adaptation note at bottom.
+### 2. Add a `<ResponsiveImage>` component
 
-### Client Journey, Workshops, Resources
-Build per your spec — phased layouts, module list, resource card grid with "Coming Soon" buttons, Signature Reflections prompts.
+`src/components/ResponsiveImage.tsx` wraps the variants in a `<picture>`:
 
-### Contact page
-Extend current contact form with: Phone, Estimated due date / baby's age, Location, "What kind of support are you seeking?", "How did you hear about Nurture The Roots?". Keep server-function submission flow intact; just add fields. Closing copy block added.
+```tsx
+<picture>
+  <source type="image/avif" srcSet="…480w, …768w, …1152w, …1600w" sizes={sizes} />
+  <source type="image/webp" srcSet="…480w, …768w, …1152w, …1600w" sizes={sizes} />
+  <img src="…1152w.jpg" srcSet="…480w, …768w, …1152w, …1600w" sizes={sizes}
+       alt={alt} loading={priority ? "eager" : "lazy"}
+       fetchPriority={priority ? "high" : "auto"}
+       decoding="async" width={…} height={…}
+       className={className} />
+</picture>
+```
 
-### Visual / design tokens (`src/styles.css`)
-Shift palette toward your earthy direction while keeping the calm editorial feel:
-- Add tokens: `--sage`, `--moss`, `--cream`, `--clay`, `--cedar`, `--terracotta`, `--ivory`, `--taupe`, `--forest` as OKLCH values.
-- Map existing semantic tokens (`--background`, `--primary`, `--accent`, etc.) onto the new palette so all current components shift cohesively.
-- Keep serif display + sans body pairing already in place.
-- Add subtle botanical/root SVG accents as reusable inline components.
+Browsers auto-negotiate: Safari picks AVIF/WebP if supported, Chrome on a 320px screen pulls the 480w file, retina desktops pull 1600w.
 
-### SEO per route
-Each new route gets its own `head()` with unique title, description, og:title/description/url, canonical, and route-appropriate JSON-LD (Service / Course / FAQPage where relevant). Sitemap (`sitemap[.]xml.ts`) updated with the new URLs.
+### 3. Swap every `<img src={someAsset.url}>` for `<ResponsiveImage source={someAssetResponsive} ... />`
 
-### Footer
-Add framework, client-journey, workshops to footer nav. Add IP line: "The Nurture The Roots™ Postpartum Framework and related language are original intellectual property of Nurture The Roots LLC."
+Routes touched (one band/portrait each, ~12 sites total):
+`index.tsx`, `services.tsx`, `framework.tsx`, `client-journey.tsx`, `workshops.tsx`, `resources.tsx`, `testimonials.tsx`, `about.tsx` (×2), `contact.tsx`, `blog.what-is-a-postpartum-doula.tsx`.
 
-### Out of scope (flag, don't build)
-- Real downloadable PDFs for the 12 resources — placeholders with "Coming Soon".
-- Waitlist signup backend (workshop CTA will route to Contact for now unless you want a dedicated form).
-- New hero/botanical photography — I'll reuse existing assets; we can generate new imagery in a follow-up.
+Existing focal points (`object-[center_30%]`), aspect-ratio classes, shadows, and rounded corners pass straight through.
 
-### Confirm before I build
-1. **Palette shift** — your current site uses blush/cocoa/taupe. Move fully to sage/moss/cedar/terracotta, or keep current warm cream base and just add sage/moss/terracotta as accents? (I recommend the latter to preserve continuity.)
-2. **Waitlist** — route Workshops CTA to Contact, or build a separate waitlist form?
-3. **Approach page** — replace `/approach` with `/framework` (redirect), or keep both?
+### 4. Keep originals as fallback
+
+Original `.asset.json` files stay in place so anything not migrated keeps working.
+
+## Expected impact
+
+- Mobile payload per photo drops roughly **60–80%** (AVIF at 480w vs original JPEG at full res).
+- LCP image gets `fetchPriority="high"` + the smallest-acceptable width preloaded.
+- No runtime cost, no extra service, no Cloudflare dependency.
+
+## Out of scope
+
+- SVG icons and the logo (already vector).
+- Migrating to Cloudflare Images later — possible additive path if you ever put the domain on a CF zone.
+
+## Open question I'll need answered before running the script
+
+The variant generator needs the original full-resolution files. Two options:
+
+- **(A)** I download each from the current CDN URL (lower quality if the originals were already compressed at upload).
+- **(B)** You re-drop the originals into chat so we start from max quality.
+
+I'll proceed with (A) by default unless you say otherwise.
