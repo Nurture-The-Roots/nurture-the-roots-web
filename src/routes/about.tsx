@@ -5,15 +5,15 @@ const aboutImg = walkingAsset.url;
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Ashlee McKenzie — Nurture The Roots™" },
-      { name: "description", content: "Ashlee McKenzie is a postpartum doula, newborn care specialist, and family coach with 16+ years of lineage-rooted practice in San Francisco." },
-      { property: "og:title", content: "About Ashlee McKenzie" },
-      { property: "og:description", content: "Postpartum doula, newborn care specialist, and family coach." },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/about" },
+      { title: "About Ashlee McKenzie — Fourth Trimester Expert | Nurture The Roots™" },
+      { name: "description", content: "Ashlee McKenzie is a Certified Postpartum Doula, Newborn Care Specialist, and Fourth Trimester Expert serving families across San Francisco." },
+      { property: "og:title", content: "About Ashlee McKenzie — Fourth Trimester Expert" },
+      { property: "og:description", content: "Lineage‑rooted postpartum support from a Fourth Trimester Expert serving San Francisco families." },
+      { property: "og:url", content: "https://nurturetheroots.co/about" },
       { property: "og:image", content: aboutImg },
     ],
     links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/about" },
+      { rel: "canonical", href: "https://nurturetheroots.co/about" },
     ],
   }),
   component: AboutPage,
@@ -30,30 +30,32 @@ function AboutPage() {
             Hi, I'm <span className="italic text-clay">Ashlee McKenzie</span>
           </h1>
           <p className="mt-8 mx-auto max-w-2xl font-serif italic text-xl md:text-2xl text-cocoa/75 leading-[1.5]">
-            A certified postpartum doula, newborn care specialist, and new parent support coach —
-            walking alongside families through the fourth trimester.
+            A Certified Postpartum Doula, Newborn Care Specialist, and Fourth Trimester Expert —
+            walking alongside San Francisco families through the earliest days of new parenthood.
           </p>
           <ul className="mt-8 flex flex-wrap justify-center gap-2 text-[0.7rem] uppercase tracking-[0.22em] text-cocoa/70">
             <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Certified Postpartum Doula</li>
             <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Newborn Care Specialist</li>
-            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">New Parent Support Coach</li>
+            <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Fourth Trimester Expert</li>
           </ul>
         </div>
       </section>
 
-      {/* HERO IMAGE + INTRO */}
+      {/* MEET ASHLEE */}
       <section className="bg-background">
         <div className="mx-auto max-w-2xl px-6 py-24 md:py-32 font-sans">
+          <div className="text-center mb-12">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Meet Ashlee</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              A grounded presence for your fourth trimester
+            </h2>
+          </div>
           <div className="space-y-8 text-[17px] text-cocoa/80 leading-[1.85]">
             <p>
-              For more than sixteen years, I've supported families through one of the most tender
-              and transformative seasons of their lives. My work is rooted in clarity, attunement,
-              and the belief that the fourth trimester is not something to "get through," but a
-              sacred beginning that shapes everything that follows.
-            </p>
-            <p>
-              I help new parents slow down, understand their baby, and feel deeply supported — not
-              just in tasks, but in identity, lineage, and the emotional landscape of becoming a family.
+              I'm Ashlee McKenzie — a Certified Postpartum Doula, Newborn Care Specialist, and
+              Fourth Trimester Expert serving families across San Francisco. My work is grounded in
+              attunement, clarity, and lineage‑rooted care that honors the earliest days of your
+              baby's life.
             </p>
           </div>
         </div>
@@ -65,27 +67,15 @@ function AboutPage() {
           <div className="space-y-7 text-[17px] text-cocoa/80 leading-[1.85] font-sans order-2 md:order-1 max-w-xl">
             <div className="uppercase tracking-[0.28em] text-xs text-clay">My Story</div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa mt-2">
-              Your story, your becoming
+              Woven through lineage and lived experience
             </h2>
             <p className="pt-2">
-              My path into postpartum work wasn't a straight line — it was a calling that revealed
-              itself through years of being invited into the quiet, sacred spaces where life begins.
-              I've always been drawn to the subtle language of newborns: the way they communicate
-              through movement, breath, and presence long before words arrive.
+              My path into postpartum work is woven through my lineage, lived experience, and a deep
+              commitment to helping families feel held during one of life's most tender transitions.
             </p>
             <p>
-              Over the years, I've supported hundreds of families across the Bay Area, each with their
-              own histories, cultures, and ways of loving. What I've learned is simple and universal:
-            </p>
-            <p className="font-serif italic text-cocoa text-xl leading-relaxed border-l-2 border-clay/40 pl-6 py-2">
-              Every family deserves to feel held.<br />
-              Every parent deserves to feel capable.<br />
-              Every baby deserves to be understood.
-            </p>
-            <p>
-              My work is grounded in identity-aligned care, honoring who you are, where you come from,
-              and the lineage you're continuing. I support you in a way that feels like you — not a
-              script, not a trend, not a one-size-fits-all approach.
+              I support parents with grounded presence, evidence‑based guidance, and a relational
+              approach that centers your family's identity and values.
             </p>
           </div>
           <div className="order-1 md:order-2 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] my-8 md:my-0">
@@ -101,109 +91,56 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* HOW I SHOW UP */}
+      {/* MY APPROACH */}
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6">
           <div className="border-t border-taupe/30" />
         </div>
         <div className="mx-auto max-w-3xl px-6 py-24 md:py-36 font-sans">
           <div className="text-center mb-16">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">How I Show Up</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">Walking with you, at your own pace.</h2>
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">My Approach</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              As a Fourth Trimester Expert, I support families through
+            </h2>
           </div>
-          <div className="space-y-8 text-[17px] text-cocoa/80 leading-[1.85]">
-            <p>
-              My presence is calm, grounded, and attuned. I move slowly. I listen deeply. I help you
-              understand your baby's cues, rhythms, and communication so you can feel confident in your
-              own instincts.
-            </p>
-          </div>
-          <div className="mt-12 bg-blush/60 rounded-2xl p-10 md:p-14">
-            <p className="text-cocoa font-medium text-center uppercase tracking-[0.2em] text-xs mb-10">Parents often tell me</p>
-            <div className="grid sm:grid-cols-3 gap-8">
-              {[
-                "You made our home feel peaceful again.",
-                "You helped us understand our baby in a way no book ever could.",
-                "You held us, not just the baby.",
-              ].map((quote, i) => (
-                <div key={i} className="text-center px-2">
-                  <p className="font-serif italic text-cocoa text-lg leading-relaxed">"{quote}"</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="mt-12 text-[17px] text-cocoa/80 leading-[1.85]">
-            <p>
-              This is the heart of my work — relational care that honors your nervous system, your
-              identity, and your family's unique dynamic.
-            </p>
-          </div>
+          <ul className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            {[
+              "Attuned newborn care",
+              "Identity‑rooted guidance",
+              "Evidence‑based education",
+              "Calm, grounded presence",
+              "Relational support that honors your story",
+            ].map((item, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-blush/40 px-5 py-4 text-cocoa"
+              >
+                <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
+                <span className="leading-relaxed text-[15px]">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-12 text-center font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5] max-w-2xl mx-auto">
+            This is not clinical care — it is relational, educational, and deeply human.
+          </p>
         </div>
       </section>
 
-      {/* PROFESSIONAL BACKGROUND */}
+      {/* WHY THIS WORK MATTERS */}
       <section className="bg-blush/40">
-        <div className="mx-auto max-w-4xl px-6 py-24 md:py-36 font-sans">
+        <div className="mx-auto max-w-3xl px-6 py-24 md:py-36 font-sans">
           <div className="text-center mb-16">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Professional Background</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">Experience &amp; Training</h2>
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Why This Work Matters</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              The fourth trimester is a sacred window
+            </h2>
           </div>
-          <p className="text-[17px] text-cocoa/80 leading-[1.85] text-center mb-14 max-w-2xl mx-auto">
-            I bring over sixteen years of experience supporting families in the San Francisco Bay Area,
-            with specialized training in:
-          </p>
-          <ul className="max-w-2xl mx-auto space-y-5">
-            {[
-              "Newborn Behavioral Observations (NBO)",
-              "Developmental + relational newborn care",
-              "Holistic postpartum support",
-              "New parent coaching",
-              "High-acuity newborn care",
-              "Feeding support + early lactation education",
-              "Sleep shaping rooted in development, not conditioning",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-4 py-3 border-b border-taupe/20 last:border-b-0">
-                <span className="text-clay mt-2 text-xs">&#9679;</span>
-                <span className="text-cocoa/80 text-[17px] leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-[17px] text-cocoa/80 leading-[1.85] text-center mt-16 max-w-2xl mx-auto">
-            My approach blends evidence-based care with intuitive, identity-aligned support. I help you
-            understand why your baby does what they do — and how to respond in ways that build secure
-            attachment and confidence.
-          </p>
-        </div>
-      </section>
-
-      {/* PHILOSOPHY */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-4xl px-6 py-24 md:py-36 font-sans">
-          <div className="text-center mb-16">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Philosophy</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa max-w-3xl mx-auto">Postpartum is not a medical event — it's a rite of passage.</h2>
+          <div className="space-y-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            <p>
+              When parents feel supported, babies thrive. My role is to help you feel confident,
+              connected, and deeply cared for as you step into new parenthood.
+            </p>
           </div>
-          <p className="text-[17px] text-cocoa/80 leading-[1.85] text-center mb-12">I believe:</p>
-          <ul className="max-w-2xl mx-auto space-y-5">
-            {[
-              "Babies arrive with wisdom.",
-              "Parents deserve to feel supported, not overwhelmed.",
-              "Lineage matters.",
-              "Identity matters.",
-              "The home environment shapes the nervous system.",
-              "Care must be relational, not transactional.",
-              "Families thrive when they feel seen, not managed.",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-4 py-3 border-b border-taupe/20 last:border-b-0">
-                <span className="text-clay mt-2 text-xs">&#9679;</span>
-                <span className="text-cocoa/80 text-[17px] leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-xl leading-relaxed text-center mt-16 font-serif italic text-cocoa max-w-2xl mx-auto">
-            My work is to help you feel rooted, confident, and connected — to your baby, to yourself,
-            and to the lineage you're continuing.
-          </p>
         </div>
       </section>
 
