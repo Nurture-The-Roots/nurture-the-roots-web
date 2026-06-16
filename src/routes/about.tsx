@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
 import ashleeRelationalDetailAsset from "@/assets/ashlee-relational-detail.jpeg.asset.json";
 import ashleePortraitAsset from "@/assets/ashlee-portrait.jpeg.asset.json";
+import branding49Responsive from "@/assets/branding-photos-49.responsive.json";
 import branding60Responsive from "@/assets/branding-60.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
@@ -159,6 +160,14 @@ function AboutPage() {
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
               A grounded presence for your fourth trimester
             </h2>
+          </div>
+          <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] max-w-2xl">
+            <ResponsiveImage
+              source={branding49Responsive}
+              alt="Ashlee McKenzie holding a newborn by a sunlit window — a warm portrait of grounded, attuned postpartum care"
+              sizes="(min-width: 768px) 672px, 100vw"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
           <div className="space-y-8 text-[17px] text-cocoa/80 leading-[1.85]">
             <p>
