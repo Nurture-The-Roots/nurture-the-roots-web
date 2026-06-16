@@ -43,7 +43,7 @@ function AboutPage() {
 
       {/* MEET ASHLEE */}
       <section className="bg-background">
-        <div className="mx-auto max-w-2xl px-6 py-24 md:py-32 font-sans">
+        <div className="mx-auto max-w-2xl px-6 pt-24 pb-12 md:pt-32 md:pb-16 font-sans">
           <div className="text-center mb-12">
             <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Meet Ashlee</div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
@@ -63,7 +63,7 @@ function AboutPage() {
 
       {/* MY STORY */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36 grid md:grid-cols-[6fr_5fr] gap-14 md:gap-20 items-center">
+        <div className="mx-auto max-w-6xl px-6 pt-8 pb-24 md:py-36 grid md:grid-cols-[6fr_5fr] gap-8 md:gap-20 items-center">
           <div className="space-y-7 text-[17px] text-cocoa/80 leading-[1.85] font-sans order-2 md:order-1 max-w-xl">
             <div className="uppercase tracking-[0.28em] text-xs text-clay">My Story</div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa mt-2">
@@ -78,7 +78,7 @@ function AboutPage() {
               approach that centers your family's identity and values.
             </p>
           </div>
-          <div className="order-1 md:order-2 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] my-8 md:my-0">
+          <div className="order-1 md:order-2 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5]">
             <img
               src={walkingAsset.url}
               alt="Ashlee McKenzie holding a sleeping newborn close, standing by a bright window with greenery outside"
