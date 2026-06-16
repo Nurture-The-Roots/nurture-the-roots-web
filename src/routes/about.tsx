@@ -129,6 +129,37 @@ function AboutPage() {
               I support parents with grounded presence, evidence‑based guidance, and a relational
               approach that centers your family's identity and values.
             </p>
+            <p>
+              {/* [PLACEHOLDER: One reflective paragraph in your voice expanding the personal arc — identity, origin, what called you to this work.] */}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* WHAT FAMILIES OFTEN SAY */}
+      <section className="bg-blush/40">
+        <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">
+          <div className="text-center mb-14">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">In Their Words</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              What families often say about me
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((i) => (
+              <figure key={i} className="rounded-2xl border border-taupe/25 bg-sand/70 p-8">
+                <blockquote className="font-serif italic text-[17px] text-cocoa/85 leading-[1.6]">
+                  {/* [PLACEHOLDER: Short pull-quote from existing testimonials — 1–2 sentences.] */}
+                  "A short, attuned quote in the family's own words."
+                </blockquote>
+                <figcaption className="mt-5 text-xs uppercase tracking-[0.22em] text-clay">
+                  {/* [PLACEHOLDER: Attribution — e.g. "— A San Francisco family"] */}
+                  — A family Ashlee served
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
