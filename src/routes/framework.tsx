@@ -98,6 +98,20 @@ function FrameworkPage() {
         </div>
       </section>
 
+      {/* IMAGE BAND — developmental + relational guidance */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={bandAsset.url}
+              alt="Ashlee playfully engaging a baby with a wooden toy during developmental tummy time"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ROOT-SYSTEM DIAGRAM */}
       <section className="bg-blush/50">
         <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">
