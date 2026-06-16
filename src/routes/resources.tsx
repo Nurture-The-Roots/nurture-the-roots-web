@@ -102,6 +102,22 @@ function ResourcesPage() {
       {/* WORKSHEETS */}
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          {/* GROUNDING INTRO + HOW TO USE + WHO FOR */}
+          <div className="grid md:grid-cols-2 gap-6 mb-16 md:mb-20">
+            <div className="rounded-2xl border border-taupe/25 bg-sand/60 p-10">
+              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">How to Use These Resources</div>
+              <p className="text-[16px] text-cocoa/75 leading-[1.85]">
+                {/* [PLACEHOLDER: 2–3 sentences guiding how to move through these resources, in your voice.] */}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-taupe/25 bg-blush/40 p-10">
+              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Who These Are For</div>
+              <p className="text-[16px] text-cocoa/75 leading-[1.85]">
+                {/* [PLACEHOLDER: 2–3 sentences naming who these resources will serve.] */}
+              </p>
+            </div>
+          </div>
+
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Worksheets &amp; Reflections</div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
