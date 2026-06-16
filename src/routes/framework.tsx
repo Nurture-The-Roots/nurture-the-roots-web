@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-61.jpeg.asset.json";
+import ashleePlaymatTendingAsset from "@/assets/ashlee-playmat-tending.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-61.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
@@ -116,11 +117,13 @@ function FrameworkPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <ResponsiveImage
-              source={bandResponsive}
-              alt="Ashlee playfully engaging a baby with a wooden toy during developmental tummy time"
+            <img
+              src={ashleePlaymatTendingAsset.url}
+              alt="Ashlee leaning over a baby on a play mat, tending with calm focus during an everyday developmental moment"
+              loading="lazy"
+              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_40%]"
+              className="w-full h-full object-cover object-[center_44%]"
             />
           </div>
         </div>
