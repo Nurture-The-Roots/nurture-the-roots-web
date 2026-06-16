@@ -14,13 +14,12 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       {
-        title:
-          "Ashlee McKenzie — Certified Postpartum Doula & NBO‑Trained Newborn Specialist | San Francisco",
+        title: "Ashlee McKenzie — Postpartum Doula & Newborn Specialist",
       },
       {
         name: "description",
         content:
-          "Meet Ashlee McKenzie: ProDoula Certified Postpartum Doula, Brazelton NBO‑trained Newborn Care Specialist, CAPPA Lactation Educator, and Fourth Trimester Expert serving San Francisco families.",
+          "Meet Ashlee McKenzie: ProDoula Certified Postpartum Doula, NBO‑trained Newborn Specialist, and Fourth Trimester Expert serving San Francisco families.",
       },
       {
         name: "keywords",
@@ -35,7 +34,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:description",
         content:
-          "Lineage‑rooted postpartum support backed by ProDoula, Brazelton NBO Level 1, CAPPA Lactation Educator, Infant Massage USA, and TrustLine credentials — serving San Francisco families.",
+          "Lineage‑rooted postpartum support backed by ProDoula, NBO Level 1, CAPPA Lactation, and TrustLine credentials for San Francisco families.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "https://nurturetheroots.co/about" },

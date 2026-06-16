@@ -48,9 +48,9 @@ export const Route = createFileRoute("/contact")({
         content:
           "I'd love to connect with you. Reach out and I'll respond with warmth, clarity, and care.",
       },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/contact" },
+      { property: "og:url", content: "https://nurturetheroots.co/contact" },
     ],
-    links: [{ rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://nurturetheroots.co/contact" }],
   }),
   component: ContactPage,
 });

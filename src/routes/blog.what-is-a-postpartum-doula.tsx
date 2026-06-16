@@ -6,7 +6,7 @@ import { ResponsiveImage } from "@/components/ResponsiveImage";
 export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
   head: () => ({
     meta: [
-      { title: "What Is a Postpartum Doula? | San Francisco | Nurture The Roots™" },
+      { title: "What Is a Postpartum Doula? | Nurture The Roots™" },
       {
         name: "description",
         content:
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
       },
       {
         property: "og:url",
-        content: "https://nurture-the-roots-web.lovable.app/blog/what-is-a-postpartum-doula",
+        content: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
       },
       { property: "og:type", content: "article" },
       { property: "og:image", content: postImageAsset.url },
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
     links: [
       {
         rel: "canonical",
-        href: "https://nurture-the-roots-web.lovable.app/blog/what-is-a-postpartum-doula",
+        href: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
       },
     ],
     scripts: [
@@ -52,10 +52,10 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
             name: "Nurture The Roots™",
             logo: {
               "@type": "ImageObject",
-              url: "https://nurture-the-roots-web.lovable.app",
+              url: "https://nurturetheroots.co",
             },
           },
-          url: "https://nurture-the-roots-web.lovable.app/blog/what-is-a-postpartum-doula",
+          url: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
           image: postImageAsset.url,
           datePublished: "2026-06-15",
         }),

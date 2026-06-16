@@ -12,11 +12,11 @@ export const Route = createFileRoute("/approach")({
       { name: "description", content: "A warm, grounded, relational approach to postpartum care rooted in identity, lineage, attunement, and development." },
       { property: "og:title", content: "My Approach — Nurture The Roots™" },
       { property: "og:description", content: "A warm, grounded, relational approach to postpartum care rooted in identity, lineage, attunement, and development." },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/approach" },
+      { property: "og:url", content: "https://nurturetheroots.co/approach" },
       { property: "og:image", content: approach1Asset.url },
     ],
     links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/approach" },
+      { rel: "canonical", href: "https://nurturetheroots.co/approach" },
     ],
   }),
   component: ApproachPage,

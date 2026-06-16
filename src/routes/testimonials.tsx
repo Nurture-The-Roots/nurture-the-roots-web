@@ -18,9 +18,9 @@ export const Route = createFileRoute("/testimonials")({
         property: "og:description",
         content: "What families say about their experience with lineage-rooted postpartum care.",
       },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/testimonials" },
+      { property: "og:url", content: "https://nurturetheroots.co/testimonials" },
     ],
-    links: [{ rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/testimonials" }],
+    links: [{ rel: "canonical", href: "https://nurturetheroots.co/testimonials" }],
   }),
   component: TestimonialsPage,
 });
