@@ -76,6 +76,10 @@ function AboutPage() {
             <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Newborn Care Specialist</li>
             <li className="rounded-full border border-taupe/40 bg-sand/60 px-4 py-2">Fourth Trimester Expert</li>
           </ul>
+          <p className="mt-10 mx-auto max-w-xl text-[16px] text-cocoa/75 leading-[1.85]">
+            {/* [PLACEHOLDER: A short grounding line under the hero in your voice — one sentence that invites the reader in.] */}
+            Welcome — I'm glad you're here.
+          </p>
         </div>
       </section>
 
