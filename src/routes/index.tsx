@@ -171,12 +171,12 @@ function Index() {
       {/* IMAGE BAND — consultation in a family's home */}
       <section aria-hidden="false" className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-2 pb-10 md:pt-6 md:pb-16">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
             <ResponsiveImage
               source={consultResponsive}
               alt="Ashlee reading from a fourth trimester book alongside two parents holding their baby in a warm, sunlit living room"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_35%]"
+              className="w-full h-full object-cover object-center"
             />
           </div>
         </div>
@@ -228,7 +228,7 @@ function Index() {
       {/* IMAGE BAND — relational presence */}
       <section aria-hidden="false" className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-4 pb-4 md:pt-10 md:pb-10">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
             <img
               src={homeBandImg}
               alt="Ashlee beside a bed, gently swaddling a baby in a calm, light-filled room"
