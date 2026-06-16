@@ -5,15 +5,44 @@ const aboutImg = walkingAsset.url;
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Ashlee McKenzie — Fourth Trimester Expert | Nurture The Roots™" },
-      { name: "description", content: "Ashlee McKenzie is a Certified Postpartum Doula, Newborn Care Specialist, and Fourth Trimester Expert serving families across San Francisco." },
-      { property: "og:title", content: "About Ashlee McKenzie — Fourth Trimester Expert" },
-      { property: "og:description", content: "Lineage‑rooted postpartum support from a Fourth Trimester Expert serving San Francisco families." },
+      { title: "Ashlee McKenzie — Certified Postpartum Doula & NBO‑Trained Newborn Specialist | San Francisco" },
+      { name: "description", content: "Meet Ashlee McKenzie: ProDoula Certified Postpartum Doula, Brazelton NBO‑trained Newborn Care Specialist, CAPPA Lactation Educator, and Fourth Trimester Expert serving San Francisco families." },
+      { name: "keywords", content: "postpartum doula San Francisco, certified postpartum doula, newborn care specialist, NBO trained, Brazelton Touchpoints, CAPPA lactation educator, fourth trimester expert, TrustLine registered, infant massage certified, Ashlee McKenzie" },
+      { property: "og:title", content: "Ashlee McKenzie — Certified Postpartum Doula, NBO‑Trained Newborn Care Specialist" },
+      { property: "og:description", content: "Lineage‑rooted postpartum support backed by ProDoula, Brazelton NBO Level 1, CAPPA Lactation Educator, Infant Massage USA, and TrustLine credentials — serving San Francisco families." },
+      { property: "og:type", content: "profile" },
       { property: "og:url", content: "https://nurturetheroots.co/about" },
       { property: "og:image", content: aboutImg },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Ashlee McKenzie — Certified Postpartum Doula & NBO‑Trained Newborn Care Specialist" },
+      { name: "twitter:description", content: "ProDoula‑certified, Brazelton NBO‑trained, CAPPA Lactation Educator — fourth trimester support for San Francisco families." },
+      { name: "twitter:image", content: aboutImg },
     ],
     links: [
       { rel: "canonical", href: "https://nurturetheroots.co/about" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Ashlee McKenzie",
+          jobTitle: "Certified Postpartum Doula & Fourth Trimester Expert",
+          url: "https://nurturetheroots.co/about",
+          image: aboutImg,
+          worksFor: { "@type": "Organization", name: "Nurture The Roots" },
+          areaServed: { "@type": "City", name: "San Francisco" },
+          hasCredential: [
+            { "@type": "EducationalOccupationalCredential", name: "ProDoula Certified Postpartum & Infant Care Doula", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "ProDoula" } },
+            { "@type": "EducationalOccupationalCredential", name: "Newborn Behavioral Observations (NBO) System — Level 1", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "The Brazelton Institute, Boston Children's Hospital / Harvard Medical School Teaching Hospital" } },
+            { "@type": "EducationalOccupationalCredential", name: "Beyond Trauma‑Informed Care: A Developmental & Relational Framework for Healing", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "Brazelton Touchpoints Center" } },
+            { "@type": "EducationalOccupationalCredential", name: "CAPPA Lactation Educator Training", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "Childbirth and Postpartum Professional Association (CAPPA)" } },
+            { "@type": "EducationalOccupationalCredential", name: "Infant Massage Certification Training", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "Infant Massage USA" } },
+            { "@type": "EducationalOccupationalCredential", name: "TrustLine Registered Childcare Provider", credentialCategory: "registration", recognizedBy: { "@type": "Organization", name: "California Department of Social Services" } },
+          ],
+        }),
+      },
     ],
   }),
   component: AboutPage,
