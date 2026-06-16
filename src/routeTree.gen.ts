@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WorkshopsRouteImport } from './routes/workshops'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -35,6 +36,11 @@ import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lova
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
+const WorkshopsRoute = WorkshopsRouteImport.update({
+  id: '/workshops',
+  path: '/workshops',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UnsubscribeRoute = UnsubscribeRouteImport.update({
   id: '/unsubscribe',
   path: '/unsubscribe',
@@ -185,6 +191,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/workshops': typeof WorkshopsRoute
   '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
@@ -211,6 +218,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/workshops': typeof WorkshopsRoute
   '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog': typeof BlogIndexRoute
@@ -239,6 +247,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/workshops': typeof WorkshopsRoute
   '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
@@ -268,6 +277,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
+    | '/workshops'
     | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog/'
@@ -294,6 +304,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
+    | '/workshops'
     | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog'
@@ -321,6 +332,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
+    | '/workshops'
     | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog/'
@@ -349,6 +361,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   TestimonialsRoute: typeof TestimonialsRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
+  WorkshopsRoute: typeof WorkshopsRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
@@ -358,6 +371,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/workshops': {
+      id: '/workshops'
+      path: '/workshops'
+      fullPath: '/workshops'
+      preLoaderRoute: typeof WorkshopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/unsubscribe': {
       id: '/unsubscribe'
       path: '/unsubscribe'
@@ -567,6 +587,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   TestimonialsRoute: TestimonialsRoute,
   UnsubscribeRoute: UnsubscribeRoute,
+  WorkshopsRoute: WorkshopsRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
