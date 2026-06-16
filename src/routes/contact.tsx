@@ -361,7 +361,7 @@ function ContactPage() {
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
             >
-              Schedule a consultation
+              Schedule Your First Conversation
             </Link>
           </div>
         </div>
