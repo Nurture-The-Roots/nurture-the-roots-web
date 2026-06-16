@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
+import faceAsset from "@/assets/branding-58.jpeg.asset.json";
+import joyAsset from "@/assets/branding-59.jpeg.asset.json";
 const aboutImg = walkingAsset.url;
 
 export const Route = createFileRoute("/about")({
@@ -172,6 +174,14 @@ function AboutPage() {
               connected, and deeply cared for as you step into new parenthood.
             </p>
           </div>
+          <div className="mt-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/3] max-w-2xl mx-auto">
+            <img
+              src={faceAsset.url}
+              alt="Ashlee sharing a tender, smiling moment face‑to‑face with a baby in her arms"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -235,6 +245,20 @@ function AboutPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* IMAGE BAND — daily practice */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={joyAsset.url}
+              alt="Ashlee smiling as she dresses a baby on a changing table — a warm, everyday moment of attuned newborn care"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 

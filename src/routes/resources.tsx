@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import bandAsset from "@/assets/branding-56.jpeg.asset.json";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -78,6 +79,20 @@ function ResourcesPage() {
           <p className="mt-8 mx-auto max-w-2xl font-serif italic text-lg md:text-xl text-cocoa/75 leading-[1.5]">
             These resources support families in slowing down, listening deeply, and building postpartum care that honors identity, rhythm, relationship, and support.
           </p>
+        </div>
+      </section>
+
+      {/* IMAGE BAND — quiet tending */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pt-10 md:pt-14">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={bandAsset.url}
+              alt="Ashlee barefoot in a calm nursery, attentively tending to a baby on the changing table"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 

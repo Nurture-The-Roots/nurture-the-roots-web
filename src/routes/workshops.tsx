@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import bandAsset from "@/assets/branding-54.jpeg.asset.json";
 
 export const Route = createFileRoute("/workshops")({
   head: () => ({
@@ -72,6 +73,20 @@ function WorkshopsPage() {
           <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             Nurture The Roots<TM /> workshops help parents and professionals understand postpartum through a lineage‑rooted, identity‑aligned, developmental, and relational lens.
           </p>
+        </div>
+      </section>
+
+      {/* IMAGE BAND — learning together */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={bandAsset.url}
+              alt="Ashlee leading a warm postpartum education session with a family — two parents and a baby learning together"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
