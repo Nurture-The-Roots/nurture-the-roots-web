@@ -1,8 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import bandAsset from "@/assets/branding-57.jpeg.asset.json";
 import ashleeBabyLaughingAsset from "@/assets/ashlee-baby-laughing.jpeg.asset.json";
 import ashleeBabyCloseupAsset from "@/assets/ashlee-baby-closeup.jpeg.asset.json";
-import bandResponsive from "@/assets/branding-57.responsive.json";
 import closingResponsive from "@/assets/branding-photos-51.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 

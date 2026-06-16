@@ -1,6 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import contactFamilyAsset from "@/assets/contact-family.jpeg.asset.json";
-import contactFamilyResponsive from "@/assets/contact-family.responsive.json";
 import ashleeBurpingBabyAsset from "@/assets/ashlee-burping-baby.jpeg.asset.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { useState } from "react";
