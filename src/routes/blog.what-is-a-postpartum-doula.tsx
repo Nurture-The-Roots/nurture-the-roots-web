@@ -86,6 +86,9 @@ function PostPage() {
               src={postImageAsset.url}
               alt="Parent holding newborn beside a bassinet in a sunlit nursery"
               loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              sizes="(min-width: 1024px) 1024px, 100vw"
               className="w-full h-full object-cover"
             />
           </div>
