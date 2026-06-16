@@ -5,12 +5,18 @@ const aboutImg = walkingAsset.url;
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Ashlee McKenzie — Fourth Trimester Expert | Nurture The Roots™" },
-      { name: "description", content: "Ashlee McKenzie is a Certified Postpartum Doula, Newborn Care Specialist, and Fourth Trimester Expert serving families across San Francisco." },
-      { property: "og:title", content: "About Ashlee McKenzie — Fourth Trimester Expert" },
-      { property: "og:description", content: "Lineage‑rooted postpartum support from a Fourth Trimester Expert serving San Francisco families." },
+      { title: "Ashlee McKenzie — Certified Postpartum Doula & NBO‑Trained Newborn Specialist | San Francisco" },
+      { name: "description", content: "Meet Ashlee McKenzie: ProDoula Certified Postpartum Doula, Brazelton NBO‑trained Newborn Care Specialist, CAPPA Lactation Educator, and Fourth Trimester Expert serving San Francisco families." },
+      { name: "keywords", content: "postpartum doula San Francisco, certified postpartum doula, newborn care specialist, NBO trained, Brazelton Touchpoints, CAPPA lactation educator, fourth trimester expert, TrustLine registered, infant massage certified, Ashlee McKenzie" },
+      { property: "og:title", content: "Ashlee McKenzie — Certified Postpartum Doula, NBO‑Trained Newborn Care Specialist" },
+      { property: "og:description", content: "Lineage‑rooted postpartum support backed by ProDoula, Brazelton NBO Level 1, CAPPA Lactation Educator, Infant Massage USA, and TrustLine credentials — serving San Francisco families." },
+      { property: "og:type", content: "profile" },
       { property: "og:url", content: "https://nurturetheroots.co/about" },
       { property: "og:image", content: aboutImg },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Ashlee McKenzie — Certified Postpartum Doula & NBO‑Trained Newborn Care Specialist" },
+      { name: "twitter:description", content: "ProDoula‑certified, Brazelton NBO‑trained, CAPPA Lactation Educator — fourth trimester support for San Francisco families." },
+      { name: "twitter:image", content: aboutImg },
     ],
     links: [
       { rel: "canonical", href: "https://nurturetheroots.co/about" },
