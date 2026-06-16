@@ -111,6 +111,20 @@ function ServicesPage() {
         </div>
       </section>
 
+      {/* IMAGE BAND — care in practice */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pt-10 md:pt-14">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={bandAsset.url}
+              alt="Ashlee gently tending to a baby on a changing table, soft daylight and calm nursery surroundings"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* OFFERINGS */}
       <section className="bg-background">
         <div className="mx-auto max-w-5xl px-6 py-24 md:py-32 space-y-16 md:space-y-24">
