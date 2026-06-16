@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import contactFamilyAsset from "@/assets/contact-family.jpeg.asset.json";
 import contactFamilyResponsive from "@/assets/contact-family.responsive.json";
+import ashleeBurpingBabyAsset from "@/assets/ashlee-burping-baby.jpeg.asset.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -144,9 +145,11 @@ function ContactPage() {
       {/* PHOTO */}
       <section className="bg-background">
         <div className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
-          <ResponsiveImage
-            source={contactFamilyResponsive}
-            alt="Ashlee McKenzie supporting a family during the fourth trimester"
+          <img
+            src={ashleeBurpingBabyAsset.url}
+            alt="Ashlee holding a baby close against her shoulder in a quiet, reassuring moment of postpartum support"
+            loading="lazy"
+            decoding="async"
             sizes="(min-width: 1024px) 1024px, 100vw"
             className="w-full rounded-2xl object-cover object-[center_30%] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9] shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]"
           />
