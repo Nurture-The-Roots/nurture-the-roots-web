@@ -199,6 +199,10 @@ function FrameworkPage() {
                   <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mb-10">
                     {p.description}
                   </p>
+                  <div className="mb-10 max-w-2xl rounded-xl border border-clay/30 bg-sand/70 px-6 py-5">
+                    <div className="uppercase tracking-[0.22em] text-[0.65rem] text-clay mb-2">What this means for your family</div>
+                    <p className="text-[15px] text-cocoa/80 leading-[1.7] italic font-serif">{p.meaning}</p>
+                  </div>
                   <div className="uppercase tracking-[0.22em] text-xs text-clay mb-5">Practices</div>
                   <div className="grid md:grid-cols-3 gap-4">
                     {p.practices.map((practice) => (
