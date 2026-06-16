@@ -30,7 +30,7 @@ const pillars = [
     description:
       "This pillar recognizes postpartum as an identity threshold for the parent, the baby, the family system, and the practitioner.",
     meaning:
-      "/* [PLACEHOLDER: 'What this means for your family' — one short line in your voice.] */",
+      "[PLACEHOLDER: 'What this means for your family' — one line in your voice for Identity-Aligned Care.]",
     practices: [
       { name: "Identity Mapping", description: "helps parents understand who they are becoming, not only what they need to do." },
       { name: "Emotional Landscape Reading", description: "is the practice of reading the room, the nervous system, and the relational field." },
@@ -43,6 +43,8 @@ const pillars = [
     belief: "Care is ceremony. Care is lineage. Care is continuity.",
     description:
       "This pillar restores sacredness, rhythm, and meaning to daily postpartum tending.",
+    meaning:
+      "[PLACEHOLDER: 'What this means for your family' — one line for Ancestral-Rooted Care.]",
     practices: [
       { name: "Rhythms Over Routines", description: "teaches families to follow the baby's natural rhythms rather than impose rigid schedules." },
       { name: "Care as Ceremony", description: "transforms daily care tasks into grounding rituals." },
@@ -55,6 +57,8 @@ const pillars = [
     belief: "Newborns communicate from the beginning. Parents deserve to feel confident listening.",
     description:
       "This pillar translates professional newborn care mastery into practical, relational teaching.",
+    meaning:
+      "[PLACEHOLDER: 'What this means for your family' — one line for Developmental + Relational Guidance.]",
     practices: [
       { name: "Cue‑Based Care", description: "teaches parents to follow newborn cues for feeding, sleep, soothing, and regulation." },
       { name: "Relational Regulation", description: "supports parents in co‑regulating with their baby." },
@@ -67,6 +71,8 @@ const pillars = [
     belief: "Families thrive when they build systems that honor their identity, not external expectations.",
     description:
       "This pillar helps families create practical, sustainable, values‑aligned support systems.",
+    meaning:
+      "[PLACEHOLDER: 'What this means for your family' — one line for Sovereign Family Systems.]",
     practices: [
       { name: "Sovereign Postpartum Planning", description: "creates plans based on identity, values, needs, and lived reality." },
       { name: "Support Ecosystem Building", description: "helps families create sustainable care networks." },
