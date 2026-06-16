@@ -97,6 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "GiaoqElZ1GYaKCQa_B1wir5ZhY6LR34L_C_rV9-4r6E" },
       { title: "Nurture The Roots™ — Fourth Trimester Expert & Postpartum Support" },
       { name: "description", content: "Lineage‑rooted postpartum support from a Fourth Trimester Expert serving families in San Francisco. Guiding you through the fourth trimester with clarity, attunement, and care." },
       { name: "author", content: "Ashlee McKenzie" },
