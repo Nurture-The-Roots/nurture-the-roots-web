@@ -167,7 +167,9 @@ function ContactPage() {
       {/* CONTACT FORM */}
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 pb-24 md:pb-32">
-          {sent ? (
+          {integrations.dubsadoInquiryUrl ? (
+            <DubsadoEmbed title="Nurture The Roots inquiry form" />
+          ) : sent ? (
             <div className="rounded-2xl bg-blush/50 border border-taupe/25 p-10 md:p-14 text-center">
               <h2 className="font-serif text-3xl md:text-4xl font-medium leading-[1.15] text-cocoa">
                 Thank you.
@@ -334,6 +336,15 @@ function ContactPage() {
               </form>
             </div>
           )}
+          {/* Schedule a call — Calendly */}
+          <div className="mt-10 text-center">
+            <CalendlyButton className="inline-flex items-center rounded-full border border-cocoa/30 bg-background px-8 py-3.5 text-sm font-medium text-cocoa hover:bg-blush transition-colors">
+              Schedule a Call
+            </CalendlyButton>
+            <p className="mt-3 text-xs text-cocoa/60">
+              Opens a scheduling window — pick a time that fits your week.
+            </p>
+          </div>
         </div>
       </section>
 
