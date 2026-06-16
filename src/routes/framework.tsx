@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import bandAsset from "@/assets/branding-61.jpeg.asset.json";
 import ashleePlaymatTendingAsset from "@/assets/ashlee-playmat-tending.jpeg.asset.json";
-import bandResponsive from "@/assets/branding-61.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 
