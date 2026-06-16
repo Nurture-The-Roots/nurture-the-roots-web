@@ -2,6 +2,14 @@ import * as React from 'react'
 import { render } from '@react-email/components'
 import { createFileRoute } from '@tanstack/react-router'
 import { TEMPLATES } from '@/lib/email-templates/registry'
+import { timingSafeEqual } from 'node:crypto'
+
+function safeEqual(a: string, b: string): boolean {
+  const ab = Buffer.from(a)
+  const bb = Buffer.from(b)
+  if (ab.length !== bb.length) return false
+  return timingSafeEqual(ab, bb)
+}
 
 // Renders all registered templates with their previewData.
 // Gated by LOVABLE_API_KEY — only the Go API calls this.
@@ -21,7 +29,7 @@ export const Route = createFileRoute("/lovable/email/transactional/preview")({
         // Verify the caller is authorized with LOVABLE_API_KEY
         const authHeader = request.headers.get('Authorization')
         const token = authHeader?.replace(/^Bearer\s+/i, '')
-        if (token !== apiKey) {
+        if (!token || !safeEqual(token, apiKey)) {
           return Response.json({ error: 'Unauthorized' }, { status: 401 })
         }
 

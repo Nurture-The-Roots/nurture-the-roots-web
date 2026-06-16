@@ -1,6 +1,3 @@
--- Harden SECURITY DEFINER email queue helpers:
--- pin search_path and restrict EXECUTE to service_role only.
-
 ALTER FUNCTION public.move_to_dlq(text, text, bigint, jsonb) SET search_path = public, pgmq, pg_temp;
 ALTER FUNCTION public.enqueue_email(text, jsonb) SET search_path = public, pgmq, pg_temp;
 ALTER FUNCTION public.read_email_batch(text, integer, integer) SET search_path = public, pgmq, pg_temp;
