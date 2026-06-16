@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "source": "/__l5e/assets-v1/f532a326-ef44-480e-a3d6-5c6835f2cab9/branding-photos-52.jpeg",
+  "original_filename": "branding-photos-52.jpeg",
+  "intrinsic": {
+    "width": 1824,
+    "height": 1215
+  },
+  "fallback": "/__l5e/assets-v1/cc6b080f-8b58-4a4d-b32f-754336a1f0e5/branding-photos-52-1152.jpg",
+  "variants": [
+    {
+      "width": 480,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/b6ede08b-bf37-49b5-9e4f-0fca1a89d383/branding-photos-52-480.avif",
+      "size": 12534
+    },
+    {
+      "width": 480,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/cf179ca6-56c8-4a9d-bbbf-9cf10cdfe1c1/branding-photos-52-480.webp",
+      "size": 22416
+    },
+    {
+      "width": 480,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/b2222478-a056-4991-b10e-33a359b6cde2/branding-photos-52-480.jpg",
+      "size": 27844
+    },
+    {
+      "width": 768,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/1581e5ff-d56e-43e8-a809-4b593e820590/branding-photos-52-768.avif",
+      "size": 23782
+    },
+    {
+      "width": 768,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/cd7881e9-d4c9-4574-901e-a5460d08139d/branding-photos-52-768.webp",
+      "size": 40842
+    },
+    {
+      "width": 768,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/0d21050a-6633-4c3e-8b86-4cc2f725d5b2/branding-photos-52-768.jpg",
+      "size": 55766
+    },
+    {
+      "width": 1152,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/7a7d7461-cc03-4266-95bb-f04dd95f9daf/branding-photos-52-1152.avif",
+      "size": 39697
+    },
+    {
+      "width": 1152,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/0ab017ab-eae1-46d6-95b4-5847441fa59b/branding-photos-52-1152.webp",
+      "size": 68776
+    },
+    {
+      "width": 1152,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/cc6b080f-8b58-4a4d-b32f-754336a1f0e5/branding-photos-52-1152.jpg",
+      "size": 100028
+    },
+    {
+      "width": 1600,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/dcac3632-00aa-4de8-bb65-b534f640557f/branding-photos-52-1600.avif",
+      "size": 61240
+    },
+    {
+      "width": 1600,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/e1a67fed-0d05-4167-ab2b-c837786395db/branding-photos-52-1600.webp",
+      "size": 101430
+    },
+    {
+      "width": 1600,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/dc53c99a-b523-4290-a05b-6b0585743c7c/branding-photos-52-1600.jpg",
+      "size": 160951
+    }
+  ]
+}
