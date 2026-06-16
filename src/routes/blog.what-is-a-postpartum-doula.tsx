@@ -89,7 +89,7 @@ function PostPage() {
               fetchPriority="high"
               decoding="async"
               sizes="(min-width: 1024px) 1024px, 100vw"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_35%]"
             />
           </div>
         </div>

@@ -129,7 +129,7 @@ function ContactPage() {
             loading="lazy"
             decoding="async"
             sizes="(min-width: 1024px) 1024px, 100vw"
-            className="w-full rounded-2xl object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9] shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]"
+            className="w-full rounded-2xl object-cover object-[center_30%] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9] shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]"
           />
         </div>
       </section>
