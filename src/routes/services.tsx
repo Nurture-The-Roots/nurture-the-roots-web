@@ -3,6 +3,8 @@ import servicesImageAsset from "@/assets/approach-3.jpeg.asset.json";
 import babyChangingTableAsset from "@/assets/baby-changing-table.jpeg.asset.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
+import { IntakeButton } from "@/components/integrations/DubsadoEmbed";
+import { GoogleReviewsBlock } from "@/components/integrations/GoogleReviewsBlock";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -229,6 +231,9 @@ function ServicesPage() {
                   >
                     {s.cta}
                   </Link>
+                  <IntakeButton className="ml-3 inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-blush transition-colors">
+                    Begin Intake
+                  </IntakeButton>
                 </div>
               </article>
             </div>
@@ -244,6 +249,11 @@ function ServicesPage() {
 
       {/* CLOSING / CTA */}
       <section className="bg-hero-gradient">
+        <GoogleReviewsBlock
+          eyebrow="From Google"
+          heading="Care that families return to"
+          className="bg-background"
+        />
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
             You don't have to navigate this beginning alone.
