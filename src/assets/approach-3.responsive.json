@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "source": "/__l5e/assets-v1/76dc70fa-c0c7-4e44-b3c1-d1d0e32f0599/approach-3.jpeg",
+  "original_filename": "approach-3.jpeg",
+  "intrinsic": {
+    "width": 1920,
+    "height": 1279
+  },
+  "fallback": "/__l5e/assets-v1/9b1073f7-ff4c-4c5c-b938-4b39de9857f7/approach-3-1152.jpg",
+  "variants": [
+    {
+      "width": 480,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/4ba7dd7b-f1b0-4a98-8ed1-e19de7242220/approach-3-480.avif",
+      "size": 9145
+    },
+    {
+      "width": 480,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/a9aa4de7-57eb-408b-87bd-2f82a67d3a84/approach-3-480.webp",
+      "size": 14682
+    },
+    {
+      "width": 480,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/8947da26-9acd-4961-bf82-88f3be2fee2a/approach-3-480.jpg",
+      "size": 19989
+    },
+    {
+      "width": 768,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/765d8952-e48f-4cd3-b4b7-f2db2f9ddfea/approach-3-768.avif",
+      "size": 17274
+    },
+    {
+      "width": 768,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/ea9d98e2-03d3-4cbb-9754-453a55afe29d/approach-3-768.webp",
+      "size": 28196
+    },
+    {
+      "width": 768,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/5cef0145-ba0b-44e5-8004-bcbc8606ab12/approach-3-768.jpg",
+      "size": 40522
+    },
+    {
+      "width": 1152,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/90350e7c-4b8e-4c94-9b34-c808f53d6f03/approach-3-1152.avif",
+      "size": 29348
+    },
+    {
+      "width": 1152,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/8766dd17-a1a7-46ab-bbe0-988c9485affe/approach-3-1152.webp",
+      "size": 46890
+    },
+    {
+      "width": 1152,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/9b1073f7-ff4c-4c5c-b938-4b39de9857f7/approach-3-1152.jpg",
+      "size": 72841
+    },
+    {
+      "width": 1600,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/eb82cd83-5c90-417a-a4c2-c208c7839416/approach-3-1600.avif",
+      "size": 44760
+    },
+    {
+      "width": 1600,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/d0307a15-80c7-4474-9213-730f26bedcb8/approach-3-1600.webp",
+      "size": 70928
+    },
+    {
+      "width": 1600,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/a3ae46fb-f2e8-4b44-bab5-dfd7e1ef2a1c/approach-3-1600.jpg",
+      "size": 116918
+    }
+  ]
+}

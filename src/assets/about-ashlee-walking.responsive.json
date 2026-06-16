@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "source": "/__l5e/assets-v1/0737eec3-7646-48eb-bc0b-6cec34de9ae5/about-ashlee-walking.jpg",
+  "original_filename": "about-ashlee-walking.jpg",
+  "intrinsic": {
+    "width": 1920,
+    "height": 1279
+  },
+  "fallback": "/__l5e/assets-v1/a4865f5e-59da-4e14-8b4b-29e0b40ff496/about-ashlee-walking-1152.jpg",
+  "variants": [
+    {
+      "width": 480,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/fd6f95aa-5900-426c-b43f-67ca1cc2a09d/about-ashlee-walking-480.avif",
+      "size": 11288
+    },
+    {
+      "width": 480,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/e5252fd8-79bc-463c-8903-ddf442036982/about-ashlee-walking-480.webp",
+      "size": 19428
+    },
+    {
+      "width": 480,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/10f84136-818c-44d3-8ccf-ddd7daae42a7/about-ashlee-walking-480.jpg",
+      "size": 24966
+    },
+    {
+      "width": 768,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/6c0d2a97-9d65-4e05-980d-f474f9791a7f/about-ashlee-walking-768.avif",
+      "size": 21023
+    },
+    {
+      "width": 768,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/3b65abd5-a028-4f94-a56f-12db25263935/about-ashlee-walking-768.webp",
+      "size": 36630
+    },
+    {
+      "width": 768,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/42e4f38e-f398-41e3-bcf4-93824b7af8de/about-ashlee-walking-768.jpg",
+      "size": 51054
+    },
+    {
+      "width": 1152,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/43399e90-0241-450c-8b0a-b29b45e5b2c8/about-ashlee-walking-1152.avif",
+      "size": 37551
+    },
+    {
+      "width": 1152,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/8fd0a1c6-9dd1-4c4e-bdd2-a71533b80b16/about-ashlee-walking-1152.webp",
+      "size": 62520
+    },
+    {
+      "width": 1152,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/a4865f5e-59da-4e14-8b4b-29e0b40ff496/about-ashlee-walking-1152.jpg",
+      "size": 93581
+    },
+    {
+      "width": 1600,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/2dd68813-fbdd-476a-9847-3571d521820c/about-ashlee-walking-1600.avif",
+      "size": 58729
+    },
+    {
+      "width": 1600,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/f95b5167-22bc-4d56-8934-2866c86821c7/about-ashlee-walking-1600.webp",
+      "size": 96842
+    },
+    {
+      "width": 1600,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/94f256cf-4e2c-42d3-ba87-91d2a98b150c/about-ashlee-walking-1600.jpg",
+      "size": 152896
+    }
+  ]
+}
