@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /files
-Disallow: /search-console
-Disallow: /unsubscribe
-Disallow: /email/unsubscribe
 
-Sitemap: https://nurturetheroots.co/sitemap.xml
+Sitemap: https://nurture-the-roots-web.lovable.app/sitemap.xml

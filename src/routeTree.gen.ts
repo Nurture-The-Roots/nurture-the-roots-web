@@ -9,23 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WorkshopsRouteImport } from './routes/workshops'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
-import { Route as SearchConsoleRouteImport } from './routes/search-console'
-import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PostpartumDoulaSanFranciscoRouteImport } from './routes/postpartum-doula-san-francisco'
 import { Route as MediaRouteImport } from './routes/media'
-import { Route as FrameworkRouteImport } from './routes/framework'
-import { Route as FilesRouteImport } from './routes/files'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ClientJourneyRouteImport } from './routes/client-journey'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as AboutRouteImport } from './routes/about'
@@ -38,11 +32,6 @@ import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lova
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
-const WorkshopsRoute = WorkshopsRouteImport.update({
-  id: '/workshops',
-  path: '/workshops',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const UnsubscribeRoute = UnsubscribeRouteImport.update({
   id: '/unsubscribe',
   path: '/unsubscribe',
@@ -68,16 +57,6 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SearchConsoleRoute = SearchConsoleRouteImport.update({
-  id: '/search-console',
-  path: '/search-console',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -94,16 +73,6 @@ const MediaRoute = MediaRouteImport.update({
   path: '/media',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FrameworkRoute = FrameworkRouteImport.update({
-  id: '/framework',
-  path: '/framework',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FilesRoute = FilesRouteImport.update({
-  id: '/files',
-  path: '/files',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
@@ -117,11 +86,6 @@ const DisclaimerRoute = DisclaimerRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ClientJourneyRoute = ClientJourneyRouteImport.update({
-  id: '/client-journey',
-  path: '/client-journey',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -189,23 +153,17 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/blog': typeof BlogRouteWithChildren
-  '/client-journey': typeof ClientJourneyRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
-  '/files': typeof FilesRoute
-  '/framework': typeof FrameworkRoute
   '/media': typeof MediaRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
   '/privacy': typeof PrivacyRoute
-  '/resources': typeof ResourcesRoute
-  '/search-console': typeof SearchConsoleRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
-  '/workshops': typeof WorkshopsRoute
   '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
@@ -218,23 +176,17 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
-  '/client-journey': typeof ClientJourneyRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
-  '/files': typeof FilesRoute
-  '/framework': typeof FrameworkRoute
   '/media': typeof MediaRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
   '/privacy': typeof PrivacyRoute
-  '/resources': typeof ResourcesRoute
-  '/search-console': typeof SearchConsoleRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
-  '/workshops': typeof WorkshopsRoute
   '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog': typeof BlogIndexRoute
@@ -249,23 +201,17 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/blog': typeof BlogRouteWithChildren
-  '/client-journey': typeof ClientJourneyRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
-  '/files': typeof FilesRoute
-  '/framework': typeof FrameworkRoute
   '/media': typeof MediaRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
   '/privacy': typeof PrivacyRoute
-  '/resources': typeof ResourcesRoute
-  '/search-console': typeof SearchConsoleRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/unsubscribe': typeof UnsubscribeRoute
-  '/workshops': typeof WorkshopsRoute
   '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
@@ -281,23 +227,17 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/blog'
-    | '/client-journey'
     | '/contact'
     | '/disclaimer'
     | '/faq'
-    | '/files'
-    | '/framework'
     | '/media'
     | '/postpartum-doula-san-francisco'
     | '/privacy'
-    | '/resources'
-    | '/search-console'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
-    | '/workshops'
     | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog/'
@@ -310,23 +250,17 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/approach'
-    | '/client-journey'
     | '/contact'
     | '/disclaimer'
     | '/faq'
-    | '/files'
-    | '/framework'
     | '/media'
     | '/postpartum-doula-san-francisco'
     | '/privacy'
-    | '/resources'
-    | '/search-console'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
-    | '/workshops'
     | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog'
@@ -340,23 +274,17 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/blog'
-    | '/client-journey'
     | '/contact'
     | '/disclaimer'
     | '/faq'
-    | '/files'
-    | '/framework'
     | '/media'
     | '/postpartum-doula-san-francisco'
     | '/privacy'
-    | '/resources'
-    | '/search-console'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
     | '/testimonials'
     | '/unsubscribe'
-    | '/workshops'
     | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog/'
@@ -371,23 +299,17 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ApproachRoute: typeof ApproachRoute
   BlogRoute: typeof BlogRouteWithChildren
-  ClientJourneyRoute: typeof ClientJourneyRoute
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
   FaqRoute: typeof FaqRoute
-  FilesRoute: typeof FilesRoute
-  FrameworkRoute: typeof FrameworkRoute
   MediaRoute: typeof MediaRoute
   PostpartumDoulaSanFranciscoRoute: typeof PostpartumDoulaSanFranciscoRoute
   PrivacyRoute: typeof PrivacyRoute
-  ResourcesRoute: typeof ResourcesRoute
-  SearchConsoleRoute: typeof SearchConsoleRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   TestimonialsRoute: typeof TestimonialsRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
-  WorkshopsRoute: typeof WorkshopsRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
@@ -397,13 +319,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/workshops': {
-      id: '/workshops'
-      path: '/workshops'
-      fullPath: '/workshops'
-      preLoaderRoute: typeof WorkshopsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/unsubscribe': {
       id: '/unsubscribe'
       path: '/unsubscribe'
@@ -439,20 +354,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/search-console': {
-      id: '/search-console'
-      path: '/search-console'
-      fullPath: '/search-console'
-      preLoaderRoute: typeof SearchConsoleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -474,20 +375,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MediaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/framework': {
-      id: '/framework'
-      path: '/framework'
-      fullPath: '/framework'
-      preLoaderRoute: typeof FrameworkRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/files': {
-      id: '/files'
-      path: '/files'
-      fullPath: '/files'
-      preLoaderRoute: typeof FilesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/faq': {
       id: '/faq'
       path: '/faq'
@@ -507,13 +394,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/client-journey': {
-      id: '/client-journey'
-      path: '/client-journey'
-      fullPath: '/client-journey'
-      preLoaderRoute: typeof ClientJourneyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -613,23 +493,17 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ApproachRoute: ApproachRoute,
   BlogRoute: BlogRouteWithChildren,
-  ClientJourneyRoute: ClientJourneyRoute,
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
   FaqRoute: FaqRoute,
-  FilesRoute: FilesRoute,
-  FrameworkRoute: FrameworkRoute,
   MediaRoute: MediaRoute,
   PostpartumDoulaSanFranciscoRoute: PostpartumDoulaSanFranciscoRoute,
   PrivacyRoute: PrivacyRoute,
-  ResourcesRoute: ResourcesRoute,
-  SearchConsoleRoute: SearchConsoleRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   TestimonialsRoute: TestimonialsRoute,
   UnsubscribeRoute: UnsubscribeRoute,
-  WorkshopsRoute: WorkshopsRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,

@@ -1,12 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import postImageAsset from "@/assets/approach-1.jpeg.asset.json";
-import postImageResponsive from "@/assets/approach-1.responsive.json";
-import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
   head: () => ({
     meta: [
-      { title: "What Is a Postpartum Doula? | Nurture The Roots™" },
+      { title: "What Is a Postpartum Doula? | San Francisco | Nurture The Roots™" },
       {
         name: "description",
         content:
@@ -23,7 +21,7 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
       },
       {
         property: "og:url",
-        content: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
+        content: "https://nurture-the-roots-web.lovable.app/blog/what-is-a-postpartum-doula",
       },
       { property: "og:type", content: "article" },
       { property: "og:image", content: postImageAsset.url },
@@ -31,7 +29,7 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
     links: [
       {
         rel: "canonical",
-        href: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
+        href: "https://nurture-the-roots-web.lovable.app/blog/what-is-a-postpartum-doula",
       },
     ],
     scripts: [
@@ -52,10 +50,10 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
             name: "Nurture The Roots™",
             logo: {
               "@type": "ImageObject",
-              url: "https://nurturetheroots.co",
+              url: "https://nurture-the-roots-web.lovable.app",
             },
           },
-          url: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
+          url: "https://nurture-the-roots-web.lovable.app/blog/what-is-a-postpartum-doula",
           image: postImageAsset.url,
           datePublished: "2026-06-15",
         }),
@@ -83,13 +81,12 @@ function PostPage() {
           </p>
         </div>
         <div className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <ResponsiveImage
-              source={postImageResponsive}
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={postImageAsset.url}
               alt="Parent holding newborn beside a bassinet in a sunlit nursery"
-              priority
-              sizes="(min-width: 1024px) 1024px, 100vw"
-              className="w-full h-full object-cover object-[center_35%]"
+              loading="eager"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
