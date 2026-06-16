@@ -25,6 +25,25 @@ export const Route = createFileRoute("/services")({
       { property: "og:image", content: servicesImageAsset.url },
     ],
     links: [{ rel: "canonical", href: "https://nurturetheroots.co/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Nurture The Roots™",
+          url: "https://nurturetheroots.co/services",
+          areaServed: { "@type": "City", name: "San Francisco" },
+          makesOffer: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rooted Postpartum Planning" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "In‑Home or Virtual Postpartum Support" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Newborn Cue + Attunement Session" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sovereign Family Systems Session" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Integration + Continuity Session" } },
+          ],
+        }),
+      },
+    ],
   }),
   component: ServicesPage,
 });

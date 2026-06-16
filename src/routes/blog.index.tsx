@@ -22,6 +22,24 @@ export const Route = createFileRoute("/blog/")({
     links: [
       { rel: "canonical", href: "https://nurturetheroots.co/blog" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Nurture the Roots Blog",
+          url: "https://nurturetheroots.co/blog",
+          description:
+            "Warm, grounded writing for new parents navigating the fourth trimester — reflections, guidance, and identity-aligned postpartum support.",
+          publisher: {
+            "@type": "Organization",
+            name: "Nurture The Roots™",
+            url: "https://nurturetheroots.co/",
+          },
+        }),
+      },
+    ],
   }),
   component: BlogPage,
 });
