@@ -1,15 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
-import faceAsset from "@/assets/branding-58.jpeg.asset.json";
-import joyAsset from "@/assets/branding-59.jpeg.asset.json";
 import ashleeBurpingBabyAsset from "@/assets/ashlee-burping-baby.jpeg.asset.json";
 import ashleeBabyLaughingAsset from "@/assets/ashlee-baby-laughing.jpeg.asset.json";
 import ashleeBabyCloseupAsset from "@/assets/ashlee-baby-closeup.jpeg.asset.json";
-import walkingResponsive from "@/assets/about-ashlee-walking.responsive.json";
-import faceResponsive from "@/assets/branding-58.responsive.json";
-import joyResponsive from "@/assets/branding-59.responsive.json";
-import embraceResponsive from "@/assets/branding-photos-50.responsive.json";
-import portraitResponsive from "@/assets/branding-photos-49.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 const aboutImg = walkingAsset.url;

@@ -1,12 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
-import aboutAsset from "@/assets/branding-65.jpeg.asset.json";
-import bandAsset from "@/assets/branding-62.jpeg.asset.json";
 import ashleeBabyChairPortraitAsset from "@/assets/ashlee-baby-chair-portrait.jpeg.asset.json";
 import ashleeBedsideSwaddleAsset from "@/assets/ashlee-bedside-swaddle.jpeg.asset.json";
 import aboutResponsive from "@/assets/branding-65.responsive.json";
-import bandResponsive from "@/assets/branding-62.responsive.json";
-import editorialResponsive from "@/assets/branding-photos-48.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 const welcomeImg = welcomeAsset.url;
