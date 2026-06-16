@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, useState, useRef, type ReactNode } from "react";
+import { Menu, X } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -153,6 +154,7 @@ function SiteHeader() {
     { to: "/faq", label: "FAQ" },
   ] as const;
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const openMenu = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -162,6 +164,25 @@ function SiteHeader() {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     closeTimer.current = setTimeout(() => setResourcesOpen(false), 120);
   };
+  // Lock body scroll while mobile menu is open
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const prev = document.body.style.overflow;
+    if (mobileOpen) document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [mobileOpen]);
+  // Close on Escape
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
+  const allMobileNav = [...nav, ...resourcesItems, { to: "/contact", label: "Contact" }] as const;
   return (
     <header className="sticky top-0 z-40 backdrop-blur-sm bg-[color-mix(in_oklab,var(--sand)_85%,transparent)] border-b border-border/60">
       <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between gap-6">
@@ -232,13 +253,61 @@ function SiteHeader() {
         >
           Begin
         </Link>
+        {/* Mobile hamburger */}
+        <button
+          type="button"
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav-panel"
+          className="lg:hidden inline-flex items-center justify-center rounded-full border border-taupe/60 p-2 text-cocoa hover:bg-blush transition-colors"
+        >
+          <span className="relative block h-5 w-5">
+            <Menu
+              size={20}
+              className={`absolute inset-0 transition-all duration-300 ${mobileOpen ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"}`}
+            />
+            <X
+              size={20}
+              className={`absolute inset-0 transition-all duration-300 ${mobileOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"}`}
+            />
+          </span>
+        </button>
       </div>
-      <nav className="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 pb-3 text-xs tracking-wide text-earth/75">
-        {[...nav, { to: "/resources", label: "Resources" }, { to: "/contact", label: "Contact" }].map((n) => (
-          <Link key={n.to} to={n.to} className="hover:text-cocoa" activeProps={{ className: "text-cocoa" }} activeOptions={{ exact: n.to === "/" }}>
-            {n.label}
-          </Link>
-        ))}
+      {/* Mobile slide-down panel + backdrop */}
+      <div
+        className={`lg:hidden fixed inset-0 top-[var(--header-h,0px)] z-30 transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden={!mobileOpen}
+        onClick={() => setMobileOpen(false)}
+      >
+        <div className="absolute inset-0 bg-cocoa/30 backdrop-blur-sm" />
+      </div>
+      <nav
+        id="mobile-nav-panel"
+        aria-hidden={!mobileOpen}
+        className={`lg:hidden absolute left-0 right-0 top-full z-40 origin-top overflow-hidden border-b border-taupe/40 bg-sand shadow-[0_20px_40px_-24px_rgba(74,63,57,0.45)] transition-all duration-300 ease-out ${
+          mobileOpen
+            ? "max-h-[80vh] opacity-100 translate-y-0"
+            : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+        }`}
+      >
+        <ul className="mx-auto max-w-2xl px-6 py-6 flex flex-col divide-y divide-taupe/30">
+          {allMobileNav.map((n) => (
+            <li key={n.to}>
+              <Link
+                to={n.to}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 font-serif text-lg text-cocoa/85 hover:text-clay transition-colors"
+                activeProps={{ className: "block py-3 font-serif text-lg text-clay" }}
+                activeOptions={{ exact: n.to === "/" }}
+              >
+                {n.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </header>
   );
