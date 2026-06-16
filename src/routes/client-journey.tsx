@@ -74,7 +74,7 @@ function ClientJourneyPage() {
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_38%]"
             />
           </div>
         </div>

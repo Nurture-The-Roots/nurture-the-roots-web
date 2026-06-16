@@ -174,7 +174,7 @@ function Index() {
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-[center_30%]"
             />
           </div>
         </div>
@@ -230,7 +230,7 @@ function Index() {
               sizes="(min-width: 1024px) 1152px, 100vw"
                 width={1280}
                 height={1920}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_28%]"
               />
             </div>
             <div className="max-w-md">
