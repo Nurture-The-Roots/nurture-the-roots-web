@@ -1,85 +1,55 @@
+Finish the `/search-console` dashboard with date ranges + period-over-period comparison, country & device breakdowns, sitemaps status, and CSV exports. Keep the route public with `noindex, nofollow`.
 
-## Goal
+## Server functions (`src/lib/search-console.functions.ts`)
 
-Add a new page at **`/files`** that lets anyone with the link browse the connected Microsoft account's files. The page has a toggle to switch between two sources:
+Extend the existing file — no new files.
 
-- **OneDrive** — the connected user's personal drive (`/me/drive`)
-- **SharePoint** — pick a site, then a document library, then browse it
+- `getGscMetrics` — add a validated `range` input: `"7d" | "28d" | "90d"` (default `28d`). Compute current window ending `today − 3 days`. Compute the immediately-preceding window of the same length. Run both windows in parallel and return:
+  - `range: { startDate, endDate, days, previousStartDate, previousEndDate }`
+  - `totals`, `previousTotals`, and `deltas` (`{ clicks, impressions, ctr, position }` as absolute differences; position delta is inverted so "lower is better" reads as positive)
+  - `daily` (current window only, one row per day)
+  - `topQueries`, `topPages` (current window, limit 25)
+  - `topCountries` (dimension `country`, limit 10 — ISO-3 codes mapped to display names via `Intl.DisplayNames`)
+  - `topDevices` (dimension `device`, limit 3 — DESKTOP / MOBILE / TABLET)
+- `listGscSitemaps({ siteUrl })` — `GET /webmasters/v3/sites/{siteUrl}/sitemaps`. Return `Array<{ path, lastSubmitted, lastDownloaded, isPending, isSitemapsIndex, type, warnings, errors, contents: Array<{ type, submitted, indexed }> }>`. Errors surface in the panel, not as a thrown exception.
 
-Both sources support full file management: **browse, upload, download, rename, delete**, plus folder navigation and "New folder".
+All gateway calls keep the existing `authHeaders()` + status-aware error pattern.
 
-## Visual / UX
+## Route (`src/routes/search-console.tsx`)
 
-- Editorial styling consistent with the rest of the site: warm cream background, serif header, soft cards.
-- Header: "Files" with subtitle "OneDrive & SharePoint".
-- Toggle pill row: `OneDrive | SharePoint`.
-- When SharePoint is selected: a site picker (search box + list) then a drive picker, then the file table.
-- Breadcrumb trail (`Root / Folder A / Folder B`) for navigation back up.
-- File table: name, type icon, size, modified date, row actions (Download, Rename, Delete). Folders are clickable rows.
-- Floating action bar: "Upload file" (drag-and-drop area + file input), "New folder".
-- Toasts on success/error; confirmation dialog before Delete.
-- `noindex, nofollow` meta on the route — even though it's public, we don't want it crawled.
+URL state via `validateSearch` + `zodValidator` + `fallback`:
 
-## Technical Plan
+- `site?: string` — selected verified property
+- `range: "7d" | "28d" | "90d"` (default `28d`)
 
-### Connectors
+Behavior:
 
-Two app connectors are now linked to this project:
-- **Microsoft OneDrive** — scopes include `Files.ReadWrite`, enabling full CRUD on `/me/drive`.
-- **Microsoft SharePoint** — scopes include `Sites.ReadWrite.All`, enabling CRUD on SharePoint document libraries.
+- First render: `listGscSites` (TanStack Query, 5-min stale). If `?site` is missing, navigate-replace to the first verified site so the URL is shareable.
+- Metrics: `useQuery` keyed by `["gsc", "metrics", site, range]`, calls `getGscMetrics({ siteUrl, range })`. Refresh button calls `queryClient.invalidateQueries` for that key.
+- Sitemaps: `useQuery` keyed by `["gsc", "sitemaps", site]`.
 
-Both are gateway-backed; secrets `MICROSOFT_ONEDRIVE_API_KEY`, `MICROSOFT_SHAREPOINT_API_KEY`, and `LOVABLE_API_KEY` are already injected at runtime. All Graph calls go through `https://connector-gateway.lovable.dev/{connector}/...` — never directly to `graph.microsoft.com`.
+Layout (top → bottom inside the existing editorial shell):
 
-### Server functions (`src/lib/ms-files.functions.ts`)
+1. Header (unchanged copy, updated subtitle showing the current window dates).
+2. Controls row: Verified-site `<select>`, Range segmented control (7d / 28d / 90d), Refresh button.
+3. Four metric cards — value + delta pill (▲ green / ▼ red, neutral when 0). Position card inverts color logic.
+4. Daily trend SVG (existing chart, restyled legend to match cards).
+5. Two-column grid: **Top queries** and **Top pages** — each gets a "Download CSV" button in the card header.
+6. Two-column grid: **Top countries** (country name + 4 metric columns) and **Devices** (3 rows with a small bar showing share of clicks).
+7. **Sitemaps** panel — table of submitted sitemaps with last-downloaded date, pending/index flags, warnings/errors counts; empty state explains how to submit one in Search Console.
 
-All Graph access happens server-side via `createServerFn` so the connector keys never reach the browser.
+CSV export is pure client-side: build a CSV string from the table data, `Blob` + `URL.createObjectURL` + anchor click. File name: `gsc-{queries|pages}-{site-host}-{range}.csv`.
 
-OneDrive (uses `MICROSOFT_ONEDRIVE_API_KEY`, base `/me/drive`):
-- `listOneDriveChildren({ itemId? })` → `GET /me/drive/root/children` or `/me/drive/items/{id}/children`
-- `getOneDriveItem({ itemId })` → metadata (used for breadcrumbs)
-- `createOneDriveFolder({ parentId, name })` → `POST /children` with `{ name, folder: {} }`
-- `renameOneDriveItem({ itemId, name })` → `PATCH /items/{id}`
-- `deleteOneDriveItem({ itemId })` → `DELETE /items/{id}`
-- `getOneDriveDownloadUrl({ itemId })` → returns the short-lived `@microsoft.graph.downloadUrl` from `GET /items/{id}` so the browser downloads directly (avoids streaming binaries through the server function RPC boundary).
-- `uploadOneDriveFile` → see "Uploads" below.
+## Technical details
 
-SharePoint (uses `MICROSOFT_SHAREPOINT_API_KEY`, base `/sites`):
-- `searchSharePointSites({ query })` → `GET /sites?search=...`
-- `listSharePointDrives({ siteId })` → `GET /sites/{siteId}/drives`
-- `listSharePointChildren({ siteId, driveId, itemId? })` → `GET /sites/{siteId}/drives/{driveId}/root/children` or `/items/{id}/children`
-- `createSharePointFolder`, `renameSharePointItem`, `deleteSharePointItem`, `getSharePointDownloadUrl`, `uploadSharePointFile` — same shapes as OneDrive, scoped to the chosen site+drive.
+- Date math is UTC, ISO `YYYY-MM-DD`, end = `today − 3 days`.
+- All numeric formatting via existing `nfInt` / `nfPct` / `nfPos`.
+- Country code → name: `new Intl.DisplayNames(["en"], { type: "region" })` with fallback to the raw code (Search Console returns ISO-3, `Intl.DisplayNames` expects ISO-2; map common ones in a small lookup, else show the code).
+- All new tables reuse the existing `TableBlock` component; pass a `headerExtra` slot for the Download button.
+- Keep error / not-found components and `noindex` meta; no auth gating.
 
-Each function validates input with a small `inputValidator` (path-safe IDs, name length, no slashes in names), returns plain DTOs (id, name, size, lastModifiedDateTime, folder/file flag, mimeType, webUrl), and re-throws gateway errors with status + body for the route's `errorComponent`.
+## Out of scope
 
-### Uploads
-
-Files come from the browser via `<input type="file">`. Two paths:
-
-- **Small files (≤ 4 MB)**: a server function accepts base64-encoded bytes + filename + parentId, then `PUT /items/{parentId}:/{name}:/content` with the decoded `Uint8Array`.
-- **Large files (> 4 MB)**: server function creates an **upload session** (`POST /items/{parentId}:/{name}:/createUploadSession`) and returns the session's `uploadUrl` to the browser, which PUTs chunks of ≤ 60 MiB directly to Microsoft (the upload URL is pre-authenticated, so chunks don't need the connector key). Cap a single upload at 100 MB to keep the UX simple; reject larger files with a clear message.
-
-### Route (`src/routes/files.tsx`)
-
-- Public route, `head()` sets `<title>Files</title>` and `meta robots="noindex, nofollow"`.
-- TanStack Query owns the file-listing cache (`["onedrive", parentId]`, `["sharepoint", siteId, driveId, parentId]`). Loader prefetches the OneDrive root via `ensureQueryData`.
-- All mutations (upload, rename, delete, new folder) use `useMutation` + `useServerFn`; on success they invalidate the matching list query so the table refreshes.
-- Source toggle and current folder path live in URL search params (`source`, `site`, `drive`, `path`) via `validateSearch` so refresh/share preserves state.
-- `errorComponent` shows a friendly message and a retry button.
-
-### Components
-
-- `src/components/files/SourceToggle.tsx` — segmented control.
-- `src/components/files/SharePointSitePicker.tsx` — debounced search + result list.
-- `src/components/files/FileTable.tsx` — sortable list, row actions, double-click into folders.
-- `src/components/files/UploadDropzone.tsx` — drop area + file picker; routes through small-vs-large upload paths.
-- `src/components/files/RenameDialog.tsx`, `ConfirmDeleteDialog.tsx`, `NewFolderDialog.tsx` — built on existing shadcn primitives.
-
-### Navigation
-
-Add a discreet "Files" link in the existing footer/admin area (not the main marketing nav) so it stays separate from the public-facing site copy.
-
-### Out of scope (ask before adding)
-
-- Per-user authentication / multi-tenant Microsoft sign-in — the connector is a single shared identity by design.
-- Sharing links, permission editing, version history.
-- In-browser preview of Office docs (we link out to `webUrl` instead).
+- URL inspection / coverage report (require separate APIs not enabled on this connector).
+- Per-user OAuth — dashboard reflects the single connected Google account.
+- Custom date pickers — only 7/28/90 presets.
