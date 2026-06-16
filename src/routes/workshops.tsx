@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-54.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-54.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const Route = createFileRoute("/workshops")({
   head: () => ({
@@ -31,17 +32,17 @@ export const Route = createFileRoute("/workshops")({
 
 const TM = () => <span className="align-super text-[0.4em] ml-0.5">™</span>;
 
-const workshops = [
-  "The Rooted Fourth Trimester",
-  "Rhythms Over Routines",
-  "Reading Your Newborn",
-  "Postpartum Identity Mapping",
-  "Care as Ceremony",
-  "Building Your Postpartum Ecosystem",
-  "Sovereign Postpartum Planning",
-  "Newborn Cues + Parent Confidence",
-  "The Relational Newborn",
-  "Thresholds of the Fourth Trimester",
+const workshops: Array<{ title: string; line: string }> = [
+  { title: "The Rooted Fourth Trimester", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Rhythms Over Routines", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Reading Your Newborn", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Postpartum Identity Mapping", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Care as Ceremony", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Building Your Postpartum Ecosystem", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Sovereign Postpartum Planning", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Newborn Cues + Parent Confidence", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "The Relational Newborn", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Thresholds of the Fourth Trimester", line: "[PLACEHOLDER: One-line description.]" },
 ];
 
 const modules = [
