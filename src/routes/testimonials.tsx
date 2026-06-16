@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-57.jpeg.asset.json";
+import ashleeBabyLaughingAsset from "@/assets/ashlee-baby-laughing.jpeg.asset.json";
+import ashleeBabyCloseupAsset from "@/assets/ashlee-baby-closeup.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-57.responsive.json";
 import closingResponsive from "@/assets/branding-photos-51.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
@@ -70,11 +72,13 @@ function TestimonialsPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <ResponsiveImage
-              source={bandResponsive}
-              alt="Ashlee laughing warmly with a smiling baby cradled in her arms"
+            <img
+              src={ashleeBabyLaughingAsset.url}
+              alt="Ashlee laughing warmly with a baby in her arms, both fully engaged in a joyful and attuned exchange"
+              loading="lazy"
+              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_30%]"
+              className="w-full h-full object-cover object-[center_50%]"
             />
           </div>
         </div>
@@ -108,11 +112,13 @@ function TestimonialsPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <ResponsiveImage
-              source={closingResponsive}
-              alt="Ashlee standing barefoot by a sunlit window in a plant-filled room, holding a sleeping swaddled baby in profile"
+            <img
+              src={ashleeBabyCloseupAsset.url}
+              alt="Ashlee cradling a baby close in her lap, held in a quiet portrait that feels intimate and deeply reassuring"
+              loading="lazy"
+              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_40%]"
+              className="w-full h-full object-cover object-[center_42%]"
             />
           </div>
         </div>
