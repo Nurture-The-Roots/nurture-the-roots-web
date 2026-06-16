@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-61.jpeg.asset.json";
+import bandResponsive from "@/assets/branding-61.responsive.json";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 export const Route = createFileRoute("/framework")({
   head: () => ({
@@ -102,11 +104,9 @@ function FrameworkPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={bandAsset.url}
+            <ResponsiveImage
+              source={bandResponsive}
               alt="Ashlee playfully engaging a baby with a wooden toy during developmental tummy time"
-              loading="lazy"
-              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover object-[center_40%]"
             />

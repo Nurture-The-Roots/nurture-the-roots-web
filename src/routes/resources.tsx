@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-56.jpeg.asset.json";
+import bandResponsive from "@/assets/branding-56.responsive.json";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -86,11 +88,9 @@ function ResourcesPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={bandAsset.url}
+            <ResponsiveImage
+              source={bandResponsive}
               alt="Ashlee barefoot in a calm nursery, attentively tending to a baby on the changing table"
-              loading="lazy"
-              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover object-[center_32%]"
             />

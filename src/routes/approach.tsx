@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import approach1Asset from "@/assets/approach-1.jpeg.asset.json";
 import approach2Asset from "@/assets/approach-2.jpeg.asset.json";
 import approach3Asset from "@/assets/approach-3.jpeg.asset.json";
+import approach2Responsive from "@/assets/approach-2.responsive.json";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 export const Route = createFileRoute("/approach")({
   head: () => ({
@@ -102,10 +104,11 @@ function ApproachPage() {
         </div>
         <div className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={approach2Asset.url}
+            <ResponsiveImage
+              source={approach2Responsive}
               alt="Ashlee gently attending to a newborn baby"
-              loading="eager"
+              priority
+              sizes="(min-width: 1024px) 1024px, 100vw"
               className="w-full h-full object-cover"
             />
           </div>

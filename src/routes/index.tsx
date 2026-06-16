@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
 import aboutAsset from "@/assets/branding-65.jpeg.asset.json";
 import bandAsset from "@/assets/branding-62.jpeg.asset.json";
+import aboutResponsive from "@/assets/branding-65.responsive.json";
+import bandResponsive from "@/assets/branding-62.responsive.json";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 const welcomeImg = welcomeAsset.url;
 
 export const Route = createFileRoute("/")({
@@ -168,11 +171,9 @@ function Index() {
       <section aria-hidden="false" className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-4 pb-4 md:pt-10 md:pb-10">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={bandAsset.url}
+            <ResponsiveImage
+              source={bandResponsive}
               alt="Ashlee McKenzie standing by a window holding a baby close, soft daylight filling the nursery"
-              loading="lazy"
-              decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
               className="w-full h-full object-cover object-[center_30%]"
             />
@@ -222,14 +223,10 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
           <div className="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
             <div className="relative overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5]">
-              <img
-                src={aboutAsset.url}
+              <ResponsiveImage
+                source={aboutResponsive}
                 alt="Ashlee McKenzie seated in a sunlit nursery, gently cradling a newborn in a soft moment of attuned presence"
-                loading="lazy"
-              decoding="async"
-              sizes="(min-width: 1024px) 1152px, 100vw"
-                width={1280}
-                height={1920}
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="w-full h-full object-cover object-[center_28%]"
               />
             </div>

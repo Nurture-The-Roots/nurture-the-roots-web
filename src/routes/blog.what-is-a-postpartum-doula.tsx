@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import postImageAsset from "@/assets/approach-1.jpeg.asset.json";
+import postImageResponsive from "@/assets/approach-1.responsive.json";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
   head: () => ({
@@ -82,12 +84,10 @@ function PostPage() {
         </div>
         <div className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={postImageAsset.url}
+            <ResponsiveImage
+              source={postImageResponsive}
               alt="Parent holding newborn beside a bassinet in a sunlit nursery"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
+              priority
               sizes="(min-width: 1024px) 1024px, 100vw"
               className="w-full h-full object-cover object-[center_35%]"
             />
