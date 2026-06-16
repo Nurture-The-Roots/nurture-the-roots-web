@@ -15,20 +15,20 @@ const homeClosingImg = ashleeBabyChairPortraitAsset.url;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nurture The Roots™ — Fourth Trimester Expert & Postpartum Support" },
+      { title: "Nurture The Roots™ — Fourth Trimester Postpartum Support" },
       {
         name: "description",
         content:
-          "Lineage‑rooted postpartum support from a Fourth Trimester Expert serving families in San Francisco. Guiding you through the fourth trimester with clarity, attunement, and care.",
+          "Lineage‑rooted postpartum support from a Fourth Trimester Expert serving San Francisco families with clarity, attunement, and attuned newborn care.",
       },
       {
         property: "og:title",
-        content: "Nurture The Roots™ — Fourth Trimester Expert & Postpartum Support",
+        content: "Nurture The Roots™ — Fourth Trimester Postpartum Support",
       },
       {
         property: "og:description",
         content:
-          "Nurture The Roots™ offers grounded, identity‑rooted postpartum support from a Fourth Trimester Expert. Serving families in San Francisco with clarity, care, and attuned newborn guidance.",
+          "Grounded, identity‑rooted postpartum support from a Fourth Trimester Expert in San Francisco — clarity, care, and attuned newborn guidance.",
       },
       { property: "og:url", content: "https://nurturetheroots.co/" },
       {

@@ -6,7 +6,7 @@ import { ResponsiveImage } from "@/components/ResponsiveImage";
 export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
   head: () => ({
     meta: [
-      { title: "What Is a Postpartum Doula? | San Francisco | Nurture The Roots™" },
+      { title: "What Is a Postpartum Doula? | Nurture The Roots™" },
       {
         name: "description",
         content:
