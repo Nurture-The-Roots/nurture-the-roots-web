@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-57.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-57.responsive.json";
+import closingResponsive from "@/assets/branding-photos-51.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 export const Route = createFileRoute("/testimonials")({
@@ -100,6 +101,20 @@ function TestimonialsPage() {
               )}
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* IMAGE BAND — quiet sanctuary */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
+            <ResponsiveImage
+              source={closingResponsive}
+              alt="Ashlee standing barefoot by a sunlit window in a plant-filled room, holding a sleeping swaddled baby in profile"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-[center_40%]"
+            />
+          </div>
         </div>
       </section>
 
