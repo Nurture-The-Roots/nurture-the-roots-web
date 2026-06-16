@@ -5,8 +5,10 @@ import { integrations } from "@/lib/integrations";
 const baseClass =
   "inline-flex items-center justify-center w-10 h-10 rounded-full border border-cocoa/15 text-cocoa/75 hover:text-clay hover:border-clay/60 transition-colors";
 
+type Link = { href: string | undefined; label: string; icon: ReactNode };
+
 export function SocialIcons() {
-  const links = [
+  const links: Link[] = [
     {
       href: integrations.instagramUrl,
       label: "Instagram",
@@ -22,12 +24,15 @@ export function SocialIcons() {
       label: "YouTube",
       icon: <Youtube size={18} aria-hidden />,
     },
-  ].filter((l): l is { href: string; label: string; icon: ReactNode } => Boolean(l.href));
+  ];
+  const visible = links.filter(
+    (l): l is Link & { href: string } => Boolean(l.href),
+  );
 
-  if (links.length === 0) return null;
+  if (visible.length === 0) return null;
   return (
     <ul className="flex items-center gap-3" aria-label="Social profiles">
-      {links.map((l) => (
+      {visible.map((l) => (
         <li key={l.label}>
           <a
             href={l.href}
