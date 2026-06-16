@@ -198,7 +198,7 @@ function ContactPage() {
                       id="fullName"
                       type="text"
                       placeholder="Your name"
-                      className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/40 focus-visible:ring-clay focus-visible:ring-offset-0"
+                      className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                       {...register("fullName")}
                     />
                     {errors.fullName && (
@@ -213,7 +213,7 @@ function ContactPage() {
                       id="email"
                       type="email"
                       placeholder="you@email.com"
-                      className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/40 focus-visible:ring-clay focus-visible:ring-offset-0"
+                      className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                       {...register("email")}
                     />
                     {errors.email && (
@@ -231,7 +231,7 @@ function ContactPage() {
                       id="phone"
                       type="tel"
                       placeholder="(555) 123-4567"
-                      className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/40 focus-visible:ring-clay focus-visible:ring-offset-0"
+                      className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                       {...register("phone")}
                     />
                   </div>
@@ -242,7 +242,7 @@ function ContactPage() {
                     <Input
                       id="dueDate"
                       type="date"
-                      className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/40 focus-visible:ring-clay focus-visible:ring-offset-0"
+                      className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                       {...register("dueDate")}
                     />
                   </div>
@@ -256,7 +256,7 @@ function ContactPage() {
                     id="location"
                     type="text"
                     placeholder="Neighborhood, city, or area"
-                    className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/40 focus-visible:ring-clay focus-visible:ring-offset-0"
+                    className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                     {...register("location")}
                   />
                 </div>
@@ -294,7 +294,7 @@ function ContactPage() {
                     id="heardAbout"
                     type="text"
                     placeholder="A friend, a search, an article…"
-                    className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/40 focus-visible:ring-clay focus-visible:ring-offset-0"
+                    className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                     {...register("heardAbout")}
                   />
                 </div>
@@ -307,7 +307,7 @@ function ContactPage() {
                     id="message"
                     rows={5}
                     placeholder="Share as much or as little as feels right."
-                    className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/40 focus-visible:ring-clay focus-visible:ring-offset-0 resize-none"
+                    className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0 resize-none"
                     {...register("message")}
                   />
                   {errors.message && (
