@@ -21,6 +21,29 @@ export const Route = createFileRoute("/about")({
     links: [
       { rel: "canonical", href: "https://nurturetheroots.co/about" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Ashlee McKenzie",
+          jobTitle: "Certified Postpartum Doula & Fourth Trimester Expert",
+          url: "https://nurturetheroots.co/about",
+          image: aboutImg,
+          worksFor: { "@type": "Organization", name: "Nurture The Roots" },
+          areaServed: { "@type": "City", name: "San Francisco" },
+          hasCredential: [
+            { "@type": "EducationalOccupationalCredential", name: "ProDoula Certified Postpartum & Infant Care Doula", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "ProDoula" } },
+            { "@type": "EducationalOccupationalCredential", name: "Newborn Behavioral Observations (NBO) System — Level 1", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "The Brazelton Institute, Boston Children's Hospital / Harvard Medical School Teaching Hospital" } },
+            { "@type": "EducationalOccupationalCredential", name: "Beyond Trauma‑Informed Care: A Developmental & Relational Framework for Healing", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "Brazelton Touchpoints Center" } },
+            { "@type": "EducationalOccupationalCredential", name: "CAPPA Lactation Educator Training", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "Childbirth and Postpartum Professional Association (CAPPA)" } },
+            { "@type": "EducationalOccupationalCredential", name: "Infant Massage Certification Training", credentialCategory: "certification", recognizedBy: { "@type": "Organization", name: "Infant Massage USA" } },
+            { "@type": "EducationalOccupationalCredential", name: "TrustLine Registered Childcare Provider", credentialCategory: "registration", recognizedBy: { "@type": "Organization", name: "California Department of Social Services" } },
+          ],
+        }),
+      },
+    ],
   }),
   component: AboutPage,
 });
