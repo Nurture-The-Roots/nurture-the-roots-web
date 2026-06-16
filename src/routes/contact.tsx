@@ -89,19 +89,19 @@ function ContactPage() {
     <>
       {/* PAGE TITLE */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
-          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-6">Contact</div>
-          <h1 className="text-4xl md:text-5xl leading-tight">Contact</h1>
+        <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
+          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Contact</div>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">Contact</h1>
         </div>
       </section>
 
       {/* INTRO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 text-center">
-          <p className="text-lg text-earth/80 leading-relaxed">
+        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             I'd love to connect with you.
           </p>
-          <p className="mt-4 text-lg text-earth/80 leading-relaxed">
+          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
             Whether you're ready to book support or simply exploring your options, reach out
             and I'll respond with warmth, clarity, and care.
           </p>
@@ -110,35 +110,35 @@ function ContactPage() {
 
       {/* PHOTO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-5xl px-6 pb-12 md:pb-16">
+        <div className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
           <img
             src={contactFamilyAsset.url}
             alt="Ashlee McKenzie supporting a family during the fourth trimester"
-            className="w-full rounded-2xl object-cover aspect-[16/9] md:aspect-[21/9]"
+            className="w-full rounded-2xl object-cover aspect-[16/9] md:aspect-[21/9] shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]"
           />
         </div>
       </section>
 
       {/* CONTACT FORM */}
       <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 pb-16 md:pb-24">
+        <div className="mx-auto max-w-3xl px-6 pb-24 md:pb-32">
           {sent ? (
-            <div className="rounded-2xl bg-blush/70 border border-taupe/30 p-10 text-center">
-              <h2 className="text-2xl">Thank you.</h2>
-              <p className="mt-4 text-earth/80 leading-relaxed">
+            <div className="rounded-2xl bg-blush/50 border border-taupe/25 p-10 md:p-14 text-center">
+              <h2 className="font-serif text-3xl md:text-4xl font-medium leading-[1.15] text-cocoa">Thank you.</h2>
+              <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
                 Your inquiry has been received with care. I'll respond within two days,
                 often sooner. Until then — be gentle with yourself.
               </p>
               <button
                 onClick={() => setSent(false)}
-                className="mt-6 text-cocoa border-b border-clay pb-1 hover:text-earth transition-colors"
+                className="mt-8 text-cocoa border-b border-clay pb-1 hover:text-earth transition-colors"
               >
                 Send another message
               </button>
             </div>
           ) : (
-            <div className="rounded-2xl bg-cream/40 border border-taupe/25 p-8 md:p-12">
-              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">Get in Touch</div>
+            <div className="rounded-2xl bg-blush/50 border border-taupe/25 p-10 md:p-14">
+              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Get in Touch</div>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
@@ -260,15 +260,15 @@ function ContactPage() {
 
       {/* DIRECT CONTACT */}
       <section className="bg-blush/40">
-        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-          <div className="text-center mb-12">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Direct Contact</div>
-            <h2 className="text-3xl md:text-4xl leading-tight">
+        <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+          <div className="text-center mb-16">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Direct Contact</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
               Prefer to Reach Out Directly?
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            <div className="rounded-2xl bg-background/60 border border-taupe/30 p-8 text-center">
+            <div className="rounded-2xl bg-background/60 border border-taupe/25 p-8 md:p-10 text-center">
               <div className="uppercase tracking-[0.22em] text-xs text-clay mb-3">Email</div>
               <a
                 href="mailto:ashleemckenzie@nurturetheroots.co"
@@ -277,10 +277,10 @@ function ContactPage() {
                 ashleemckenzie@nurturetheroots.co
               </a>
             </div>
-            <div className="rounded-2xl bg-background/60 border border-taupe/30 p-8 text-center">
+            <div className="rounded-2xl bg-background/60 border border-taupe/25 p-8 md:p-10 text-center">
               <div className="uppercase tracking-[0.22em] text-xs text-clay mb-3">Location</div>
               <p className="text-cocoa font-serif text-xl">San Francisco, CA</p>
-              <p className="mt-1 text-sm text-earth/70">Serving families across the Bay Area</p>
+              <p className="mt-2 text-sm text-cocoa/70">Serving families across the Bay Area</p>
             </div>
           </div>
         </div>
@@ -288,12 +288,12 @@ function ContactPage() {
 
       {/* CTA */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Ready to Begin?</div>
-          <h2 className="text-3xl md:text-4xl leading-tight">
+        <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Ready to Begin?</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
             Let's start your fourth trimester with intention, clarity, and attuned support.
           </h2>
-          <div className="mt-10">
+          <div className="mt-12">
             <Link
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"

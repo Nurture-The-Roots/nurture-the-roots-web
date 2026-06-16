@@ -44,21 +44,21 @@ function MediaPage() {
     <>
       {/* HERO */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 pt-20 pb-12 md:pt-28 md:pb-16 text-center">
-          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-6">Media</div>
-          <h1 className="text-4xl md:text-5xl leading-tight">Media & Press</h1>
+        <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
+          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Media</div>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">Media &amp; Press</h1>
         </div>
       </section>
 
       {/* INTRO */}
       <section className="bg-background">
-        <div className="mx-auto max-w-4xl px-6 py-16 md:py-24 text-center">
-          <p className="text-lg text-earth/80 leading-relaxed">
+        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             I'm honored to share my work, philosophy, and expertise with communities, publications,
             and organizations who are expanding the conversation around postpartum care, newborn
             development, identity, and lineage.
           </p>
-          <p className="mt-6 text-lg text-earth/80 leading-relaxed">
+          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
             My voice centers attunement, relational care, and the emotional landscape of early
             parenthood. If you're seeking a grounded, thoughtful perspective on the fourth trimester,
             I'd love to connect.
@@ -68,12 +68,12 @@ function MediaPage() {
 
       {/* FEATURED APPEARANCES */}
       <section className="bg-background">
-        <div className="mx-auto max-w-5xl px-6 py-12 md:py-16">
-          <div className="text-center mb-14">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Featured Appearances</div>
-            <h2 className="text-3xl md:text-4xl leading-tight text-cocoa">In the Conversation</h2>
+        <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+          <div className="text-center mb-16">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Featured Appearances</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">In the Conversation</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "Coming Soon",
@@ -88,10 +88,10 @@ function MediaPage() {
                 description: "As your brand grows, this space will showcase collaborations, panels, and expert contributions.",
               },
             ].map((feature, i) => (
-              <div key={i} className="bg-cream/40 rounded-2xl p-8 border border-taupe/25 text-center">
-                <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Feature</div>
-                <h3 className="text-xl leading-tight text-cocoa mb-3">{feature.title}</h3>
-                <p className="text-sm text-earth/70 leading-relaxed">{feature.description}</p>
+              <div key={i} className="bg-cream/50 rounded-2xl p-8 md:p-10 border border-taupe/25 text-center">
+                <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Feature</div>
+                <h3 className="font-serif text-xl leading-tight text-cocoa mb-4">{feature.title}</h3>
+                <p className="text-[15px] text-cocoa/75 leading-[1.8]">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -100,20 +100,20 @@ function MediaPage() {
 
       {/* TOPICS I SPEAK ON */}
       <section className="bg-blush/40">
-        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-          <div className="text-center mb-14">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Expertise</div>
-            <h2 className="text-3xl md:text-4xl leading-tight text-cocoa">Areas of Expertise</h2>
+        <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+          <div className="text-center mb-16">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Expertise</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">Areas of Expertise</h2>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {topics.map((topic, i) => (
-              <div key={i} className="flex items-start gap-3 bg-background/60 rounded-xl p-5">
+              <div key={i} className="flex items-start gap-3 bg-background/60 border border-taupe/25 rounded-xl p-5">
                 <span className="text-clay mt-1">&bull;</span>
-                <span className="text-earth/80">{topic}</span>
+                <span className="text-cocoa/80 leading-relaxed">{topic}</span>
               </div>
             ))}
           </div>
-          <div className="text-center mt-12">
+          <div className="text-center mt-14">
             <Link
               to="/approach"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
@@ -126,10 +126,10 @@ function MediaPage() {
 
       {/* MEDIA BIO (SHORT) */}
       <section className="bg-background">
-        <div className="mx-auto max-w-4xl px-6 py-16 md:py-24 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Media Bio</div>
-          <h2 className="text-3xl md:text-4xl leading-tight text-cocoa mb-8">Short Version</h2>
-          <p className="text-lg text-earth/80 leading-relaxed">
+        <div className="mx-auto max-w-3xl px-6 py-24 md:py-32 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Media Bio</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa mb-10">Short Version</h2>
+          <p className="text-[17px] text-cocoa/80 leading-[1.85] text-left">
             Ashlee McKenzie is a Certified Postpartum Doula, Newborn Care Specialist, and New Parent
             Support Coach with over sixteen years of experience supporting families across the San
             Francisco Bay Area. Her work blends evidence-based newborn care with identity-aligned,
@@ -142,17 +142,17 @@ function MediaPage() {
 
       {/* MEDIA BIO (LONG) */}
       <section className="bg-soft-gradient">
-        <div className="mx-auto max-w-4xl px-6 py-20 md:py-28 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Media Bio</div>
-          <h2 className="text-3xl md:text-4xl leading-tight text-cocoa mb-8">Full Version</h2>
-          <p className="text-lg text-earth/80 leading-relaxed">
+        <div className="mx-auto max-w-3xl px-6 py-24 md:py-32 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Media Bio</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa mb-10">Full Version</h2>
+          <p className="text-[17px] text-cocoa/80 leading-[1.85] text-left">
             Ashlee McKenzie is a postpartum specialist, newborn care expert, and the founder of Nurture
             the Roots — a practice dedicated to identity-aligned, lineage-rooted support for new parents.
             With over sixteen years of experience, Ashlee brings a deeply relational, developmentally
             informed approach to the fourth trimester, helping families understand their newborns,
             regulate their nervous systems, and navigate the profound identity shifts of early parenthood.
           </p>
-          <p className="mt-6 text-lg text-earth/80 leading-relaxed">
+          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] text-left">
             Her work is grounded in the belief that postpartum is a sacred rite of passage, not a medical
             event. She blends Newborn Behavioral Observations (NBO), developmental guidance, and ancestral
             postpartum principles to create care that is warm, attuned, and deeply human. Ashlee is available
@@ -164,20 +164,20 @@ function MediaPage() {
 
       {/* PAST PROJECTS & RECOGNITION */}
       <section className="bg-background">
-        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
-          <div className="text-center mb-14">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Recognition</div>
-            <h2 className="text-3xl md:text-4xl leading-tight text-cocoa">Projects & Recognition</h2>
+        <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+          <div className="text-center mb-16">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Recognition</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">Projects &amp; Recognition</h2>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {recognition.map((item, i) => (
-              <div key={i} className="flex items-start gap-3 bg-cream/40 rounded-xl p-5">
+              <div key={i} className="flex items-start gap-3 bg-cream/50 border border-taupe/25 rounded-xl p-5">
                 <span className="text-clay mt-1">&bull;</span>
-                <span className="text-earth/80">{item}</span>
+                <span className="text-cocoa/80 leading-relaxed">{item}</span>
               </div>
             ))}
           </div>
-          <div className="text-center mt-12">
+          <div className="text-center mt-14">
             <Link
               to="/about"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
@@ -190,14 +190,14 @@ function MediaPage() {
 
       {/* CONTACT FOR MEDIA */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-4">Media Inquiries</div>
-          <h2 className="text-3xl md:text-4xl leading-tight text-cocoa">Let's Connect</h2>
-          <p className="mt-6 text-lg text-earth/80 leading-relaxed">
+        <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Media Inquiries</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">Let's Connect</h2>
+          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
             For interviews, collaborations, speaking engagements, or written contributions, please reach
             out directly.
           </p>
-          <p className="mt-4 text-lg">
+          <p className="mt-4 text-[17px]">
             <a
               href="mailto:ashleemckenzie@nurturetheroots.co"
               className="text-cocoa hover:underline"
@@ -205,7 +205,7 @@ function MediaPage() {
               ashleemckenzie@nurturetheroots.co
             </a>
           </p>
-          <div className="mt-10">
+          <div className="mt-12">
             <Link
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
