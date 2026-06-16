@@ -135,6 +135,9 @@ function ResourcesPage() {
               >
                 <h3 className="font-serif text-xl text-cocoa leading-snug mb-3">{w.title}</h3>
                 <p className="text-cocoa/75 leading-[1.75] text-[14px] flex-1">{w.body}</p>
+                <p className="mt-3 text-[13px] text-cocoa/60 leading-[1.7] italic font-serif">
+                  {/* [PLACEHOLDER: One expanded description line in your voice.] */}
+                </p>
                 <span className="mt-6 inline-flex w-fit items-center rounded-full border border-taupe/40 px-4 py-2 text-xs uppercase tracking-[0.22em] text-cocoa/70">
                   Coming Soon
                 </span>
@@ -143,6 +146,8 @@ function ResourcesPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* SIGNATURE REFLECTIONS */}
       <section className="bg-blush/50">
