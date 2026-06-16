@@ -1,55 +1,100 @@
-Finish the `/search-console` dashboard with date ranges + period-over-period comparison, country & device breakdowns, sitemaps status, and CSV exports. Keep the route public with `noindex, nofollow`.
 
-## Server functions (`src/lib/search-console.functions.ts`)
+# Site-Wide Editorial Refinement
 
-Extend the existing file — no new files.
+Refine every page of Nurture The Roots™ for emotional spaciousness, clearer hierarchy, and a premium editorial feel — without changing the navigation, the framework, or your written voice. All copy additions will be drafted in your existing warm, grounded, lineage-rooted tone (short connective lines, intros, micro-sections), not new claims or services.
 
-- `getGscMetrics` — add a validated `range` input: `"7d" | "28d" | "90d"` (default `28d`). Compute current window ending `today − 3 days`. Compute the immediately-preceding window of the same length. Run both windows in parallel and return:
-  - `range: { startDate, endDate, days, previousStartDate, previousEndDate }`
-  - `totals`, `previousTotals`, and `deltas` (`{ clicks, impressions, ctr, position }` as absolute differences; position delta is inverted so "lower is better" reads as positive)
-  - `daily` (current window only, one row per day)
-  - `topQueries`, `topPages` (current window, limit 25)
-  - `topCountries` (dimension `country`, limit 10 — ISO-3 codes mapped to display names via `Intl.DisplayNames`)
-  - `topDevices` (dimension `device`, limit 3 — DESKTOP / MOBILE / TABLET)
-- `listGscSitemaps({ siteUrl })` — `GET /webmasters/v3/sites/{siteUrl}/sitemaps`. Return `Array<{ path, lastSubmitted, lastDownloaded, isPending, isSitemapsIndex, type, warnings, errors, contents: Array<{ type, submitted, indexed }> }>`. Errors surface in the panel, not as a thrown exception.
+## Global (applies to every page)
 
-All gateway calls keep the existing `authHeaders()` + status-aware error pattern.
+- Increase vertical rhythm: larger section padding, consistent max-widths for prose (~65ch).
+- Add subtle motif dividers between major sections (hairline rule + small ornamental glyph in terracotta).
+- Calmer typographic scale: tighten heading leading, widen body leading, ensure serif H1/H2 + sans body.
+- Standardize CTA language sitewide to the three approved phrases:
+  - "Begin Your Postpartum Support"
+  - "Start Your Fourth Trimester Plan"
+  - "Schedule Your First Conversation"
+- Footer: add a soft brand anchor line ("Rooted care for the fourth trimester — San Francisco Bay Area") and add spacing between IP, legal, and disclaimer lines.
+- Add 1–2 soft warm images per page from the existing `src/assets/` library (hands, home, baby, rhythm — no new photography).
 
-## Route (`src/routes/search-console.tsx`)
+## Page-by-page refinements
 
-URL state via `validateSearch` + `zodValidator` + `fallback`:
+**1. Home (`src/routes/index.tsx`)**
+- Add a short grounding emotional arc above the hero CTA.
+- Insert two soft images for rhythm (one mid-page, one near closing).
+- Add a "Services at a Glance" preview (3–5 short tiles linking to /services).
+- Add a "Who This Is For" section above Meet Ashlee.
+- Strengthen primary CTA copy.
+- Keep: Four Pillars, Meet Ashlee, overall flow.
 
-- `site?: string` — selected verified property
-- `range: "7d" | "28d" | "90d"` (default `28d`)
+**2. About (`src/routes/about.tsx`)**
+- Add a grounding intro line under the hero.
+- Expand "My Story" with one additional reflective paragraph (drafted in your voice for your approval).
+- Add a warm portrait block (existing asset).
+- New micro-section: "What families often say about me" (2–3 short pull-quotes from existing testimonials).
+- Reorder for arc: Identity → Origin → Philosophy → Expertise → Invitation.
+- More breathing room around Certifications.
 
-Behavior:
+**3. Framework (`src/routes/framework.tsx`)**
+- Grounding intro paragraph explaining why this framework matters.
+- One-line explainer under "At the Center" (Identity · Lineage · Relationship · Rhythm).
+- Add a single "What this means for your family" line under each of the Four Pillars.
+- Soft motif divider between pillars.
+- Closing reflection block before CTA.
+- Keep Four Pillars + Twelve Practices intact.
 
-- First render: `listGscSites` (TanStack Query, 5-min stale). If `?site` is missing, navigate-replace to the first verified site so the URL is shareable.
-- Metrics: `useQuery` keyed by `["gsc", "metrics", site, range]`, calls `getGscMetrics({ siteUrl, range })`. Refresh button calls `queryClient.invalidateQueries` for that key.
-- Sitemaps: `useQuery` keyed by `["gsc", "sitemaps", site]`.
+**4. Services (`src/routes/services.tsx`)**
+- Grounding intro paragraph above offerings.
+- "Who This Is For" section.
+- "What to Expect When We Work Together" section (3–4 short beats).
+- Soft hairline dividers between offerings.
+- One signature line per offering.
+- Add 1–2 soft images.
 
-Layout (top → bottom inside the existing editorial shell):
+**5. Client Journey (`src/routes/client-journey.tsx`)**
+- Grounding intro at top.
+- "What This Journey Offers" section.
+- Soft dividers between the four phases.
+- Closing reflection before CTA.
+- 1–2 soft images.
 
-1. Header (unchanged copy, updated subtitle showing the current window dates).
-2. Controls row: Verified-site `<select>`, Range segmented control (7d / 28d / 90d), Refresh button.
-3. Four metric cards — value + delta pill (▲ green / ▼ red, neutral when 0). Position card inverts color logic.
-4. Daily trend SVG (existing chart, restyled legend to match cards).
-5. Two-column grid: **Top queries** and **Top pages** — each gets a "Download CSV" button in the card header.
-6. Two-column grid: **Top countries** (country name + 4 metric columns) and **Devices** (3 rows with a small bar showing share of clicks).
-7. **Sitemaps** panel — table of submitted sitemaps with last-downloaded date, pending/index flags, warnings/errors counts; empty state explains how to submit one in Search Console.
+**6. Workshops (`src/routes/workshops.tsx`)**
+- Grounding intro.
+- "Who These Workshops Are For" section.
+- "What You'll Learn" section.
+- Short description under each workshop title.
+- Closing reflection before waitlist CTA.
+- 1–2 soft images.
 
-CSV export is pure client-side: build a CSV string from the table data, `Blob` + `URL.createObjectURL` + anchor click. File name: `gsc-{queries|pages}-{site-host}-{range}.csv`.
+**7. Resources (`src/routes/resources.tsx`)**
+- Grounding intro.
+- "How to Use These Resources" + "Who These Are For" sections.
+- Expanded one-line descriptions under each of the Twelve Grounded Companions.
+- Closing reflection.
+- Soft visual rhythm (dividers, spacing).
 
-## Technical details
+**8. Contact (`src/routes/contact.tsx`)**
+- Grounding intro line above the form.
+- Optional single testimonial card alongside form.
+- More spacing between sections; keep all form fields and reassurance copy.
 
-- Date math is UTC, ISO `YYYY-MM-DD`, end = `today − 3 days`.
-- All numeric formatting via existing `nfInt` / `nfPct` / `nfPos`.
-- Country code → name: `new Intl.DisplayNames(["en"], { type: "region" })` with fallback to the raw code (Search Console returns ISO-3, `Intl.DisplayNames` expects ISO-2; map common ones in a small lookup, else show the code).
-- All new tables reuse the existing `TableBlock` component; pass a `headerExtra` slot for the Download button.
-- Keep error / not-found components and `noindex` meta; no auth gating.
+**9. Footer (in `__root.tsx` or footer component)**
+- Soft brand anchor line at top of footer.
+- Increased spacing between IP, legal, disclaimer lines.
+- Keep nav, IP, disclaimer, sovereign tone.
+
+## Technical approach
+
+- Edit each route file in `src/routes/` in place; no new routes, no nav changes.
+- Reuse existing image assets in `src/assets/` via `ResponsiveImage`; no new image generation unless you ask.
+- Introduce a small shared `SectionDivider` component (hairline + terracotta glyph) and a `PullQuote` component in `src/components/` for reuse across pages.
+- Spacing/typography tweaks via Tailwind utilities + small additions to `src/styles.css` tokens if needed (no palette change).
+- All new microcopy will be added in your voice; if you'd prefer to write any of it yourself, I'll leave clearly marked placeholders.
 
 ## Out of scope
 
-- URL inspection / coverage report (require separate APIs not enabled on this connector).
-- Per-user OAuth — dashboard reflects the single connected Google account.
-- Custom date pickers — only 7/28/90 presets.
+- No nav changes, no new pages, no new services or claims.
+- No rewriting of your existing copy — only additive connective tissue and structural refinement.
+- No new photography or AI-generated imagery unless you request it.
+
+## One confirmation before building
+
+Do you want me to draft the new connective microcopy (intros, "Who This Is For", closing reflections, footer anchor line) in your voice for your review, or leave placeholders for you to fill in?
