@@ -22,6 +22,7 @@ import { Route as FrameworkRouteImport } from './routes/framework'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ClientJourneyRouteImport } from './routes/client-journey'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ApproachRouteImport } from './routes/approach'
 import { Route as AboutRouteImport } from './routes/about'
@@ -100,6 +101,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ClientJourneyRoute = ClientJourneyRouteImport.update({
+  id: '/client-journey',
+  path: '/client-journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -165,6 +171,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/blog': typeof BlogRouteWithChildren
+  '/client-journey': typeof ClientJourneyRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
@@ -190,6 +197,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
+  '/client-journey': typeof ClientJourneyRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
@@ -217,6 +225,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/approach': typeof ApproachRoute
   '/blog': typeof BlogRouteWithChildren
+  '/client-journey': typeof ClientJourneyRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
@@ -245,6 +254,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/blog'
+    | '/client-journey'
     | '/contact'
     | '/disclaimer'
     | '/faq'
@@ -270,6 +280,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/approach'
+    | '/client-journey'
     | '/contact'
     | '/disclaimer'
     | '/faq'
@@ -296,6 +307,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/approach'
     | '/blog'
+    | '/client-journey'
     | '/contact'
     | '/disclaimer'
     | '/faq'
@@ -323,6 +335,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ApproachRoute: typeof ApproachRoute
   BlogRoute: typeof BlogRouteWithChildren
+  ClientJourneyRoute: typeof ClientJourneyRoute
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
   FaqRoute: typeof FaqRoute
@@ -436,6 +449,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/client-journey': {
+      id: '/client-journey'
+      path: '/client-journey'
+      fullPath: '/client-journey'
+      preLoaderRoute: typeof ClientJourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
@@ -533,6 +553,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ApproachRoute: ApproachRoute,
   BlogRoute: BlogRouteWithChildren,
+  ClientJourneyRoute: ClientJourneyRoute,
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
   FaqRoute: FaqRoute,
