@@ -62,30 +62,27 @@ function Index() {
       <section className="relative overflow-hidden bg-hero-gradient">
         <div className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 h-[640px] w-[640px] rounded-full bg-clay/20 blur-3xl" aria-hidden />
         <div className="relative mx-auto max-w-5xl px-6 pt-24 pb-24 md:pt-36 md:pb-36 text-center">
-          <div className="uppercase tracking-[0.32em] text-[0.7rem] text-cocoa/70 mb-8">
-            San Francisco · Postpartum Support
+          <div className="uppercase tracking-[0.32em] text-[0.7rem] text-cocoa/70 mb-10">
+            San Francisco · Postpartum Sanctuary
           </div>
-          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.05] text-cocoa">
-            Guiding you through the fourth trimester with clarity and care.
+          <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl font-medium leading-[1.02] text-cocoa">
+            Nurture the Roots<sup className="text-2xl md:text-3xl align-super ml-1 font-normal">™</sup>
           </h1>
-          <p className="mt-8 mx-auto max-w-2xl text-lg md:text-xl text-cocoa/75 leading-[1.85]">
-            Private, in-home postpartum support for San Francisco families—rooted in attunement, identity, and evidence-based care.
+          <p className="mt-10 mx-auto max-w-2xl font-serif text-2xl md:text-3xl text-cocoa leading-[1.3]">
+            Warm, Attuned Postpartum Support in San Francisco
           </p>
-          <p className="mt-6 mx-auto max-w-2xl text-base text-cocoa/70 leading-[1.85]">
-            I support new parents in navigating newborn care, physical recovery, and emotional transition so you can feel grounded, confident, and supported from the very beginning.
+          <p className="mt-10 mx-auto max-w-2xl font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+            Guiding you through the fourth trimester with clarity and care.
           </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
+          <p className="mt-10 mx-auto max-w-2xl text-lg text-cocoa/80 leading-[1.85]">
+            Your fourth trimester deserves care that feels grounding, relational, and deeply human. I support new parents with clarity, attunement, and developmental guidance — so you can feel confident, rested, and connected in this new beginning.
+          </p>
+          <div className="mt-12 flex justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand shadow-sm hover:bg-cocoa transition-colors"
+              className="inline-flex items-center rounded-full bg-clay px-10 py-4 text-base font-medium text-sand shadow-sm hover:bg-cocoa transition-colors"
             >
-              Book a Consultation
-            </Link>
-            <Link
-              to="/approach"
-              className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
-            >
-              Learn About Support
+              Schedule a consultation
             </Link>
           </div>
         </div>
