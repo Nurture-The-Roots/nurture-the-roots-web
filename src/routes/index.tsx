@@ -3,6 +3,7 @@ import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
 import ashleeBabyChairPortraitAsset from "@/assets/ashlee-baby-chair-portrait.jpeg.asset.json";
 import ashleeTenderHoldAsset from "@/assets/ashlee-tender-hold.jpeg.asset.json";
 import aboutResponsive from "@/assets/branding-65.responsive.json";
+import consultResponsive from "@/assets/branding-54.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
@@ -163,6 +164,20 @@ function Index() {
               families through this passage with care that honors who they are, who their baby is
               becoming, and the systems they need to feel grounded, confident, and held.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* IMAGE BAND — consultation in a family's home */}
+      <section aria-hidden="false" className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pt-2 pb-10 md:pt-6 md:pb-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
+            <ResponsiveImage
+              source={consultResponsive}
+              alt="Ashlee reading from a fourth trimester book alongside two parents holding their baby in a warm, sunlit living room"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-[center_35%]"
+            />
           </div>
         </div>
       </section>
