@@ -161,6 +161,14 @@ function AboutPage() {
               A grounded presence for your fourth trimester
             </h2>
           </div>
+          <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] max-w-2xl">
+            <ResponsiveImage
+              source={branding49Responsive}
+              alt="Ashlee McKenzie holding a newborn by a sunlit window — a warm portrait of grounded, attuned postpartum care"
+              sizes="(min-width: 768px) 672px, 100vw"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
           <div className="space-y-8 text-[17px] text-cocoa/80 leading-[1.85]">
             <p>
               I'm Ashlee McKenzie — a Certified Postpartum Doula, Newborn Care Specialist, and
