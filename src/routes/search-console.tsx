@@ -94,7 +94,7 @@ function SearchConsoleDashboard() {
   useEffect(() => {
     if (!site && sitesQuery.data && sitesQuery.data.length > 0) {
       navigate({
-        search: (p) => ({ ...p, site: sitesQuery.data![0].siteUrl }),
+        search: (p: Record<string, unknown>) => ({ ...p, site: sitesQuery.data![0].siteUrl }),
         replace: true,
       });
     }
@@ -161,7 +161,7 @@ function SearchConsoleDashboard() {
                 className="mt-2 w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
                 value={site ?? ""}
                 onChange={(e) =>
-                  navigate({ search: (p) => ({ ...p, site: e.target.value }) })
+                  navigate({ search: (p: Record<string, unknown>) => ({ ...p, site: e.target.value }) })
                 }
               >
                 {sitesQuery.data?.map((s) => (
@@ -181,7 +181,7 @@ function SearchConsoleDashboard() {
                 <button
                   key={r}
                   type="button"
-                  onClick={() => navigate({ search: (p) => ({ ...p, range: r }) })}
+                  onClick={() => navigate({ search: (p: Record<string, unknown>) => ({ ...p, range: r }) })}
                   className={`px-3 py-2 text-sm transition-colors ${
                     range === r
                       ? "bg-primary text-primary-foreground"
