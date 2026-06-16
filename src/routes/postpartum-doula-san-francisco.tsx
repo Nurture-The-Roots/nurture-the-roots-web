@@ -136,9 +136,10 @@ function SfDoulaPage() {
               is a good place to start.
             </p>
             <p>
-              In San Francisco, I work with families who want something more
-              than a checklist: care that honors your identity, your lineage,
-              and the specific shape of your household.
+              As a postpartum doula in San Francisco, I work with families who
+              want something more than a checklist: fourth trimester support that
+              honors your identity, your lineage, and the specific shape of your
+              household.
             </p>
           </div>
         </div>
@@ -211,8 +212,9 @@ function SfDoulaPage() {
             Serving San Francisco & the Bay Area
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] text-center max-w-xl mx-auto">
-            Postpartum doula and newborn care across San Francisco neighborhoods
-            and surrounding Bay Area communities, including:
+            As a postpartum doula and newborn care specialist in San Francisco,
+            I serve families across neighborhoods and surrounding Bay Area
+            communities, including:
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {neighborhoods.map((n) => (
