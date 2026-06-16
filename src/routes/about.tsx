@@ -248,6 +248,20 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* IMAGE BAND — daily practice */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
+            <img
+              src={joyAsset.url}
+              alt="Ashlee smiling as she dresses a baby on a changing table — a warm, everyday moment of attuned newborn care"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* INVITATION / CTA */}
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center font-sans">
