@@ -6,6 +6,7 @@ import aboutResponsive from "@/assets/branding-65.responsive.json";
 import bandResponsive from "@/assets/branding-62.responsive.json";
 import editorialResponsive from "@/assets/branding-photos-48.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 const welcomeImg = welcomeAsset.url;
 
 export const Route = createFileRoute("/")({
@@ -105,7 +106,7 @@ function Index() {
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-9 py-4 text-base font-medium text-sand shadow-sm hover:bg-cocoa transition-colors"
             >
-              Book a Consultation
+              Begin Your Postpartum Support
             </Link>
             <Link
               to="/framework"
@@ -116,6 +117,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <SectionDivider className="my-2 md:my-4" />
 
       {/* OPENING — fourth trimester as threshold */}
       <section className="bg-background">
@@ -219,6 +222,73 @@ function Index() {
         </div>
       </section>
 
+      {/* SERVICES AT A GLANCE */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Services at a Glance</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              Five ways we can work together
+            </h2>
+            <p className="mt-6 text-[16px] text-cocoa/75 leading-[1.8] max-w-xl mx-auto">
+              {/* [PLACEHOLDER: One- to two-sentence intro framing the offerings in your voice.] */}
+              A brief preview of the offerings — each one rooted in identity, rhythm, relationship, and the realities of your family.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { title: "Rooted Postpartum Planning", line: "Prepare for postpartum with clarity and sovereignty." },
+              { title: "In-Home or Virtual Support", line: "Relational care for newborn cues, rhythm, and grounding." },
+              { title: "Newborn Cue + Attunement", line: "Understand your baby's communication and states." },
+              { title: "Sovereign Family Systems", line: "Organize care, boundaries, and household rhythms." },
+              { title: "Integration + Continuity", line: "Carry what you've learned into the next season." },
+            ].map((s) => (
+              <article key={s.title} className="rounded-2xl border border-taupe/25 bg-blush/40 p-6">
+                <h3 className="font-serif text-lg text-cocoa leading-snug mb-2">{s.title}</h3>
+                <p className="text-[14px] text-cocoa/75 leading-[1.7]">{s.line}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link
+              to="/services"
+              className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              View all services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* WHO THIS IS FOR */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-3xl px-6 py-24 md:py-32 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">Who This Is For</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+            This work is for…
+          </h2>
+          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            {/* [PLACEHOLDER: 2–4 sentence description of the families you serve, in your voice.] */}
+            Families preparing for or moving through the fourth trimester who want care that honors who they are — not a template.
+          </p>
+          <ul className="mt-10 grid sm:grid-cols-2 gap-3 max-w-xl mx-auto text-left">
+            {[
+              "Expecting parents preparing with intention",
+              "New parents in the early postpartum window",
+              "Families seeking attuned newborn guidance",
+              "Parents wanting identity-aligned support",
+            ].map((line) => (
+              <li key={line} className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-sand/60 px-5 py-3 text-sm text-cocoa">
+                <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
+                <span className="leading-relaxed">{line}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* ABOUT YOU (FOUNDER) */}
       <section className="bg-blush/60">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
@@ -302,7 +372,7 @@ function Index() {
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
             >
-              Book a Consultation
+              Schedule Your First Conversation
             </Link>
             <Link
               to="/services"

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-54.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-54.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const Route = createFileRoute("/workshops")({
   head: () => ({
@@ -31,17 +32,17 @@ export const Route = createFileRoute("/workshops")({
 
 const TM = () => <span className="align-super text-[0.4em] ml-0.5">™</span>;
 
-const workshops = [
-  "The Rooted Fourth Trimester",
-  "Rhythms Over Routines",
-  "Reading Your Newborn",
-  "Postpartum Identity Mapping",
-  "Care as Ceremony",
-  "Building Your Postpartum Ecosystem",
-  "Sovereign Postpartum Planning",
-  "Newborn Cues + Parent Confidence",
-  "The Relational Newborn",
-  "Thresholds of the Fourth Trimester",
+const workshops: Array<{ title: string; line: string }> = [
+  { title: "The Rooted Fourth Trimester", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Rhythms Over Routines", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Reading Your Newborn", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Postpartum Identity Mapping", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Care as Ceremony", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Building Your Postpartum Ecosystem", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Sovereign Postpartum Planning", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Newborn Cues + Parent Confidence", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "The Relational Newborn", line: "[PLACEHOLDER: One-line description.]" },
+  { title: "Thresholds of the Fourth Trimester", line: "[PLACEHOLDER: One-line description.]" },
 ];
 
 const modules = [
@@ -72,9 +73,37 @@ function WorkshopsPage() {
       {/* INTRO */}
       <section className="bg-background">
         <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <p className="mb-8 text-[16px] text-cocoa/70 leading-[1.85]">
+            {/* [PLACEHOLDER: A grounding intro paragraph in your voice for Workshops + Education.] */}
+          </p>
           <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             Nurture The Roots<TM /> workshops help parents and professionals understand postpartum through a lineage‑rooted, identity‑aligned, developmental, and relational lens.
           </p>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* WHO + WHAT YOU'LL LEARN */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28 grid md:grid-cols-2 gap-6">
+          <div className="rounded-2xl border border-taupe/25 bg-sand/60 p-10">
+            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Who These Workshops Are For</div>
+            <p className="text-[16px] text-cocoa/75 leading-[1.85]">
+              {/* [PLACEHOLDER: 2–3 sentences describing the parents and professionals these workshops are for.] */}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-taupe/25 bg-blush/40 p-10">
+            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">What You'll Learn</div>
+            <ul className="space-y-2 text-[15px] text-cocoa/80 leading-[1.7]">
+              {[1, 2, 3, 4].map((i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="text-clay mt-1 text-[0.55rem]">&#9679;</span>
+                  <span className="italic font-serif">{`[PLACEHOLDER: Learning outcome #${i}.]`}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -102,12 +131,13 @@ function WorkshopsPage() {
             </h2>
           </div>
           <ul className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {workshops.map((title) => (
+            {workshops.map((w) => (
               <li
-                key={title}
-                className="rounded-xl border border-taupe/25 bg-sand/70 px-5 py-5 text-cocoa font-serif text-lg leading-snug"
+                key={w.title}
+                className="rounded-xl border border-taupe/25 bg-sand/70 px-5 py-5 text-cocoa"
               >
-                {title}
+                <div className="font-serif text-lg leading-snug">{w.title}</div>
+                <p className="mt-2 text-[14px] text-cocoa/70 leading-[1.7] italic font-serif">{w.line}</p>
               </li>
             ))}
           </ul>
@@ -144,6 +174,9 @@ function WorkshopsPage() {
       {/* CTA */}
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
+          <p className="mb-10 font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+            {/* [PLACEHOLDER: A short closing reflection in your voice before the waitlist CTA.] */}
+          </p>
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
             Join the workshop list
           </h2>

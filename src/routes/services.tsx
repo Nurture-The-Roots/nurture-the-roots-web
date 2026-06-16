@@ -4,6 +4,7 @@ import servicesImageAsset from "@/assets/approach-3.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-60.responsive.json";
 import planningResponsive from "@/assets/branding-photos-52.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/services")({
 const services = [
   {
     title: "Rooted Postpartum Planning",
+    signature: "[PLACEHOLDER: One signature line for Rooted Postpartum Planning.]",
     description:
       "A values‑based planning session for expecting families who want to prepare for postpartum with clarity, support, and sovereignty.",
     includes: [
@@ -41,6 +43,7 @@ const services = [
   },
   {
     title: "In‑Home or Virtual Postpartum Support",
+    signature: "[PLACEHOLDER: One signature line for In-Home or Virtual Postpartum Support.]",
     description:
       "Relational postpartum support focused on newborn cues, parent confidence, rhythm, regulation, and family grounding.",
     includes: [
@@ -57,6 +60,7 @@ const services = [
   },
   {
     title: "Newborn Cue + Attunement Session",
+    signature: "[PLACEHOLDER: One signature line for Newborn Cue + Attunement Session.]",
     description:
       "A focused session helping parents understand their baby's communication, states, cues, stress signals, readiness signals, and regulation needs.",
     includes: [
@@ -70,6 +74,7 @@ const services = [
   },
   {
     title: "Sovereign Family Systems Session",
+    signature: "[PLACEHOLDER: One signature line for Sovereign Family Systems Session.]",
     description:
       "A practical and reflective session for families who need support organizing care, boundaries, household systems, and community support.",
     includes: [
@@ -84,6 +89,7 @@ const services = [
   },
   {
     title: "Integration + Continuity Session",
+    signature: "[PLACEHOLDER: One signature line for Integration + Continuity Session.]",
     description:
       "A closing or transition session for families moving beyond early postpartum and into the next season of family life.",
     includes: [
@@ -136,10 +142,44 @@ function ServicesPage() {
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
               Five ways we can work together
             </h2>
+            <p className="mt-6 text-[16px] text-cocoa/75 leading-[1.85] max-w-xl mx-auto">
+              {/* [PLACEHOLDER: A grounding intro paragraph above the offerings, in your voice.] */}
+            </p>
           </div>
+
+          {/* WHO THIS IS FOR */}
+          <div className="rounded-2xl border border-taupe/25 bg-sand/60 p-10 md:p-14">
+            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Who This Is For</div>
+            <h3 className="font-serif text-2xl md:text-3xl text-cocoa leading-snug mb-4">
+              These offerings are for…
+            </h3>
+            <p className="text-[16px] text-cocoa/75 leading-[1.85] max-w-2xl">
+              {/* [PLACEHOLDER: 2–3 sentences describing who these offerings are for, in your voice.] */}
+            </p>
+          </div>
+
+          {/* WHAT TO EXPECT */}
+          <div className="rounded-2xl border border-taupe/25 bg-blush/40 p-10 md:p-14">
+            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">What to Expect When We Work Together</div>
+            <ol className="mt-2 grid gap-5 sm:grid-cols-2">
+              {[
+                "[PLACEHOLDER: Step 1 — first beat of working with you.]",
+                "[PLACEHOLDER: Step 2 — second beat.]",
+                "[PLACEHOLDER: Step 3 — third beat.]",
+                "[PLACEHOLDER: Step 4 — fourth beat.]",
+              ].map((line, idx) => (
+                <li key={idx} className="flex items-start gap-4 text-[15px] text-cocoa/80 leading-[1.7]">
+                  <span className="font-serif text-clay text-xl leading-none mt-1">{String(idx + 1).padStart(2, "0")}</span>
+                  <span className="italic font-serif">{line}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
           {services.map((s, i) => (
+            <div key={s.title}>
+              {i > 0 && <SectionDivider className="mb-16 md:mb-20" />}
             <article
-              key={s.title}
               className="rounded-2xl bg-blush/50 p-10 md:p-14 border border-taupe/25"
             >
               <div className="flex items-center gap-5 mb-6">
@@ -148,6 +188,9 @@ function ServicesPage() {
                 </div>
                 <h2 className="font-serif text-3xl md:text-4xl font-medium leading-tight text-cocoa">{s.title}</h2>
               </div>
+              <p className="font-serif italic text-lg text-cocoa/85 leading-[1.5] mb-5 max-w-2xl">
+                {s.signature}
+              </p>
               <p className="text-lg text-cocoa/80 leading-[1.85] max-w-2xl">
                 {s.description}
               </p>
@@ -174,6 +217,7 @@ function ServicesPage() {
                 </Link>
               </div>
             </article>
+            </div>
           ))}
           <div className="text-center pt-4">
             <p className="font-serif italic text-lg text-cocoa/75 max-w-2xl mx-auto leading-[1.6]">
@@ -197,7 +241,7 @@ function ServicesPage() {
               to="/contact"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
             >
-              Schedule a consultation
+              Begin Your Postpartum Support
             </Link>
           </div>
         </div>

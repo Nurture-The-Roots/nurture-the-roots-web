@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-56.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-56.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -101,6 +102,22 @@ function ResourcesPage() {
       {/* WORKSHEETS */}
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
+          {/* GROUNDING INTRO + HOW TO USE + WHO FOR */}
+          <div className="grid md:grid-cols-2 gap-6 mb-16 md:mb-20">
+            <div className="rounded-2xl border border-taupe/25 bg-sand/60 p-10">
+              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">How to Use These Resources</div>
+              <p className="text-[16px] text-cocoa/75 leading-[1.85]">
+                {/* [PLACEHOLDER: 2–3 sentences guiding how to move through these resources, in your voice.] */}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-taupe/25 bg-blush/40 p-10">
+              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Who These Are For</div>
+              <p className="text-[16px] text-cocoa/75 leading-[1.85]">
+                {/* [PLACEHOLDER: 2–3 sentences naming who these resources will serve.] */}
+              </p>
+            </div>
+          </div>
+
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Worksheets &amp; Reflections</div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
@@ -118,6 +135,9 @@ function ResourcesPage() {
               >
                 <h3 className="font-serif text-xl text-cocoa leading-snug mb-3">{w.title}</h3>
                 <p className="text-cocoa/75 leading-[1.75] text-[14px] flex-1">{w.body}</p>
+                <p className="mt-3 text-[13px] text-cocoa/60 leading-[1.7] italic font-serif">
+                  {/* [PLACEHOLDER: One expanded description line in your voice.] */}
+                </p>
                 <span className="mt-6 inline-flex w-fit items-center rounded-full border border-taupe/40 px-4 py-2 text-xs uppercase tracking-[0.22em] text-cocoa/70">
                   Coming Soon
                 </span>
@@ -126,6 +146,8 @@ function ResourcesPage() {
           </div>
         </div>
       </section>
+
+      <SectionDivider />
 
       {/* SIGNATURE REFLECTIONS */}
       <section className="bg-blush/50">
@@ -187,6 +209,9 @@ function ResourcesPage() {
       {/* CTA */}
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
+          <p className="mb-10 font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+            {/* [PLACEHOLDER: A short closing reflection in your voice before the CTA.] */}
+          </p>
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
             Receive new resources as they're released
           </h2>

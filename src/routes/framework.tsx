@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import bandAsset from "@/assets/branding-61.jpeg.asset.json";
 import bandResponsive from "@/assets/branding-61.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const Route = createFileRoute("/framework")({
   head: () => ({
@@ -28,6 +29,8 @@ const pillars = [
     belief: "Postpartum support begins with identity, not tasks.",
     description:
       "This pillar recognizes postpartum as an identity threshold for the parent, the baby, the family system, and the practitioner.",
+    meaning:
+      "[PLACEHOLDER: 'What this means for your family' — one line in your voice for Identity-Aligned Care.]",
     practices: [
       { name: "Identity Mapping", description: "helps parents understand who they are becoming, not only what they need to do." },
       { name: "Emotional Landscape Reading", description: "is the practice of reading the room, the nervous system, and the relational field." },
@@ -40,6 +43,8 @@ const pillars = [
     belief: "Care is ceremony. Care is lineage. Care is continuity.",
     description:
       "This pillar restores sacredness, rhythm, and meaning to daily postpartum tending.",
+    meaning:
+      "[PLACEHOLDER: 'What this means for your family' — one line for Ancestral-Rooted Care.]",
     practices: [
       { name: "Rhythms Over Routines", description: "teaches families to follow the baby's natural rhythms rather than impose rigid schedules." },
       { name: "Care as Ceremony", description: "transforms daily care tasks into grounding rituals." },
@@ -52,6 +57,8 @@ const pillars = [
     belief: "Newborns communicate from the beginning. Parents deserve to feel confident listening.",
     description:
       "This pillar translates professional newborn care mastery into practical, relational teaching.",
+    meaning:
+      "[PLACEHOLDER: 'What this means for your family' — one line for Developmental + Relational Guidance.]",
     practices: [
       { name: "Cue‑Based Care", description: "teaches parents to follow newborn cues for feeding, sleep, soothing, and regulation." },
       { name: "Relational Regulation", description: "supports parents in co‑regulating with their baby." },
@@ -64,6 +71,8 @@ const pillars = [
     belief: "Families thrive when they build systems that honor their identity, not external expectations.",
     description:
       "This pillar helps families create practical, sustainable, values‑aligned support systems.",
+    meaning:
+      "[PLACEHOLDER: 'What this means for your family' — one line for Sovereign Family Systems.]",
     practices: [
       { name: "Sovereign Postpartum Planning", description: "creates plans based on identity, values, needs, and lived reality." },
       { name: "Support Ecosystem Building", description: "helps families create sustainable care networks." },
@@ -91,6 +100,9 @@ function FrameworkPage() {
       {/* INTRO */}
       <section className="bg-background">
         <div className="mx-auto max-w-2xl px-6 py-24 md:py-32 text-center">
+          <p className="mb-10 text-[16px] text-cocoa/70 leading-[1.85]">
+            {/* [PLACEHOLDER: A grounding paragraph in your voice explaining why this framework matters, and why postpartum needs more than a checklist.] */}
+          </p>
           <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             Nurture The Roots<TM /> helps families move through the fourth trimester by grounding postpartum care in identity, lineage, newborn communication, relational regulation, and sovereign systems of support.
           </p>
@@ -122,6 +134,9 @@ function FrameworkPage() {
             <h2 className="font-serif text-3xl md:text-4xl font-medium leading-[1.15] text-cocoa">
               Identity · Lineage · Relationship · Rhythm
             </h2>
+            <p className="mt-6 max-w-xl mx-auto text-[16px] text-cocoa/75 leading-[1.85]">
+              {/* [PLACEHOLDER: One short line in your voice explaining what 'Identity · Lineage · Relationship · Rhythm' holds at the center.] */}
+            </p>
           </div>
           <div className="relative mx-auto aspect-square max-w-lg">
             <div className="absolute inset-0 rounded-full border border-taupe/30" />
@@ -165,8 +180,9 @@ function FrameworkPage() {
             {pillars.map((p, i) => {
               const alt = i % 2 === 0;
               return (
+                <div key={p.numeral}>
+                  {i > 0 && <SectionDivider className="mb-16 md:mb-24" />}
                 <article
-                  key={p.numeral}
                   className={`rounded-2xl border border-taupe/25 p-10 md:p-14 ${alt ? "bg-blush/50" : "bg-sand/60"}`}
                 >
                   <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
@@ -184,6 +200,10 @@ function FrameworkPage() {
                   <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mb-10">
                     {p.description}
                   </p>
+                  <div className="mb-10 max-w-2xl rounded-xl border border-clay/30 bg-sand/70 px-6 py-5">
+                    <div className="uppercase tracking-[0.22em] text-[0.65rem] text-clay mb-2">What this means for your family</div>
+                    <p className="text-[15px] text-cocoa/80 leading-[1.7] italic font-serif">{p.meaning}</p>
+                  </div>
                   <div className="uppercase tracking-[0.22em] text-xs text-clay mb-5">Practices</div>
                   <div className="grid md:grid-cols-3 gap-4">
                     {p.practices.map((practice) => (
@@ -199,9 +219,19 @@ function FrameworkPage() {
                     ))}
                   </div>
                 </article>
+                </div>
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* CLOSING REFLECTION */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+            {/* [PLACEHOLDER: A short closing reflection in your voice — one or two sentences that land the framework before the CTA.] */}
+          </p>
         </div>
       </section>
 
@@ -216,7 +246,7 @@ function FrameworkPage() {
               to="/services"
               className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
             >
-              Explore Services
+              Begin Your Postpartum Support
             </Link>
             <Link
               to="/client-journey"
