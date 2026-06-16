@@ -126,7 +126,7 @@ function ContactPage() {
           <img
             src={contactFamilyAsset.url}
             alt="Ashlee McKenzie supporting a family during the fourth trimester"
-            className="w-full rounded-2xl object-cover aspect-[16/9] md:aspect-[21/9] shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]"
+            className="w-full rounded-2xl object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9] shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]"
           />
         </div>
       </section>
