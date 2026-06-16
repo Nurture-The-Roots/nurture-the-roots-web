@@ -1,68 +1,85 @@
+
 ## Goal
 
-Deliver smaller, faster images on mobile without relying on Cloudflare Image Resizing. Each photo gets pre-generated AVIF + WebP + JPEG variants at multiple widths, served via a `<picture>` element so the browser picks the best format and width for the device.
+Add a new page at **`/files`** that lets anyone with the link browse the connected Microsoft account's files. The page has a toggle to switch between two sources:
 
-## Why this approach
+- **OneDrive** — the connected user's personal drive (`/me/drive`)
+- **SharePoint** — pick a site, then a document library, then browse it
 
-- Lovable's asset CDN serves originals as-is — no on-the-fly format/width negotiation.
-- A server-side transformer (sharp) won't run on the Workers runtime used here.
-- Pre-built variants are a one-time cost at design time, then served straight from the CDN with the same speed and caching as today.
+Both sources support full file management: **browse, upload, download, rename, delete**, plus folder navigation and "New folder".
 
-## What changes
+## Visual / UX
 
-### 1. Generate variants for every photo
+- Editorial styling consistent with the rest of the site: warm cream background, serif header, soft cards.
+- Header: "Files" with subtitle "OneDrive & SharePoint".
+- Toggle pill row: `OneDrive | SharePoint`.
+- When SharePoint is selected: a site picker (search box + list) then a drive picker, then the file table.
+- Breadcrumb trail (`Root / Folder A / Folder B`) for navigation back up.
+- File table: name, type icon, size, modified date, row actions (Download, Rename, Delete). Folders are clickable rows.
+- Floating action bar: "Upload file" (drag-and-drop area + file input), "New folder".
+- Toasts on success/error; confirmation dialog before Delete.
+- `noindex, nofollow` meta on the route — even though it's public, we don't want it crawled.
 
-A one-off Node script (`scripts/generate-image-variants.mjs`) using `sharp`:
+## Technical Plan
 
-- Reads every `src/assets/branding-*.jpeg` / hero / portrait original (re-uploaded temporarily, or pulled from the existing CDN URL).
-- For each source, emits widths `[480, 768, 1152, 1600]` × formats `[avif, webp, jpeg]` — 12 files per photo.
-- Uploads each via `lovable-assets create` and writes a single combined pointer file like `src/assets/branding-62.responsive.json` listing every variant's URL + width + format.
+### Connectors
 
-### 2. Add a `<ResponsiveImage>` component
+Two app connectors are now linked to this project:
+- **Microsoft OneDrive** — scopes include `Files.ReadWrite`, enabling full CRUD on `/me/drive`.
+- **Microsoft SharePoint** — scopes include `Sites.ReadWrite.All`, enabling CRUD on SharePoint document libraries.
 
-`src/components/ResponsiveImage.tsx` wraps the variants in a `<picture>`:
+Both are gateway-backed; secrets `MICROSOFT_ONEDRIVE_API_KEY`, `MICROSOFT_SHAREPOINT_API_KEY`, and `LOVABLE_API_KEY` are already injected at runtime. All Graph calls go through `https://connector-gateway.lovable.dev/{connector}/...` — never directly to `graph.microsoft.com`.
 
-```tsx
-<picture>
-  <source type="image/avif" srcSet="…480w, …768w, …1152w, …1600w" sizes={sizes} />
-  <source type="image/webp" srcSet="…480w, …768w, …1152w, …1600w" sizes={sizes} />
-  <img src="…1152w.jpg" srcSet="…480w, …768w, …1152w, …1600w" sizes={sizes}
-       alt={alt} loading={priority ? "eager" : "lazy"}
-       fetchPriority={priority ? "high" : "auto"}
-       decoding="async" width={…} height={…}
-       className={className} />
-</picture>
-```
+### Server functions (`src/lib/ms-files.functions.ts`)
 
-Browsers auto-negotiate: Safari picks AVIF/WebP if supported, Chrome on a 320px screen pulls the 480w file, retina desktops pull 1600w.
+All Graph access happens server-side via `createServerFn` so the connector keys never reach the browser.
 
-### 3. Swap every `<img src={someAsset.url}>` for `<ResponsiveImage source={someAssetResponsive} ... />`
+OneDrive (uses `MICROSOFT_ONEDRIVE_API_KEY`, base `/me/drive`):
+- `listOneDriveChildren({ itemId? })` → `GET /me/drive/root/children` or `/me/drive/items/{id}/children`
+- `getOneDriveItem({ itemId })` → metadata (used for breadcrumbs)
+- `createOneDriveFolder({ parentId, name })` → `POST /children` with `{ name, folder: {} }`
+- `renameOneDriveItem({ itemId, name })` → `PATCH /items/{id}`
+- `deleteOneDriveItem({ itemId })` → `DELETE /items/{id}`
+- `getOneDriveDownloadUrl({ itemId })` → returns the short-lived `@microsoft.graph.downloadUrl` from `GET /items/{id}` so the browser downloads directly (avoids streaming binaries through the server function RPC boundary).
+- `uploadOneDriveFile` → see "Uploads" below.
 
-Routes touched (one band/portrait each, ~12 sites total):
-`index.tsx`, `services.tsx`, `framework.tsx`, `client-journey.tsx`, `workshops.tsx`, `resources.tsx`, `testimonials.tsx`, `about.tsx` (×2), `contact.tsx`, `blog.what-is-a-postpartum-doula.tsx`.
+SharePoint (uses `MICROSOFT_SHAREPOINT_API_KEY`, base `/sites`):
+- `searchSharePointSites({ query })` → `GET /sites?search=...`
+- `listSharePointDrives({ siteId })` → `GET /sites/{siteId}/drives`
+- `listSharePointChildren({ siteId, driveId, itemId? })` → `GET /sites/{siteId}/drives/{driveId}/root/children` or `/items/{id}/children`
+- `createSharePointFolder`, `renameSharePointItem`, `deleteSharePointItem`, `getSharePointDownloadUrl`, `uploadSharePointFile` — same shapes as OneDrive, scoped to the chosen site+drive.
 
-Existing focal points (`object-[center_30%]`), aspect-ratio classes, shadows, and rounded corners pass straight through.
+Each function validates input with a small `inputValidator` (path-safe IDs, name length, no slashes in names), returns plain DTOs (id, name, size, lastModifiedDateTime, folder/file flag, mimeType, webUrl), and re-throws gateway errors with status + body for the route's `errorComponent`.
 
-### 4. Keep originals as fallback
+### Uploads
 
-Original `.asset.json` files stay in place so anything not migrated keeps working.
+Files come from the browser via `<input type="file">`. Two paths:
 
-## Expected impact
+- **Small files (≤ 4 MB)**: a server function accepts base64-encoded bytes + filename + parentId, then `PUT /items/{parentId}:/{name}:/content` with the decoded `Uint8Array`.
+- **Large files (> 4 MB)**: server function creates an **upload session** (`POST /items/{parentId}:/{name}:/createUploadSession`) and returns the session's `uploadUrl` to the browser, which PUTs chunks of ≤ 60 MiB directly to Microsoft (the upload URL is pre-authenticated, so chunks don't need the connector key). Cap a single upload at 100 MB to keep the UX simple; reject larger files with a clear message.
 
-- Mobile payload per photo drops roughly **60–80%** (AVIF at 480w vs original JPEG at full res).
-- LCP image gets `fetchPriority="high"` + the smallest-acceptable width preloaded.
-- No runtime cost, no extra service, no Cloudflare dependency.
+### Route (`src/routes/files.tsx`)
 
-## Out of scope
+- Public route, `head()` sets `<title>Files</title>` and `meta robots="noindex, nofollow"`.
+- TanStack Query owns the file-listing cache (`["onedrive", parentId]`, `["sharepoint", siteId, driveId, parentId]`). Loader prefetches the OneDrive root via `ensureQueryData`.
+- All mutations (upload, rename, delete, new folder) use `useMutation` + `useServerFn`; on success they invalidate the matching list query so the table refreshes.
+- Source toggle and current folder path live in URL search params (`source`, `site`, `drive`, `path`) via `validateSearch` so refresh/share preserves state.
+- `errorComponent` shows a friendly message and a retry button.
 
-- SVG icons and the logo (already vector).
-- Migrating to Cloudflare Images later — possible additive path if you ever put the domain on a CF zone.
+### Components
 
-## Open question I'll need answered before running the script
+- `src/components/files/SourceToggle.tsx` — segmented control.
+- `src/components/files/SharePointSitePicker.tsx` — debounced search + result list.
+- `src/components/files/FileTable.tsx` — sortable list, row actions, double-click into folders.
+- `src/components/files/UploadDropzone.tsx` — drop area + file picker; routes through small-vs-large upload paths.
+- `src/components/files/RenameDialog.tsx`, `ConfirmDeleteDialog.tsx`, `NewFolderDialog.tsx` — built on existing shadcn primitives.
 
-The variant generator needs the original full-resolution files. Two options:
+### Navigation
 
-- **(A)** I download each from the current CDN URL (lower quality if the originals were already compressed at upload).
-- **(B)** You re-drop the originals into chat so we start from max quality.
+Add a discreet "Files" link in the existing footer/admin area (not the main marketing nav) so it stays separate from the public-facing site copy.
 
-I'll proceed with (A) by default unless you say otherwise.
+### Out of scope (ask before adding)
+
+- Per-user authentication / multi-tenant Microsoft sign-in — the connector is a single shared identity by design.
+- Sharing links, permission editing, version history.
+- In-browser preview of Office docs (we link out to `webUrl` instead).
