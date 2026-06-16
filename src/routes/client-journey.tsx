@@ -72,7 +72,9 @@ function ClientJourneyPage() {
               src={bandAsset.url}
               alt="Ashlee softly tending to a baby beside a bassinet in a sunlit nursery"
               loading="lazy"
-              className="w-full h-full object-cover"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-[center_38%]"
             />
           </div>
         </div>

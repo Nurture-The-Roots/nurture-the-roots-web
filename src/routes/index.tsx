@@ -172,7 +172,9 @@ function Index() {
               src={bandAsset.url}
               alt="Ashlee McKenzie standing by a window holding a baby close, soft daylight filling the nursery"
               loading="lazy"
-              className="w-full h-full object-cover"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-[center_30%]"
             />
           </div>
         </div>
@@ -224,9 +226,11 @@ function Index() {
                 src={aboutAsset.url}
                 alt="Ashlee McKenzie seated in a sunlit nursery, gently cradling a newborn in a soft moment of attuned presence"
                 loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
                 width={1280}
                 height={1920}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_28%]"
               />
             </div>
             <div className="max-w-md">

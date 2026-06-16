@@ -90,7 +90,9 @@ function ResourcesPage() {
               src={bandAsset.url}
               alt="Ashlee barefoot in a calm nursery, attentively tending to a baby on the changing table"
               loading="lazy"
-              className="w-full h-full object-cover"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-[center_32%]"
             />
           </div>
         </div>

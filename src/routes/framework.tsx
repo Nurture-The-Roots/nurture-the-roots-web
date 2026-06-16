@@ -106,7 +106,9 @@ function FrameworkPage() {
               src={bandAsset.url}
               alt="Ashlee playfully engaging a baby with a wooden toy during developmental tummy time"
               loading="lazy"
-              className="w-full h-full object-cover"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-[center_40%]"
             />
           </div>
         </div>

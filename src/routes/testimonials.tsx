@@ -71,7 +71,9 @@ function TestimonialsPage() {
               src={bandAsset.url}
               alt="Ashlee laughing warmly with a smiling baby cradled in her arms"
               loading="lazy"
-              className="w-full h-full object-cover"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-[center_30%]"
             />
           </div>
         </div>
