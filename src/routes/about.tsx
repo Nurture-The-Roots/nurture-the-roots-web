@@ -5,6 +5,8 @@ import ashleePortraitAsset from "@/assets/ashlee-portrait.jpeg.asset.json";
 import branding60Responsive from "@/assets/branding-60.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
+import { GoogleReviewsBlock } from "@/components/integrations/GoogleReviewsBlock";
+import { IntakeButton } from "@/components/integrations/DubsadoEmbed";
 const aboutImg = walkingAsset.url;
 
 export const Route = createFileRoute("/about")({

@@ -247,13 +247,14 @@ function ServicesPage() {
         </div>
       </section>
 
+      <GoogleReviewsBlock
+        eyebrow="From Google"
+        heading="Care that families return to"
+        className="bg-background"
+      />
+
       {/* CLOSING / CTA */}
       <section className="bg-hero-gradient">
-        <GoogleReviewsBlock
-          eyebrow="From Google"
-          heading="Care that families return to"
-          className="bg-background"
-        />
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
             You don't have to navigate this beginning alone.
