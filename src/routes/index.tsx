@@ -6,16 +6,17 @@ const welcomeImg = welcomeAsset.url;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Postpartum Doula San Francisco | Nurture The Roots™" },
-      { name: "description", content: "Private, in-home postpartum support for San Francisco families—rooted in attunement, identity, and evidence-based care." },
-      { property: "og:title", content: "Postpartum Doula San Francisco | Nurture The Roots™" },
-      { property: "og:description", content: "Guiding you through the fourth trimester with clarity and care." },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/" },
+      { title: "Nurture The Roots™ — Fourth Trimester Expert & Postpartum Support" },
+      { name: "description", content: "Lineage‑rooted postpartum support from a Fourth Trimester Expert serving families in San Francisco. Guiding you through the fourth trimester with clarity, attunement, and care." },
+      { property: "og:title", content: "Nurture The Roots™ — Fourth Trimester Expert & Postpartum Support" },
+      { property: "og:description", content: "Nurture The Roots™ offers grounded, identity‑rooted postpartum support from a Fourth Trimester Expert. Serving families in San Francisco with clarity, care, and attuned newborn guidance." },
+      { property: "og:url", content: "https://nurturetheroots.co/" },
+      { name: "keywords", content: "fourth trimester expert, postpartum doula San Francisco, newborn care specialist, postpartum support SF, fourth trimester support, newborn guidance, attuned postpartum care" },
       { property: "og:image", content: welcomeImg },
       { name: "twitter:image", content: welcomeImg },
     ],
     links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/" },
+      { rel: "canonical", href: "https://nurturetheroots.co/" },
     ],
     scripts: [
       {
