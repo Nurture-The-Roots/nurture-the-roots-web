@@ -18,6 +18,20 @@ import { NewsletterForm } from "../components/integrations/NewsletterForm";
 import { SocialIcons } from "../components/integrations/SocialIcons";
 import { integrations } from "../lib/integrations";
 
+/**
+ * Build the Microsoft Clarity bootstrap script when a Project ID is set, and
+ * only in production builds so dev sessions don't pollute the live analytics.
+ */
+function buildClarityScripts() {
+  const id = integrations.clarityProjectId;
+  if (!id || !import.meta.env.PROD) return [];
+  return [
+    {
+      children: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${id}");`,
+    },
+  ];
+}
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -347,6 +361,9 @@ function SiteFooter() {
           <p className="mt-2 text-sm text-cocoa/75">
             Postpartum Support · San Francisco, CA
           </p>
+          <div className="mt-5">
+            <SocialIcons />
+          </div>
         </div>
 
         {/* Contact */}
@@ -382,6 +399,13 @@ function SiteFooter() {
             <li><Link to="/privacy" className="hover:text-clay transition-colors">Privacy Policy</Link></li>
             <li><Link to="/terms" className="hover:text-clay transition-colors">Terms of Service</Link></li>
           </ul>
+        </div>
+      </div>
+
+      {/* Newsletter */}
+      <div className="border-t border-cocoa/15 bg-blush/30">
+        <div className="mx-auto max-w-6xl px-6 py-14">
+          <NewsletterForm />
         </div>
       </div>
 
