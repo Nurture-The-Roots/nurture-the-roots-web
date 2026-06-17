@@ -4,7 +4,7 @@ import ashleeBabyChairPortraitAsset from "@/assets/ashlee-baby-chair-portrait.jp
 import ashleeTenderHoldAsset from "@/assets/ashlee-tender-hold.jpeg.asset.json";
 import aboutResponsive from "@/assets/branding-65.responsive.json";
 import consultResponsive from "@/assets/branding-54.responsive.json";
-import heroResponsive from "@/assets/branding-55.responsive.json";
+import heroResponsive from "@/assets/branding-photos-48.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
@@ -112,13 +112,13 @@ function Index() {
 
       {/* HERO IMAGE */}
       <section className="bg-background">
-        <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
+        <div className="mx-auto max-w-5xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
             <ResponsiveImage
               source={heroResponsive}
-              alt="Ashlee holding a baby wrapped in a rust-colored blanket in a bright nursery, standing beside a white mesh bassinet with a bird mobile above"
-              sizes="(min-width: 1024px) 896px, 100vw"
-              className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]"
+              alt="Ashlee standing barefoot in a plant-filled living room, holding a baby wrapped in a peach blanket, with sunlight streaming through a large window and greenery everywhere"
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/2] md:aspect-[16/10]"
             />
           </div>
         </div>
@@ -151,15 +151,15 @@ function Index() {
         </div>
       </section>
 
-      {/* IMAGE BAND */}
-      <section aria-hidden="false" className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 pt-2 pb-10 md:pt-6 md:pb-16">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
+      {/* SECONDARY IMAGE — chair portrait */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-4xl px-6 pt-2 pb-10 md:pt-6 md:pb-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]">
             <ResponsiveImage
-              source={consultResponsive}
-              alt="Ashlee reading from a fourth trimester book alongside two parents holding their baby in a warm, sunlit living room"
-              sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-center"
+              source={aboutResponsive}
+              alt="Ashlee sitting in a light wooden chair near a window, holding a baby on her lap in a soft, bright, intimate moment"
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="w-full h-full object-cover object-[center_30%]"
             />
           </div>
         </div>
@@ -401,14 +401,12 @@ function Index() {
       {/* IMAGE BAND — editorial */}
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={homeClosingImg}
-              alt="Ashlee seated with a baby in her lap near a sunlit window, sharing a soft, grounded moment together"
-              loading="lazy"
-              decoding="async"
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
+            <ResponsiveImage
+              source={consultResponsive}
+              alt="Ashlee reading from a fourth trimester book alongside two parents holding their baby in a warm, sunlit living room"
               sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_38%]"
+              className="w-full h-full object-cover object-center"
             />
           </div>
         </div>

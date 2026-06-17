@@ -192,13 +192,13 @@ function ClientJourneyPage() {
                   </div>
                 </article>
 
-                {/* Support ecosystem photo after Phase One */}
-                {i === 0 && (
+                {/* Group family photo after Phase Three — collaborative support */}
+                {i === 2 && (
                   <div className="mt-12 md:mt-16">
                     <div className="overflow-hidden rounded-2xl shadow-[0_16px_48px_-20px_rgba(74,63,57,0.3)] max-w-2xl mx-auto">
                       <img
-                        src="/images/support-ecosystem.jpg"
-                        alt="Three adults standing in a bright nursery, one holding a baby wrapped in a rust-colored blanket, the others standing close by observing"
+                        src="/images/ashlee-brand-0101.jpg"
+                        alt="Three adults sitting together with a baby wrapped in a rust blanket, reviewing a family plan in a warm, sunlit living room"
                         loading="lazy"
                         decoding="async"
                         className="w-full h-auto object-cover rounded-2xl"
