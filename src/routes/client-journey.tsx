@@ -180,6 +180,21 @@ function ClientJourneyPage() {
                     </ul>
                   </div>
                 </article>
+
+                {/* Support ecosystem photo after Phase One */}
+                {i === 0 && (
+                  <div className="mt-12 md:mt-16">
+                    <div className="overflow-hidden rounded-2xl shadow-[0_16px_48px_-20px_rgba(74,63,57,0.3)] max-w-2xl mx-auto">
+                      <img
+                        src="/images/support-ecosystem.jpg"
+                        alt="Three adults standing in a bright nursery, one holding a baby wrapped in a rust-colored blanket, the others standing close by observing"
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-auto object-cover rounded-2xl"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })}
