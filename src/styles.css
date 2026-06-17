@@ -53,12 +53,6 @@
   --color-taupe: var(--taupe);
   --color-cocoa: var(--cocoa);
   --color-earth: var(--earth);
-  --color-sage: var(--sage);
-  --color-moss: var(--moss);
-  --color-cedar: var(--cedar);
-  --color-terracotta: var(--terracotta);
-  --color-forest: var(--forest);
-  --color-ivory: var(--ivory);
   --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
@@ -72,14 +66,6 @@
   --taupe: oklch(0.800 0.018 65);   /* soft warm taupe (footer) */
   --cocoa: oklch(0.300 0.012 60);   /* deep charcoal heading */
   --earth: oklch(0.260 0.010 60);   /* deep charcoal body text */
-
-  /* Earthy botanical accents — used sparingly alongside the warm cream base */
-  --ivory:      oklch(0.965 0.008 80);
-  --sage:       oklch(0.780 0.028 145);  /* soft sage */
-  --moss:       oklch(0.560 0.045 145);  /* moss green */
-  --forest:     oklch(0.380 0.040 150);  /* deep forest accent */
-  --cedar:      oklch(0.430 0.045 50);   /* cedar brown */
-  --terracotta: oklch(0.620 0.110 38);   /* muted terracotta */
 
   --background: var(--sand);
   --foreground: var(--earth);
@@ -125,42 +111,12 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
-    font-size: 1rem;
-    line-height: 1.75;
-    text-rendering: optimizeLegibility;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
     color: var(--color-cocoa);
     font-weight: 400;
     letter-spacing: -0.01em;
-    line-height: 1.15;
-    text-wrap: balance;
-  }
-  h1 {
-    font-size: clamp(2.25rem, 5vw + 0.5rem, 3.75rem);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-  }
-  h2 {
-    font-size: clamp(1.75rem, 3vw + 0.5rem, 2.75rem);
-    line-height: 1.15;
-  }
-  h3 {
-    font-size: clamp(1.35rem, 1.5vw + 0.6rem, 1.75rem);
-    line-height: 1.25;
-  }
-  p {
-    text-wrap: pretty;
-    max-width: 65ch;
-  }
-  /* Allow opt-out for grid/card layouts where the measure cap is unwanted */
-  .measure-none p,
-  p.measure-none {
-    max-width: none;
-  }
-  section {
-    scroll-margin-top: 5rem;
   }
 }
 
@@ -172,35 +128,4 @@
 
 @utility bg-soft-gradient {
   background-image: linear-gradient(180deg, var(--sand), var(--blush));
-}
-
-@layer components {
-  .nav-link {
-    position: relative;
-    padding-bottom: 0.25rem;
-  }
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin-inline: auto;
-    height: 1px;
-    width: 0;
-    background-color: var(--clay);
-    transition: width 300ms ease;
-  }
-  .nav-link:hover::after,
-  .nav-link:focus-visible::after {
-    width: 60%;
-  }
-  .nav-link.is-active::after {
-    width: 100%;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .nav-link::after {
-      transition: none;
-    }
-  }
 }

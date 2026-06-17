@@ -7,10 +7,10 @@ export const Route = createFileRoute("/terms")({
       { name: "description", content: "Terms and conditions for using the Nurture The Roots website and services." },
       { property: "og:title", content: "Terms & Conditions — Nurture The Roots™" },
       { property: "og:description", content: "Terms and conditions for Nurture The Roots." },
-      { property: "og:url", content: "https://nurturetheroots.co/terms" },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/terms" },
     ],
     links: [
-      { rel: "canonical", href: "https://nurturetheroots.co/terms" },
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/terms" },
     ],
   }),
   component: TermsPage,

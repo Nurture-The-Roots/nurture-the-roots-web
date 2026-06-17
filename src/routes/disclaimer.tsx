@@ -7,10 +7,10 @@ export const Route = createFileRoute("/disclaimer")({
       { name: "description", content: "Disclaimer for Nurture The Roots. Important information about the scope of services and medical advice." },
       { property: "og:title", content: "Disclaimer — Nurture The Roots™" },
       { property: "og:description", content: "Disclaimer for Nurture The Roots services and website content." },
-      { property: "og:url", content: "https://nurturetheroots.co/disclaimer" },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/disclaimer" },
     ],
     links: [
-      { rel: "canonical", href: "https://nurturetheroots.co/disclaimer" },
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/disclaimer" },
     ],
   }),
   component: DisclaimerPage,

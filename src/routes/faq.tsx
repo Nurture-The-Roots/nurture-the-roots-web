@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
-import nurseryResponsive from "@/assets/branding-photos-40.responsive.json";
-import { ResponsiveImage } from "@/components/ResponsiveImage";
 import {
   Accordion,
   AccordionContent,
@@ -69,11 +67,11 @@ export const Route = createFileRoute("/faq")({
       { name: "description", content: "Frequently asked questions about postpartum support, overnight care, feeding support, and working with Ashlee McKenzie." },
       { property: "og:title", content: "FAQ — Nurture The Roots™" },
       { property: "og:description", content: "Answers to common questions about postpartum support and care services." },
-      { property: "og:url", content: "https://nurturetheroots.co/faq" },
+      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/faq" },
       { property: "og:image", content: welcomeAsset.url },
     ],
     links: [
-      { rel: "canonical", href: "https://nurturetheroots.co/faq" },
+      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/faq" },
     ],
     scripts: [
       {
@@ -113,20 +111,6 @@ function FaqPage() {
           <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
             Here are answers to the most common questions new parents ask when exploring support.
           </p>
-        </div>
-      </section>
-
-      {/* IMAGE BAND — quiet, grounded support */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 pb-16 md:pb-20">
-          <div className="mx-auto overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/3] max-w-2xl">
-            <ResponsiveImage
-              source={nurseryResponsive}
-              alt="Ashlee gently lowering a swaddled baby into a bassinet in a warmly lit nursery at night"
-              sizes="(min-width: 768px) 672px, 100vw"
-              className="w-full h-full object-cover object-[center_30%]"
-            />
-          </div>
         </div>
       </section>
 

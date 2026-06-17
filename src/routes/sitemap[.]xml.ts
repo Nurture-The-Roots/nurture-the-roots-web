@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://nurturetheroots.co";
+const BASE_URL = "https://nurture-the-roots-web.lovable.app";
 
 interface SitemapEntry {
   path: string;
@@ -16,11 +16,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/about", changefreq: "monthly", priority: "0.9" },
-          { path: "/framework", changefreq: "monthly", priority: "0.9" },
           { path: "/services", changefreq: "monthly", priority: "0.9" },
-          { path: "/client-journey", changefreq: "monthly", priority: "0.8" },
-          { path: "/workshops", changefreq: "monthly", priority: "0.8" },
-          { path: "/resources", changefreq: "monthly", priority: "0.7" },
           { path: "/postpartum-doula-san-francisco", changefreq: "monthly", priority: "0.9" },
           { path: "/approach", changefreq: "monthly", priority: "0.8" },
           { path: "/testimonials", changefreq: "monthly", priority: "0.7" },
