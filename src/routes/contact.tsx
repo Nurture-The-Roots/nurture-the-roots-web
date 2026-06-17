@@ -60,7 +60,7 @@ const supportOptions = [
   "Newborn Care Specialist Support",
   "Fourth Trimester Coaching",
   "Holistic Family Support Sessions",
-  "General Inquiry / Not Sure Yet",
+  "I'm not sure yet",
 ];
 
 function ContactPage() {
@@ -129,7 +129,7 @@ function ContactPage() {
         <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
             <ResponsiveImage
-              src={contactFamilyResponsive}
+              source={contactFamilyResponsive}
               alt="Ashlee supporting a family during the fourth trimester — a warm, attuned moment in the nursery"
               sizes="(min-width: 1024px) 896px, 100vw"
               className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9]"
@@ -171,7 +171,7 @@ function ContactPage() {
                     <Input
                       id="fullName"
                       type="text"
-                      placeholder="Your name"
+                      placeholder="Your full name"
                       className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                       {...register("fullName")}
                     />
@@ -186,7 +186,7 @@ function ContactPage() {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="you@email.com"
+                      placeholder="Your email address"
                       className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                       {...register("email")}
                     />
@@ -204,7 +204,7 @@ function ContactPage() {
                     <Input
                       id="phone"
                       type="tel"
-                      placeholder="(555) 123-4567"
+                      placeholder="Your phone number"
                       className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                       {...register("phone")}
                     />
@@ -229,7 +229,7 @@ function ContactPage() {
                   <Input
                     id="location"
                     type="text"
-                    placeholder="Neighborhood, city, or area"
+                    placeholder="City or neighborhood"
                     className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                     {...register("location")}
                   />
@@ -248,7 +248,7 @@ function ContactPage() {
                       aria-label="Type of support"
                       className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth focus:ring-clay focus:ring-offset-0 h-auto"
                     >
-                      <SelectValue placeholder="Select a service" />
+                      <SelectValue placeholder="Select an option" />
                     </SelectTrigger>
                     <SelectContent className="pointer-events-auto">
                       {supportOptions.map((option) => (
@@ -267,7 +267,7 @@ function ContactPage() {
                   <Input
                     id="heardAbout"
                     type="text"
-                    placeholder="A friend, a search, an article…"
+                    placeholder="Referral, social media, search, etc."
                     className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0"
                     {...register("heardAbout")}
                   />
@@ -280,7 +280,7 @@ function ContactPage() {
                   <Textarea
                     id="message"
                     rows={5}
-                    placeholder="Share as much or as little as feels right."
+                    placeholder="Share anything you'd like me to know about your family, your needs, or your questions."
                     className="w-full rounded-lg border border-taupe/40 bg-background px-4 py-3 text-earth placeholder:text-earth/70 focus-visible:ring-clay focus-visible:ring-offset-0 resize-none"
                     {...register("message")}
                   />
@@ -297,7 +297,7 @@ function ContactPage() {
                     disabled={isSubmitting}
                     className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand hover:bg-cocoa transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Sending..." : "Send Inquiry"}
+                    {isSubmitting ? "Sending..." : "Send Your Inquiry"}
                   </button>
                 </div>
               </form>
