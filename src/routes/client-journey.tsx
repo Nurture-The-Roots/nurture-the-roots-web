@@ -123,7 +123,8 @@ function ClientJourneyPage() {
           {/* GROUNDING INTRO */}
           <div className="text-center max-w-2xl mx-auto">
             <p className="text-[17px] text-cocoa/80 leading-[1.85]">
-              {/* [PLACEHOLDER: A grounding intro paragraph in your voice at the top of the journey.] */}
+              Your journey is held with clarity, rhythm, and relational depth. This is postpartum
+              care that meets you where you are and grows with you.
             </p>
           </div>
 
@@ -136,7 +137,9 @@ function ClientJourneyPage() {
               A rooted pathway, phase by phase
             </h2>
             <p className="text-[16px] text-cocoa/75 leading-[1.85] max-w-2xl">
-              {/* [PLACEHOLDER: 2–3 sentences naming what the journey offers families.] */}
+              We begin with identity, lineage, and your family's story. We learn your baby's cues,
+              rhythms, and communication. We support emotional and nervous system grounding. And we
+              build sustainable systems for your fourth trimester and beyond.
             </p>
           </div>
 
@@ -187,7 +190,7 @@ function ClientJourneyPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-2xl px-6 pb-16 md:pb-24 text-center">
           <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
-            {/* [PLACEHOLDER: A short closing reflection in your voice before the CTA.] */}
+            This is postpartum care that begins at the roots — and carries you forward.
           </p>
         </div>
       </section>

@@ -35,11 +35,26 @@ export const Route = createFileRoute("/services")({
           url: "https://nurturetheroots.co/services",
           areaServed: { "@type": "City", name: "San Francisco" },
           makesOffer: [
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Rooted Postpartum Planning" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "In‑Home or Virtual Postpartum Support" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Newborn Cue + Attunement Session" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sovereign Family Systems Session" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Integration + Continuity Session" } },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Rooted Postpartum Planning" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "In‑Home or Virtual Postpartum Support" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Newborn Cue + Attunement Session" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Sovereign Family Systems Session" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Integration + Continuity Session" },
+            },
           ],
         }),
       },
@@ -51,7 +66,7 @@ export const Route = createFileRoute("/services")({
 const services = [
   {
     title: "Rooted Postpartum Planning",
-    signature: "[PLACEHOLDER: One signature line for Rooted Postpartum Planning.]",
+    signature: "Prepare for postpartum with clarity and sovereignty.",
     description:
       "A values‑based planning session for expecting families who want to prepare for postpartum with clarity, support, and sovereignty.",
     includes: [
@@ -68,7 +83,7 @@ const services = [
   },
   {
     title: "In‑Home or Virtual Postpartum Support",
-    signature: "[PLACEHOLDER: One signature line for In-Home or Virtual Postpartum Support.]",
+    signature: "Relational care for newborn cues, rhythm, and grounding.",
     description:
       "Relational postpartum support focused on newborn cues, parent confidence, rhythm, regulation, and family grounding.",
     includes: [
@@ -85,7 +100,7 @@ const services = [
   },
   {
     title: "Newborn Cue + Attunement Session",
-    signature: "[PLACEHOLDER: One signature line for Newborn Cue + Attunement Session.]",
+    signature: "Understand your baby's communication and states.",
     description:
       "A focused session helping parents understand their baby's communication, states, cues, stress signals, readiness signals, and regulation needs.",
     includes: [
@@ -99,7 +114,7 @@ const services = [
   },
   {
     title: "Sovereign Family Systems Session",
-    signature: "[PLACEHOLDER: One signature line for Sovereign Family Systems Session.]",
+    signature: "Organize care, boundaries, and household rhythms around your values.",
     description:
       "A practical and reflective session for families who need support organizing care, boundaries, household systems, and community support.",
     includes: [
@@ -114,7 +129,7 @@ const services = [
   },
   {
     title: "Integration + Continuity Session",
-    signature: "[PLACEHOLDER: One signature line for Integration + Continuity Session.]",
+    signature: "Carry what you've learned into the next season with confidence.",
     description:
       "A closing or transition session for families moving beyond early postpartum and into the next season of family life.",
     includes: [
@@ -171,7 +186,8 @@ function ServicesPage() {
               Five ways we can work together
             </h2>
             <p className="mt-6 text-[16px] text-cocoa/75 leading-[1.85] max-w-xl mx-auto">
-              {/* [PLACEHOLDER: A grounding intro paragraph above the offerings, in your voice.] */}
+              Every family receives care that is tailored, relational, and aligned with their
+              identity and lived reality.
             </p>
           </div>
 
@@ -184,7 +200,10 @@ function ServicesPage() {
               These offerings are for…
             </h3>
             <p className="text-[16px] text-cocoa/75 leading-[1.85] max-w-2xl">
-              {/* [PLACEHOLDER: 2–3 sentences describing who these offerings are for, in your voice.] */}
+              Families who desire a grounded, relational postpartum experience. Parents seeking
+              newborn communication and developmental guidance. Anyone who wants support that honors
+              their values, culture, and lived reality — whether this is your first baby or your
+              fourth.
             </p>
           </div>
 
@@ -195,10 +214,10 @@ function ServicesPage() {
             </div>
             <ol className="mt-2 grid gap-5 sm:grid-cols-2">
               {[
-                "[PLACEHOLDER: Step 1 — first beat of working with you.]",
-                "[PLACEHOLDER: Step 2 — second beat.]",
-                "[PLACEHOLDER: Step 3 — third beat.]",
-                "[PLACEHOLDER: Step 4 — fourth beat.]",
+                "We connect — starting with your identity, values, and what you need protected.",
+                "We attune — learning your baby's cues, rhythms, and communication together.",
+                "We regulate — supporting emotional and nervous system grounding for the whole family.",
+                "We integrate — building sustainable systems for your fourth trimester and beyond.",
               ].map((line, idx) => (
                 <li
                   key={idx}

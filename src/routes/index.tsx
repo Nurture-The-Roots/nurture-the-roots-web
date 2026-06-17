@@ -289,9 +289,9 @@ function Index() {
               Five ways we can work together
             </h2>
             <p className="mt-6 text-[16px] text-cocoa/75 leading-[1.8] max-w-xl mx-auto">
-              {/* [PLACEHOLDER: One- to two-sentence intro framing the offerings in your voice.] */}
-              A brief preview of the offerings — each one rooted in identity, rhythm, relationship,
-              and the realities of your family.
+              {/* Services intro */}
+              Your care experience is grounded in identity, rhythm, relationship, and the realities
+              of your family.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
