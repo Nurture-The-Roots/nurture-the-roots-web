@@ -176,6 +176,21 @@ function ResourcesPage() {
                       </div>
                     ))}
                   </div>
+
+                  {/* Image after Newborn Communication & Rhythm */}
+                  {ci === 1 && (
+                    <div className="mt-14 md:mt-18">
+                      <div className="overflow-hidden rounded-2xl shadow-[0_16px_48px_-20px_rgba(74,63,57,0.3)] max-w-2xl mx-auto">
+                        <img
+                          src="/images/ashlee-brand-0037.jpg"
+                          alt="A baby lying on a play mat under a wooden activity gym, Ashlee's hands gently holding the baby's feet in a developmental moment"
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-auto object-cover rounded-2xl"
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}

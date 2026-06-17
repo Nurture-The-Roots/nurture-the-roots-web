@@ -192,6 +192,21 @@ function ClientJourneyPage() {
                   </div>
                 </article>
 
+                {/* Support ecosystem photo after Phase One */}
+                {i === 0 && (
+                  <div className="mt-12 md:mt-16">
+                    <div className="overflow-hidden rounded-2xl shadow-[0_16px_48px_-20px_rgba(74,63,57,0.3)] max-w-2xl mx-auto">
+                      <img
+                        src="/images/ashlee-brand-0082.jpg"
+                        alt="Ashlee leaning into a bassinet while two parents stand close by, smiling together in a bright nursery"
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-auto object-cover rounded-2xl"
+                      />
+                    </div>
+                  </div>
+                )}
+
                 {/* Group family photo after Phase Three — collaborative support */}
                 {i === 2 && (
                   <div className="mt-12 md:mt-16">
