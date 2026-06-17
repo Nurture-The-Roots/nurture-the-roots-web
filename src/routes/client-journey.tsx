@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import ashleeFeedingMomentAsset from "@/assets/ashlee-feeding-moment.jpeg.asset.json";
+import openerResponsive from "@/assets/branding-55.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 
@@ -141,6 +142,16 @@ function ClientJourneyPage() {
               rhythms, and communication. We support emotional and nervous system grounding. And we
               build sustainable systems for your fourth trimester and beyond.
             </p>
+          </div>
+
+          {/* CLIENT JOURNEY OPENER IMAGE */}
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-3xl mx-auto mb-16 md:mb-20">
+            <ResponsiveImage
+              source={openerResponsive}
+              alt="Ashlee holding a baby wrapped in a rust-colored blanket, standing beside a white mesh bassinet in a bright nursery with a bird mobile above"
+              sizes="(min-width: 1024px) 768px, 100vw"
+              className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]"
+            />
           </div>
 
           {phases.map((phase, i) => {

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import ashleePlaymatTendingAsset from "@/assets/ashlee-playmat-tending.jpeg.asset.json";
+import babyChangingTableAsset from "@/assets/baby-changing-table.jpeg.asset.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 
@@ -180,8 +180,8 @@ function FrameworkPage() {
         <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
             <img
-              src={ashleePlaymatTendingAsset.url}
-              alt="Ashlee leaning over a baby on a play mat, tending with calm focus during an everyday developmental moment"
+              src={babyChangingTableAsset.url}
+              alt="Ashlee in a calm nursery environment, tending to a baby on a changing table with focused, attuned presence"
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"

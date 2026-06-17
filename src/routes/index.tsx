@@ -4,6 +4,7 @@ import ashleeBabyChairPortraitAsset from "@/assets/ashlee-baby-chair-portrait.jp
 import ashleeTenderHoldAsset from "@/assets/ashlee-tender-hold.jpeg.asset.json";
 import aboutResponsive from "@/assets/branding-65.responsive.json";
 import consultResponsive from "@/assets/branding-54.responsive.json";
+import heroResponsive from "@/assets/branding-55.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
@@ -105,6 +106,20 @@ function Index() {
             <CalendlyButton className="inline-flex items-center rounded-full bg-clay px-9 py-4 text-base font-medium text-sand shadow-sm hover:bg-cocoa transition-colors">
               Book a Consultation
             </CalendlyButton>
+          </div>
+        </div>
+      </section>
+
+      {/* HERO IMAGE */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
+            <ResponsiveImage
+              source={heroResponsive}
+              alt="Ashlee holding a baby wrapped in a rust-colored blanket in a bright nursery, standing beside a white mesh bassinet with a bird mobile above"
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]"
+            />
           </div>
         </div>
       </section>

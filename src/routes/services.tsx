@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import servicesImageAsset from "@/assets/approach-3.jpeg.asset.json";
-import babyChangingTableAsset from "@/assets/baby-changing-table.jpeg.asset.json";
-import approach1Responsive from "@/assets/approach-1.responsive.json";
+import anchorResponsive from "@/assets/branding-54.responsive.json";
+import ncsResponsive from "@/assets/branding-57.responsive.json";
 import approach2Responsive from "@/assets/approach-2.responsive.json";
+import ashleeFeedingAsset from "@/assets/ashlee-feeding-moment.jpeg.asset.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
@@ -106,15 +107,15 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* IMAGE 1 — warm, relational, holding baby */}
+      {/* IMAGE 1 — anchor: family + Fourth Trimester book */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-16">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
+        <div className="mx-auto max-w-4xl px-6 pb-10 md:pb-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
             <ResponsiveImage
-              source={approach1Responsive}
-              alt="Ashlee holding a baby in a bright, calm environment — a warm, relational moment of postpartum care"
-              sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-center"
+              source={anchorResponsive}
+              alt="Three adults sitting together in a cozy living room, one holding a baby wrapped in a rust-colored blanket, another holding the book The Fourth Trimester"
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="w-full h-auto object-cover aspect-[3/2] md:aspect-[16/9]"
             />
           </div>
         </div>
@@ -156,6 +157,18 @@ function ServicesPage() {
               </li>
             ))}
           </ul>
+          {/* Optional image — feeding moment */}
+          <div className="mt-12 max-w-md mx-auto">
+            <div className="overflow-hidden rounded-2xl shadow-[0_16px_48px_-20px_rgba(74,63,57,0.3)]">
+              <img
+                src={ashleeFeedingAsset.url}
+                alt="Ashlee in a quiet feeding moment, illustrating the attuned, relational rhythm of postpartum doula support"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-auto object-cover rounded-2xl"
+              />
+            </div>
+          </div>
           <p className="mt-10 text-center font-serif italic text-lg text-cocoa/85 leading-[1.5] max-w-2xl mx-auto">
             This is not task‑based care. It is relational, developmental, and deeply attuned.
           </p>
@@ -205,17 +218,15 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* IMAGE 2 — developmental / attunement moment */}
+      {/* IMAGE — NCS: baby on mat under wooden gym */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-10 md:py-16">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
-            <img
-              src={babyChangingTableAsset.url}
-              alt="A developmental, attunement-based moment — baby on a changing table during a gentle, grounded postpartum care session"
-              loading="lazy"
-              decoding="async"
-              sizes="(min-width: 1024px) 1152px, 100vw"
-              className="w-full h-full object-cover object-[center_45%]"
+        <div className="mx-auto max-w-4xl px-6 py-10 md:py-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
+            <ResponsiveImage
+              source={ncsResponsive}
+              alt="Baby on a soft mat under a wooden baby gym, with Ashlee kneeling close by in a warm, developmental moment"
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="w-full h-auto object-cover aspect-[3/2] md:aspect-[16/9]"
             />
           </div>
         </div>

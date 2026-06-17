@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
 import ashleeRelationalDetailAsset from "@/assets/ashlee-relational-detail.jpeg.asset.json";
 import ashleePortraitAsset from "@/assets/ashlee-portrait.jpeg.asset.json";
-import branding49Responsive from "@/assets/branding-photos-49.responsive.json";
+import branding54Responsive from "@/assets/branding-54.responsive.json";
+import branding39Responsive from "@/assets/branding-photos-39.responsive.json";
 import branding60Responsive from "@/assets/branding-60.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
@@ -146,8 +147,8 @@ function AboutPage() {
           </div>
           <div className="mx-auto mb-12 md:mb-16 overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] max-w-2xl">
             <ResponsiveImage
-              source={branding49Responsive}
-              alt="Ashlee McKenzie holding a newborn by a sunlit window — a warm portrait of grounded, attuned postpartum care"
+              source={branding54Responsive}
+              alt="Ashlee sitting with a family in a cozy living room, one adult holding a baby wrapped in a rust-colored blanket, another holding the book The Fourth Trimester"
               sizes="(min-width: 768px) 672px, 100vw"
               className="w-full h-full object-cover object-center"
             />
@@ -219,17 +220,15 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* IMAGE BAND */}
+      {/* IMAGE BAND — attunement / bassinet */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 pb-10 md:pb-16">
-          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/5] max-w-md mx-auto">
-            <img
-              src={ashleeRelationalDetailAsset.url}
-              alt="A quiet relational detail between Ashlee and a baby, illustrating attuned, grounded postpartum care"
-              loading="lazy"
-              decoding="async"
-              sizes="(min-width: 768px) 448px, 100vw"
-              className="w-full h-full object-cover object-[center_40%]"
+        <div className="mx-auto max-w-4xl px-6 pb-10 md:pb-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] max-w-2xl mx-auto">
+            <ResponsiveImage
+              source={branding39Responsive}
+              alt="Ashlee leaning over a bassinet, gently adjusting and soothing a baby wrapped in an orange blanket"
+              sizes="(min-width: 768px) 672px, 100vw"
+              className="w-full h-full object-cover object-center"
             />
           </div>
         </div>
