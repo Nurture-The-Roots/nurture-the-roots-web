@@ -1,22 +1,45 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
-import aboutAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
+import ashleeBabyChairPortraitAsset from "@/assets/ashlee-baby-chair-portrait.jpeg.asset.json";
+import ashleeTenderHoldAsset from "@/assets/ashlee-tender-hold.jpeg.asset.json";
+import aboutResponsive from "@/assets/branding-65.responsive.json";
+import consultResponsive from "@/assets/branding-54.responsive.json";
+import heroResponsive from "@/assets/branding-photos-48.responsive.json";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
+import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 const welcomeImg = welcomeAsset.url;
+const homeBandImg = ashleeTenderHoldAsset.url;
+const homeClosingImg = ashleeBabyChairPortraitAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Postpartum Doula San Francisco | Nurture The Roots™" },
-      { name: "description", content: "Private, in-home postpartum support for San Francisco families—rooted in attunement, identity, and evidence-based care." },
-      { property: "og:title", content: "Postpartum Doula San Francisco | Nurture The Roots™" },
-      { property: "og:description", content: "Guiding you through the fourth trimester with clarity and care." },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/" },
+      { title: "Nurture The Roots™ — Fourth Trimester Postpartum Support" },
+      {
+        name: "description",
+        content:
+          "Lineage‑rooted postpartum support from a Fourth Trimester Expert serving San Francisco families with clarity, attunement, and attuned newborn care.",
+      },
+      {
+        property: "og:title",
+        content: "Nurture The Roots™ — Fourth Trimester Postpartum Support",
+      },
+      {
+        property: "og:description",
+        content:
+          "Grounded, identity‑rooted postpartum support from a Fourth Trimester Expert in San Francisco — clarity, care, and attuned newborn guidance.",
+      },
+      { property: "og:url", content: "https://nurturetheroots.co/" },
+      {
+        name: "keywords",
+        content:
+          "fourth trimester expert, postpartum doula San Francisco, newborn care specialist, postpartum support SF, fourth trimester support, newborn guidance, attuned postpartum care",
+      },
       { property: "og:image", content: welcomeImg },
       { name: "twitter:image", content: welcomeImg },
     ],
-    links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/" },
-    ],
+    links: [{ rel: "canonical", href: "https://nurturetheroots.co/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -26,7 +49,7 @@ export const Route = createFileRoute("/")({
           name: "Nurture The Roots™",
           description:
             "Lineage-rooted, identity-aligned postpartum doula and newborn care practice serving families across the San Francisco Bay Area.",
-          url: "https://nurture-the-roots-web.lovable.app/",
+          url: "https://nurturetheroots.co/",
           image: welcomeImg,
           telephone: "",
           email: "ashleemckenzie@nurturetheroots.co",
@@ -60,189 +83,314 @@ function Index() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden bg-hero-gradient">
-        <div className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 h-[640px] w-[640px] rounded-full bg-clay/20 blur-3xl" aria-hidden />
+        <div
+          className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 h-[640px] w-[640px] rounded-full bg-clay/20 blur-3xl"
+          aria-hidden
+        />
         <div className="relative mx-auto max-w-5xl px-6 pt-24 pb-24 md:pt-36 md:pb-36 text-center">
-          <div className="uppercase tracking-[0.32em] text-[0.7rem] text-cocoa/70 mb-8">
-            San Francisco · Postpartum Support
+          <div className="uppercase tracking-[0.32em] text-[0.7rem] text-cocoa/70 mb-10">
+            San Francisco · Postpartum Sanctuary
           </div>
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.05] text-cocoa">
-            Guiding you through the fourth trimester with clarity and care.
+            Postpartum care begins at the roots
           </h1>
-          <p className="mt-8 mx-auto max-w-2xl text-lg md:text-xl text-cocoa/75 leading-[1.85]">
-            Private, in-home postpartum support for San Francisco families—rooted in attunement, identity, and evidence-based care.
+          <p className="mt-8 font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5] max-w-2xl mx-auto">
+            A lineage‑rooted, identity‑aligned sanctuary for the fourth trimester.
           </p>
-          <p className="mt-6 mx-auto max-w-2xl text-base text-cocoa/70 leading-[1.85]">
-            I support new parents in navigating newborn care, physical recovery, and emotional transition so you can feel grounded, confident, and supported from the very beginning.
+          <p className="mt-8 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
+            Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> offers
+            attuned, relational, developmental postpartum care that honors who you are, where you
+            come from, and the new life emerging in your arms.
           </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand shadow-sm hover:bg-cocoa transition-colors"
-            >
+          <div className="mt-12">
+            <CalendlyButton className="inline-flex items-center rounded-full bg-clay px-9 py-4 text-base font-medium text-sand shadow-sm hover:bg-cocoa transition-colors">
               Book a Consultation
-            </Link>
-            <Link
-              to="/approach"
-              className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
-            >
-              Learn About Support
-            </Link>
+            </CalendlyButton>
           </div>
         </div>
       </section>
 
-      {/* YOU'RE IN THE RIGHT PLACE */}
+      {/* HERO IMAGE */}
       <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 py-24 md:py-36 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">You're in the Right Place</div>
+        <div className="mx-auto max-w-5xl px-6 pt-10 md:pt-14">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
+            <ResponsiveImage
+              source={heroResponsive}
+              alt="Ashlee standing barefoot in a plant-filled living room, holding a baby wrapped in a peach blanket, with sunlight streaming through a large window and greenery everywhere"
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/2] md:aspect-[16/10]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider className="my-2 md:my-4" />
+
+      {/* WHAT FAMILIES NEED MOST */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-3xl px-6 py-24 md:py-32 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">
+            What Families Need Most
+          </div>
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            Support that meets you where you are
+            The fourth trimester is a threshold — a becoming
           </h2>
-          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            The early weeks after birth can feel tender, overwhelming, and deeply transformative.
+          <div className="mt-10 space-y-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            <p>Parents deserve care that is grounded, relational, and deeply human.</p>
+            <p>
+              Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> supports
+              families through identity shifts, newborn communication, emotional regulation, and the
+              creation of sovereign systems of support.
+            </p>
+            <p>
+              This is not task‑based care.
+              <br />
+              This is identity‑based, lineage‑rooted postpartum tending.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECONDARY IMAGE — chair portrait */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-4xl px-6 pt-2 pb-10 md:pt-6 md:pb-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]">
+            <ResponsiveImage
+              source={aboutResponsive}
+              alt="Ashlee sitting in a light wooden chair near a window, holding a baby on her lap in a soft, bright, intimate moment"
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="w-full h-full object-cover object-[center_30%]"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* THE NURTURE THE ROOTS™ APPROACH */}
+      <section className="bg-blush/60">
+        <div className="mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">The Approach</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+            The Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> Approach
+          </h2>
+          <p className="mt-10 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            Postpartum support is most powerful when it begins at the roots:
           </p>
-          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            You may be navigating:
-          </p>
-          <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-xl mx-auto text-left">
+          <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
             {[
-              "Exhaustion and constant change",
-              "Questions about your newborn's needs",
-              "Your own recovery and identity shift",
-              "A desire to feel more steady, more supported, more like yourself",
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-blush/40 px-5 py-4 text-sm text-cocoa">
+              { root: "Identity", line: "who you are becoming" },
+              { root: "Lineage", line: "the continuity you carry forward" },
+              { root: "Relationship", line: "the bond you are building" },
+              { root: "Rhythm", line: "the pace your family naturally moves at" },
+            ].map((item) => (
+              <div
+                key={item.root}
+                className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-sand/60 px-5 py-4 text-sm text-cocoa"
+              >
                 <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
-                <span className="leading-relaxed">{item}</span>
+                <span className="leading-relaxed">
+                  <strong className="font-medium">{item.root}</strong> — {item.line}
+                </span>
               </div>
             ))}
           </div>
           <p className="mt-10 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            You don't have to move through this alone.
+            These four roots shape the entire fourth trimester and form the foundation of the
+            Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> Framework.
           </p>
-          <p className="mt-4 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            Nurture The Roots offers calm, attuned, and grounded support so you can settle into this season with greater clarity and care.
-          </p>
+          <div className="mt-10">
+            <Link
+              to="/framework"
+              className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              Explore the Framework
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* WHAT YOU RECEIVE */}
-      <section className="bg-blush/60">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
-          <div className="text-center max-w-2xl mx-auto">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">What You Receive</div>
+      {/* IMAGE BAND — relational presence */}
+      <section aria-hidden="false" className="bg-background">
+        <div className="mx-auto max-w-6xl px-6 pt-4 pb-4 md:pt-10 md:pb-10">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
+            <img
+              src={homeBandImg}
+              alt="Ashlee beside a bed, gently swaddling a baby in a calm, light-filled room"
+              loading="lazy"
+              decoding="async"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-[center_52%]"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* HOW I SUPPORT YOU */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+              How I Support You
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-              Postpartum care that is both practical and deeply attuned
+              Your care experience is grounded in
             </h2>
           </div>
-          <div className="mt-16 grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
             {[
-              {
-                title: "Newborn Care Guidance",
-                body: "Hands-on support with feeding, sleep, soothing, and understanding your baby's cues.",
-              },
-              {
-                title: "Postpartum Recovery Support",
-                body: "Care that honors your healing, rest, and physical recovery after birth.",
-              },
-              {
-                title: "Emotional & Relational Support",
-                body: "A steady, nonjudgmental presence as you navigate the emotional landscape of early parenthood.",
-              },
-              {
-                title: "In-Home, Personalized Care",
-                body: "Private support tailored to your needs, rhythm, and home environment in San Francisco.",
-              },
+              "Attuned presence",
+              "Newborn communication + developmental guidance",
+              "Relational regulation",
+              "Ceremonial tending",
+              "Sovereign postpartum planning",
+              "Sustainable support systems",
             ].map((item) => (
               <div
-                key={item.title}
-                className="rounded-2xl border border-taupe/30 bg-sand/60 p-8 hover:bg-sand transition-colors"
+                key={item}
+                className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-blush/40 px-5 py-4 text-sm text-cocoa"
               >
-                <h3 className="font-serif text-xl text-cocoa mb-3">{item.title}</h3>
-                <p className="text-cocoa/75 leading-relaxed">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* YOUR APPROACH */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 py-24 md:py-36 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Your Approach</div>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            Rooted in attunement, guided by what matters
-          </h2>
-          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            My approach is both relational and evidence-based.
-          </p>
-          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            “Lineage-rooted” care means I honor your identity, family history, and lived experience as part of how we support your transition into parenthood.
-          </p>
-          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            This is not one-size-fits-all care.
-          </p>
-          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            It is support that:
-          </p>
-          <div className="mt-8 grid sm:grid-cols-2 gap-4 max-w-xl mx-auto text-left">
-            {[
-              "Listens before it leads",
-              "Adapts to your values and needs",
-              "Integrates best practices in newborn and postpartum care",
-              "Centers your sense of safety, clarity, and trust in yourself",
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-blush/40 px-5 py-4 text-sm text-cocoa">
                 <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
                 <span className="leading-relaxed">{item}</span>
               </div>
             ))}
           </div>
+          <p className="mt-12 text-center text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            Every family receives care that is tailored, relational, and aligned with their identity
+            and lived reality.
+          </p>
+          <div className="mt-10 text-center">
+            <Link
+              to="/services"
+              className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              View Services
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ABOUT YOU (FOUNDER) */}
+      <SectionDivider />
+
+      {/* THE CLIENT JOURNEY (SHORT VERSION) */}
+      <section className="bg-blush/60">
+        <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+              The Client Journey
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              Your journey is held with clarity, rhythm, and relational depth
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+            {[
+              {
+                num: "01",
+                name: "Connection",
+                line: "we begin with identity, lineage, and your family's story",
+              },
+              {
+                num: "02",
+                name: "Attunement",
+                line: "we learn your baby's cues, rhythms, and communication",
+              },
+              {
+                num: "03",
+                name: "Regulation",
+                line: "we support emotional + nervous system grounding",
+              },
+              {
+                num: "04",
+                name: "Integration",
+                line: "we build sustainable systems for your fourth trimester and beyond",
+              },
+            ].map((step) => (
+              <div key={step.num} className="rounded-2xl border border-taupe/25 bg-sand/60 p-6">
+                <div className="font-serif text-2xl text-clay leading-none mb-3">{step.num}</div>
+                <h3 className="font-serif text-lg text-cocoa leading-snug mb-2">{step.name}</h3>
+                <p className="text-[14px] text-cocoa/75 leading-[1.7]">{step.line}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-12 text-center font-serif italic text-lg md:text-xl text-cocoa/85 leading-[1.5] max-w-2xl mx-auto">
+            This is postpartum care that meets you where you are and grows with you.
+          </p>
+          <div className="mt-10 text-center">
+            <Link
+              to="/client-journey"
+              className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              How It Works
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHO I SUPPORT */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-3xl px-6 py-24 md:py-32 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">Who I Support</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+            I support families who desire
+          </h2>
+          <ul className="mt-10 grid sm:grid-cols-2 gap-3 max-w-xl mx-auto text-left">
+            {[
+              "A grounded, relational postpartum experience",
+              "Newborn communication + developmental guidance",
+              "Identity‑aligned care",
+              "Ancestral continuity",
+              "A calm, regulated home environment",
+              "Support that honors their values, culture, and lived reality",
+            ].map((line) => (
+              <li
+                key={line}
+                className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-sand/60 px-5 py-3 text-sm text-cocoa"
+              >
+                <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
+                <span className="leading-relaxed">{line}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            Whether this is your first baby or your fourth, your fourth trimester deserves to be
+            held with intention.
+          </p>
+        </div>
+      </section>
+
+      {/* ABOUT ASHLEE */}
       <section className="bg-blush/60">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
           <div className="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
             <div className="relative overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5]">
-              <img
-                src={aboutAsset.url}
-                alt="Ashlee McKenzie holding a sleeping newborn close, standing by a bright window with greenery outside"
-                loading="lazy"
-                width={1280}
-                height={1920}
-                className="w-full h-full object-cover"
+              <ResponsiveImage
+                source={aboutResponsive}
+                alt="Ashlee McKenzie seated in a sunlit nursery, gently cradling a newborn in a soft moment of attuned presence"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="w-full h-full object-cover object-[center_28%]"
               />
             </div>
             <div className="max-w-md">
-              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">About</div>
+              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">About Ashlee</div>
               <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
                 Meet Ashlee
               </h2>
               <div className="mt-8 space-y-6 text-[17px] text-cocoa/80 leading-[1.85]">
                 <p>
-                  I'm a certified postpartum doula and newborn care specialist and new parent support coach, based in San Francisco.
+                  I am a postpartum doula, newborn care specialist, and fourth trimester guide with
+                  15+ years of experience supporting families through identity shifts, newborn
+                  communication, and relational regulation.
                 </p>
                 <p>
-                  My work is grounded in attunement, presence, and a deep respect for the early postpartum period as a foundational time for both parent and child.
-                </p>
-                <p>
-                  I believe families deserve support that is not only knowledgeable, but also relational, culturally aware, and emotionally safe.
-                </p>
-                <p>
-                  I come to this work not just with training, but with a commitment to helping you feel more steady, more informed, and more supported in this transition.
+                  My work is rooted in lineage, developmental attunement, and sovereign family
+                  systems — helping parents feel confident, connected, and deeply supported.
                 </p>
               </div>
-              <p className="mt-6 text-sm text-cocoa/60 italic">
-                Certified postpartum doula serving San Francisco families through the fourth trimester.
-              </p>
               <div className="mt-8">
                 <Link
-                  to="/approach"
+                  to="/about"
                   className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
                 >
-                  Learn More About My Approach
+                  Meet Ashlee
                 </Link>
               </div>
             </div>
@@ -250,47 +398,37 @@ function Index() {
         </div>
       </section>
 
-      {/* SOCIAL PROOF */}
+      {/* IMAGE BAND — editorial */}
       <section className="bg-background">
-        <div className="mx-auto max-w-5xl px-6 py-24 md:py-36 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">Testimonials</div>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa mb-14">
-            Trusted by growing families
-          </h2>
-          <div className="rounded-2xl bg-blush/50 border border-taupe/25 p-10 md:p-14 max-w-2xl mx-auto">
-            <p className="text-cocoa/75 leading-[1.85]">
-              Kind words from families I've supported will be shared here soon.
-            </p>
+        <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
+            <ResponsiveImage
+              source={consultResponsive}
+              alt="Ashlee reading from a fourth trimester book alongside two parents holding their baby in a warm, sunlit living room"
+              sizes="(min-width: 1024px) 1152px, 100vw"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
         </div>
       </section>
 
-      {/* HOW TO BEGIN */}
+      {/* BEGIN YOUR POSTPARTUM SANCTUARY */}
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">How to Begin</div>
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Begin</div>
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            Start with a conversation
+            Begin your postpartum sanctuary
           </h2>
-          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
-            Every family's needs are different.
+          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
+            Your fourth trimester deserves care that is slow, relational, and rooted.
           </p>
-          <p className="mt-4 text-[17px] text-cocoa/80 leading-[1.85]">
-            We'll begin with a consultation to understand your postpartum plans, your questions, and how I can best support you during this time.
+          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
+            If you're ready to feel held, grounded, and supported:
           </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
-            >
+          <div className="mt-12">
+            <CalendlyButton className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand shadow-sm hover:bg-cocoa transition-colors">
               Book a Consultation
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full border border-cocoa/30 px-8 py-4 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
-            >
-              Contact
-            </Link>
+            </CalendlyButton>
           </div>
         </div>
       </section>

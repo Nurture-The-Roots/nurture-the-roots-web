@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "source": "/__l5e/assets-v1/186c1505-4d00-4cfc-bcc5-c0c84378b8ff/approach-1.jpeg",
+  "original_filename": "approach-1.jpeg",
+  "intrinsic": {
+    "width": 1279,
+    "height": 1920
+  },
+  "fallback": "/__l5e/assets-v1/837fc4c8-d8a7-45a9-84c6-91eaaec8703c/approach-1-1152.jpg",
+  "variants": [
+    {
+      "width": 480,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/73a0a5b7-00e1-4c21-869c-f870db70d256/approach-1-480.avif",
+      "size": 24731
+    },
+    {
+      "width": 480,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/49bd4105-3d29-44b3-8a61-3472a8d13800/approach-1-480.webp",
+      "size": 43752
+    },
+    {
+      "width": 480,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/8096d89b-dcda-4594-be1f-de75444be379/approach-1-480.jpg",
+      "size": 51393
+    },
+    {
+      "width": 768,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/a8995fc4-907b-4ff4-b3ec-5f2c5ad4de4a/approach-1-768.avif",
+      "size": 50046
+    },
+    {
+      "width": 768,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/f31e88da-085d-40a8-8b65-40e0cd968210/approach-1-768.webp",
+      "size": 90582
+    },
+    {
+      "width": 768,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/ae1e7fa0-3edf-4c7b-a31b-629c4cb0b458/approach-1-768.jpg",
+      "size": 109626
+    },
+    {
+      "width": 1152,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/d45719b8-50d0-46bb-a53a-9864f01eb19e/approach-1-1152.avif",
+      "size": 87866
+    },
+    {
+      "width": 1152,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/968b8fa3-2c4a-4585-b895-81534fb69c1d/approach-1-1152.webp",
+      "size": 164826
+    },
+    {
+      "width": 1152,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/837fc4c8-d8a7-45a9-84c6-91eaaec8703c/approach-1-1152.jpg",
+      "size": 209100
+    }
+  ]
+}

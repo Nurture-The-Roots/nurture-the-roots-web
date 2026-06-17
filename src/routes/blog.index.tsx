@@ -1,187 +1,189 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import blogImageAsset from "@/assets/approach-2.jpeg.asset.json";
+import { SectionDivider } from "@/components/SectionDivider";
+import { useState } from "react";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Nurture the Roots Blog — Fourth Trimester Reflections" },
+      { title: "Reflections & Resources — Nurture The Roots™" },
       {
         name: "description",
         content:
-          "Warm, grounded writing for new parents navigating the fourth trimester — reflections, guidance, and identity-aligned postpartum support.",
+          "Writing from the intersections of identity, lineage, newborn communication, and the fourth trimester.",
       },
-      { property: "og:title", content: "Nurture the Roots Blog" },
+      { property: "og:title", content: "Reflections & Resources — Nurture The Roots™" },
       {
         property: "og:description",
         content:
-          "Reflections, guidance, and identity-aligned support for the fourth trimester.",
+          "Stories, guidance, and reflections for families moving through the earliest seasons of parenthood.",
       },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/blog" },
+      { property: "og:url", content: "https://nurturetheroots.co/blog" },
       { property: "og:image", content: blogImageAsset.url },
     ],
-    links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/blog" },
+    links: [{ rel: "canonical", href: "https://nurturetheroots.co/blog" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Reflections & Resources — Nurture The Roots™",
+          url: "https://nurturetheroots.co/blog",
+          description:
+            "Writing from the intersections of identity, lineage, newborn communication, and the fourth trimester.",
+          publisher: {
+            "@type": "Organization",
+            name: "Nurture The Roots™",
+            url: "https://nurturetheroots.co/",
+          },
+        }),
+      },
     ],
   }),
   component: BlogPage,
 });
 
-const featuredPosts = [
-  {
-    title: "What Is a Postpartum Doula?",
-    excerpt:
-      "A warm guide to understanding what a postpartum doula does, how they differ from other caregivers, and why identity-aligned care matters in the fourth trimester.",
-    href: "/blog/what-is-a-postpartum-doula",
-  },
-  {
-    title: "The Sacred Pause of the Fourth Trimester",
-    excerpt:
-      "A reflection on slowing down, softening expectations, and meeting yourself with tenderness in the weeks after birth.",
-  },
-  {
-    title: "Reading Your Newborn's Cues",
-    excerpt:
-      "How attunement begins long before words — gentle ways to recognize what your baby is telling you, from the very first days.",
-  },
+const categories = [
+  "Identity",
+  "Lineage",
+  "Newborn Communication",
+  "Rhythm",
+  "Postpartum Care",
+  "Family Systems",
 ];
 
-const categories = [
-  "Fourth Trimester",
-  "Newborn Cues & Development",
-  "Identity & Postpartum Transitions",
-  "Lineage & Ancestral Support",
-  "Feeding & Nourishment",
-  "Sleep & Rhythms",
-  "Home Environment & Nervous System",
-  "Personal Essays",
-];
+const placeholderCards = Array.from({ length: 6 }, (_, i) => ({
+  id: i,
+  title: "Coming Soon",
+  subtitle: "A grounded reflection is on its way.",
+}));
 
 function BlogPage() {
+  const [email, setEmail] = useState("");
+
   return (
-    <div className="bg-background text-cocoa">
-      {/* Hero */}
+    <>
+      {/* HERO */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-4xl px-6 py-24 text-center">
-          <p className="uppercase tracking-[0.3em] text-xs text-clay mb-6">Journal</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-cocoa">
-            Nurture the Roots Blog
+        <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
+          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Blog</div>
+          <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">
+            Reflections &amp; Resources
           </h1>
-          <div className="mt-8 space-y-4 text-earth/80 text-lg leading-relaxed max-w-2xl mx-auto">
-            <p>Warm, grounded writing for new parents navigating the fourth trimester.</p>
-            <p>
-              Here you'll find reflections, guidance, and identity-aligned support
-              rooted in lineage, attunement, and developmental understanding.
-            </p>
+          <p className="mt-8 font-serif italic text-xl md:text-2xl text-cocoa/75 leading-[1.5] max-w-2xl mx-auto">
+            Writing from the intersections of identity, lineage, newborn communication, and the
+            fourth trimester.
+          </p>
+          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            This space is a calm, grounded archive of stories, guidance, and reflections for
+            families moving through the earliest seasons of parenthood.
+          </p>
+        </div>
+      </section>
+
+      {/* FEATURED CATEGORIES */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-4xl px-6 py-20 md:py-28 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+            Featured Categories
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {categories.map((cat) => (
+              <span
+                key={cat}
+                className="inline-block rounded-full border border-taupe/40 bg-blush/40 px-6 py-2.5 text-sm text-cocoa/80 cursor-default"
+              >
+                {cat}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Posts */}
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center mb-12">
-            <p className="uppercase tracking-[0.3em] text-xs text-clay mb-4">Featured</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-cocoa">Featured Writing</h2>
+      {/* FEATURED POST */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-3xl px-6 pb-16 md:pb-24">
+          <div className="rounded-2xl border border-taupe/25 bg-sand/60 p-10 md:p-14 text-center">
+            <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">Featured</div>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium leading-[1.15] text-cocoa">
+              Coming Soon
+            </h2>
+            <p className="mt-4 font-serif italic text-lg text-cocoa/75 leading-[1.5]">
+              A new reflection is being prepared with care.
+            </p>
+            <button
+              type="button"
+              disabled
+              className="mt-8 inline-flex items-center rounded-full border border-taupe/40 px-6 py-3 text-sm uppercase tracking-[0.22em] text-cocoa/50 cursor-not-allowed"
+            >
+              Read More
+            </button>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {featuredPosts.map((post) => (
-              <article
-                key={post.title}
-                className="bg-cream/50 border border-taupe/20 rounded-2xl p-8 flex flex-col"
-              >
-                <h3 className="font-serif text-xl text-cocoa">{post.title}</h3>
-                <p className="mt-4 text-sm text-earth/80 leading-relaxed flex-1">
-                  {post.excerpt}
-                </p>
-                {post.href ? (
-                  <Link
-                    to={post.href}
-                    className="mt-6 self-start text-sm uppercase tracking-[0.2em] text-clay hover:text-cocoa transition-colors"
-                  >
-                    Read More →
-                  </Link>
-                ) : (
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* BLOG GRID */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {placeholderCards.map((card) => {
+              const alt = card.id % 2 === 0;
+              return (
+                <article
+                  key={card.id}
+                  className={`rounded-2xl border border-taupe/25 p-8 flex flex-col ${alt ? "bg-blush/40" : "bg-sand/50"}`}
+                >
+                  <h3 className="font-serif text-xl text-cocoa leading-snug">{card.title}</h3>
+                  <p className="mt-3 text-[15px] text-cocoa/70 leading-[1.75] flex-1">
+                    {card.subtitle}
+                  </p>
                   <button
                     type="button"
-                    className="mt-6 self-start text-sm uppercase tracking-[0.2em] text-clay hover:text-cocoa transition-colors"
+                    disabled
+                    className="mt-8 self-start inline-flex items-center rounded-full border border-taupe/40 px-5 py-2 text-xs uppercase tracking-[0.22em] text-cocoa/50 cursor-not-allowed"
                   >
-                    Read More →
+                    Read More
                   </button>
-                )}
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="py-20 bg-cream/30">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <p className="uppercase tracking-[0.3em] text-xs text-clay mb-4">Topics</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-cocoa">Explore Topics</h2>
-          <ul className="mt-10 flex flex-wrap justify-center gap-3">
-            {categories.map((cat) => (
-              <li key={cat}>
-                <span className="inline-block rounded-full border border-taupe/50 bg-background px-5 py-2 text-sm text-earth hover:bg-blush hover:text-cocoa transition-colors cursor-default">
-                  {cat}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* All Posts */}
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center mb-12">
-            <p className="uppercase tracking-[0.3em] text-xs text-clay mb-4">Archive</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-cocoa">All Posts</h2>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <article className="rounded-2xl bg-blush/50 border border-taupe/25 p-8 md:p-10">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-clay mb-2">Fourth Trimester · June 2026</p>
-                  <h3 className="font-serif text-2xl text-cocoa">
-                    <Link to="/blog/what-is-a-postpartum-doula" className="hover:text-earth transition-colors">
-                      What Is a Postpartum Doula?
-                    </Link>
-                  </h3>
-                  <p className="mt-2 text-sm text-earth/80 leading-relaxed max-w-xl">
-                    A warm guide to understanding what a postpartum doula does, how they differ from other caregivers, and why identity-aligned care matters in the fourth trimester.
-                  </p>
-                </div>
-                <Link
-                  to="/blog/what-is-a-postpartum-doula"
-                  className="inline-flex items-center rounded-full border border-taupe/70 px-5 py-2 text-sm text-cocoa hover:bg-blush transition-colors shrink-0"
-                >
-                  Read post
-                </Link>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* EMAIL SIGNUP */}
       <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl text-cocoa">
-            Want Support Beyond the Blog?
-          </h2>
-          <p className="mt-6 text-earth/80 text-lg leading-relaxed">
-            If you're craving attuned, identity-aligned care during your fourth
-            trimester, I'd love to support your family.
+        <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
+          <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+            Want to receive new reflections as they're published?
           </p>
-          <Link
-            to="/contact"
-            className="mt-10 inline-flex items-center rounded-full bg-cocoa text-sand px-8 py-3 text-sm uppercase tracking-[0.2em] hover:bg-earth transition-colors"
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setEmail("");
+            }}
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto"
           >
-            Schedule a consultation
-          </Link>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email address"
+              required
+              className="w-full sm:flex-1 rounded-full border border-taupe/40 bg-background px-5 py-3.5 text-sm text-earth placeholder:text-earth/60 focus:outline-none focus:ring-2 focus:ring-clay/40"
+            />
+            <button
+              type="submit"
+              className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
       </section>
-    </div>
+    </>
   );
 }

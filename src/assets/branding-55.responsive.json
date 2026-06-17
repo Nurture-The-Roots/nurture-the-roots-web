@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "source": "/__l5e/assets-v1/1beb4315-b17b-4ea2-8250-45bd80284b57/branding-55.jpeg",
+  "original_filename": "branding-55.jpeg",
+  "intrinsic": {
+    "width": 1215,
+    "height": 1824
+  },
+  "fallback": "/__l5e/assets-v1/b95c80d3-e643-45d6-8c32-f29054204308/branding-55-1152.jpg",
+  "variants": [
+    {
+      "width": 480,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/732f37ef-0083-4977-8bca-21256aaeef51/branding-55-480.avif",
+      "size": 23949
+    },
+    {
+      "width": 480,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/07786d54-80f6-4fab-9dcd-bea9b3b9df6e/branding-55-480.webp",
+      "size": 42626
+    },
+    {
+      "width": 480,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/adf3db56-815e-485c-b953-0299e665ce09/branding-55-480.jpg",
+      "size": 50574
+    },
+    {
+      "width": 768,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/c63dd5ab-31e6-4d9d-b03c-9dc1608fc1f8/branding-55-768.avif",
+      "size": 47173
+    },
+    {
+      "width": 768,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/5d6c5fab-af25-4e42-98c7-28530e8f0a4d/branding-55-768.webp",
+      "size": 83344
+    },
+    {
+      "width": 768,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/13f94b69-de9d-4036-a51c-ff3c40981728/branding-55-768.jpg",
+      "size": 105712
+    },
+    {
+      "width": 1152,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/9f534384-2f6f-4009-94e5-a0839972c3f6/branding-55-1152.avif",
+      "size": 79591
+    },
+    {
+      "width": 1152,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/e8077fa0-d369-4636-82e6-d1d0a7298511/branding-55-1152.webp",
+      "size": 144286
+    },
+    {
+      "width": 1152,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/b95c80d3-e643-45d6-8c32-f29054204308/branding-55-1152.jpg",
+      "size": 195131
+    }
+  ]
+}

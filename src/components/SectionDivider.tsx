@@ -1,0 +1,26 @@
+import type { HTMLAttributes } from "react";
+
+/**
+ * Soft editorial divider: a hairline rule with a small terracotta glyph centered.
+ * Use between major sections to add visual rhythm without harsh breaks.
+ */
+export function SectionDivider({
+  className = "",
+  glyph = "❦",
+  ...rest
+}: HTMLAttributes<HTMLDivElement> & { glyph?: string }) {
+  return (
+    <div
+      role="presentation"
+      aria-hidden="true"
+      className={`mx-auto flex max-w-3xl items-center gap-4 px-6 ${className}`}
+      {...rest}
+    >
+      <span className="h-px flex-1 bg-taupe/30" />
+      <span className="text-clay/70 text-lg font-serif leading-none select-none">{glyph}</span>
+      <span className="h-px flex-1 bg-taupe/30" />
+    </div>
+  );
+}
+
+export default SectionDivider;

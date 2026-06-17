@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "source": "/__l5e/assets-v1/01d62e97-0065-4f8d-b6c1-e284e65cb341/welcome-ashlee-baby.jpg",
+  "original_filename": "welcome-ashlee-baby.jpg",
+  "intrinsic": {
+    "width": 1279,
+    "height": 1920
+  },
+  "fallback": "/__l5e/assets-v1/46fcdca0-3056-464b-8b93-1e6dc3a7633c/welcome-ashlee-baby-1152.jpg",
+  "variants": [
+    {
+      "width": 480,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/ab4804a5-653e-466d-b6c2-6aabd7877a7e/welcome-ashlee-baby-480.avif",
+      "size": 14540
+    },
+    {
+      "width": 480,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/5f8bb5bd-c47f-44ca-9fe2-b9aaf8f2fa0c/welcome-ashlee-baby-480.webp",
+      "size": 22178
+    },
+    {
+      "width": 480,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/423caec1-136e-4bb0-aaae-c50f04cf5aad/welcome-ashlee-baby-480.jpg",
+      "size": 32528
+    },
+    {
+      "width": 768,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/75e2bcbd-868c-494b-b856-da8be22299bd/welcome-ashlee-baby-768.avif",
+      "size": 26682
+    },
+    {
+      "width": 768,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/069bfab5-f715-460f-bf7a-5a8a25bee664/welcome-ashlee-baby-768.webp",
+      "size": 41372
+    },
+    {
+      "width": 768,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/432e0564-ba3b-4425-a3aa-51d540a62e3f/welcome-ashlee-baby-768.jpg",
+      "size": 65829
+    },
+    {
+      "width": 1152,
+      "format": "avif",
+      "mime": "image/avif",
+      "url": "/__l5e/assets-v1/5aa22baa-57a1-4fda-9248-244242ca4903/welcome-ashlee-baby-1152.avif",
+      "size": 46116
+    },
+    {
+      "width": 1152,
+      "format": "webp",
+      "mime": "image/webp",
+      "url": "/__l5e/assets-v1/dc58c6b7-b62e-4e83-994a-dddfdf020c9c/welcome-ashlee-baby-1152.webp",
+      "size": 70076
+    },
+    {
+      "width": 1152,
+      "format": "jpg",
+      "mime": "image/jpeg",
+      "url": "/__l5e/assets-v1/46fcdca0-3056-464b-8b93-1e6dc3a7633c/welcome-ashlee-baby-1152.jpg",
+      "size": 121026
+    }
+  ]
+}
