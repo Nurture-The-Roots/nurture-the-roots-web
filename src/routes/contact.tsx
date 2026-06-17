@@ -1,6 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import ashleeBurpingBabyAsset from "@/assets/ashlee-burping-baby.jpeg.asset.json";
+import { createFileRoute } from "@tanstack/react-router";
+import contactFamilyResponsive from "@/assets/contact-family.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { SectionDivider } from "@/components/SectionDivider";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,7 +18,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { DubsadoEmbed } from "@/components/integrations/DubsadoEmbed";
-import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 import { integrations } from "@/lib/integrations";
 
 const contactFormSchema = z.object({
@@ -56,12 +56,10 @@ export const Route = createFileRoute("/contact")({
 });
 
 const supportOptions = [
-  "Postpartum Doula Care",
-  "Overnight Newborn Care",
-  "NBO-Informed Newborn Sessions",
-  "Feeding & Lactation Support",
-  "New Parent Support Coaching",
-  "Innate Postpartum Care",
+  "Postpartum Doula Support",
+  "Newborn Care Specialist Support",
+  "Fourth Trimester Coaching",
+  "Holistic Family Support Sessions",
   "General Inquiry / Not Sure Yet",
 ];
 
@@ -85,8 +83,6 @@ function ContactPage() {
     setIsSubmitting(true);
     setSubmitError("");
     try {
-      // Fold extra fields (location, heardAbout) into the message body so we
-      // keep a single backend schema while honoring the user's expanded form.
       const extraLines: string[] = [];
       if (data.location) extraLines.push(`Location: ${data.location}`);
       if (data.heardAbout)
@@ -111,62 +107,40 @@ function ContactPage() {
 
   return (
     <>
-      {/* PAGE TITLE */}
+      {/* HERO */}
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-28 text-center">
           <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Contact</div>
           <h1 className="font-serif text-5xl md:text-6xl font-medium leading-[1.1] text-cocoa">
             Contact
           </h1>
-        </div>
-      </section>
-
-      {/* INTRO */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
-          <p className="mb-8 font-serif italic text-xl text-cocoa/85 leading-[1.5]">
-            {/* [PLACEHOLDER: A grounding intro line above the form in your voice.] */}
+          <p className="mt-8 font-serif italic text-xl md:text-2xl text-cocoa/75 leading-[1.5]">
+            I'd love to connect with you.
           </p>
-          <p className="text-[17px] text-cocoa/80 leading-[1.85]">I'd love to connect with you.</p>
-          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
+          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
             Whether you're ready to book support or simply exploring your options, reach out and
             I'll respond with warmth, clarity, and care.
           </p>
         </div>
       </section>
 
-      {/* OPTIONAL TESTIMONIAL */}
+      {/* EDITORIAL IMAGE */}
       <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 pb-12">
-          <figure className="rounded-2xl border border-taupe/25 bg-blush/40 p-10 md:p-12 text-center">
-            <blockquote className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
-              {/* [PLACEHOLDER: A short testimonial quote to land just above the form.] */}
-              "A short, attuned quote from a family Ashlee served."
-            </blockquote>
-            <figcaption className="mt-6 text-xs uppercase tracking-[0.22em] text-clay">
-              {/* [PLACEHOLDER: Attribution.] */}— A San Francisco family
-            </figcaption>
-          </figure>
+        <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
+            <ResponsiveImage
+              src={contactFamilyResponsive}
+              alt="Ashlee supporting a family during the fourth trimester — a warm, attuned moment in the nursery"
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9]"
+            />
+          </div>
         </div>
       </section>
 
-      {/* PHOTO */}
+      {/* INQUIRY FORM */}
       <section className="bg-background">
-        <div className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
-          <img
-            src={ashleeBurpingBabyAsset.url}
-            alt="Ashlee holding a baby close against her shoulder in a quiet, reassuring moment of postpartum support"
-            loading="lazy"
-            decoding="async"
-            sizes="(min-width: 1024px) 1024px, 100vw"
-            className="w-full rounded-2xl object-cover object-[center_30%] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9] shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]"
-          />
-        </div>
-      </section>
-
-      {/* CONTACT FORM */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 pb-24 md:pb-32">
+        <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">
           {integrations.dubsadoInquiryUrl ? (
             <DubsadoEmbed title="Nurture The Roots inquiry form" />
           ) : sent ? (
@@ -187,7 +161,7 @@ function ContactPage() {
             </div>
           ) : (
             <div className="rounded-2xl bg-blush/50 border border-taupe/25 p-10 md:p-14">
-              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Get in Touch</div>
+              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Inquiry Form</div>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
@@ -326,70 +300,33 @@ function ContactPage() {
                     {isSubmitting ? "Sending..." : "Send Inquiry"}
                   </button>
                 </div>
-                <p className="text-xs text-earth/60">
-                  Your words are held in confidence. I respond personally to every message.
-                </p>
-                <p className="mt-6 text-[15px] text-cocoa/75 leading-[1.85] font-serif italic">
-                  Your family does not have to move through postpartum alone. Support is not a
-                  luxury — it is part of the postpartum design.
-                </p>
               </form>
             </div>
           )}
-          {/* Schedule a call — Calendly */}
-          <div className="mt-10 text-center">
-            <CalendlyButton className="inline-flex items-center rounded-full border border-cocoa/30 bg-background px-8 py-3.5 text-sm font-medium text-cocoa hover:bg-blush transition-colors">
-              Schedule a Call
-            </CalendlyButton>
-            <p className="mt-3 text-xs text-cocoa/60">
-              Opens a scheduling window — pick a time that fits your week.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* DIRECT CONTACT */}
-      <section className="bg-blush/40">
-        <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
-          <div className="text-center mb-16">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Direct Contact</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-              Prefer to Reach Out Directly?
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            <div className="rounded-2xl bg-background/60 border border-taupe/25 p-8 md:p-10 text-center">
-              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-3">Email</div>
-              <a
-                href="mailto:ashleemckenzie@nurturetheroots.co"
-                className="text-cocoa font-serif text-xl hover:text-earth transition-colors"
-              >
-                ashleemckenzie@nurturetheroots.co
-              </a>
+      {/* REASSURANCE */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-2xl px-6 pb-24 md:pb-32">
+          <SectionDivider className="mb-16 md:mb-20" />
+          <div className="text-center space-y-8">
+            <div>
+              <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+                Your words are held in confidence.
+              </p>
+              <p className="mt-2 text-[17px] text-cocoa/70 leading-[1.85]">
+                I respond personally to every message.
+              </p>
             </div>
-            <div className="rounded-2xl bg-background/60 border border-taupe/25 p-8 md:p-10 text-center">
-              <div className="uppercase tracking-[0.22em] text-xs text-clay mb-3">Location</div>
-              <p className="text-cocoa font-serif text-xl">San Francisco, CA</p>
-              <p className="mt-2 text-sm text-cocoa/70">Serving families across the Bay Area</p>
+            <div>
+              <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
+                Your family does not have to move through postpartum alone.
+              </p>
+              <p className="mt-2 text-[17px] text-cocoa/70 leading-[1.85]">
+                Support is not a luxury — it is part of the postpartum design.
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-hero-gradient">
-        <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Ready to Begin?</div>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            Let's start your fourth trimester with intention, clarity, and attuned support.
-          </h2>
-          <div className="mt-12">
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
-            >
-              Schedule Your First Conversation
-            </Link>
           </div>
         </div>
       </section>
