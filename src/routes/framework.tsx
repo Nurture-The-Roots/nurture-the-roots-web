@@ -40,7 +40,7 @@ const pillars = [
     description:
       "This pillar recognizes postpartum as an identity threshold for the parent, the baby, the family system, and the practitioner.",
     meaning:
-      "[PLACEHOLDER: 'What this means for your family' — one line in your voice for Identity-Aligned Care.]",
+      "You learn to understand your own emotional landscape, read the room, and respond to your baby with grounded presence.",
     practices: [
       {
         name: "Identity Mapping",
@@ -65,7 +65,7 @@ const pillars = [
     description:
       "This pillar restores sacredness, rhythm, and meaning to daily postpartum tending.",
     meaning:
-      "[PLACEHOLDER: 'What this means for your family' — one line for Ancestral-Rooted Care.]",
+      "Postpartum becomes a sacred return to rhythm, meaning, and ancestral memory — daily care transformed into grounding ritual.",
     practices: [
       {
         name: "Rhythms Over Routines",
@@ -90,7 +90,7 @@ const pillars = [
     description:
       "This pillar translates professional newborn care mastery into practical, relational teaching.",
     meaning:
-      "[PLACEHOLDER: 'What this means for your family' — one line for Developmental + Relational Guidance.]",
+      "You learn to understand newborn cues, support regulation, and navigate the emotional and developmental thresholds of the fourth trimester.",
     practices: [
       {
         name: "Cue‑Based Care",
@@ -116,7 +116,7 @@ const pillars = [
     description:
       "This pillar helps families create practical, sustainable, values‑aligned support systems.",
     meaning:
-      "[PLACEHOLDER: 'What this means for your family' — one line for Sovereign Family Systems.]",
+      "You leave the fourth trimester with clarity, confidence, and continuity — and systems that reflect who you are.",
     practices: [
       {
         name: "Sovereign Postpartum Planning",
@@ -157,7 +157,11 @@ function FrameworkPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-2xl px-6 py-24 md:py-32 text-center">
           <p className="mb-10 text-[16px] text-cocoa/70 leading-[1.85]">
-            {/* [PLACEHOLDER: A grounding paragraph in your voice explaining why this framework matters, and why postpartum needs more than a checklist.] */}
+            Postpartum is a threshold — a becoming. Families deserve care that honors who they are,
+            where they come from, and the new life emerging in their arms. The Nurture The Roots
+            <TM /> Framework restores meaning, rhythm, and relational depth to the earliest weeks of
+            parenthood. This is not task‑based postpartum care — it is identity‑based, relationally
+            attuned, lineage‑rooted postpartum sanctuary.
           </p>
           <p className="text-[17px] text-cocoa/80 leading-[1.85]">
             Nurture The Roots
@@ -196,7 +200,10 @@ function FrameworkPage() {
               Identity · Lineage · Relationship · Rhythm
             </h2>
             <p className="mt-6 max-w-xl mx-auto text-[16px] text-cocoa/75 leading-[1.85]">
-              {/* [PLACEHOLDER: One short line in your voice explaining what 'Identity · Lineage · Relationship · Rhythm' holds at the center.] */}
+              These four roots shape every moment of the fourth trimester. They are the foundation
+              of the Nurture The Roots
+              <TM /> approach and the compass for how families are supported, seen, and
+              strengthened.
             </p>
           </div>
           <div className="relative mx-auto aspect-square max-w-lg">
@@ -311,7 +318,8 @@ function FrameworkPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
           <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
-            {/* [PLACEHOLDER: A short closing reflection in your voice — one or two sentences that land the framework before the CTA.] */}
+            Because postpartum is not a checklist. It is a relational, ancestral, developmental,
+            identity‑shaping experience — rooted, intentional, and sovereign.
           </p>
         </div>
       </section>

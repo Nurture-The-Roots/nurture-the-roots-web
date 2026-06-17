@@ -171,8 +171,15 @@ function AboutPage() {
           <div className="space-y-8 text-[17px] text-cocoa/80 leading-[1.85]">
             <p>
               I'm Ashlee McKenzie — a Certified Postpartum Doula, Newborn Care Specialist, and
-              Fourth Trimester Expert serving families across San Francisco. My work is grounded in
-              attunement, clarity, and lineage‑rooted care that honors your baby's earliest days.
+              Fourth Trimester Expert based in San Francisco. For more than fifteen years, I've
+              supported families through the tender, disorienting, identity‑shifting threshold of
+              the fourth trimester.
+            </p>
+            <p>
+              My work is grounded in attunement, presence, and a deep respect for the early
+              postpartum period as a foundational time for both parent and child. I help families
+              slow down, listen deeply, and build rhythms that feel aligned with who they are
+              becoming.
             </p>
           </div>
         </div>
@@ -198,19 +205,63 @@ function AboutPage() {
             </h2>
           </div>
           <div className="space-y-7 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            <p>My approach didn't begin in a training or a classroom. It began in my lineage.</p>
             <p>
-              My path into postpartum work is woven through my lineage, lived experience, and a deep
-              commitment to helping families feel held during one of the most tender transitions of
-              early parenthood.
+              I come from Sinixt and Chinook ancestry — peoples whose traditions hold care,
+              continuity, and relational tending as sacred. For much of my life, I didn't have the
+              language or access to fully understand this inheritance. But the values were always
+              there: the instinct to listen, to observe, to honor rhythm, to protect the vulnerable,
+              to tend the roots so the future can thrive.
             </p>
             <p>
-              I support parents with grounded presence, evidence‑based guidance, and a relational
-              approach that centers your family's identity and values.
-            </p>
-            <p>
-              {/* [PLACEHOLDER: One reflective paragraph in your voice expanding the personal arc — identity, origin, what called you to this work.] */}
+              Through reclamation, research, and reconnection, I've been able to name and integrate
+              this part of myself. The more I learned about my ancestors, the more clearly I
+              understood why my work has always felt like ceremony — why I've always been drawn to
+              identity, lineage, and the earliest relational beginnings.
             </p>
           </div>
+
+          <blockquote className="mt-12 mb-12 max-w-2xl mx-auto text-center font-serif italic text-2xl md:text-3xl text-clay leading-[1.4]">
+            Nurture The Roots<sup className="align-super text-[0.45em] ml-0.5">™</sup> is not a
+            brand I created. It is a lineage I stepped into.
+          </blockquote>
+
+          <div className="text-center mb-10">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+              Identity, Belonging &amp; Continuity
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium leading-[1.15] text-cocoa">
+              A life shaped by where I come from
+            </h2>
+          </div>
+          <div className="space-y-7 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            <p>
+              My personal story — adoptee, foster care, reclamation, multi‑generation lineage
+              research — taught me early on that identity and belonging are not abstract ideas. They
+              are lived experiences that shape how we attach, how we parent, how we love, and how we
+              understand ourselves.
+            </p>
+            <p>This lived understanding is woven into every part of my work.</p>
+          </div>
+          <ul className="mt-8 space-y-3 max-w-2xl mx-auto">
+            {[
+              "It's why I see the fourth trimester as a threshold, not a task list.",
+              "It's why I support parents in naming who they are becoming.",
+              "It's why I help families build systems that honor their values, not someone else's expectations.",
+              "It's why I believe care is ceremony, and continuity is a form of protection.",
+            ].map((line) => (
+              <li
+                key={line}
+                className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-blush/40 px-5 py-4 text-[16px] text-cocoa leading-[1.7]"
+              >
+                <span className="text-clay mt-1.5 text-[0.6rem]">&#9679;</span>
+                <span>{line}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-12 text-center font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5] max-w-2xl mx-auto">
+            My framework is not theoretical. It is lived, embodied, and ancestral.
+          </p>
         </div>
       </section>
 
@@ -251,16 +302,23 @@ function AboutPage() {
           <div className="text-center mb-16">
             <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">My Approach</div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-              As a Fourth Trimester Expert, I support families through
+              Professional mastery, rooted in attunement
             </h2>
+            <p className="mt-8 mx-auto max-w-xl text-[17px] text-cocoa/80 leading-[1.85]">
+              Over the past 15+ years, I've supported more than 500 families across the Bay Area. My
+              work blends:
+            </p>
           </div>
           <ul className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
             {[
-              "Attuned newborn care",
-              "Identity‑rooted guidance",
-              "Evidence‑based education",
-              "Calm, grounded presence",
-              "Relational support that honors your story",
+              "Newborn behavioral observation",
+              "Developmental + relational guidance",
+              "Identity‑aligned postpartum support",
+              "Cue‑based care",
+              "Attachment‑supportive practices",
+              "Ancestral care principles",
+              "Family systems support",
+              "Postpartum planning and continuity",
             ].map((item, i) => (
               <li
                 key={i}
@@ -373,6 +431,13 @@ function AboutPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-12 text-center text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            I am trained in newborn development, lactation education, infant massage, and the
+            Brazelton Touchpoints/NBO approach — a framework that aligns deeply with my
+            lineage‑rooted understanding of newborn communication. But my deepest training has come
+            from the families I've served, the babies I've held, and the ancestral values that have
+            guided me long before I had the words for them.
+          </p>
         </div>
       </section>
 

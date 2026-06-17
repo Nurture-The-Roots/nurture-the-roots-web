@@ -344,16 +344,18 @@ function Index() {
             This work is for…
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            {/* [PLACEHOLDER: 2–4 sentence description of the families you serve, in your voice.] */}
-            Families preparing for or moving through the fourth trimester who want care that honors
-            who they are — not a template.
+            I support families who desire care that honors who they are — not a template. Whether
+            this is your first baby or your fourth, your fourth trimester deserves to be held with
+            intention.
           </p>
           <ul className="mt-10 grid sm:grid-cols-2 gap-3 max-w-xl mx-auto text-left">
             {[
-              "Expecting parents preparing with intention",
-              "New parents in the early postpartum window",
-              "Families seeking attuned newborn guidance",
-              "Parents wanting identity-aligned support",
+              "A grounded, relational postpartum experience",
+              "Newborn communication + developmental guidance",
+              "Identity‑aligned care",
+              "Ancestral continuity",
+              "A calm, regulated home environment",
+              "Support that honors their values, culture, and lived reality",
             ].map((line) => (
               <li
                 key={line}
@@ -386,12 +388,13 @@ function Index() {
               </h2>
               <div className="mt-8 space-y-6 text-[17px] text-cocoa/80 leading-[1.85]">
                 <p>
-                  I'm a certified postpartum doula and newborn care specialist and new parent
-                  support coach, based in San Francisco.
+                  I'm a postpartum doula, newborn care specialist, and fourth trimester guide with
+                  15+ years of experience supporting families through identity shifts, newborn
+                  communication, and relational regulation.
                 </p>
                 <p>
-                  My work is grounded in attunement, presence, and a deep respect for the early
-                  postpartum period as a foundational time for both parent and child.
+                  My work is rooted in lineage, developmental attunement, and sovereign family
+                  systems — helping parents feel confident, connected, and deeply supported.
                 </p>
               </div>
               <div className="mt-8">
