@@ -7,7 +7,6 @@ import consultResponsive from "@/assets/branding-54.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
-import { TestimonialsCarousel } from "@/components/integrations/TestimonialsCarousel";
 const welcomeImg = welcomeAsset.url;
 const homeBandImg = ashleeTenderHoldAsset.url;
 const homeClosingImg = ashleeBabyChairPortraitAsset.url;
@@ -78,29 +77,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const pillars = [
-  {
-    numeral: "I",
-    title: "Identity‑Aligned Care",
-    body: "Postpartum support begins with identity, not tasks. This pillar supports the parent, the baby, and the family system through the deep identity shifts of the fourth trimester.",
-  },
-  {
-    numeral: "II",
-    title: "Ancestral‑Rooted Care",
-    body: "Care is ceremony. Care is lineage. Care is continuity. This pillar restores meaning, rhythm, and sacredness to daily postpartum tending.",
-  },
-  {
-    numeral: "III",
-    title: "Developmental + Relational Guidance",
-    body: "Newborns communicate from the beginning. This pillar helps parents understand cues, states, regulation, and the relational language of their baby.",
-  },
-  {
-    numeral: "IV",
-    title: "Sovereign Family Systems",
-    body: "Families thrive when their systems honor their actual identity, values, needs, and lived reality. This pillar supports planning, boundaries, support ecosystems, and continuity.",
-  },
-];
-
 function Index() {
   return (
     <>
@@ -117,58 +93,50 @@ function Index() {
           <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.05] text-cocoa">
             Postpartum care begins at the roots
           </h1>
-          <p className="mt-10 mx-auto max-w-2xl font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
-            Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> offers
-            lineage‑rooted, identity‑aligned, developmental, and relational support for families
-            moving through the fourth trimester.
+          <p className="mt-8 font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5] max-w-2xl mx-auto">
+            A lineage‑rooted, identity‑aligned sanctuary for the fourth trimester.
           </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
+          <p className="mt-8 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
+            Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> offers
+            attuned, relational, developmental postpartum care that honors who you are, where you
+            come from, and the new life emerging in your arms.
+          </p>
+          <div className="mt-12">
             <CalendlyButton className="inline-flex items-center rounded-full bg-clay px-9 py-4 text-base font-medium text-sand shadow-sm hover:bg-cocoa transition-colors">
               Book a Consultation
             </CalendlyButton>
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full border border-cocoa/30 px-9 py-4 text-base font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
-            >
-              Begin Your Postpartum Support
-            </Link>
-            <Link
-              to="/framework"
-              className="inline-flex items-center rounded-full border border-cocoa/30 px-9 py-4 text-base font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
-            >
-              Explore the Framework
-            </Link>
           </div>
         </div>
       </section>
 
       <SectionDivider className="my-2 md:my-4" />
 
-      {/* OPENING — fourth trimester as threshold */}
+      {/* WHAT FAMILIES NEED MOST */}
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 py-24 md:py-32 text-center">
           <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">
-            A Threshold, Not a Task List
+            What Families Need Most
           </div>
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            The fourth trimester is a becoming
+            The fourth trimester is a threshold — a becoming
           </h2>
           <div className="mt-10 space-y-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            <p>
-              The fourth trimester is not simply a season of feeding, sleeping, diapers, and
-              recovery. It is a threshold. A becoming. A time when identity, lineage, relationship,
-              rhythm, and support all matter.
-            </p>
+            <p>Parents deserve care that is grounded, relational, and deeply human.</p>
             <p>
               Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> supports
-              families through this passage with care that honors who they are, who their baby is
-              becoming, and the systems they need to feel grounded, confident, and held.
+              families through identity shifts, newborn communication, emotional regulation, and the
+              creation of sovereign systems of support.
+            </p>
+            <p>
+              This is not task‑based care.
+              <br />
+              This is identity‑based, lineage‑rooted postpartum tending.
             </p>
           </div>
         </div>
       </section>
 
-      {/* IMAGE BAND — consultation in a family's home */}
+      {/* IMAGE BAND */}
       <section aria-hidden="false" className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pt-2 pb-10 md:pt-6 md:pb-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
@@ -182,48 +150,48 @@ function Index() {
         </div>
       </section>
 
-      {/* THE NURTURE THE ROOTS DIFFERENCE */}
+      {/* THE NURTURE THE ROOTS™ APPROACH */}
       <section className="bg-blush/60">
         <div className="mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">The Difference</div>
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">The Approach</div>
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            The Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup>{" "}
-            Difference
+            The Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> Approach
           </h2>
           <p className="mt-10 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> is not
-            generic postpartum support. It is a sovereign postpartum framework rooted in lived
-            experience, professional mastery, developmental training, relational care, and ancestral
-            wisdom.
-          </p>
-          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            This work integrates:
+            Postpartum support is most powerful when it begins at the roots:
           </p>
           <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
             {[
-              "identity formation",
-              "newborn development",
-              "ancestral care practices",
-              "relational regulation",
-              "postpartum planning",
-              "family systems",
-              "practitioner attunement",
-              "continuity beyond the early postpartum window",
+              { root: "Identity", line: "who you are becoming" },
+              { root: "Lineage", line: "the continuity you carry forward" },
+              { root: "Relationship", line: "the bond you are building" },
+              { root: "Rhythm", line: "the pace your family naturally moves at" },
             ].map((item) => (
               <div
-                key={item}
+                key={item.root}
                 className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-sand/60 px-5 py-4 text-sm text-cocoa"
               >
                 <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
-                <span className="leading-relaxed">{item}</span>
+                <span className="leading-relaxed">
+                  <strong className="font-medium">{item.root}</strong> — {item.line}
+                </span>
               </div>
             ))}
           </div>
+          <p className="mt-10 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            These four roots shape the entire fourth trimester and form the foundation of the
+            Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> Framework.
+          </p>
+          <div className="mt-10">
+            <Link
+              to="/framework"
+              className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              Explore the Framework
+            </Link>
+          </div>
         </div>
       </section>
-
-      {/* TESTIMONIALS CAROUSEL */}
-      <TestimonialsCarousel />
 
       {/* IMAGE BAND — relational presence */}
       <section aria-hidden="false" className="bg-background">
@@ -241,94 +209,45 @@ function Index() {
         </div>
       </section>
 
-      {/* THE FOUR PILLARS */}
+      {/* HOW I SUPPORT YOU */}
       <section className="bg-background">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">The Framework</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-              The Four Pillars
-            </h2>
-            <p className="mt-6 font-serif italic text-lg text-cocoa/75 leading-[1.5]">
-              Identity · Lineage · Relationship · Rhythm
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {pillars.map((p) => (
-              <article
-                key={p.numeral}
-                className="rounded-2xl border border-taupe/25 bg-blush/40 p-8 md:p-10"
-              >
-                <div className="font-serif text-3xl text-clay leading-none mb-4">{p.numeral}</div>
-                <h3 className="font-serif text-2xl md:text-[1.75rem] text-cocoa leading-[1.2] mb-4">
-                  {p.title}
-                </h3>
-                <p className="text-cocoa/80 leading-[1.85] text-[15px]">{p.body}</p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-14 text-center">
-            <Link
-              to="/framework"
-              className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
-            >
-              Explore the full Framework
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES AT A GLANCE */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
-              Services at a Glance
+              How I Support You
             </div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-              Five ways we can work together
+              Your care experience is grounded in
             </h2>
-            <p className="mt-6 text-[16px] text-cocoa/75 leading-[1.8] max-w-xl mx-auto">
-              {/* Services intro */}
-              Your care experience is grounded in identity, rhythm, relationship, and the realities
-              of your family.
-            </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
             {[
-              {
-                title: "Rooted Postpartum Planning",
-                line: "Prepare for postpartum with clarity and sovereignty.",
-              },
-              {
-                title: "In-Home or Virtual Support",
-                line: "Relational care for newborn cues, rhythm, and grounding.",
-              },
-              {
-                title: "Newborn Cue + Attunement",
-                line: "Understand your baby's communication and states.",
-              },
-              {
-                title: "Sovereign Family Systems",
-                line: "Organize care, boundaries, and household rhythms.",
-              },
-              {
-                title: "Integration + Continuity",
-                line: "Carry what you've learned into the next season.",
-              },
-            ].map((s) => (
-              <article key={s.title} className="rounded-2xl border border-taupe/25 bg-blush/40 p-6">
-                <h3 className="font-serif text-lg text-cocoa leading-snug mb-2">{s.title}</h3>
-                <p className="text-[14px] text-cocoa/75 leading-[1.7]">{s.line}</p>
-              </article>
+              "Attuned presence",
+              "Newborn communication + developmental guidance",
+              "Relational regulation",
+              "Ceremonial tending",
+              "Sovereign postpartum planning",
+              "Sustainable support systems",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-blush/40 px-5 py-4 text-sm text-cocoa"
+              >
+                <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
+                <span className="leading-relaxed">{item}</span>
+              </div>
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <p className="mt-12 text-center text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            Every family receives care that is tailored, relational, and aligned with their identity
+            and lived reality.
+          </p>
+          <div className="mt-10 text-center">
             <Link
               to="/services"
               className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
             >
-              View all services
+              View Services
             </Link>
           </div>
         </div>
@@ -336,18 +255,68 @@ function Index() {
 
       <SectionDivider />
 
-      {/* WHO THIS IS FOR */}
+      {/* THE CLIENT JOURNEY (SHORT VERSION) */}
+      <section className="bg-blush/60">
+        <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
+              The Client Journey
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              Your journey is held with clarity, rhythm, and relational depth
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+            {[
+              {
+                num: "01",
+                name: "Connection",
+                line: "we begin with identity, lineage, and your family's story",
+              },
+              {
+                num: "02",
+                name: "Attunement",
+                line: "we learn your baby's cues, rhythms, and communication",
+              },
+              {
+                num: "03",
+                name: "Regulation",
+                line: "we support emotional + nervous system grounding",
+              },
+              {
+                num: "04",
+                name: "Integration",
+                line: "we build sustainable systems for your fourth trimester and beyond",
+              },
+            ].map((step) => (
+              <div key={step.num} className="rounded-2xl border border-taupe/25 bg-sand/60 p-6">
+                <div className="font-serif text-2xl text-clay leading-none mb-3">{step.num}</div>
+                <h3 className="font-serif text-lg text-cocoa leading-snug mb-2">{step.name}</h3>
+                <p className="text-[14px] text-cocoa/75 leading-[1.7]">{step.line}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-12 text-center font-serif italic text-lg md:text-xl text-cocoa/85 leading-[1.5] max-w-2xl mx-auto">
+            This is postpartum care that meets you where you are and grows with you.
+          </p>
+          <div className="mt-10 text-center">
+            <Link
+              to="/client-journey"
+              className="inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              How It Works
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHO I SUPPORT */}
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 py-24 md:py-32 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">Who This Is For</div>
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">Who I Support</div>
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            This work is for…
+            I support families who desire
           </h2>
-          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            I support families who desire care that honors who they are — not a template. Whether
-            this is your first baby or your fourth, your fourth trimester deserves to be held with
-            intention.
-          </p>
           <ul className="mt-10 grid sm:grid-cols-2 gap-3 max-w-xl mx-auto text-left">
             {[
               "A grounded, relational postpartum experience",
@@ -366,10 +335,14 @@ function Index() {
               </li>
             ))}
           </ul>
+          <p className="mt-10 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            Whether this is your first baby or your fourth, your fourth trimester deserves to be
+            held with intention.
+          </p>
         </div>
       </section>
 
-      {/* ABOUT YOU (FOUNDER) */}
+      {/* ABOUT ASHLEE */}
       <section className="bg-blush/60">
         <div className="mx-auto max-w-6xl px-6 py-24 md:py-36">
           <div className="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
@@ -382,13 +355,13 @@ function Index() {
               />
             </div>
             <div className="max-w-md">
-              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">About</div>
+              <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">About Ashlee</div>
               <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
                 Meet Ashlee
               </h2>
               <div className="mt-8 space-y-6 text-[17px] text-cocoa/80 leading-[1.85]">
                 <p>
-                  I'm a postpartum doula, newborn care specialist, and fourth trimester guide with
+                  I am a postpartum doula, newborn care specialist, and fourth trimester guide with
                   15+ years of experience supporting families through identity shifts, newborn
                   communication, and relational regulation.
                 </p>
@@ -402,7 +375,7 @@ function Index() {
                   to="/about"
                   className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
                 >
-                  More About Ashlee
+                  Meet Ashlee
                 </Link>
               </div>
             </div>
@@ -410,27 +383,7 @@ function Index() {
         </div>
       </section>
 
-      {/* FOR FAMILIES WHO WANT MORE THAN SURVIVAL */}
-      <section className="bg-background">
-        <div className="mx-auto max-w-3xl px-6 py-24 md:py-32 text-center">
-          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">For Families</div>
-          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            For families who want more than survival
-          </h2>
-          <p className="mt-10 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> is for
-            families who want postpartum care that is practical and meaningful, grounded and
-            responsive, professional and deeply human.
-          </p>
-          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            It is for parents who want to listen to their baby, trust their rhythms, protect their
-            values, and move through postpartum as a meaningful passage rather than a season to
-            simply survive.
-          </p>
-        </div>
-      </section>
-
-      {/* IMAGE BAND — editorial sanctuary */}
+      {/* IMAGE BAND — editorial */}
       <section className="bg-background">
         <div className="mx-auto max-w-6xl px-6 pb-4 md:pb-10">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9] lg:aspect-[21/9]">
@@ -446,30 +399,23 @@ function Index() {
         </div>
       </section>
 
-      {/* CLOSING CTA */}
+      {/* BEGIN YOUR POSTPARTUM SANCTUARY */}
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
           <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Begin</div>
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            Begin your rooted postpartum support
+            Begin your postpartum sanctuary
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
-            Every family's needs are different. We'll begin with a consultation to understand your
-            postpartum plans, your questions, and how I can best support you during this time.
+            Your fourth trimester deserves care that is slow, relational, and rooted.
           </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
-            >
-              Schedule Your First Conversation
-            </Link>
-            <Link
-              to="/services"
-              className="inline-flex items-center rounded-full border border-cocoa/30 px-8 py-4 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
-            >
-              View Services
-            </Link>
+          <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
+            If you're ready to feel held, grounded, and supported:
+          </p>
+          <div className="mt-12">
+            <CalendlyButton className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand shadow-sm hover:bg-cocoa transition-colors">
+              Book a Consultation
+            </CalendlyButton>
           </div>
         </div>
       </section>
