@@ -473,9 +473,7 @@ function LibraryPage() {
       {/* HERO */}
       <section className="section bg-hero-gradient">
         <div className="mx-auto max-w-3xl px-6 pt-24 pb-20 md:pt-36 md:pb-24 text-center">
-          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">
-            Postpartum Library
-          </div>
+          <div className="uppercase tracking-[0.32em] text-xs text-clay mb-8">Resources</div>
           <h1 className="font-serif text-4xl md:text-5xl font-medium leading-[1.1] text-cocoa">
             Postpartum Library
           </h1>
@@ -526,9 +524,9 @@ function LibraryPage() {
       <section className="section bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
           <div className="uppercase tracking-[0.28em] text-xs text-clay mb-6">
-            Want Personalised Guidance?
+            Want Personalized Guidance?
           </div>
-          <h2 className="sr-only">Want Personalised Guidance?</h2>
+          <h2 className="sr-only">Want Personalized Guidance?</h2>
           <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
             The library gives you a foundation. For support that's shaped around your family, your
             baby, and your specific season — reach out for a consultation.
