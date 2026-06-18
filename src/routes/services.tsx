@@ -61,50 +61,10 @@ export const Route = createFileRoute("/services")({
 });
 
 const phases = [
-  {
-    numeral: "One",
-    name: "Rooting",
-    includes: [
-      "intake + orientation",
-      "early newborn cues",
-      "feeding support",
-      "soothing + settling",
-      "recovery support",
-      "partner guidance",
-    ],
-  },
-  {
-    numeral: "Two",
-    name: "Settling",
-    includes: [
-      "state regulation",
-      "responsive sleep + wake patterns",
-      "feeding rhythms",
-      "environmental support",
-      "emotional steadiness",
-    ],
-  },
-  {
-    numeral: "Three",
-    name: "Deepening",
-    includes: [
-      "developmental guidance",
-      "responsive care",
-      "partner support",
-      "family systems",
-      "identity transitions",
-    ],
-  },
-  {
-    numeral: "Four",
-    name: "Integrating",
-    includes: [
-      "evolving rhythms",
-      "developmental next steps",
-      "returning‑to‑work planning",
-      "ongoing support sessions",
-    ],
-  },
+  { name: "Rooting", line: "Orientation, stabilization, early understanding." },
+  { name: "Settling", line: "Shaping responsive rhythms." },
+  { name: "Deepening", line: "Strengthening connection and confidence." },
+  { name: "Integrating", line: "Carrying your rhythm forward." },
 ];
 
 function ServicesPage() {
@@ -117,10 +77,19 @@ function ServicesPage() {
           <h1 className="font-serif text-4xl md:text-6xl font-medium leading-[1.1] text-cocoa">
             Services &amp; Support
           </h1>
+          <p className="mt-6 mx-auto max-w-2xl font-serif italic text-lg md:text-xl text-cocoa/75 leading-[1.5]">
+            Developmental, evidence‑based care for the earliest weeks.
+          </p>
           <p className="mt-8 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
-            The earliest weeks with a newborn are a period of rapid development — for the baby and
-            for the parents. My work centers on helping families understand what their newborn is
-            communicating, respond with confidence, and build rhythms that hold everyone.
+            The first months with a newborn call for support that is both practical and deeply
+            attuned. My services are designed to help you understand your baby's communication,
+            create responsive rhythms, and receive grounded guidance that supports your whole
+            family's well‑being.
+          </p>
+          <p className="mt-6 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
+            Each offering is shaped by newborn behavioral science, relational care, and the lived
+            realities of early parenthood — so you can move through the fourth trimester with
+            clarity, steadiness, and confidence.
           </p>
         </div>
       </section>
@@ -151,16 +120,18 @@ function ServicesPage() {
               Attuned, in‑home care for the earliest days.
             </p>
           </div>
+          <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto mb-8 text-center">
+            Postpartum doula support provides hands‑on, relational care during the transition into
+            life with a newborn. This work centers on:
+          </p>
           <ul className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {[
-              "newborn behavioral observation (NBO‑informed)",
-              "feeding support (breast/chest, bottle, combination)",
-              "soothing + settling strategies",
-              "responsive sleep + wake patterns",
-              "recovery support for the birthing parent",
-              "emotional steadiness + practical guidance",
-              "light household support",
-              "sibling integration",
+              "understanding your baby's cues and states",
+              "supporting early feeding",
+              "shaping responsive rhythms",
+              "tending to your physical recovery",
+              "creating systems that reduce overwhelm",
+              "helping you feel grounded and confident",
             ].map((item) => (
               <li
                 key={item}
@@ -171,6 +142,10 @@ function ServicesPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto text-center">
+            This is not task‑based care. It is developmental, relational, and responsive to what
+            your family needs in real time.
+          </p>
 
           {/* Doula image — feeding moment */}
           <div className="mt-12 max-w-md mx-auto">
@@ -198,18 +173,20 @@ function ServicesPage() {
               Newborn Care Specialist Support
             </h2>
             <p className="mt-6 font-serif italic text-lg md:text-xl text-cocoa/75 leading-[1.5]">
-              Developmentally informed newborn care — especially overnight.
+              Developmentally informed overnight + continuity care.
             </p>
           </div>
+          <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto mb-8 text-center">
+            Overnight support offers rest, continuity, and developmental guidance during the
+            earliest weeks. My approach is rooted in newborn behavioral observation and focuses on:
+          </p>
           <ul className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {[
-              "newborn cues + state regulation",
-              "safe sleep guidance",
-              "responsive nighttime care",
-              "developmental rhythms",
-              "bottle‑feeding support",
-              "continuity of care",
-              "responsive care",
+              "supporting early regulation",
+              "understanding state transitions",
+              "responding to cues with consistency",
+              "maintaining safe sleep practices",
+              "shaping rhythms that support the whole family",
             ].map((item) => (
               <li
                 key={item}
@@ -220,6 +197,10 @@ function ServicesPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto text-center">
+            This is not sleep training. It is responsive, evidence‑based care that honors your
+            baby's development and your family's values.
+          </p>
         </div>
       </section>
 
@@ -246,18 +227,22 @@ function ServicesPage() {
               Fourth Trimester Coaching
             </h2>
             <p className="mt-6 font-serif italic text-lg md:text-xl text-cocoa/75 leading-[1.5]">
-              Clarity, identity, and developmental guidance.
+              A reflective, educational space for clarity and confidence.
             </p>
           </div>
+          <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto mb-8 text-center">
+            Fourth trimester coaching is for families who want depth beyond tasks — a space to
+            understand your baby, your own transition, and the identity shifts of early parenthood.
+            Sessions may include:
+          </p>
           <ul className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {[
-              "postpartum planning",
-              "identity + role transitions",
-              "partner support",
-              "newborn communication education",
-              "developmental guidance",
-              "family systems support",
-              "emotional processing",
+              "newborn communication + developmental guidance",
+              "feeding and rhythm support",
+              "emotional + identity transitions",
+              "partner dynamics and shared caregiving",
+              "practical tools for daily life",
+              "building confidence through clarity",
             ].map((item) => (
               <li
                 key={item}
@@ -268,31 +253,32 @@ function ServicesPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-center text-[15px] text-cocoa/70 leading-[1.75] max-w-2xl mx-auto">
-            Available in person (San Francisco Bay Area) or virtually. Structured to your family's
-            pace.
+          <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto text-center">
+            This is a collaborative, grounding space for parents who want to feel steady and
+            informed.
           </p>
         </div>
       </section>
 
       <SectionDivider />
 
-      {/* THE CLIENT JOURNEY */}
+      {/* HOW SUPPORT WORKS */}
       <section className="section bg-background">
         <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">
           <div className="text-center max-w-2xl mx-auto mb-6">
             <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">
-              The Client Journey
+              How Support Works
             </div>
             <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-              The Client Journey
+              How Support Works
             </h2>
-            <p className="mt-6 font-serif italic text-lg md:text-xl text-cocoa/75 leading-[1.5]">
-              A developmental arc through the first weeks.
+            <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
+              My work follows a developmental arc that adapts to your baby's needs and your
+              family's values:
             </p>
           </div>
 
-          {/* IMAGE — CLIENT JOURNEY OPENER: nursery/bassinet */}
+          {/* IMAGE — JOURNEY OPENER: nursery/bassinet */}
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-3xl mx-auto mb-16 md:mb-20 mt-10 md:mt-14">
             <ResponsiveImage
               source={journeyOpenerResponsive}
@@ -303,39 +289,56 @@ function ServicesPage() {
           </div>
 
           {/* PHASES */}
-          <div className="space-y-16 md:space-y-20">
-            {phases.map((phase, i) => {
-              const alt = i % 2 === 0;
-              return (
-                <div key={phase.numeral}>
-                  {i > 0 && <SectionDivider className="mb-16 md:mb-20" />}
-                  <article
-                    className={`rounded-2xl border border-taupe/25 p-10 md:p-14 ${alt ? "bg-blush/50" : "bg-sand/60"}`}
-                  >
-                    <div className="uppercase tracking-[0.22em] text-xs text-clay mb-4">
-                      Phase {phase.numeral}
-                    </div>
-                    <h3 className="font-serif text-4xl md:text-5xl font-medium leading-[1.1] text-cocoa">
-                      {phase.name}
-                    </h3>
-                    <div className="mt-10">
-                      <ul className="grid sm:grid-cols-2 gap-3">
-                        {phase.includes.map((item) => (
-                          <li
-                            key={item}
-                            className={`flex items-start gap-3 rounded-xl border border-taupe/25 px-4 py-3 text-sm text-cocoa ${alt ? "bg-sand/60" : "bg-blush/60"}`}
-                          >
-                            <span className="text-clay mt-1 text-[0.55rem]">&#9679;</span>
-                            <span className="leading-relaxed">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </article>
-                </div>
-              );
-            })}
+          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+            {phases.map((phase) => (
+              <div key={phase.name} className="rounded-2xl border border-taupe/25 bg-sand/60 p-7">
+                <h3 className="font-serif text-xl text-cocoa leading-snug">{phase.name}</h3>
+                <p className="mt-2 text-[15px] text-cocoa/75 leading-[1.75]">{phase.line}</p>
+              </div>
+            ))}
           </div>
+
+          <p className="mt-12 text-center text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            Every family moves through these phases differently. Your support plan is tailored,
+            flexible, and responsive.
+          </p>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* WHO THIS IS FOR */}
+      <section className="section bg-blush/40">
+        <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">
+          <div className="text-center mb-12">
+            <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Who This Is For</div>
+            <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+              Who This Is For
+            </h2>
+            <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">Families who want:</p>
+          </div>
+          <ul className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+            {[
+              "clarity, not noise",
+              "evidence‑based guidance",
+              "support grounded in newborn communication",
+              "relational, non‑prescriptive care",
+              "a steady presence during the fourth trimester",
+              "help understanding their baby's cues and rhythms",
+              "continuity and confidence in the earliest weeks",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-xl border border-taupe/25 bg-sand/60 px-5 py-4 text-[15px] text-cocoa"
+              >
+                <span className="text-clay mt-1 text-[0.6rem]">&#9679;</span>
+                <span className="leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-center text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
+            If you're unsure which service is right for you, we'll figure it out together.
+          </p>
         </div>
       </section>
 
