@@ -59,7 +59,6 @@ const supportOptions = [
   "Postpartum Doula Support",
   "Newborn Care Specialist Support",
   "Fourth Trimester Coaching",
-  "Holistic Family Support Sessions",
   "I'm not sure yet",
 ];
 
@@ -148,9 +147,9 @@ function ContactPage() {
               <h2 className="font-serif text-3xl md:text-4xl font-medium leading-[1.15] text-cocoa">
                 Thank you.
               </h2>
-              <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
-                Your inquiry has been received with care. I'll respond within two days, often
-                sooner. Until then — be gentle with yourself.
+              <p className="confirmation mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
+                Thank you for reaching out. I'll be in touch within 1–2 business days with next
+                steps.
               </p>
               <button
                 onClick={() => setSent(false)}
@@ -162,6 +161,9 @@ function ContactPage() {
           ) : (
             <div className="rounded-2xl bg-blush/50 border border-taupe/25 p-10 md:p-14">
               <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Inquiry Form</div>
+              <h2 className="font-serif text-2xl md:text-3xl font-medium leading-[1.25] text-cocoa mb-8">
+                Share a bit about your family and what you're hoping for in this season.
+              </h2>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
@@ -237,7 +239,7 @@ function ContactPage() {
 
                 <div>
                   <Label htmlFor="supportType" className="block text-sm text-cocoa mb-2">
-                    What kind of support are you seeking?
+                    What kind of support you're seeking
                   </Label>
                   <Select
                     value={watch("supportType") || ""}
@@ -262,7 +264,8 @@ function ContactPage() {
 
                 <div>
                   <Label htmlFor="heardAbout" className="block text-sm text-cocoa mb-2">
-                    How did you hear about Nurture The Roots?
+                    How you heard about Nurture The Roots
+                    <span className="align-super text-[0.6em] ml-0.5">™</span>
                   </Label>
                   <Input
                     id="heardAbout"
@@ -291,13 +294,17 @@ function ContactPage() {
 
                 {submitError && <p className="text-sm text-red-600">{submitError}</p>}
 
+                <p className="form-subtext text-[15px] italic text-cocoa/70 leading-[1.7]">
+                  You don't need the perfect words — just begin where you are.
+                </p>
+
                 <div className="pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand hover:bg-cocoa transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="button primary inline-flex items-center rounded-full bg-clay px-7 py-3.5 text-sm font-medium text-sand hover:bg-cocoa transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Sending..." : "Send Your Inquiry"}
+                    {isSubmitting ? "Sending..." : "Send Inquiry"}
                   </button>
                 </div>
               </form>
