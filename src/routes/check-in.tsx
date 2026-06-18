@@ -109,6 +109,8 @@ const WEEKLY_GUIDES = [
 
 /* ── Helpers ──────────────────────────────────────────────────── */
 
+const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
+
 function getTimeGreeting(): string {
   const h = new Date().getHours();
   if (h >= 5 && h < 12) return "wherever this morning finds you, take a breath.";
@@ -123,7 +125,7 @@ function getDailyTip() {
 }
 
 function getWeeklyGuide() {
-  const week = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000)) % WEEKLY_GUIDES.length;
+  const week = Math.floor(Date.now() / MS_PER_WEEK) % WEEKLY_GUIDES.length;
   return WEEKLY_GUIDES[week];
 }
 
@@ -155,7 +157,7 @@ function CheckInPage() {
           </p>
 
           {/* Greeting */}
-          <h1 className="font-serif text-4xl text-cocoa leading-[1.1] mb-1">Hi Ash,</h1>
+          <h1 className="font-serif text-4xl text-cocoa leading-[1.1] mb-1">Hi there,</h1>
           <p className="font-serif italic text-clay text-xl leading-[1.4] mb-8">{greeting}</p>
 
           {/* Daily check-in card */}
@@ -226,7 +228,7 @@ function CheckInPage() {
           {/* This week's guide */}
           <Link
             to="/resources"
-            className="block rounded-2xl border border-taupe/25 bg-white/80 shadow-sm p-4 mb-4 flex gap-4 items-center group"
+            className="rounded-2xl border border-taupe/25 bg-white/80 shadow-sm p-4 mb-4 flex gap-4 items-center group"
           >
             <div
               className={`shrink-0 w-12 h-12 rounded-xl ${guide.color} flex items-center justify-center text-xl`}
