@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import servicesImageAsset from "@/assets/approach-3.jpeg.asset.json";
 import anchorResponsive from "@/assets/branding-54.responsive.json";
 import journeyOpenerResponsive from "@/assets/branding-55.responsive.json";
@@ -347,10 +347,16 @@ function ServicesPage() {
             Every family starts with a 20‑minute consultation to understand your needs and determine
             the right level of support.
           </p>
-          <div className="mt-12">
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
             <CalendlyButton className="button inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand shadow-sm hover:bg-cocoa transition-colors">
               Begin Your Postpartum Support
             </CalendlyButton>
+            <Link
+              to="/framework"
+              className="button inline-flex items-center rounded-full border border-cocoa/30 px-8 py-4 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              Explore the Framework
+            </Link>
           </div>
         </div>
       </section>

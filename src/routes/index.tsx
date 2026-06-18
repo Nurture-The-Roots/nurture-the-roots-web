@@ -177,10 +177,24 @@ function Index() {
           </h2>
           <p className="mt-10 text-[17px] text-cocoa/80 leading-[1.85]">
             My work is grounded in newborn communication, developmental science, and the lived
-            realities of early parenthood. I help families understand their baby's cues, build
-            responsive rhythms, support early regulation, navigate identity shifts, and create
-            systems that reduce overwhelm.
+            realities of early parenthood. I help families read their baby's cues + states, build
+            developmental rhythms, support early regulation, move through identity transitions, and
+            create systems that reduce overwhelm.
           </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/framework"
+              className="link inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              Explore the Framework
+            </Link>
+            <Link
+              to="/about"
+              className="link inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -239,10 +253,24 @@ function Index() {
           </h2>
           <p className="mt-10 text-[17px] text-cocoa/80 leading-[1.85]">
             Nurture The Roots<sup className="align-super text-[0.55em] ml-0.5">™</sup> is a learning
-            hub — a place to return for clarity and evidence‑based guidance on newborn cues, early
-            rhythms, developmental transitions, identity shifts, partner support, and practical
-            tools for daily life.
+            hub — a place to return for clarity and evidence‑based guidance on newborn cues + states,
+            developmental rhythms, identity transitions, partner support, and practical tools for
+            daily life.
           </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link
+              to="/resources"
+              className="link inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              Browse Resources
+            </Link>
+            <Link
+              to="/blog"
+              className="link inline-flex items-center rounded-full border border-cocoa/30 px-7 py-3.5 text-sm font-medium text-cocoa hover:bg-cocoa/5 transition-colors"
+            >
+              Visit the Blog
+            </Link>
+          </div>
         </div>
       </section>
 
