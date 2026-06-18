@@ -45,9 +45,11 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Long-lived caching for static images served from /public/images
-# (also used as the upstream for the Netlify Image CDN)
+# Static images in /public/images are not content-hashed, so use a moderate
+# cache with stale-while-revalidate rather than `immutable`. This still gives
+# the Netlify Image CDN a cacheable upstream while allowing same-filename
+# replacements to roll out within a day.
 [[headers]]
   for = "/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
