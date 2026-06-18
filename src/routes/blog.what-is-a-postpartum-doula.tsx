@@ -204,7 +204,7 @@ function PostPage() {
             <p>
               Not all postpartum support looks the same. At Nurture The Roots™, my
               approach is rooted in{" "}
-              <Link to="/approach" className="text-clay hover:text-cocoa underline underline-offset-4 transition-colors">
+              <Link to="/framework" className="text-clay hover:text-cocoa underline underline-offset-4 transition-colors">
                 Identity-Aligned Care
               </Link>
               — a framework that honors who you are, where you come from, and the lineage

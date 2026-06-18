@@ -196,8 +196,8 @@ function SfDoulaPage() {
             <p>
               You can read more about the four pillars that shape this work on
               the{" "}
-              <Link to="/approach" className="text-clay underline underline-offset-4 hover:text-cocoa">
-                approach
+              <Link to="/framework" className="text-clay underline underline-offset-4 hover:text-cocoa">
+                framework
               </Link>{" "}
               page.
             </p>
