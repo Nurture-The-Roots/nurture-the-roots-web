@@ -61,7 +61,7 @@ const pillars = [
   {
     numeral: "III",
     name: "Relationship",
-    lead: "Newborns communicate from the beginning. This pillar focuses on the early relational dance between you and your baby. Newborns express themselves through cues, states, rhythms, and patterns — and when parents understand these signals, connection becomes intuitive.",
+    lead: "Newborns communicate from the beginning. This pillar centers the early relational dance between you and your baby. Newborns express themselves through cues, states, rhythms, and patterns — and when parents understand these signals, connection becomes intuitive.",
     bullets: [
       "newborn behavioral observation (NBO‑informed)",
       "understanding cues + states",
@@ -100,7 +100,7 @@ function FrameworkPage() {
             formation. The Nurture The Roots
             <TM /> Framework is the structure that guides my work with families — a way of
             understanding the fourth trimester that is grounded in newborn communication,
-            developmental science, and the lived realities of early parenthood.
+            developmental science, and the lived reality of early parenthood.
           </p>
           <p className="mt-6 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
             This framework is not a method or a protocol. It is a lens — one that helps families
@@ -170,10 +170,22 @@ function FrameworkPage() {
           <h2 className="sr-only">Why This Framework Matters</h2>
           <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
             The Nurture The Roots
-            <TM /> Framework gives families a way to understand the fourth trimester that is
-            developmental, relational, attentive to identity transitions, culturally aware, grounded
-            in newborn communication, and adaptable to each family's values and lived experience.
+            <TM /> Framework gives families a way to understand the fourth trimester that is:
           </p>
+          <ul className="mt-6 space-y-2 text-[17px] text-cocoa/80 leading-[1.85] max-w-md mx-auto text-left">
+            {[
+              "developmental and relational",
+              "attentive to identity transitions",
+              "culturally aware",
+              "grounded in newborn communication",
+              "adaptable to each family's values and lived reality",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="text-clay mt-2 text-[0.5rem]">&#9679;</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             <Link
               to="/services"

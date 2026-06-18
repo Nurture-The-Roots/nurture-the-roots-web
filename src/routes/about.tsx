@@ -210,8 +210,8 @@ function AboutPage() {
               Ventures, and APPPAH.
             </p>
             <p>
-              And my deepest learning has come from the families I've served and the babies I've
-              cared for — hundreds of real fourth trimesters, each one different.
+              And my deepest education has come from the families themselves — hundreds of real
+              fourth trimesters, each one its own story.
             </p>
           </div>
         </div>

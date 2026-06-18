@@ -102,8 +102,8 @@ function BlogPage() {
             insights.
           </p>
           <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
-            Every article is written to help you understand your baby, your own transition, and the
-            rhythms that support early parenthood.
+            Every article is written to help you understand your baby, your own becoming, and the
+            rhythms that hold early parenthood.
           </p>
         </div>
       </section>

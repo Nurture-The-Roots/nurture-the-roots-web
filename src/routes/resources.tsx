@@ -10,7 +10,7 @@ export const Route = createFileRoute("/resources")({
       {
         name: "description",
         content:
-          "A learning hub for new parents: guides, articles, and practical tools shaped by developmental science, newborn communication, and the lived realities of early parenthood.",
+          "A learning hub for new parents: guides, articles, and practical tools shaped by developmental science, newborn communication, and the lived reality of early parenthood.",
       },
       { property: "og:title", content: "Resources — A Learning Hub for the Fourth Trimester" },
       {
@@ -34,11 +34,25 @@ const guides = [
   "Preparing Your Support Ecosystem",
 ];
 
-const collections = [
+const collections: {
+  name: string;
+  intro: string;
+  body: string;
+  bullets?: string[];
+  note?: string;
+}[] = [
   {
     name: "Articles & Education",
     intro: "Thoughtful, developmental writing for new parents.",
-    body: "Topics include newborn behavioral patterns, early regulation, developmental rhythms, identity shifts, relational beginnings, and building sustainable systems in the fourth trimester.",
+    body: "Topics include:",
+    bullets: [
+      "Newborn behavioral patterns and cue reading",
+      "Early regulation and state transitions",
+      "Developmental rhythms in the first weeks",
+      "Identity shifts and the parental transition",
+      "Relational beginnings and early attachment",
+      "Building sustainable systems in the fourth trimester",
+    ],
   },
   {
     name: "The Blog",
@@ -49,11 +63,12 @@ const collections = [
     name: "Media & Features",
     intro: "Interviews, collaborations, and educational contributions.",
     body: "Including podcasts, guest articles, expert features, and community events.",
+    note: "Ashlee's work has been informed by training through the Brazelton Institute and Brazelton Touchpoints Center. Future features and collaborations will be listed here as they develop.",
   },
   {
     name: "FAQ",
     intro: "Clear answers to common questions.",
-    body: "Covering feeding, sleep, newborn cues, postpartum recovery, partner support, and early rhythms.",
+    body: "Common questions about feeding, sleep, newborn cues, postpartum recovery, partner support, and early rhythms — answered clearly and without pressure.",
   },
 ];
 
@@ -70,7 +85,7 @@ function ResourcesPage() {
           <p className="mt-8 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
             This space is designed as a learning hub — a place where parents can return for clarity,
             grounding, and practical support. Everything here is shaped by developmental science,
-            newborn communication, and the lived realities of early parenthood.
+            newborn communication, and the lived reality of early parenthood.
           </p>
           <p className="mt-6 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
             These resources are not meant to overwhelm you. They're meant to help you understand
@@ -146,6 +161,19 @@ function ResourcesPage() {
                   {item.intro}
                 </p>
                 <p className="mt-4 text-[15px] text-cocoa/75 leading-[1.85]">{item.body}</p>
+                {item.bullets && (
+                  <ul className="mt-3 space-y-2 text-[15px] text-cocoa/75 leading-[1.75]">
+                    {item.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3">
+                        <span className="text-clay mt-1.5 text-[0.5rem]">&#9679;</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {item.note && (
+                  <p className="mt-4 text-[15px] text-cocoa/75 leading-[1.85]">{item.note}</p>
+                )}
               </div>
             ))}
           </div>
