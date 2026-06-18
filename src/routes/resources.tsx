@@ -116,7 +116,9 @@ function ResourcesPage() {
         <div className="mx-auto max-w-4xl px-6 py-10 md:py-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-3xl mx-auto">
             <img
-              src="/images/ashlee-brand-0077.jpg"
+              src="/.netlify/images?url=/images/ashlee-brand-0077.jpg&w=1200&fit=cover&fm=avif&q=70"
+              srcSet="/.netlify/images?url=/images/ashlee-brand-0077.jpg&w=480&fit=cover&fm=avif&q=70 480w, /.netlify/images?url=/images/ashlee-brand-0077.jpg&w=768&fit=cover&fm=avif&q=70 768w, /.netlify/images?url=/images/ashlee-brand-0077.jpg&w=1200&fit=cover&fm=avif&q=70 1200w"
+              sizes="(min-width: 1024px) 768px, 100vw"
               alt="Top-down view of hands settling a swaddled newborn into a bassinet — safe sleep and responsive care"
               loading="lazy"
               decoding="async"
