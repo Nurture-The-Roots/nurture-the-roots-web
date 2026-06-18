@@ -40,7 +40,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Reach out to Ashlee at Nurture The Roots™ for warm, attuned postpartum support in San Francisco.",
+          "Reach out to Ashlee at Nurture The Roots™ for warm, evidence-based postpartum and newborn support in the San Francisco Bay Area.",
       },
       { property: "og:title", content: "Contact — Nurture The Roots™" },
       {
@@ -129,7 +129,7 @@ function ContactPage() {
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
             <ResponsiveImage
               source={contactFamilyResponsive}
-              alt="Ashlee supporting a family during the fourth trimester — a warm, attuned moment in the nursery"
+              alt="Postpartum doula Ashlee McKenzie supporting a San Francisco family with their newborn during the fourth trimester"
               sizes="(min-width: 1024px) 896px, 100vw"
               className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9]"
             />

@@ -11,26 +11,26 @@ const homeBandImg = ashleeTenderHoldAsset.url;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nurture The Roots™ — Fourth Trimester Postpartum Support" },
+      { title: "Nurture The Roots™ — Evidence-Based Postpartum & Newborn Support" },
       {
         name: "description",
         content:
-          "Lineage‑rooted postpartum support from a Fourth Trimester Expert serving San Francisco families with clarity, attunement, and attuned newborn care.",
+          "Evidence-based postpartum and newborn development support for the fourth trimester. Newborn communication, responsive care, and developmental guidance for San Francisco Bay Area families.",
       },
       {
         property: "og:title",
-        content: "Nurture The Roots™ — Fourth Trimester Postpartum Support",
+        content: "Nurture The Roots™ — Evidence-Based Postpartum & Newborn Support",
       },
       {
         property: "og:description",
         content:
-          "Grounded, identity‑rooted postpartum support from a Fourth Trimester Expert in San Francisco — clarity, care, and attuned newborn guidance.",
+          "Postpartum and newborn development support for the fourth trimester — newborn communication, cues + states, developmental rhythms, and responsive care for San Francisco Bay Area families.",
       },
       { property: "og:url", content: "https://nurturetheroots.co/" },
       {
         name: "keywords",
         content:
-          "fourth trimester expert, postpartum doula San Francisco, newborn care specialist, postpartum support SF, fourth trimester support, newborn guidance, attuned postpartum care",
+          "postpartum support, newborn care specialist, newborn communication, fourth trimester, developmental rhythms, responsive care, early regulation, San Francisco Bay Area",
       },
       { property: "og:image", content: welcomeImg },
       { name: "twitter:image", content: welcomeImg },
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "Nurture The Roots™",
           description:
-            "Lineage-rooted, identity-aligned postpartum doula and newborn care practice serving families across the San Francisco Bay Area.",
+            "Evidence-based postpartum doula and newborn care practice serving families across the San Francisco Bay Area — focused on newborn communication, developmental rhythms, and responsive care.",
           url: "https://nurturetheroots.co/",
           image: welcomeImg,
           telephone: "",
@@ -91,7 +91,7 @@ function Index() {
             Evidence‑Based Postpartum &amp; Newborn Development Support
           </h2>
           <p className="mt-6 mx-auto max-w-2xl font-serif italic text-lg md:text-xl text-cocoa/75 leading-[1.5]">
-            For families who want clarity, confidence, and attuned guidance from the very beginning.
+            For families who want clarity, confidence, and responsive guidance from the very beginning.
           </p>
           <div className="mt-12">
             <CalendlyButton className="button inline-flex items-center rounded-full bg-clay px-9 py-4 text-base font-medium text-sand shadow-sm hover:bg-cocoa transition-colors">
@@ -107,7 +107,7 @@ function Index() {
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
             <ResponsiveImage
               source={welcomeResponsive}
-              alt="Ashlee cradling a newborn in a warm, sunlit room — a grounded moment of attuned postpartum presence"
+              alt="Postpartum doula Ashlee McKenzie holding a newborn in a warm, sunlit San Francisco home"
               sizes="(min-width: 1024px) 896px, 100vw"
               className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/2] md:aspect-[16/10]"
             />
@@ -190,7 +190,7 @@ function Index() {
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
             <img
               src={homeBandImg}
-              alt="Ashlee beside a bed, gently swaddling a baby in a calm, light-filled room"
+              alt="Newborn care specialist Ashlee McKenzie swaddling a baby in a calm, light-filled nursery"
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"

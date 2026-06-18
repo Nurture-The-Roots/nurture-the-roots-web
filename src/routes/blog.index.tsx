@@ -63,7 +63,7 @@ const topics = [
   },
   {
     name: "Thought Leadership",
-    body: "Essays and reflections on postpartum care, continuity, lineage, and the future of newborn + family support.",
+    body: "Essays and reflections on postpartum care, continuity, and the future of newborn + family support.",
   },
 ];
 

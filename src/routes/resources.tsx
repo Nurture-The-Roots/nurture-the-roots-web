@@ -86,7 +86,7 @@ function ResourcesPage() {
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
             <img
               src={babyChangingTableAsset.url}
-              alt="Ashlee barefoot in a calm nursery, attentively tending to a baby on the changing table"
+              alt="Postpartum doula Ashlee McKenzie caring for a newborn on a changing table in a calm nursery"
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1024px) 896px, 100vw"

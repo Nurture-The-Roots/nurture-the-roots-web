@@ -11,20 +11,20 @@ import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Grounded, Identity‑Aligned Postpartum Support | Nurture The Roots™" },
+      { title: "Postpartum & Newborn Care Services | Nurture The Roots™" },
       {
         name: "description",
         content:
-          "Postpartum doula support, newborn care specialist services, fourth trimester coaching, and holistic family sessions — identity‑aligned, lineage‑rooted care for San Francisco families.",
+          "Postpartum doula support, newborn care specialist services, and fourth trimester coaching — evidence-based newborn communication, developmental rhythms, and responsive care for San Francisco Bay Area families.",
       },
       {
         property: "og:title",
-        content: "Services — Nurture The Roots™ Postpartum Support",
+        content: "Postpartum & Newborn Care Services — Nurture The Roots™",
       },
       {
         property: "og:description",
         content:
-          "Care that honors your identity, your lineage, your rhythms, and the tender threshold of the fourth trimester.",
+          "Evidence-based postpartum doula and newborn care services for the fourth trimester — newborn communication, cues + states, developmental rhythms, and responsive care.",
       },
       { property: "og:url", content: "https://nurturetheroots.co/services" },
       { property: "og:image", content: servicesImageAsset.url },
@@ -89,7 +89,7 @@ const phases = [
     name: "Deepening",
     includes: [
       "developmental guidance",
-      "attuned routines",
+      "responsive care",
       "partner support",
       "family systems",
       "identity transitions",
@@ -178,7 +178,7 @@ function ServicesPage() {
             <div className="overflow-hidden rounded-2xl shadow-[0_16px_48px_-20px_rgba(74,63,57,0.3)]">
               <img
                 src={ashleeFeedingAsset.url}
-                alt="Ashlee in a quiet feeding moment, illustrating the attuned, relational rhythm of postpartum doula support"
+                alt="Postpartum doula Ashlee McKenzie supporting a feeding during an in-home postpartum doula session"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-auto object-cover rounded-2xl"
@@ -210,7 +210,7 @@ function ServicesPage() {
               "developmental rhythms",
               "bottle‑feeding support",
               "continuity of care",
-              "attuned routines",
+              "responsive care",
             ].map((item) => (
               <li
                 key={item}

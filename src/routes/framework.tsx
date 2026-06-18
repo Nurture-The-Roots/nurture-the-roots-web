@@ -13,16 +13,16 @@ export const Route = createFileRoute("/framework")({
       {
         name: "description",
         content:
-          "The Nurture The Roots™ Postpartum Framework: a lineage‑rooted, identity‑aligned, developmental, and relational model for the fourth trimester, built on four pillars.",
+          "The Nurture The Roots™ Framework: a developmental, relational model for the fourth trimester built on four pillars — Identity, Lineage, Relationship, and Rhythm — grounded in newborn communication.",
       },
       {
         property: "og:title",
-        content: "The Nurture The Roots™ Postpartum Framework",
+        content: "The Nurture The Roots™ Framework",
       },
       {
         property: "og:description",
         content:
-          "Identity · Lineage · Relationship · Rhythm — four pillars for grounded, sovereign postpartum care.",
+          "Identity · Lineage · Relationship · Rhythm — four pillars for grounded, evidence-based postpartum and newborn care.",
       },
       { property: "og:url", content: "https://nurturetheroots.co/framework" },
       { property: "og:type", content: "website" },
@@ -115,7 +115,7 @@ function FrameworkPage() {
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
             <ResponsiveImage
               source={branding56Responsive}
-              alt="Ashlee barefoot in a calm nursery, attentively tending to a baby on a changing table"
+              alt="Postpartum doula Ashlee McKenzie caring for a newborn on a changing table in a calm nursery"
               sizes="(min-width: 1024px) 896px, 100vw"
               className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9]"
             />
@@ -171,8 +171,8 @@ function FrameworkPage() {
           <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
             The Nurture The Roots
             <TM /> Framework gives families a way to understand the fourth trimester that is
-            developmental, relational, identity‑aligned, culturally aware, grounded in newborn
-            communication, and adaptable to each family's values and lived experience.
+            developmental, relational, attentive to identity transitions, culturally aware, grounded
+            in newborn communication, and adaptable to each family's values and lived experience.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             <Link
