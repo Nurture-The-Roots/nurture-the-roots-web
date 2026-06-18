@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LibraryRouteImport } from './routes/library'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -35,6 +36,11 @@ import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/e
 const UnsubscribeRoute = UnsubscribeRouteImport.update({
   id: '/unsubscribe',
   path: '/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryRoute = LibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -156,6 +162,7 @@ export interface FileRoutesByFullPath {
   '/disclaimer': typeof DisclaimerRoute
   '/files': typeof FilesRoute
   '/framework': typeof FrameworkRoute
+  '/library': typeof LibraryRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
   '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRoute
@@ -179,6 +186,7 @@ export interface FileRoutesByTo {
   '/disclaimer': typeof DisclaimerRoute
   '/files': typeof FilesRoute
   '/framework': typeof FrameworkRoute
+  '/library': typeof LibraryRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
   '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRoute
@@ -204,6 +212,7 @@ export interface FileRoutesById {
   '/disclaimer': typeof DisclaimerRoute
   '/files': typeof FilesRoute
   '/framework': typeof FrameworkRoute
+  '/library': typeof LibraryRoute
   '/postpartum-doula-san-francisco': typeof PostpartumDoulaSanFranciscoRoute
   '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRoute
@@ -230,6 +239,7 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/files'
     | '/framework'
+    | '/library'
     | '/postpartum-doula-san-francisco'
     | '/privacy'
     | '/resources'
@@ -253,6 +263,7 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/files'
     | '/framework'
+    | '/library'
     | '/postpartum-doula-san-francisco'
     | '/privacy'
     | '/resources'
@@ -277,6 +288,7 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/files'
     | '/framework'
+    | '/library'
     | '/postpartum-doula-san-francisco'
     | '/privacy'
     | '/resources'
@@ -302,6 +314,7 @@ export interface RootRouteChildren {
   DisclaimerRoute: typeof DisclaimerRoute
   FilesRoute: typeof FilesRoute
   FrameworkRoute: typeof FrameworkRoute
+  LibraryRoute: typeof LibraryRoute
   PostpartumDoulaSanFranciscoRoute: typeof PostpartumDoulaSanFranciscoRoute
   PrivacyRoute: typeof PrivacyRoute
   ResourcesRoute: typeof ResourcesRoute
@@ -380,6 +393,13 @@ declare module '@tanstack/react-router' {
       path: '/framework'
       fullPath: '/framework'
       preLoaderRoute: typeof FrameworkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library': {
+      id: '/library'
+      path: '/library'
+      fullPath: '/library'
+      preLoaderRoute: typeof LibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/files': {
@@ -496,6 +516,7 @@ const rootRouteChildren: RootRouteChildren = {
   DisclaimerRoute: DisclaimerRoute,
   FilesRoute: FilesRoute,
   FrameworkRoute: FrameworkRoute,
+  LibraryRoute: LibraryRoute,
   PostpartumDoulaSanFranciscoRoute: PostpartumDoulaSanFranciscoRoute,
   PrivacyRoute: PrivacyRoute,
   ResourcesRoute: ResourcesRoute,

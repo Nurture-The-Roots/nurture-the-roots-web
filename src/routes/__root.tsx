@@ -142,6 +142,7 @@ function SiteHeader() {
     { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
     { to: "/framework", label: "Framework" },
+    { to: "/library", label: "Library" },
     { to: "/resources", label: "Resources" },
     { to: "/blog", label: "Blog" },
     { to: "/contact", label: "Contact" },
