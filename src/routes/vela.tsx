@@ -31,7 +31,8 @@ function VelaOnboarding() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: persist personalization data and navigate into the app
+    // TODO: persist { name, role, context } to user profile (Supabase / context store)
+    // and navigate to the Vela app dashboard once the route exists.
   }
 
   return (
@@ -141,6 +142,7 @@ function VelaOnboarding() {
         <button
           type="submit"
           disabled={!name.trim()}
+          aria-label={name.trim() ? "Enter Vela" : "Enter Vela (name required)"}
           className="w-full rounded-2xl bg-clay px-6 py-4 text-base font-medium text-sand shadow-sm transition hover:bg-cocoa disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Enter Vela →
