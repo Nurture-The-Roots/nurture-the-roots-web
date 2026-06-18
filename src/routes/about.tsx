@@ -157,16 +157,15 @@ function AboutPage() {
               understand ourselves.
             </p>
             <p>This lived understanding is woven into every part of my work.</p>
-            <p>
-              It's why I see the fourth trimester as a threshold, not a task list.
-              <br />
-              It's why I support parents in naming who they are becoming.
-              <br />
-              It's why I help families build systems that honor their values, not someone else's
-              expectations.
-              <br />
-              It's why I believe care is ceremony, and continuity is a form of protection.
-            </p>
+            <ul className="list-disc pl-6 space-y-2 marker:text-clay">
+              <li>It's why I see the fourth trimester as a threshold, not a task list.</li>
+              <li>It's why I support parents in naming who they are becoming.</li>
+              <li>
+                It's why I help families build systems that honor their values, not someone else's
+                expectations.
+              </li>
+              <li>It's why I believe care is ceremony, and continuity is a form of protection.</li>
+            </ul>
             <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5] text-center pt-4">
               My framework is not theoretical.
               <br />
@@ -194,14 +193,14 @@ function AboutPage() {
           </div>
           <ul className="mt-8 grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {[
-              "Newborn behavioral observation",
-              "Developmental + relational guidance",
-              "Identity‑aligned postpartum support",
-              "Cue‑based care",
-              "Attachment‑supportive practices",
-              "Ancestral care principles",
-              "Family systems support",
-              "Postpartum planning and continuity",
+              "newborn behavioral observation (trained through the Brazelton Institute's NBO System, Level 1)",
+              "developmental + relational guidance (Brazelton Touchpoints Center)",
+              "identity‑aligned postpartum support",
+              "cue‑based care and newborn communication",
+              "attachment‑supportive practices",
+              "ancestral care principles",
+              "family systems support",
+              "postpartum planning and continuity",
             ].map((item) => (
               <li
                 key={item}
@@ -214,9 +213,13 @@ function AboutPage() {
           </ul>
           <div className="mt-12 space-y-7 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
             <p>
-              I am trained in newborn development, lactation education, infant massage, and the
-              Brazelton Touchpoints/NBO approach — a framework that aligns deeply with my
-              lineage‑rooted understanding of newborn communication.
+              I am trained in newborn development, lactation education (CAPPA CLE), infant massage
+              (Infant Massage USA), and the Brazelton Touchpoints/NBO approach — a framework that
+              aligns deeply with my lineage‑rooted understanding of newborn communication.
+            </p>
+            <p>
+              I am also TrustLine‑cleared, CPR/First Aid certified, and trained through DONA, Gentle
+              Ventures, and APPPAH.
             </p>
             <p>
               But my deepest training has come from the families I've served, the babies I've held,
