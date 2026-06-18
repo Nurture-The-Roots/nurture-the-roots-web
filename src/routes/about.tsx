@@ -298,6 +298,23 @@ function AboutPage() {
 
       <SectionDivider />
 
+      {/* IMAGE — tender hold */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-4xl px-6 py-10 md:py-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-3xl mx-auto">
+            <img
+              src="/images/ashlee-brand-0020.jpg"
+              alt="Ashlee McKenzie holding a baby close, cheek to cheek, in a bright, sunlit room"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="800"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* MY ROLE IN YOUR POSTPARTUM SEASON */}
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">
