@@ -120,8 +120,7 @@ function ServicesPage() {
           <p className="mt-8 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
             The earliest weeks with a newborn are a period of rapid development — for the baby and
             for the parents. My work centers on helping families understand what their newborn is
-            communicating, respond with confidence, and build rhythms that support everyone's
-            well‑being.
+            communicating, respond with confidence, and build rhythms that hold everyone.
           </p>
         </div>
       </section>
@@ -199,7 +198,7 @@ function ServicesPage() {
               Newborn Care Specialist Support
             </h2>
             <p className="mt-6 font-serif italic text-lg md:text-xl text-cocoa/75 leading-[1.5]">
-              Developmentally informed newborn care.
+              Developmentally informed newborn care — especially overnight.
             </p>
           </div>
           <ul className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
@@ -269,6 +268,10 @@ function ServicesPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-8 text-center text-[15px] text-cocoa/70 leading-[1.75] max-w-2xl mx-auto">
+            Available in person (San Francisco Bay Area) or virtually. Structured to your family's
+            pace.
+          </p>
         </div>
       </section>
 

@@ -125,7 +125,7 @@ function Index() {
               communication, build responsive rhythms, and move through the fourth trimester with
               steadiness and confidence.
             </p>
-            <p>This is a space for grounded, evidence‑based support — a space for clarity, not noise.</p>
+            <p>This is a space for grounded, evidence‑based support — for clarity, not noise.</p>
           </div>
         </div>
       </section>
@@ -282,8 +282,7 @@ function Index() {
             Begin With a Conversation
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
-            Every family starts with a 20‑minute consultation — a calm, pressure‑free space to
-            understand what support would feel grounding and aligned.
+            Every family begins with a 20‑minute conversation — calm, unhurried, and pressure‑free.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-3">
             <CalendlyButton className="button inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand shadow-sm hover:bg-cocoa transition-colors">
