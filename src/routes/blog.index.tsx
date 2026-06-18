@@ -160,6 +160,10 @@ function BlogPage() {
           <p className="font-serif italic text-xl md:text-2xl text-cocoa/85 leading-[1.5]">
             Want to receive new reflections as they're published?
           </p>
+          <p className="mt-5 text-[17px] text-cocoa/80 leading-[1.85] max-w-xl mx-auto">
+            Join the mailing list for grounded writing on identity, lineage, and the fourth
+            trimester.
+          </p>
           <form
             onSubmit={(e) => {
               e.preventDefault();
