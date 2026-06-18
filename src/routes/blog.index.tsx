@@ -108,6 +108,23 @@ function BlogPage() {
         </div>
       </section>
 
+      {/* IMAGE — soothing moment */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-3xl mx-auto">
+            <img
+              src="/images/ashlee-brand-0025.jpg"
+              alt="Ashlee McKenzie soothing a baby against her shoulder in a calm, sunlit nursery"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="800"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* WHAT YOU'LL FIND HERE */}
       <section className="section bg-background">
         <div className="mx-auto max-w-4xl px-6 py-24 md:py-32">

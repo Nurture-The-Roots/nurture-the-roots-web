@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
 import welcomeResponsive from "@/assets/welcome-ashlee-baby.responsive.json";
 import ashleeTenderHoldAsset from "@/assets/ashlee-tender-hold.jpeg.asset.json";
+import branding48Responsive from "@/assets/branding-photos-48.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
@@ -240,6 +241,20 @@ function Index() {
                 <p className="mt-2 text-[15px] text-cocoa/75 leading-[1.75]">{phase.line}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IMAGE BAND — Ashlee at home with baby */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-6 py-10 md:py-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2]">
+            <ResponsiveImage
+              source={branding48Responsive}
+              alt="Postpartum doula Ashlee McKenzie holding a newborn by a sunlit window in a calm, plant-filled San Francisco living room"
+              sizes="(min-width: 1024px) 1024px, 100vw"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
         </div>
       </section>

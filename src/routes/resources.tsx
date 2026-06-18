@@ -111,6 +111,23 @@ function ResourcesPage() {
         </div>
       </section>
 
+      {/* IMAGE — settling baby in bassinet */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-4xl px-6 py-10 md:py-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-3xl mx-auto">
+            <img
+              src="/images/ashlee-brand-0077.jpg"
+              alt="Top-down view of hands settling a swaddled newborn into a bassinet — safe sleep and responsive care"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="800"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* GUIDES & HANDOUTS */}
       <section className="section bg-background">
         <div className="mx-auto max-w-3xl px-6 py-24 md:py-32">

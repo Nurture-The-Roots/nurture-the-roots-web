@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import branding56Responsive from "@/assets/branding-56.responsive.json";
+import branding58Responsive from "@/assets/branding-58.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
@@ -160,6 +161,20 @@ function FrameworkPage() {
       })}
 
       <SectionDivider />
+
+      {/* IMAGE — relational moment */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-4xl px-6 py-10 md:py-16">
+          <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-md mx-auto">
+            <ResponsiveImage
+              source={branding58Responsive}
+              alt="Ashlee McKenzie smiling with a baby during a playful, responsive moment of early relational connection"
+              sizes="(min-width: 768px) 448px, 100vw"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* WHY THIS FRAMEWORK MATTERS */}
       <section className="section bg-hero-gradient">
