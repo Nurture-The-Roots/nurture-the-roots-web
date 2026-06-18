@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VelaRouteImport } from './routes/vela'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -32,6 +33,11 @@ import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lova
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
 
+const VelaRoute = VelaRouteImport.update({
+  id: '/vela',
+  path: '/vela',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UnsubscribeRoute = UnsubscribeRouteImport.update({
   id: '/unsubscribe',
   path: '/unsubscribe',
@@ -164,6 +170,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/vela': typeof VelaRoute
   '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
@@ -187,6 +194,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/vela': typeof VelaRoute
   '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog': typeof BlogIndexRoute
@@ -212,6 +220,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/unsubscribe': typeof UnsubscribeRoute
+  '/vela': typeof VelaRoute
   '/blog/what-is-a-postpartum-doula': typeof BlogWhatIsAPostpartumDoulaRoute
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/blog/': typeof BlogIndexRoute
@@ -238,6 +247,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/unsubscribe'
+    | '/vela'
     | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog/'
@@ -261,6 +271,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/unsubscribe'
+    | '/vela'
     | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog'
@@ -285,6 +296,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/unsubscribe'
+    | '/vela'
     | '/blog/what-is-a-postpartum-doula'
     | '/email/unsubscribe'
     | '/blog/'
@@ -310,6 +322,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   UnsubscribeRoute: typeof UnsubscribeRoute
+  VelaRoute: typeof VelaRoute
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
@@ -319,6 +332,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vela': {
+      id: '/vela'
+      path: '/vela'
+      fullPath: '/vela'
+      preLoaderRoute: typeof VelaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/unsubscribe': {
       id: '/unsubscribe'
       path: '/unsubscribe'
@@ -504,6 +524,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   UnsubscribeRoute: UnsubscribeRoute,
+  VelaRoute: VelaRoute,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
