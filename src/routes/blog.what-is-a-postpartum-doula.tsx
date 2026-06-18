@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import postImageAsset from "@/assets/approach-1.jpeg.asset.json";
+import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 
 export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
   head: () => ({
@@ -8,7 +9,7 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
       {
         name: "description",
         content:
-          "Learn what a postpartum doula does, how she differs from a night nurse or nanny, and why identity-aligned care in San Francisco transforms the fourth trimester.",
+          "Learn what a postpartum doula does, how she differs from a night nurse or nanny, and why evidence-based care in San Francisco supports the fourth trimester.",
       },
       {
         property: "og:title",
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
       {
         property: "og:description",
         content:
-          "What a postpartum doula does, how she differs from a night nurse or nanny, and why identity-aligned care matters in the fourth trimester.",
+          "What a postpartum doula does, how she differs from a night nurse or nanny, and why evidence-based care matters in the fourth trimester.",
       },
       {
         property: "og:url",
@@ -40,7 +41,7 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
           "@type": "Article",
           headline: "What Is a Postpartum Doula? A Guide to Fourth Trimester Support",
           description:
-            "What a postpartum doula does, how she differs from a midwife, night nurse, or nanny, and why identity-aligned care in San Francisco transforms the fourth trimester.",
+            "What a postpartum doula does, how she differs from a midwife, night nurse, or nanny, and why evidence-based care in San Francisco supports the fourth trimester.",
           author: {
             "@type": "Person",
             name: "Ashlee McKenzie",
@@ -84,7 +85,7 @@ function PostPage() {
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
             <img
               src={postImageAsset.url}
-              alt="Parent holding newborn beside a bassinet in a sunlit nursery"
+              alt="Parent holding a newborn beside a bassinet in a sunlit San Francisco nursery during the fourth trimester"
               loading="eager"
               className="w-full h-full object-cover"
             />
@@ -104,8 +105,8 @@ function PostPage() {
 
             <p>
               In a culture that often rushes new parents through the early weeks, a
-              postpartum doula offers something rare: attuned, grounded, nonjudgmental
-              support that honors your pace, your identity, and the family you're becoming.
+              postpartum doula offers something rare: clear, grounded, nonjudgmental
+              support that honors your pace, your identity, and your family.
             </p>
 
             <h2 className="font-serif text-2xl md:text-3xl text-cocoa pt-4">
@@ -142,12 +143,12 @@ function PostPage() {
             </p>
             <ul className="space-y-4 my-6">
               {[
-                "Emotional support and processing — holding space for the tenderness, uncertainty, and joy of early parenthood",
-                "Newborn care education — reading cues, understanding communication, and building confidence in your instincts",
+                "Emotional support — steady, nonjudgmental help through the uncertainty and joy of early parenthood",
+                "Newborn care education — reading cues + states, understanding newborn communication, and building confidence in your instincts",
                 "Feeding support — chestfeeding, bottle feeding, combination feeding, and early lactation guidance",
-                "Overnight care — gentle, developmentally aligned nighttime support so you can rest and recover",
+                "Overnight care — developmentally informed nighttime support so you can rest and recover",
                 "Household assistance — light meal prep, nursery organization, and creating a calm, regulated environment",
-                "Parent coaching — identity support, partnership communication, and navigating the emotional landscape of becoming a family",
+                "Parent coaching — support through identity transitions, partner communication, and the early weeks of parenthood",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="text-clay mt-2 text-[0.5rem]">&#9679;</span>
@@ -199,27 +200,27 @@ function PostPage() {
             </div>
 
             <h2 className="font-serif text-2xl md:text-3xl text-cocoa pt-4">
-              Identity-Aligned Postpartum Care in San Francisco
+              Evidence-Based Postpartum Care in San Francisco
             </h2>
             <p>
               Not all postpartum support looks the same. At Nurture The Roots™, my
-              approach is rooted in{" "}
-              <Link to="/approach" className="text-clay hover:text-cocoa underline underline-offset-4 transition-colors">
-                Identity-Aligned Care
+              approach is grounded in the{" "}
+              <Link to="/framework" className="text-clay hover:text-cocoa underline underline-offset-4 transition-colors">
+                Nurture The Roots™ Framework
               </Link>
-              — a framework that honors who you are, where you come from, and the lineage
-              you're continuing.
+              — a way of working that honors who you are, where you come from, and how your
+              family actually lives.
             </p>
             <p>
               This means your postpartum experience isn't shaped by a script or a trend. It's
-              shaped by your values, your cultural rhythms, your nervous system, and the
-              unique way your family moves through the world. The care you receive should
-              reflect that — not override it.
+              shaped by your values, your developmental rhythms, and the unique way your family
+              moves through the world. The care you receive should reflect that — not override
+              it.
             </p>
             <p>
-              Whether you're drawn to ancestral practices, evidence-based guidance, or a blend
-              of both, identity-aligned support meets you where you are and helps you feel
-              more like yourself, not less.
+              Whether you want evidence-based guidance, practical newborn support, or both,
+              this approach meets you where you are and helps you feel more like yourself, not
+              less.
             </p>
             <p>
               If this resonates, you can read more about my{" "}
@@ -265,15 +266,12 @@ function PostPage() {
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
             If you're looking for postpartum support that honors your identity, your pace,
-            and the family you're becoming, I'd be honored to walk with you.
+            and your family, I'd be glad to help.
           </p>
           <div className="mt-12">
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
-            >
-              Schedule a consultation
-            </Link>
+            <CalendlyButton className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors">
+              Schedule a Consultation
+            </CalendlyButton>
           </div>
         </div>
       </section>

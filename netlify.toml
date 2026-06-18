@@ -1,3 +1,40 @@
 [build]
   command = "bun run build"
   publish = "dist"
+
+# 301 redirects for retired pages → closest living page (preserves link equity)
+[[redirects]]
+  from = "/approach"
+  to = "/framework"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/client-journey"
+  to = "/services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/faq"
+  to = "/resources"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/media"
+  to = "/resources"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/testimonials"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/workshops"
+  to = "/services"
+  status = 301
+  force = true

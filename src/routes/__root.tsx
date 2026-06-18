@@ -14,19 +14,20 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="not-found flex min-h-screen items-center justify-center bg-hero-gradient px-6">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+        <h1 className="font-serif text-4xl md:text-5xl font-medium leading-[1.1] text-cocoa">
+          This page isn't here.
+        </h1>
+        <p className="mt-6 text-[17px] text-cocoa/80 leading-[1.85]">
+          Let's get you back to what you need.
         </p>
-        <div className="mt-6">
+        <div className="mt-10">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="button inline-flex items-center justify-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand shadow-sm transition-colors hover:bg-cocoa"
           >
-            Go home
+            Return Home
           </Link>
         </div>
       </div>
@@ -140,14 +141,10 @@ function SiteHeader() {
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
-    { to: "/postpartum-doula-san-francisco", label: "SF Doula" },
-    { to: "/approach", label: "Approach" },
-    { to: "/testimonials", label: "Testimonials" },
+    { to: "/framework", label: "Framework" },
+    { to: "/resources", label: "Resources" },
     { to: "/blog", label: "Blog" },
-    { to: "/media", label: "Media" },
-    { to: "/faq", label: "FAQ" },
     { to: "/contact", label: "Contact" },
-    { to: "/privacy", label: "Legal" },
   ] as const;
   return (
     <header className="sticky top-0 z-40 backdrop-blur-sm bg-[color-mix(in_oklab,var(--sand)_85%,transparent)] border-b border-border/60">
@@ -189,50 +186,33 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="mt-24 bg-taupe text-cocoa">
-      <div className="mx-auto max-w-6xl px-6 py-14 grid gap-10 md:grid-cols-3">
-        {/* Brand Info */}
-        <div>
-          <div className="font-serif text-2xl">Ashlee McKenzie</div>
-          <p className="mt-2 text-sm text-cocoa/75">
-            Certified Postpartum Doula & Newborn Care Specialist
-          </p>
-        </div>
-
-        {/* Contact */}
-        <div className="text-sm text-cocoa/80">
-          <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Contact</div>
-          <p>San Francisco, California — Serving families across the Bay Area</p>
-          <p className="mt-2">
-            <a href="mailto:ashleemckenzie@nurturetheroots.co" className="hover:text-clay transition-colors">
-              ashleemckenzie@nurturetheroots.co
-            </a>
-          </p>
-        </div>
-
-        {/* Navigation */}
-        <div className="text-sm text-cocoa/80">
-          <div className="uppercase tracking-[0.2em] text-xs text-clay mb-3">Navigation</div>
-          <ul className="space-y-2">
-            <li><Link to="/" className="hover:text-clay transition-colors">Home</Link></li>
-            <li><Link to="/about" className="hover:text-clay transition-colors">About</Link></li>
-            <li><Link to="/services" className="hover:text-clay transition-colors">Services</Link></li>
-            <li><Link to="/blog" className="hover:text-clay transition-colors">Blog</Link></li>
-            <li><Link to="/media" className="hover:text-clay transition-colors">Media</Link></li>
-            <li><Link to="/contact" className="hover:text-clay transition-colors">Contact</Link></li>
-            <li><Link to="/privacy" className="hover:text-clay transition-colors">Legal</Link></li>
-          </ul>
-        </div>
+      <div className="mx-auto max-w-3xl px-6 py-16 text-center space-y-4">
+        <p className="text-[15px] text-cocoa/85 leading-[1.85]">
+          Evidence‑based postpartum &amp; newborn development support in the San Francisco Bay Area.
+        </p>
+        <p className="text-sm text-cocoa/75">
+          © Nurture The Roots<span className="align-super text-[0.6em] ml-0.5">™</span> — All rights
+          reserved.
+        </p>
+        <p className="text-xs text-cocoa/65 leading-[1.7]">
+          This site is for educational purposes only and does not replace medical care.
+        </p>
       </div>
 
-      {/* Bottom bar */}
+      {/* Bottom bar — legal */}
       <div className="border-t border-cocoa/15">
-        <div className="mx-auto max-w-6xl px-6 py-6">
-          <p className="text-xs text-cocoa/65 text-center">
-            My support is relational and educational, not medical. Please consult your healthcare provider for medical concerns.
-          </p>
-          <p className="mt-2 text-xs text-cocoa/65 text-center">
-            © 2026 Nurture the Roots LLC. All rights reserved.
-          </p>
+        <div className="mx-auto max-w-6xl px-6 py-5">
+          <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-cocoa/65">
+            <Link to="/privacy" className="hover:text-clay transition-colors">
+              Privacy
+            </Link>
+            <Link to="/terms" className="hover:text-clay transition-colors">
+              Terms
+            </Link>
+            <Link to="/disclaimer" className="hover:text-clay transition-colors">
+              Disclaimer
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

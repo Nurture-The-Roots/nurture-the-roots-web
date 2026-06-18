@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 
 const CANONICAL = "https://nurture-the-roots-web.lovable.app/postpartum-doula-san-francisco";
 
@@ -9,13 +10,13 @@ export const Route = createFileRoute("/postpartum-doula-san-francisco")({
       {
         name: "description",
         content:
-          "Experienced postpartum doula in San Francisco offering warm, identity-aligned daytime support, overnight newborn care, feeding guidance, and NBO-informed sessions for Bay Area families.",
+          "Experienced postpartum doula in San Francisco offering warm, evidence-based daytime support, overnight newborn care, feeding guidance, and NBO-informed sessions for Bay Area families.",
       },
       { property: "og:title", content: "Postpartum Doula in San Francisco & Bay Area | Nurture The Roots™" },
       {
         property: "og:description",
         content:
-          "Warm, identity-aligned postpartum doula care for San Francisco and Bay Area families — daytime support, overnight newborn care, feeding guidance, and NBO-informed sessions.",
+          "Warm, evidence-based postpartum doula care for San Francisco and Bay Area families — daytime support, overnight newborn care, feeding guidance, and NBO-informed sessions.",
       },
       { property: "og:url", content: CANONICAL },
       { property: "og:type", content: "website" },
@@ -29,7 +30,7 @@ export const Route = createFileRoute("/postpartum-doula-san-francisco")({
           "@type": "LocalBusiness",
           name: "Nurture The Roots™ — Postpartum Doula Care",
           description:
-            "Identity-aligned postpartum doula and newborn care specialist serving San Francisco and the Bay Area.",
+            "Evidence-based postpartum doula and newborn care specialist serving San Francisco and the Bay Area.",
           areaServed: [
             { "@type": "City", name: "San Francisco" },
             { "@type": "AdministrativeArea", name: "San Francisco Bay Area" },
@@ -53,22 +54,22 @@ const offerings = [
   {
     title: "Daytime Postpartum Doula Care",
     body:
-      "Hands-on emotional, physical, and educational support during the day — so you can rest, feed, and find your footing with someone attuned beside you.",
+      "Hands-on emotional, physical, and educational support during the day — so you can rest, feed, and find your footing with someone experienced beside you.",
   },
   {
     title: "Overnight Newborn Care",
     body:
-      "Restorative overnights with developmentally aligned newborn care, gentle feeding support, and clear morning updates.",
+      "Restorative overnights with developmentally informed newborn care, responsive feeding support, and clear morning updates.",
   },
   {
     title: "Feeding & Lactation Support",
     body:
-      "Chestfeeding, bottle, and combination feeding support grounded in your body, your baby, and your family's reality.",
+      "Chestfeeding, bottle, and combination feeding support grounded in your body, your baby, and your family's real life.",
   },
   {
     title: "NBO-Informed Newborn Sessions",
     body:
-      "A relational session using the Newborn Behavioral Observations framework to help you read your baby's cues and early communication.",
+      "A session using the Newborn Behavioral Observations framework to help you read your baby's cues + states and newborn communication.",
   },
 ];
 
@@ -100,17 +101,13 @@ function SfDoulaPage() {
             Postpartum Doula in San Francisco
           </h1>
           <p className="mt-8 text-[17px] md:text-lg text-cocoa/80 leading-[1.85]">
-            Identity-aligned postpartum care for families across San Francisco and
-            the Bay Area — warm, lineage-rooted, and attuned to who you are
-            becoming as a parent.
+            Evidence-based postpartum care for families across San Francisco and the Bay Area —
+            warm, developmental, and grounded in newborn communication.
           </p>
           <div className="mt-12">
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
-            >
-              Schedule a consultation
-            </Link>
+            <CalendlyButton className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors">
+              Schedule a Consultation
+            </CalendlyButton>
           </div>
         </div>
       </section>
@@ -122,13 +119,13 @@ function SfDoulaPage() {
             What I Offer
           </div>
           <h2 className="font-serif text-3xl md:text-4xl font-medium leading-tight text-cocoa text-center">
-            A postpartum doula who meets your family with attunement
+            A postpartum doula who meets your family where you are
           </h2>
           <div className="mt-10 space-y-6 text-[17px] text-cocoa/80 leading-[1.85]">
             <p>
               A postpartum doula offers non-medical, relational care during the
               fourth trimester — guiding you through newborn care, feeding,
-              recovery, and the emotional terrain of becoming a parent. If
+              recovery, and the identity transitions of early parenthood. If
               you're new to the role, the{" "}
               <Link to="/blog/what-is-a-postpartum-doula" className="text-clay underline underline-offset-4 hover:text-cocoa">
                 guide to what a postpartum doula does
@@ -137,9 +134,9 @@ function SfDoulaPage() {
             </p>
             <p>
               As a postpartum doula in San Francisco, I offer fourth trimester
-              support for families who want something more than a checklist: care
-              that honors your identity, your lineage, and the specific shape of
-              your household.
+              support for families who want more than a checklist: evidence-based
+              care shaped around your family, your values, and how you actually
+              live.
             </p>
           </div>
         </div>
@@ -184,20 +181,20 @@ function SfDoulaPage() {
             The Approach
           </div>
           <h2 className="font-serif text-3xl md:text-4xl font-medium leading-tight text-cocoa text-center">
-            Identity-Aligned Care in the Bay Area
+            Responsive, Evidence-Based Care in the Bay Area
           </h2>
           <div className="mt-10 space-y-6 text-[17px] text-cocoa/80 leading-[1.85]">
             <p>
-              San Francisco families come from many lineages, structures, and
-              traditions. Identity-aligned care means I follow your culture,
-              your language around your body, and the rhythms of your home —
-              not a single template of what postpartum should look like.
+              San Francisco families come from many backgrounds, structures, and
+              traditions. That means I follow your culture, your language around
+              your body, and the rhythms of your home — not a single template of
+              what postpartum should look like.
             </p>
             <p>
               You can read more about the four pillars that shape this work on
               the{" "}
-              <Link to="/approach" className="text-clay underline underline-offset-4 hover:text-cocoa">
-                approach
+              <Link to="/framework" className="text-clay underline underline-offset-4 hover:text-cocoa">
+                framework
               </Link>{" "}
               page.
             </p>
@@ -233,19 +230,16 @@ function SfDoulaPage() {
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-2xl px-6 py-28 md:py-36 text-center">
           <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
-            Begin with a quiet conversation.
+            Begin with a conversation.
           </h2>
           <p className="mt-8 text-[17px] text-cocoa/80 leading-[1.85]">
-            If you're looking for a postpartum doula in San Francisco who will
-            meet your family with warmth and care, I'd be honored to walk with you.
+            If you're looking for a postpartum doula in San Francisco who will meet your family with
+            warmth and evidence-based care, I'd be glad to support you.
           </p>
           <div className="mt-12">
-            <Link
-              to="/contact"
-              className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
-            >
-              Schedule a consultation
-            </Link>
+            <CalendlyButton className="inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand hover:bg-cocoa transition-colors">
+              Schedule a Consultation
+            </CalendlyButton>
           </div>
         </div>
       </section>
