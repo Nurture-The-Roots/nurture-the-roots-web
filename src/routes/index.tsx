@@ -6,6 +6,8 @@ import branding48Responsive from "@/assets/branding-photos-48.responsive.json";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
+import { DailyCheckIn } from "@/components/DailyCheckIn";
+import { useState } from "react";
 const welcomeImg = welcomeAsset.url;
 const homeBandImg = ashleeTenderHoldAsset.url;
 
@@ -76,8 +78,11 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [checkInOpen, setCheckInOpen] = useState(false);
+
   return (
     <div className="home-page">
+      <DailyCheckIn open={checkInOpen} onOpenChange={setCheckInOpen} userName="Ash" />
       {/* HERO */}
       <section className="hero section relative overflow-hidden bg-hero-gradient">
         <div
@@ -127,6 +132,29 @@ function Index() {
               steadiness and confidence.
             </p>
             <p>This is a space for grounded, evidence‑based support — for clarity, not noise.</p>
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider />
+
+      {/* DAILY CHECK-IN */}
+      <section className="section bg-blush/30">
+        <div className="mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+          <div className="uppercase tracking-[0.28em] text-xs text-clay mb-5">Daily Rhythm</div>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium leading-[1.15] text-cocoa">
+            Daily Check‑In
+          </h2>
+          <p className="mt-6 text-[17px] text-cocoa/75 leading-[1.85] max-w-lg mx-auto">
+            A quiet moment to name where you are. All answers valid — no wrong feeling.
+          </p>
+          <div className="mt-10">
+            <button
+              onClick={() => setCheckInOpen(true)}
+              className="button inline-flex items-center rounded-full bg-clay px-8 py-4 text-sm font-medium text-sand shadow-sm hover:bg-cocoa transition-colors"
+            >
+              Begin Today's Check‑In
+            </button>
           </div>
         </div>
       </section>
