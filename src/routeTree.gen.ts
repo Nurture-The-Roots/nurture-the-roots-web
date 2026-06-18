@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CheckInRouteImport } from './routes/check-in'
 import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -35,6 +36,11 @@ import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/e
 const UnsubscribeRoute = UnsubscribeRouteImport.update({
   id: '/unsubscribe',
   path: '/unsubscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckInRoute = CheckInRouteImport.update({
+  id: '/check-in',
+  path: '/check-in',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -152,6 +158,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/check-in': typeof CheckInRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/files': typeof FilesRoute
@@ -175,6 +182,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/check-in': typeof CheckInRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/files': typeof FilesRoute
@@ -200,6 +208,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/check-in': typeof CheckInRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/files': typeof FilesRoute
@@ -226,6 +235,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/check-in'
     | '/contact'
     | '/disclaimer'
     | '/files'
@@ -249,6 +259,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/check-in'
     | '/contact'
     | '/disclaimer'
     | '/files'
@@ -273,6 +284,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/check-in'
     | '/contact'
     | '/disclaimer'
     | '/files'
@@ -298,6 +310,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRouteWithChildren
+  CheckInRoute: typeof CheckInRoute
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
   FilesRoute: typeof FilesRoute
@@ -417,6 +430,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/check-in': {
+      id: '/check-in'
+      path: '/check-in'
+      fullPath: '/check-in'
+      preLoaderRoute: typeof CheckInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -492,6 +512,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BlogRoute: BlogRouteWithChildren,
+  CheckInRoute: CheckInRoute,
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
   FilesRoute: FilesRoute,
