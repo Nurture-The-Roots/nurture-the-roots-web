@@ -97,7 +97,7 @@ export function DailyCheckIn({ open, onOpenChange, userName = "you" }: DailyChec
                 ))}
               </div>
 
-              {/* Invisible spacer to keep dots centred */}
+              {/* Invisible spacer to keep dots centered */}
               <div className="h-8 w-8" aria-hidden />
             </div>
 
@@ -157,7 +157,13 @@ export function DailyCheckIn({ open, onOpenChange, userName = "you" }: DailyChec
                 </p>
                 <p className="mt-3 text-sm text-cocoa/55">Coming soon…</p>
                 <button
-                  onClick={() => setStep((s) => Math.min(s + 1, TOTAL_STEPS))}
+                  onClick={() => {
+                    if (step < TOTAL_STEPS) {
+                      setStep((s) => s + 1);
+                    } else {
+                      handleOpenChange(false);
+                    }
+                  }}
                   className="mt-8 inline-flex items-center rounded-full bg-clay px-7 py-3 text-sm font-medium text-sand hover:bg-cocoa transition-colors"
                 >
                   {step < TOTAL_STEPS ? "Continue" : "Done"}
