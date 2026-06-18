@@ -7,6 +7,10 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Force the Nitro deploy build to run outside the Lovable sandbox (e.g. on
+  // Netlify CI) and target Netlify so SSR + server functions are deployed.
+  // Inside the Lovable sandbox this is overridden back to Cloudflare automatically.
+  nitro: { preset: "netlify" },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
