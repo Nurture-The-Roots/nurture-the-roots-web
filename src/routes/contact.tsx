@@ -29,6 +29,8 @@ const contactFormSchema = z.object({
   supportType: z.string().optional(),
   heardAbout: z.string().trim().max(200).optional(),
   message: z.string().trim().min(1, "Message is required").max(2000),
+  /** Honeypot: must be empty — bots fill it, humans don't see it */
+  _hp: z.string().optional(),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
@@ -79,6 +81,13 @@ function ContactPage() {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
+    // Honeypot check: if the hidden field is filled, a bot submitted the form.
+    // Silently fake success to avoid revealing the protection mechanism.
+    if (data._hp) {
+      setSent(true);
+      reset();
+      return;
+    }
     setIsSubmitting(true);
     setSubmitError("");
     try {
@@ -89,9 +98,10 @@ function ContactPage() {
       const composedMessage = extraLines.length
         ? `${data.message}\n\n— — —\n${extraLines.join("\n")}`
         : data.message;
-      const { location: _l, heardAbout: _h, ...rest } = data;
+      const { location: _l, heardAbout: _h, _hp: _honeypot, ...rest } = data;
       void _l;
       void _h;
+      void _honeypot;
       await submitContact({ data: { ...rest, message: composedMessage } });
       setSent(true);
       reset();
@@ -165,6 +175,17 @@ function ContactPage() {
                 Share a bit about your family and what you're hoping for in this season.
               </h2>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                {/* Honeypot: hidden from real users, visible to bots */}
+                <div aria-hidden="true" className="absolute opacity-0 pointer-events-none overflow-hidden h-0 w-0 -z-10">
+                  <label htmlFor="contact_hp">Leave this field empty</label>
+                  <input
+                    id="contact_hp"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    {...register("_hp")}
+                  />
+                </div>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="fullName" className="block text-sm text-cocoa mb-2">
