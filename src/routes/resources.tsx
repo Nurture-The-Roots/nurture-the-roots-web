@@ -117,11 +117,11 @@ function ResourcesPage() {
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-3xl mx-auto">
             <img
               src="/images/ashlee-brand-0077.jpg"
-              alt="Top-down view of hands settling a swaddled newborn into a bassinet — safe sleep and responsive care"
+              alt="Postpartum doula Ashlee McKenzie settling a swaddled newborn into a bassinet for safe sleep in a calm San Francisco home"
               loading="lazy"
               decoding="async"
-              width="1200"
-              height="800"
+              width="910"
+              height="748"
               className="w-full h-auto object-cover"
             />
           </div>
