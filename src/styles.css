@@ -64,16 +64,16 @@
 :root {
   --radius: 0.5rem;
 
-  --sand: #F5EBE0;
-  --blush: #FAF3EB;
-  --clay: #C97B5F;
-  --deep-accent: #A85D43;
-  --soft-accent: #E8C9B8;
+  --sand: #f5ebe0;
+  --blush: #faf3eb;
+  --clay: #c97b5f;
+  --deep-accent: #a85d43;
+  --soft-accent: #e8c9b8;
   --taupe: var(--soft-accent);
-  --cocoa: #3D2E25;
-  --earth: #6B5446;
-  --soft-ink: #6B5446;
-  --faint-ink: #9C8775;
+  --cocoa: #3d2e25;
+  --earth: #6b5446;
+  --soft-ink: #6b5446;
+  --faint-ink: #9c8775;
 
   --background: var(--sand);
   --foreground: var(--earth);
@@ -89,7 +89,7 @@
   --muted-foreground: var(--faint-ink);
   --accent: var(--soft-accent);
   --accent-foreground: var(--sand);
-  --destructive: oklch(0.577 0.180 27);
+  --destructive: oklch(0.577 0.18 27);
   --destructive-foreground: oklch(0.984 0 0);
   --border: color-mix(in oklab, var(--soft-accent) 72%, white);
   --input: color-mix(in oklab, var(--soft-accent) 72%, white);
@@ -120,7 +120,10 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-serif);
     color: var(--color-cocoa);
     font-weight: 400;
@@ -130,8 +133,17 @@
 
 @utility bg-hero-gradient {
   background-image:
-    radial-gradient(60% 50% at 50% 30%, color-mix(in oklab, var(--clay) 24%, transparent), transparent 70%),
-    linear-gradient(180deg, var(--sand) 0%, var(--blush) 65%, color-mix(in oklab, var(--soft-accent) 48%, var(--blush)) 100%);
+    radial-gradient(
+      60% 50% at 50% 30%,
+      color-mix(in oklab, var(--clay) 24%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      var(--sand) 0%,
+      var(--blush) 65%,
+      color-mix(in oklab, var(--soft-accent) 48%, var(--blush)) 100%
+    );
 }
 
 @utility bg-soft-gradient {

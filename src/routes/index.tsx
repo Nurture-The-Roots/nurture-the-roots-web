@@ -106,7 +106,9 @@ function Index() {
 
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-          <h2 className="text-4xl font-medium leading-tight md:text-5xl">Hi, I'm Ashlee McKenzie.</h2>
+          <h2 className="text-4xl font-medium leading-tight md:text-5xl">
+            Hi, I'm Ashlee McKenzie.
+          </h2>
           <p className="mt-5 font-serif text-xl italic text-soft-ink md:text-2xl">
             Certified Postpartum Doula · Newborn Care Specialist · Founder of Nurture The Roots™
           </p>
@@ -114,8 +116,8 @@ function Index() {
             <p>
               For 16 years, I've sat with families through the hardest, tenderest hours — the 2am
               feeds, the questions no one warns you about, the steep, tender work of learning to
-              read a brand-new person. After more than 500 families, I've learned that what
-              parents need most isn't more information. It's understanding.
+              read a brand-new person. After more than 500 families, I've learned that what parents
+              need most isn't more information. It's understanding.
             </p>
             <p>
               My work helps you read your baby's cues, build rhythms that fit your real life, and
@@ -157,7 +159,9 @@ function Index() {
                 key={pillar.name}
                 className="rounded-3xl border border-soft-accent bg-card p-7 md:p-8"
               >
-                <h3 className="text-2xl font-semibold leading-tight text-cocoa">{pillar.headline}</h3>
+                <h3 className="text-2xl font-semibold leading-tight text-cocoa">
+                  {pillar.headline}
+                </h3>
                 <p className="mt-3 text-lg font-semibold text-deep-accent">{pillar.name}</p>
                 <p className="mt-3 leading-[1.8] text-earth">{pillar.description}</p>
               </article>
@@ -184,7 +188,10 @@ function Index() {
           </div>
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {journeySteps.map((step) => (
-              <div key={step} className="rounded-2xl border border-soft-accent bg-background p-6 text-earth">
+              <div
+                key={step}
+                className="rounded-2xl border border-soft-accent bg-background p-6 text-earth"
+              >
                 {step}
               </div>
             ))}
@@ -208,7 +215,9 @@ function Index() {
 
       <section className="bg-card">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-          <h2 className="text-4xl font-medium leading-tight md:text-5xl">A weekly note from Ashlee</h2>
+          <h2 className="text-4xl font-medium leading-tight md:text-5xl">
+            A weekly note from Ashlee
+          </h2>
           <p className="mx-auto mt-5 max-w-2xl font-serif text-xl italic text-soft-ink md:text-2xl">
             One piece of fourth-trimester wisdom, every week — plus my free guide on the #1 thing
             every parent Googles at 2am.
@@ -223,7 +232,9 @@ function Index() {
 
       <section className="bg-hero-gradient">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
-          <h2 className="text-4xl font-medium leading-tight md:text-5xl">Begin with a conversation</h2>
+          <h2 className="text-4xl font-medium leading-tight md:text-5xl">
+            Begin with a conversation
+          </h2>
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-[1.85] text-earth">
             Every family begins with a 20-minute conversation — calm, unhurried, and pressure-free.
             A chance to explore what support would feel right for you.

@@ -81,21 +81,44 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Nurture The Roots™ — Postpartum Support" },
-      { name: "description", content: "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco." },
+      {
+        name: "description",
+        content:
+          "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco.",
+      },
       { name: "author", content: "Ashlee McKenzie" },
       { property: "og:title", content: "Nurture The Roots™ — Postpartum Support" },
-      { property: "og:description", content: "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco." },
+      {
+        property: "og:description",
+        content:
+          "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Nurture The Roots™ — Postpartum Support" },
-      { name: "twitter:description", content: "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/AQ2lCvbMjJa5vC9jf05TYfDbSXt2/social-images/social-1781566712427-Branding_photos-50.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/AQ2lCvbMjJa5vC9jf05TYfDbSXt2/social-images/social-1781566712427-Branding_photos-50.webp" },
+      {
+        name: "twitter:description",
+        content:
+          "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/AQ2lCvbMjJa5vC9jf05TYfDbSXt2/social-images/social-1781566712427-Branding_photos-50.webp",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/AQ2lCvbMjJa5vC9jf05TYfDbSXt2/social-images/social-1781566712427-Branding_photos-50.webp",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
