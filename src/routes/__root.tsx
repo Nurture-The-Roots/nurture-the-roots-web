@@ -7,7 +7,9 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { Menu } from "lucide-react";
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -79,21 +81,44 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Nurture The Roots™ — Postpartum Support" },
-      { name: "description", content: "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco." },
+      {
+        name: "description",
+        content:
+          "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco.",
+      },
       { name: "author", content: "Ashlee McKenzie" },
       { property: "og:title", content: "Nurture The Roots™ — Postpartum Support" },
-      { property: "og:description", content: "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco." },
+      {
+        property: "og:description",
+        content:
+          "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Nurture The Roots™ — Postpartum Support" },
-      { name: "twitter:description", content: "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/AQ2lCvbMjJa5vC9jf05TYfDbSXt2/social-images/social-1781566712427-Branding_photos-50.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/AQ2lCvbMjJa5vC9jf05TYfDbSXt2/social-images/social-1781566712427-Branding_photos-50.webp" },
+      {
+        name: "twitter:description",
+        content:
+          "Postpartum support for the fourth trimester — grounded, evidence‑based, and rooted in your family’s story. Serving families in San Francisco.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/AQ2lCvbMjJa5vC9jf05TYfDbSXt2/social-images/social-1781566712427-Branding_photos-50.webp",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/AQ2lCvbMjJa5vC9jf05TYfDbSXt2/social-images/social-1781566712427-Branding_photos-50.webp",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -137,22 +162,22 @@ function RootComponent() {
 }
 
 function SiteHeader() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const nav = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
-    { to: "/services", label: "Services" },
     { to: "/framework", label: "Framework" },
+    { to: "/services", label: "Services" },
     { to: "/resources", label: "Resources" },
-    { to: "/blog", label: "Blog" },
     { to: "/contact", label: "Contact" },
   ] as const;
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-sm bg-[color-mix(in_oklab,var(--sand)_85%,transparent)] border-b border-border/60">
-      <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between gap-6">
+    <header className="sticky top-0 z-40 border-b border-border/80 bg-[color-mix(in_oklab,var(--background)_92%,transparent)] backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-5">
         <Link to="/" className="font-serif text-lg text-cocoa tracking-wide">
           Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-6 text-sm text-earth/80">
+        <nav className="hidden items-center gap-6 text-sm text-earth/90 lg:flex">
           {nav.map((n) => (
             <Link
               key={n.to}
@@ -165,20 +190,38 @@ function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link
-          to="/contact"
-          className="hidden lg:inline-flex items-center rounded-full border border-taupe/70 px-4 py-2 text-sm text-cocoa hover:bg-blush transition-colors"
-        >
-          Begin
-        </Link>
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <SheetTrigger asChild>
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-full border border-soft-accent bg-card p-2 text-cocoa transition-colors hover:bg-soft-accent lg:hidden"
+              aria-label="Open navigation menu"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="border-soft-accent bg-background pt-12">
+            <SheetTitle className="font-serif text-2xl font-medium text-cocoa">
+              Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span>
+            </SheetTitle>
+            <nav className="mt-8 flex flex-col gap-4 text-lg text-earth">
+              {nav.map((n) => (
+                <SheetClose asChild key={n.to}>
+                  <Link
+                    to={n.to}
+                    className="rounded-xl px-3 py-2 transition-colors hover:bg-card hover:text-cocoa"
+                    activeProps={{ className: "bg-card text-cocoa rounded-xl px-3 py-2" }}
+                    activeOptions={{ exact: n.to === "/" }}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {n.label}
+                  </Link>
+                </SheetClose>
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
-      <nav className="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 pb-3 text-xs tracking-wide text-earth/75">
-        {nav.map((n) => (
-          <Link key={n.to} to={n.to} className="hover:text-cocoa" activeProps={{ className: "text-cocoa" }} activeOptions={{ exact: n.to === "/" }}>
-            {n.label}
-          </Link>
-        ))}
-      </nav>
     </header>
   );
 }
