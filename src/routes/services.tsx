@@ -231,9 +231,10 @@ function ServicesPage() {
             </p>
           </div>
           <p className="text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto mb-8 text-center">
-            Fourth trimester coaching is for families who want depth beyond tasks — a space to
-            understand your baby, your own transition, and the identity shifts of early parenthood.
-            Sessions may include:
+            Fourth trimester coaching is for families who want depth — postpartum support isn't a
+            checklist of tasks. It's a space to better understand your baby, support your own
+            transition, and move through the identity shifts of early parenthood. Sessions may
+            include:
           </p>
           <ul className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {[
