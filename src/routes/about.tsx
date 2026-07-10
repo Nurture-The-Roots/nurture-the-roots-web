@@ -1,12 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import walkingAsset from "@/assets/about-ashlee-walking.jpg.asset.json";
-import ashleePortraitAsset from "@/assets/ashlee-portrait.jpeg.asset.json";
-import branding54Responsive from "@/assets/branding-54.responsive.json";
-import branding39Responsive from "@/assets/branding-photos-39.responsive.json";
-import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
-const aboutImg = walkingAsset.url;
+const aboutImg = "/images/family-consultation-fourth-trimester.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -66,7 +61,7 @@ function AboutPage() {
           </h1>
           <p className="mt-8 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
             I'm Ashlee McKenzie — a Certified Postpartum Doula, Newborn Care Specialist, and Fourth
-            Trimester Expert based in San Francisco. For more than fifteen years, I've helped
+            Trimester Expert based in San Francisco. For 16 years, I've helped
             families navigate the fourth trimester with clarity and confidence.
           </p>
           <p className="mt-6 mx-auto max-w-2xl text-[17px] text-cocoa/80 leading-[1.85]">
@@ -82,10 +77,11 @@ function AboutPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] max-w-3xl mx-auto">
-            <ResponsiveImage
-              source={branding54Responsive}
-              alt="Postpartum doula Ashlee McKenzie supporting a San Francisco family holding their newborn during a fourth trimester session"
-              sizes="(min-width: 768px) 768px, 100vw"
+            <img
+              src="/images/family-consultation-fourth-trimester.jpg"
+              alt="Ashlee McKenzie meeting with a family in their living room, discussing fourth trimester care alongside a copy of The Fourth Trimester"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover object-center"
             />
           </div>
@@ -126,10 +122,11 @@ function AboutPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-6 pb-10 md:pb-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] max-w-2xl mx-auto">
-            <ResponsiveImage
-              source={branding39Responsive}
-              alt="Newborn care specialist Ashlee McKenzie soothing a baby in a bassinet during responsive newborn care"
-              sizes="(min-width: 768px) 672px, 100vw"
+            <img
+              src="/images/responsive-care-close-hold.jpg"
+              alt="Postpartum doula holding a baby close for comfort during a responsive newborn care moment"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover object-center"
             />
           </div>
@@ -175,7 +172,7 @@ function AboutPage() {
           </div>
           <div className="space-y-7 text-[17px] text-cocoa/80 leading-[1.85] max-w-2xl mx-auto">
             <p>
-              Over the past 15+ years, I've supported more than 500 families across the Bay Area. My
+              Over 16 years, I've supported more than 500 families across the Bay Area. My
               work blends:
             </p>
           </div>
@@ -222,7 +219,7 @@ function AboutPage() {
         <div className="mx-auto max-w-4xl px-6 pb-10 md:pb-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/4] sm:aspect-[4/3] max-w-2xl mx-auto">
             <img
-              src={ashleePortraitAsset.url}
+              src="/images/ashlee-tender-kiss.jpg"
               alt="Editorial portrait of Ashlee McKenzie, postpartum doula and newborn care specialist behind Nurture The Roots™"
               loading="lazy"
               decoding="async"
@@ -251,22 +248,22 @@ function AboutPage() {
             {[
               {
                 numeral: "I",
-                name: "Identity",
+                name: "Identity-Aligned Care™",
                 body: "Postpartum support starts with the parent — your values, your instincts, and the identity transitions of early parenthood.",
               },
               {
                 numeral: "II",
-                name: "Lineage",
+                name: "Ancestral-Rooted Care™",
                 body: "The patterns and stories you carry shape the ones you pass on — what you keep, and what you set down.",
               },
               {
                 numeral: "III",
-                name: "Relationship",
+                name: "Developmental & Relational Guidance™",
                 body: "Newborns communicate from the beginning. Reading cues + states is the foundation of connection.",
               },
               {
                 numeral: "IV",
-                name: "Rhythm",
+                name: "Sovereign Family Systems™",
                 body: "Families do best with developmental rhythms that fit their real lives, not idealized schedules.",
               },
             ].map((pillar) => (

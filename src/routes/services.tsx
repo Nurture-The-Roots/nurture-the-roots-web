@@ -1,10 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import servicesImageAsset from "@/assets/approach-3.jpeg.asset.json";
-import anchorResponsive from "@/assets/branding-54.responsive.json";
-import journeyOpenerResponsive from "@/assets/branding-55.responsive.json";
-import ncsResponsive from "@/assets/branding-57.responsive.json";
-import ashleeFeedingAsset from "@/assets/ashlee-feeding-moment.jpeg.asset.json";
-import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 
@@ -27,7 +21,7 @@ export const Route = createFileRoute("/services")({
           "Evidence-based postpartum doula and newborn care services for the fourth trimester — newborn communication, cues + states, developmental rhythms, and responsive care.",
       },
       { property: "og:url", content: "https://nurturetheroots.co/services" },
-      { property: "og:image", content: servicesImageAsset.url },
+      { property: "og:image", content: "/images/family-consultation-fourth-trimester.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://nurturetheroots.co/services" }],
     scripts: [
@@ -98,10 +92,11 @@ function ServicesPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
-            <ResponsiveImage
-              source={anchorResponsive}
+            <img
+              src="/images/family-consultation-fourth-trimester.jpg"
               alt="Three adults sitting together in a cozy living room, one holding a baby wrapped in a rust-colored blanket, another holding the book The Fourth Trimester, all smiling and engaged"
-              sizes="(min-width: 1024px) 896px, 100vw"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-cover aspect-[3/2] md:aspect-[16/9]"
             />
           </div>
@@ -151,7 +146,7 @@ function ServicesPage() {
           <div className="mt-12 max-w-md mx-auto">
             <div className="overflow-hidden rounded-2xl shadow-[0_16px_48px_-20px_rgba(74,63,57,0.3)]">
               <img
-                src={ashleeFeedingAsset.url}
+                src="/images/ashlee-bottle-feeding.jpg"
                 alt="Postpartum doula Ashlee McKenzie supporting a feeding during an in-home postpartum doula session"
                 loading="lazy"
                 decoding="async"
@@ -208,10 +203,11 @@ function ServicesPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-6 py-10 md:py-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
-            <ResponsiveImage
-              source={ncsResponsive}
+            <img
+              src="/images/ashlee-brand-0037.jpg"
               alt="Baby on a soft mat under a wooden baby gym, with Ashlee kneeling close by in a warm, developmental moment"
-              sizes="(min-width: 1024px) 896px, 100vw"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-cover aspect-[3/2] md:aspect-[16/9]"
             />
           </div>
@@ -280,10 +276,11 @@ function ServicesPage() {
 
           {/* IMAGE — JOURNEY OPENER: nursery/bassinet */}
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-3xl mx-auto mb-16 md:mb-20 mt-10 md:mt-14">
-            <ResponsiveImage
-              source={journeyOpenerResponsive}
-              alt="Ashlee holding a baby wrapped in a rust-colored blanket, standing beside a white mesh bassinet in a bright nursery with a bird mobile above"
-              sizes="(min-width: 1024px) 768px, 100vw"
+            <img
+              src="/images/consultation-planning-session.jpg"
+              alt="Ashlee sitting with both parents in their living room, walking through a fourth trimester plan together"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]"
             />
           </div>

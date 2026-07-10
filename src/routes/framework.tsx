@@ -1,7 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import branding56Responsive from "@/assets/branding-56.responsive.json";
-import branding58Responsive from "@/assets/branding-58.responsive.json";
-import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 
@@ -9,12 +6,12 @@ export const Route = createFileRoute("/framework")({
   head: () => ({
     meta: [
       {
-        title: "The Nurture The Roots™ Framework — Identity · Lineage · Relationship · Rhythm",
+        title: "The Nurture The Roots™ Framework | Ashlee McKenzie",
       },
       {
         name: "description",
         content:
-          "The Nurture The Roots™ Framework: a developmental, relational model for the fourth trimester built on four pillars — Identity, Lineage, Relationship, and Rhythm — grounded in newborn communication.",
+          "The Nurture The Roots™ Framework: a developmental, relational model for the fourth trimester built on four pillars — Identity-Aligned Care™, Ancestral-Rooted Care™, Developmental & Relational Guidance™, and Sovereign Family Systems™ — grounded in newborn communication.",
       },
       {
         property: "og:title",
@@ -23,7 +20,7 @@ export const Route = createFileRoute("/framework")({
       {
         property: "og:description",
         content:
-          "Identity · Lineage · Relationship · Rhythm — four pillars for grounded, evidence-based postpartum and newborn care.",
+          "Identity-Aligned Care™ · Ancestral-Rooted Care™ · Developmental & Relational Guidance™ · Sovereign Family Systems™ — four pillars for grounded, evidence-based postpartum and newborn care.",
       },
       { property: "og:url", content: "https://nurturetheroots.co/framework" },
       { property: "og:type", content: "website" },
@@ -38,7 +35,7 @@ const TM = () => <span className="align-super text-[0.4em] ml-0.5">™</span>;
 const pillars = [
   {
     numeral: "I",
-    name: "Identity",
+    name: "Identity-Aligned Care™",
     lead: "Who you are shapes how you parent. The fourth trimester is a time of profound identity expansion. This pillar centers the parent — their values, their instincts, their history, and the emerging shape of who they are becoming.",
     bullets: [
       "clarifying what matters most in this season",
@@ -50,7 +47,7 @@ const pillars = [
   },
   {
     numeral: "II",
-    name: "Lineage",
+    name: "Ancestral-Rooted Care™",
     lead: "The stories you carry shape the stories you pass on. Every family arrives in the fourth trimester with inherited patterns — cultural, ancestral, relational. This pillar helps you understand what you're carrying, what you want to continue, and what you're ready to release.",
     bullets: [
       "exploring inherited beliefs about care",
@@ -61,7 +58,7 @@ const pillars = [
   },
   {
     numeral: "III",
-    name: "Relationship",
+    name: "Developmental & Relational Guidance™",
     lead: "Newborns communicate from the beginning. This pillar centers the early relational dance between you and your baby. Newborns express themselves through cues, states, rhythms, and patterns — and when parents understand these signals, connection becomes intuitive.",
     bullets: [
       "newborn behavioral observation (NBO‑informed)",
@@ -73,8 +70,8 @@ const pillars = [
   },
   {
     numeral: "IV",
-    name: "Rhythm",
-    lead: "Rhythm is not a schedule. It is the natural patterning that emerges when you understand your baby's cues and your own needs. This pillar helps families create sustainable flow — responsive, flexible, and grounded in real life.",
+    name: "Sovereign Family Systems™",
+    lead: "This isn't a rigid schedule handed down from the outside. It is the natural patterning that emerges when you understand your baby's cues and your own needs — with your family fully in charge of what that looks like. This pillar helps families create sustainable flow — responsive, flexible, and grounded in real life.",
     bullets: [
       "shaping feeding + sleep patterns responsively",
       "supporting state transitions",
@@ -114,17 +111,18 @@ function FrameworkPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
-            <ResponsiveImage
-              source={branding56Responsive}
+            <img
+              src="/images/ashlee-brand-0042.jpg"
               alt="Postpartum doula Ashlee McKenzie caring for a newborn on a changing table in a calm nursery"
-              sizes="(min-width: 1024px) 896px, 100vw"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9]"
             />
           </div>
         </div>
       </section>
 
-      {/* PILLARS — Identity · Lineage · Relationship · Rhythm */}
+      {/* PILLARS — Identity-Aligned Care™ · Ancestral-Rooted Care™ · Developmental & Relational Guidance™ · Sovereign Family Systems™ */}
       {pillars.map((pillar, i) => {
         const alt = i % 2 === 1;
         return (
@@ -166,10 +164,11 @@ function FrameworkPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-6 py-10 md:py-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] max-w-md mx-auto">
-            <ResponsiveImage
-              source={branding58Responsive}
-              alt="Ashlee McKenzie smiling with a baby during a playful, responsive moment of early relational connection"
-              sizes="(min-width: 768px) 448px, 100vw"
+            <img
+              src="/images/playful-relational-moment.jpg"
+              alt="A playful, responsive moment between caregiver and baby during early relational connection"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-cover"
             />
           </div>
