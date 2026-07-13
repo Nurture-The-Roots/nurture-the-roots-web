@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
-const welcomeImg = "/images/ashlee-window-portrait.jpg";
+const welcomeImg = "https://nurturetheroots.co/images/ashlee-window-portrait.jpg";
 const homeBandImg = "/images/newborn-hands-feet-care.jpg";
 
 export const Route = createFileRoute("/")({

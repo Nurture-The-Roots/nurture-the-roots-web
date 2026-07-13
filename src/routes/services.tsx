@@ -21,7 +21,7 @@ export const Route = createFileRoute("/services")({
           "Evidence-based postpartum doula and newborn care services for the fourth trimester — newborn communication, cues + states, developmental rhythms, and responsive care.",
       },
       { property: "og:url", content: "https://nurturetheroots.co/services" },
-      { property: "og:image", content: "/images/family-consultation-fourth-trimester.jpg" },
+      { property: "og:image", content: "https://nurturetheroots.co/images/family-consultation-fourth-trimester.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://nurturetheroots.co/services" }],
     scripts: [

@@ -24,7 +24,7 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
         content: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
       },
       { property: "og:type", content: "article" },
-      { property: "og:image", content: "/images/consultation-planning-session.jpg" },
+      { property: "og:image", content: "https://nurturetheroots.co/images/consultation-planning-session.jpg" },
     ],
     links: [
       {
@@ -50,7 +50,7 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
             name: "Nurture The Roots™",
             logo: {
               "@type": "ImageObject",
-              url: "https://nurturetheroots.co",
+              url: "https://nurturetheroots.co/favicon.ico",
             },
           },
           url: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",

@@ -18,7 +18,7 @@ export const Route = createFileRoute("/blog/")({
           "Developmental guidance, newborn communication, and grounded support for the earliest weeks of parenthood.",
       },
       { property: "og:url", content: "https://nurturetheroots.co/blog" },
-      { property: "og:image", content: "/images/consultation-planning-session.jpg" },
+      { property: "og:image", content: "https://nurturetheroots.co/images/consultation-planning-session.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://nurturetheroots.co/blog" }],
     scripts: [
