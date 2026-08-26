@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import postImageAsset from "@/assets/approach-1.jpeg.asset.json";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 
 export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
@@ -22,15 +21,15 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
       },
       {
         property: "og:url",
-        content: "https://nurture-the-roots-web.lovable.app/blog/what-is-a-postpartum-doula",
+        content: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
       },
       { property: "og:type", content: "article" },
-      { property: "og:image", content: postImageAsset.url },
+      { property: "og:image", content: "https://nurturetheroots.co/images/consultation-planning-session.jpg" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://nurture-the-roots-web.lovable.app/blog/what-is-a-postpartum-doula",
+        href: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
       },
     ],
     scripts: [
@@ -51,11 +50,11 @@ export const Route = createFileRoute("/blog/what-is-a-postpartum-doula")({
             name: "Nurture The Roots™",
             logo: {
               "@type": "ImageObject",
-              url: "https://nurture-the-roots-web.lovable.app",
+              url: "https://nurturetheroots.co/favicon.ico",
             },
           },
-          url: "https://nurture-the-roots-web.lovable.app/blog/what-is-a-postpartum-doula",
-          image: postImageAsset.url,
+          url: "https://nurturetheroots.co/blog/what-is-a-postpartum-doula",
+          image: "https://nurturetheroots.co/images/consultation-planning-session.jpg",
           datePublished: "2026-06-15",
         }),
       },
@@ -84,8 +83,8 @@ function PostPage() {
         <div className="mx-auto max-w-5xl px-6 pb-20 md:pb-28">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[21/9]">
             <img
-              src={postImageAsset.url}
-              alt="Parent holding a newborn beside a bassinet in a sunlit San Francisco nursery during the fourth trimester"
+              src="/images/consultation-planning-session.jpg"
+              alt="Ashlee sitting with new parents in their sunlit living room, planning fourth trimester support together"
               loading="eager"
               className="w-full h-full object-cover"
             />

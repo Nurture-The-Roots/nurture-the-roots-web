@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 
-const CANONICAL = "https://nurture-the-roots-web.lovable.app/postpartum-doula-san-francisco";
+const CANONICAL = "https://nurturetheroots.co/postpartum-doula-san-francisco";
 
 export const Route = createFileRoute("/postpartum-doula-san-francisco")({
   head: () => ({

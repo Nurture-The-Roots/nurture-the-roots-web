@@ -1,13 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import welcomeAsset from "@/assets/welcome-ashlee-baby.jpg.asset.json";
-import welcomeResponsive from "@/assets/welcome-ashlee-baby.responsive.json";
-import ashleeTenderHoldAsset from "@/assets/ashlee-tender-hold.jpeg.asset.json";
-import branding48Responsive from "@/assets/branding-photos-48.responsive.json";
-import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
-const welcomeImg = welcomeAsset.url;
-const homeBandImg = ashleeTenderHoldAsset.url;
+const welcomeImg = "https://nurturetheroots.co/images/ashlee-window-portrait.jpg";
+const homeBandImg = "/images/newborn-hands-feet-care.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -106,10 +101,12 @@ function Index() {
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
-            <ResponsiveImage
-              source={welcomeResponsive}
-              alt="Postpartum doula Ashlee McKenzie holding a newborn in a warm, sunlit San Francisco home"
-              sizes="(min-width: 1024px) 896px, 100vw"
+            <img
+              src="/images/ashlee-window-portrait.jpg"
+              alt="Postpartum doula Ashlee McKenzie holding a swaddled newborn by a sunlit window"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/2] md:aspect-[16/10]"
             />
           </div>
@@ -205,7 +202,7 @@ function Index() {
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2] md:aspect-[16/9] lg:aspect-[21/9]">
             <img
               src={homeBandImg}
-              alt="Newborn care specialist Ashlee McKenzie swaddling a baby in a calm, light-filled nursery"
+              alt="Postpartum doula gently tending to a baby's hands and feet during a calm newborn care session"
               loading="lazy"
               decoding="async"
               sizes="(min-width: 1024px) 1152px, 100vw"
@@ -249,10 +246,11 @@ function Index() {
       <section className="bg-background">
         <div className="mx-auto max-w-5xl px-6 py-10 md:py-16">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)] aspect-[3/2]">
-            <ResponsiveImage
-              source={branding48Responsive}
-              alt="Postpartum doula Ashlee McKenzie holding a newborn by a sunlit window in a calm, plant-filled San Francisco living room"
-              sizes="(min-width: 1024px) 1024px, 100vw"
+            <img
+              src="/images/ashlee-brand-0069.jpg"
+              alt="Ashlee McKenzie kissing a swaddled baby on the cheek during a tender moment on a sunlit bed"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover object-center"
             />
           </div>

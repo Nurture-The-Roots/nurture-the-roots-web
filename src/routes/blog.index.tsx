@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import blogImageAsset from "@/assets/approach-2.jpeg.asset.json";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 
@@ -19,7 +18,7 @@ export const Route = createFileRoute("/blog/")({
           "Developmental guidance, newborn communication, and grounded support for the earliest weeks of parenthood.",
       },
       { property: "og:url", content: "https://nurturetheroots.co/blog" },
-      { property: "og:image", content: blogImageAsset.url },
+      { property: "og:image", content: "https://nurturetheroots.co/images/consultation-planning-session.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://nurturetheroots.co/blog" }],
     scripts: [

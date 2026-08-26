@@ -7,10 +7,10 @@ export const Route = createFileRoute("/privacy")({
       { name: "description", content: "Privacy policy for Nurture The Roots. Learn what information is collected, how it is used, and how it is protected." },
       { property: "og:title", content: "Privacy Policy — Nurture The Roots™" },
       { property: "og:description", content: "Privacy policy for Nurture The Roots." },
-      { property: "og:url", content: "https://nurture-the-roots-web.lovable.app/privacy" },
+      { property: "og:url", content: "https://nurturetheroots.co/privacy" },
     ],
     links: [
-      { rel: "canonical", href: "https://nurture-the-roots-web.lovable.app/privacy" },
+      { rel: "canonical", href: "https://nurturetheroots.co/privacy" },
     ],
   }),
   component: PrivacyPage,

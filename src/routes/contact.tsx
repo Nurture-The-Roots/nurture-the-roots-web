@@ -1,6 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import contactFamilyResponsive from "@/assets/contact-family.responsive.json";
-import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { SectionDivider } from "@/components/SectionDivider";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -127,10 +125,11 @@ function ContactPage() {
       <section className="bg-background">
         <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
-            <ResponsiveImage
-              source={contactFamilyResponsive}
-              alt="Postpartum doula Ashlee McKenzie supporting a San Francisco family with their newborn during the fourth trimester"
-              sizes="(min-width: 1024px) 896px, 100vw"
+            <img
+              src="/images/family-warm-embrace.jpg"
+              alt="Ashlee McKenzie and family gathered warmly around a newborn, supporting a San Francisco family during the fourth trimester"
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9]"
             />
           </div>

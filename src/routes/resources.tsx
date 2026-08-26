@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import babyChangingTableAsset from "@/assets/baby-changing-table.jpeg.asset.json";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
 
@@ -100,11 +99,10 @@ function ResourcesPage() {
         <div className="mx-auto max-w-4xl px-6 pt-10 md:pt-14">
           <div className="overflow-hidden rounded-2xl shadow-[0_24px_60px_-30px_rgba(74,63,57,0.4)]">
             <img
-              src={babyChangingTableAsset.url}
-              alt="Postpartum doula Ashlee McKenzie caring for a newborn on a changing table in a calm nursery"
+              src="/images/newborn-hands-feet-care.jpg"
+              alt="Gentle hands tending to a newborn's feet during a calm, hands-on care moment"
               loading="lazy"
               decoding="async"
-              sizes="(min-width: 1024px) 896px, 100vw"
               className="w-full h-auto object-cover aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/9]"
             />
           </div>
