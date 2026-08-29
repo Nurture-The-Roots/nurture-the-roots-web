@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionDivider } from "@/components/SectionDivider";
 import { CalendlyButton } from "@/components/integrations/CalendlyButton";
+import { NewsletterForm } from "@/components/integrations/NewsletterForm";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -238,6 +239,17 @@ function BlogPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* NEWSLETTER SIGNUP */}
+      <section className="section bg-blush/40">
+        <div className="mx-auto max-w-2xl px-6 py-24 md:py-32">
+          <NewsletterForm
+            heading="Stay close to the rhythm"
+            description="Occasional, grounded letters on newborn communication, developmental rhythms, and identity-aligned postpartum care — sent only when there's something worth reading."
+            className="rounded-2xl border border-taupe/30 bg-sand/70 px-8 py-10 md:px-12 md:py-12"
+          />
         </div>
       </section>
     </div>
