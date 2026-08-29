@@ -7,10 +7,18 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { Menu } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetClose,
+} from "../components/ui/sheet";
 
 function NotFoundComponent() {
   return (
@@ -137,6 +145,8 @@ function RootComponent() {
 }
 
 function SiteHeader() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   const nav = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
@@ -146,12 +156,15 @@ function SiteHeader() {
     { to: "/blog", label: "Blog" },
     { to: "/contact", label: "Contact" },
   ] as const;
+
   return (
     <header className="sticky top-0 z-40 backdrop-blur-sm bg-[color-mix(in_oklab,var(--sand)_85%,transparent)] border-b border-border/60">
       <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between gap-6">
         <Link to="/" className="font-serif text-lg text-cocoa tracking-wide">
           Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span>
         </Link>
+
+        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-6 text-sm text-earth/80">
           {nav.map((n) => (
             <Link
@@ -165,20 +178,58 @@ function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link
-          to="/contact"
-          className="hidden lg:inline-flex items-center rounded-full border border-taupe/70 px-4 py-2 text-sm text-cocoa hover:bg-blush transition-colors"
-        >
-          Begin
-        </Link>
-      </div>
-      <nav className="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 pb-3 text-xs tracking-wide text-earth/75">
-        {nav.map((n) => (
-          <Link key={n.to} to={n.to} className="hover:text-cocoa" activeProps={{ className: "text-cocoa" }} activeOptions={{ exact: n.to === "/" }}>
-            {n.label}
+
+        <div className="flex items-center gap-3">
+          <Link
+            to="/contact"
+            className="hidden lg:inline-flex items-center rounded-full border border-taupe/70 px-4 py-2 text-sm text-cocoa hover:bg-blush transition-colors"
+          >
+            Begin
           </Link>
-        ))}
-      </nav>
+
+          {/* Mobile hamburger button */}
+          <button
+            aria-label="Open navigation menu"
+            className="lg:hidden flex items-center justify-center rounded-md p-2 text-cocoa hover:bg-blush transition-colors"
+            onClick={() => setMobileOpen(true)}
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile side drawer */}
+      <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+        <SheetContent side="left" className="w-72 bg-sand p-0">
+          <SheetHeader className="px-6 py-5 border-b border-border/60">
+            <SheetTitle className="font-serif text-lg text-cocoa tracking-wide text-left">
+              Nurture The Roots<span className="align-super text-[0.55em] ml-0.5">™</span>
+            </SheetTitle>
+          </SheetHeader>
+          <nav className="flex flex-col px-6 py-4 gap-1">
+            {nav.map((n) => (
+              <SheetClose asChild key={n.to}>
+                <Link
+                  to={n.to}
+                  className="py-3 text-base text-earth/80 hover:text-cocoa transition-colors border-b border-border/40 last:border-0"
+                  activeProps={{ className: "text-cocoa font-medium" }}
+                  activeOptions={{ exact: n.to === "/" }}
+                >
+                  {n.label}
+                </Link>
+              </SheetClose>
+            ))}
+            <SheetClose asChild>
+              <Link
+                to="/contact"
+                className="mt-4 inline-flex items-center justify-center rounded-full border border-taupe/70 px-4 py-2 text-sm text-cocoa hover:bg-blush transition-colors"
+              >
+                Begin
+              </Link>
+            </SheetClose>
+          </nav>
+        </SheetContent>
+      </Sheet>
     </header>
   );
 }
