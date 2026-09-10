@@ -27,12 +27,12 @@ The site is designed to provide grounded, developmental, and relational guidance
 - Brand‑aligned visual system
 
 ## Repository Structure
-/public        → static assets (favicon, robots.txt, images, etc.)
-/src           → application source (routes, components, styles)
-/src/assets    → app-managed assets
-/supabase      → Supabase config
-netlify.toml   → Netlify deploy configuration
-vite.config.ts → Vite configuration
+- `/public` → static assets (favicon, robots.txt, images, etc.)
+- `/src` → application source (routes, components, styles)
+- `/src/assets` → app-managed assets
+- `/supabase` → Supabase config
+- `netlify.toml` → Netlify deploy configuration
+- `vite.config.ts` → Vite configuration
 ## Author
 Ashlee McKenzie
 Certified Postpartum Doula, Newborn Care Specialist, Fourth Trimester Expert
