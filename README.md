@@ -1,7 +1,7 @@
-Nurture The Roots™ Website
+# Nurture The Roots™ Website
 The source code for the Nurture The Roots™ website — a calm, evidence‑based postpartum and newborn development platform built for clarity, accessibility, and a premium user experience.
 
-About This Project
+## About This Project
 This repository contains the frontend codebase for the Nurture The Roots™ website.
 The site is designed to provide grounded, developmental, and relational guidance for families navigating the fourth trimester, with an emphasis on clarity, usability, and a warm, modern aesthetic.
 
